@@ -1,31 +1,31 @@
-ELVIGLOW — STRONA Z PODSTRONAMI + PL/EN/NL
+ElviGlow mobile polished project
 
-Co jest w paczce:
-- normalne przechodzenie między zakładkami/podstronami
-- języki: PL / EN / NL
-- zakładki: Home, Zabiegi, Paznokcie, Akademia skóry, Abonamenty, Kontakt
-- zaawansowana Akademia skóry z sekcją „Ścieżka świadomej pielęgnacji” i mini mapą skóry
-- miejsce na prawdziwy cennik paznokci
-- logo i grafiki ElviGlow w folderze public
+Wersja poprawiona pod telefon:
+- menu nie ucina zakładek na mobile,
+- zakładki mają jednolity format,
+- przyciski i karty są równe i czytelne,
+- teksty publiczne są bardziej klient-facing, bez technicznych opisów typu "strona działa jak...",
+- package-lock.json został usunięty, żeby npm/Vercel używał normalnego registry.
 
-Jak uruchomić:
-1. Rozpakuj folder.
-2. Wejdź w PowerShell do folderu, gdzie jest package.json.
-3. Wpisz:
+Uruchomienie lokalne:
+1. Wejdź do folderu projektu:
+   cd "C:\Users\Marcin\Desktop\wszystkie projekty\strona internetowa\elvi glove\elviglow-mobile-polished-project"
+
+2. Ustaw normalny registry npm:
+   npm.cmd config set registry "https://registry.npmjs.org/"
+
+3. Zainstaluj paczki:
    npm.cmd install
+
+4. Uruchom lokalnie:
    npm.cmd run dev
-4. Otwórz http://localhost:5173/
 
-Gdzie edytować teksty:
-- src/data/i18n.js
+5. Build test:
+   npm.cmd run build
 
-Gdzie są dane kontaktowe:
-- src/data/i18n.js
-- szukaj sekcji contact dla pl, en i nl
-
-Gdzie podmienić ceny paznokci:
-- src/data/i18n.js
-- szukaj sekcji nails.services dla pl, en i nl
-
-Ważne:
-Na stronie nie używamy słowa „lejek”. Zrobione jest to jako edukacyjna „Ścieżka świadomej pielęgnacji” i „Mini mapa skóry”, żeby klientka czuła, że sama rozumie problem i sama podejmuje decyzję.
+Wdrożenie przez GitHub/Vercel:
+- Skopiuj zawartość tej paczki do swojego folderu projektu.
+- Zrób git add .
+- git commit -m "Mobile polish for ElviGlow"
+- git push
+- Vercel sam zrobi nowy deployment.

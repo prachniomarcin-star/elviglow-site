@@ -313,7 +313,7 @@ export const translations = {
         ["Regeneracja", "Microneedling i zabiegi dla skóry wymagającej mocniejszego wsparcia."],
       ],
       offerTitle: "Twarz, paznokcie i edukacja w jednym miejscu.",
-      offerText: "Strona działa jak spokojna ścieżka decyzyjna: klientka może wejść w zabiegi, paznokcie, akademię skóry, abonamenty albo kontakt — bez poczucia nachalnej sprzedaży.",
+      offerText: "W jednym miejscu znajdziesz pielęgnację twarzy, paznokcie, edukację skóry i regularne plany dbania o cerę — bez presji, spokojnie i świadomie.",
     },
     treatments: {
       eyebrow: "Oferta zabiegów",
@@ -360,7 +360,7 @@ export const translations = {
     academy: {
       eyebrow: "Akademia skóry",
       title: "Klientka nie kupuje zabiegu. Ona zaczyna rozumieć swoją skórę.",
-      lead: "Ta zakładka działa jak spokojna ścieżka edukacyjna: najpierw problem, potem mechanizm, następnie kierunek pielęgnacji i dopiero na końcu propozycja zabiegu.",
+      lead: "Najpierw pokazujemy problem skóry, potem prosty mechanizm, a dopiero później kierunek pielęgnacji. Dzięki temu łatwiej zrozumieć, dlaczego zabieg lub regularność mogą mieć sens.",
       preventionTitle: "Lepiej zapobiegać, niż walczyć z utrwalonymi zmianami.",
       preventionCards: [
         { title: "Skóra pamięta regularność", text: "Pojedynczy zabieg może dać świeżość, ale największą zmianę buduje powtarzalność i mądrze dobrana seria." },
@@ -368,7 +368,7 @@ export const translations = {
         { title: "Domowa pielęgnacja ma granice", text: "Krem jest ważny, ale nie zawsze wystarczy, gdy problem dotyczy głębszej regeneracji, struktury skóry lub mocnego przesuszenia." },
       ],
       pathTitle: "Ścieżka świadomej pielęgnacji ElviGlow",
-      pathText: "To jest bardziej zaawansowany element strony: klientka przechodzi przez prosty proces i zaczyna rozumieć, który kierunek zabiegu może mieć sens. Nie nazywamy tego lejkiem — na stronie wygląda to jak edukacyjna mapa skóry.",
+      pathText: "To spokojna mapa decyzji: objaw, przyczyna, cel i plan. Klientka przechodzi przez prosty proces i zaczyna rozumieć, który kierunek pielęgnacji może mieć dla niej sens.",
       pathSteps: [
         ["1", "Objaw", "Co widzisz w lustrze: suchość, pory, ziemisty kolor, wiotkość, pierwsze zmarszczki?"],
         ["2", "Mechanizm", "Dlaczego to się dzieje: brak nawilżenia, wolniejsza regeneracja, zanieczyszczenia, utrata elastyczności?"],
@@ -477,7 +477,7 @@ export const translations = {
         ["Regeneration", "Microneedling and treatments for skin that needs stronger support."],
       ],
       offerTitle: "Face, nails and education in one place.",
-      offerText: "The website works like a calm decision path: the client can enter treatments, nails, Skin Academy, memberships or contact — without feeling pushed into buying.",
+      offerText: "In one place you can explore facial care, nails, skin education and regular care plans — calmly, clearly and without pressure.",
     },
     treatments: {
       eyebrow: "Treatment offer",
@@ -520,7 +520,7 @@ export const translations = {
     academy: {
       eyebrow: "Skin Academy",
       title: "A client does not just buy a treatment. She starts understanding her skin.",
-      lead: "This page works as an educational path: first the problem, then the mechanism, then the care direction, and only at the end a treatment suggestion.",
+      lead: "First we show the skin concern, then the simple mechanism, and only after that the care direction. This helps you understand why a treatment or regular rhythm may make sense.",
       preventionTitle: "It is better to prevent than to fight established changes later.",
       preventionCards: [
         { title: "Skin remembers consistency", text: "One treatment may bring freshness, but the biggest change comes from repetition and a well-matched series." },
@@ -528,7 +528,7 @@ export const translations = {
         { title: "Home care has limits", text: "Cream matters, but it may not be enough when the problem involves deeper regeneration, texture or strong dryness." },
       ],
       pathTitle: "The ElviGlow conscious care path",
-      pathText: "This is the advanced element of the website: the client goes through a simple process and begins to understand which treatment direction may make sense. On the site it feels like an educational skin map, not a sales funnel.",
+      pathText: "This is a calm decision map: symptom, cause, goal and plan. It helps you understand which care direction may make sense for your skin.",
       pathSteps: [
         ["1", "Symptom", "What do you see in the mirror: dryness, pores, dull tone, laxity, first lines?"],
         ["2", "Mechanism", "Why does it happen: lack of hydration, slower regeneration, impurities, loss of elasticity?"],
@@ -637,7 +637,7 @@ export const translations = {
         ["Regeneratie", "Microneedling en behandelingen voor huid die meer ondersteuning nodig heeft."],
       ],
       offerTitle: "Gezicht, nagels en educatie op één plek.",
-      offerText: "De website werkt als een rustige beslisroute: de klant kan naar behandelingen, nagels, Huidacademie, abonnementen of contact — zonder druk om direct te kopen.",
+      offerText: "Op één plek vind je gezichtsverzorging, nagels, huidseducatie en regelmatige verzorgingsplannen — rustig, duidelijk en zonder druk.",
     },
     treatments: {
       eyebrow: "Behandelaanbod",
@@ -688,7 +688,7 @@ export const translations = {
         { title: "Thuisverzorging heeft grenzen", text: "Crème is belangrijk, maar niet altijd genoeg bij diepere regeneratie, huidstructuur of sterke droogte." },
       ],
       pathTitle: "De bewuste verzorgingsroute van ElviGlow",
-      pathText: "Dit is het geavanceerde element van de website: de klant doorloopt een eenvoudig proces en begrijpt welke behandelingsrichting logisch kan zijn. Op de site voelt het als een educatieve huidkaart, niet als verkoopdruk.",
+      pathText: "Dit is een rustige besliskaart: symptoom, oorzaak, doel en plan. Zo begrijp je welke verzorgingsrichting logisch kan zijn voor jouw huid.",
       pathSteps: [
         ["1", "Symptoom", "Wat zie je in de spiegel: droogte, poriën, doffe teint, verslapping, eerste lijntjes?"],
         ["2", "Mechanisme", "Waarom gebeurt het: vochttekort, tragere regeneratie, onzuiverheden, verlies van elasticiteit?"],
