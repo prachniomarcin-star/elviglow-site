@@ -300,13 +300,13 @@ export const translations = {
     home: {
       eyebrow: "Beauty • Wellness • Glow",
       title: "Twoja chwila luksusu i blasku",
-      lead: "ElviGlow to salon świadomej pielęgnacji twarzy i paznokci: oczyszczenie, rozświetlenie, ampułki, microneedling, rytuały glow oraz spokojna atmosfera, w której klientka rozumie, czego potrzebuje jej skóra.",
+      lead: "ElviGlow to salon świadomej pielęgnacji twarzy i paznokci: oczyszczanie, rozświetlenie, ampułki, microneedling i rytuały glow w spokojnej atmosferze. Pomagamy zrozumieć, czego potrzebuje skóra i jak dbać o nią regularnie.",
       cardTitle: "ElviGlow",
       cardSubtitle: "Twoja chwila luksusu i blasku",
       philosophyEyebrow: "Filozofia",
       philosophyTitle: "Pielęgnacja nie powinna być przypadkiem.",
-      philosophyText1: "Klientka często trafia do salonu dopiero wtedy, gdy skóra jest już zmęczona, przesuszona albo zaczynają utrwalać się pierwsze zmarszczki. ElviGlow ma edukować, że regularna pielęgnacja jest spokojniejsza, tańsza i łatwiejsza niż późniejsza walka z zaniedbaniami.",
-      philosophyText2: "Nie sprzedajemy strachu. Uczymy mechanizmu: objaw → przyczyna → właściwy zabieg → regularność. Dzięki temu klientka czuje, że sama podejmuje dobrą decyzję.",
+      philosophyText1: "Skóra często pokazuje zmęczenie, przesuszenie albo pierwsze zmarszczki wcześniej, niż zaczynamy działać. Regularna pielęgnacja pomaga zachować świeżość, blask i dobrą kondycję skóry, zanim problem stanie się bardziej widoczny.",
+      philosophyText2: "W ElviGlow pielęgnacja zaczyna się od zrozumienia: co widzisz na skórze, dlaczego może się to pojawiać i jaki rytuał będzie najlepszym początkiem.",
       pillars: [
         ["Glow", "Oczyszczenie, świeżość i promienny wygląd po zabiegu."],
         ["Premium", "Ampułki, maski i bardziej dopracowany rytuał pielęgnacyjny."],
@@ -318,7 +318,7 @@ export const translations = {
     treatments: {
       eyebrow: "Oferta zabiegów",
       title: "Wybierz rytuał dla swojej skóry",
-      lead: "Pakiety ElviGlow są ułożone tak, żeby klientka mogła zacząć delikatnie, wejść w pielęgnację premium albo wybrać bardziej zaawansowaną regenerację po konsultacji.",
+      lead: "Pakiety ElviGlow są ułożone tak, żeby można było zacząć delikatnie, wybrać pielęgnację premium albo po konsultacji przejść do bardziej zaawansowanej regeneracji.",
       tabs: {
         facial: "Pakiety zabiegowe",
         premium: "Zabiegi premium",
@@ -331,7 +331,7 @@ export const translations = {
       },
       consultationTitle: "Najpierw potrzeba skóry, potem wybór pakietu.",
       consultationSteps: [
-        "Patrzymy, z czym klientka przychodzi: suchość, pory, ziemisty kolor, utrata blasku, pierwsze zmarszczki albo wiotkość.",
+        "Patrzymy, co najbardziej przeszkadza skórze: suchość, pory, ziemisty kolor, utrata blasku, pierwsze zmarszczki albo wiotkość.",
         "Tłumaczymy mechanizm prostym językiem: czego skórze brakuje i dlaczego sam krem może nie wystarczyć.",
         "Dobieramy zabieg do celu: oczyszczenie, glow, odżywienie, liftingujący efekt albo regeneracja.",
         "Ustalamy, czy wystarczy pojedynczy zabieg, czy lepsza będzie seria albo abonament pielęgnacyjny.",
@@ -341,26 +341,26 @@ export const translations = {
     nails: {
       eyebrow: "Paznokcie",
       title: "Dłonie, które wyglądają czysto, kobieco i zadbanie",
-      lead: "Cennik paznokci ustawiony w średniej półce dla rynku holenderskiego: elegancko, dostępnie, ale bez pozycjonowania jako najtańszy salon.",
+      lead: "Manicure, BIAB, stylizacja żelowa i pedicure w spokojnym stylu ElviGlow — estetycznie, czysto i kobieco.",
       introTitle: "Paznokcie są częścią pierwszego wrażenia.",
       introText: "Zadbane dłonie budują poczucie elegancji tak samo jak promienna skóra. W ElviGlow paznokcie mogą być osobną usługą albo uzupełnieniem rytuału beauty.",
       services: [
         { name: "Manicure klasyczny", price: "30 €", text: "Opracowanie płytki i skórek, nadanie kształtu oraz estetyczne wykończenie dłoni." },
         { name: "Manicure hybrydowy / gellak", price: "40 €", text: "Trwały kolor, czysty kształt i elegancki efekt na co dzień." },
         { name: "BIAB natural / wzmocnienie płytki", price: "50 €", text: "Dla naturalnych paznokci, które potrzebują wzmocnienia, gładkiej struktury i zadbanego wyglądu." },
-        { name: "BIAB + kolor lub French", price: "55–60 €", text: "Mocniejszy efekt estetyczny dla klientek, które chcą trwałej stylizacji i bardziej dopracowanego wykończenia." },
+        { name: "BIAB + kolor lub French", price: "55–60 €", text: "Mocniejszy efekt estetyczny dla osób, które chcą trwałej stylizacji i bardziej dopracowanego wykończenia." },
         { name: "Uzupełnienie BIAB / żel", price: "45–50 €", text: "Regularne odświeżenie stylizacji, żeby dłonie wyglądały zadbanie między wizytami." },
-        { name: "Nowa stylizacja z przedłużeniem", price: "70 €", text: "Dla klientek, które chcą wydłużyć paznokcie i uzyskać elegancki kształt od podstaw." },
+        { name: "Nowa stylizacja z przedłużeniem", price: "70 €", text: "Dla osób, które chcą wydłużyć paznokcie i uzyskać elegancki kształt od podstaw." },
         { name: "Usunięcie stylizacji", price: "20 €", text: "Bezpieczne zdjęcie starej stylizacji i przygotowanie paznokci do dalszej pielęgnacji." },
         { name: "Pedicure klasyczny", price: "45 €", text: "Pielęgnacja stóp, paznokci i skórek jako część pełnego rytuału wellness." },
         { name: "Pedicure + gellak", price: "55 €", text: "Zadbane stopy z trwałym kolorem — idealne przed wyjazdem, sezonem letnim albo jako regularna pielęgnacja." },
       ],
-      note: "Ceny są ustawione jako średnia półka dla Holandii. Po pierwszych klientkach można je delikatnie podnieść albo stworzyć pakiety z zabiegami na twarz.",
+      note: "Dobierzemy usługę do kondycji paznokci, oczekiwanego efektu i tego, jak długo stylizacja ma się utrzymać.",
     },
     academy: {
       eyebrow: "Akademia skóry",
-      title: "Klientka nie kupuje zabiegu. Ona zaczyna rozumieć swoją skórę.",
-      lead: "Najpierw pokazujemy problem skóry, potem prosty mechanizm, a dopiero później kierunek pielęgnacji. Dzięki temu łatwiej zrozumieć, dlaczego zabieg lub regularność mogą mieć sens.",
+      title: "Zrozum swoją skórę, zanim wybierzesz zabieg.",
+      lead: "Najpierw rozpoznajemy objaw, potem tłumaczymy prosty mechanizm, a dopiero później dobieramy kierunek pielęgnacji. Dzięki temu łatwiej zrozumieć, dlaczego zabieg lub regularność mogą mieć sens.",
       preventionTitle: "Lepiej zapobiegać, niż walczyć z utrwalonymi zmianami.",
       preventionCards: [
         { title: "Skóra pamięta regularność", text: "Pojedynczy zabieg może dać świeżość, ale największą zmianę buduje powtarzalność i mądrze dobrana seria." },
@@ -368,7 +368,7 @@ export const translations = {
         { title: "Domowa pielęgnacja ma granice", text: "Krem jest ważny, ale nie zawsze wystarczy, gdy problem dotyczy głębszej regeneracji, struktury skóry lub mocnego przesuszenia." },
       ],
       pathTitle: "Ścieżka świadomej pielęgnacji ElviGlow",
-      pathText: "To spokojna mapa decyzji: objaw, przyczyna, cel i plan. Klientka przechodzi przez prosty proces i zaczyna rozumieć, który kierunek pielęgnacji może mieć dla niej sens.",
+      pathText: "To prosta mapa pielęgnacji: objaw, możliwa przyczyna, cel i plan. Dzięki niej łatwiej zrozumieć, który kierunek może mieć sens dla Twojej skóry.",
       pathSteps: [
         ["1", "Objaw", "Co widzisz w lustrze: suchość, pory, ziemisty kolor, wiotkość, pierwsze zmarszczki?"],
         ["2", "Mechanizm", "Dlaczego to się dzieje: brak nawilżenia, wolniejsza regeneracja, zanieczyszczenia, utrata elastyczności?"],
@@ -377,7 +377,7 @@ export const translations = {
       ],
       builder: {
         title: "Mini mapa skóry",
-        text: "Wybierz odpowiedzi i zobacz edukacyjny kierunek pielęgnacji. To pomaga klientce poczuć: ‘to jest o mnie’. ",
+        text: "Wybierz odpowiedzi i zobacz edukacyjny kierunek pielęgnacji. To prosty sposób, aby lepiej zrozumieć potrzeby skóry. ",
         ageLabel: "Wiek / etap skóry",
         problemLabel: "Główny problem",
         rhythmLabel: "Rytm pielęgnacji",
@@ -398,7 +398,7 @@ export const translations = {
         { age: "30+", title: "Pierwsze oznaki spowolnienia", text: "Skóra częściej potrzebuje wsparcia w nawilżeniu, elastyczności, blasku i regeneracji po stresie." },
         { age: "40+", title: "Regeneracja i jakość skóry", text: "Większe znaczenie ma seria, ampułki, zabiegi liftingujące oraz rozsądnie dobrany microneedling." },
       ],
-      topicsTitle: "Co klientka powinna wiedzieć?",
+      topicsTitle: "Co warto wiedzieć o skórze?",
       topics: [
         { title: "Dlaczego jeden zabieg nie zawsze wystarczy?", text: "Bo skóra odnawia się procesem. Jeden rytuał może odświeżyć, ale seria utrwala efekt i pozwala pracować głębiej." },
         { title: "Dlaczego pory i ziemisty kolor wracają?", text: "Często problemem jest regularność oczyszczania, martwy naskórek, przesuszenie albo pielęgnacja niedopasowana do skóry." },
@@ -413,7 +413,7 @@ export const translations = {
     memberships: {
       eyebrow: "Abonamenty",
       title: "Regularność, która buduje efekt",
-      lead: "Abonamenty są dla klientek, które wolą mieć skórę pod opieką cały czas, zamiast wracać dopiero wtedy, gdy problem już widać.",
+      lead: "Abonamenty są dla osób, które chcą dbać o skórę regularnie, zamiast wracać dopiero wtedy, gdy problem jest już wyraźnie widoczny.",
       items: [
         { name: "Cera w równowadze", price: "69 €/mies.", includes: ["1 zabieg oczyszczający w miesiącu", "Gratis maska co druga wizyta"], effect: "Regularna pielęgnacja i utrzymanie skóry w dobrej kondycji." },
         { name: "Pielęgnacja Premium", price: "129 €/mies.", includes: ["2 zabiegi miesięcznie z zabiegów podstawowych", "Maseczka w płachcie do domu"], effect: "Systematyczne oczyszczanie i rozświetlenie cery." },
@@ -423,12 +423,12 @@ export const translations = {
     contact: {
       eyebrow: "Kontakt",
       title: "Umów wizytę albo zapytaj o najlepszy kierunek dla skóry",
-      lead: "Możesz wpisać prawdziwy adres salonu, telefon, e-mail i link do rezerwacji online. Na razie zostawiłem bezpieczne placeholdery do podmiany.",
-      address: "Adres salonu: do uzupełnienia",
-      phone: "Telefon: +31 000 000 000",
+      lead: "Napisz do nas, aby umówić wizytę albo zapytać, który zabieg będzie najlepszym początkiem dla Twojej skóry.",
+      address: "",
+      phone: "",
       email: "E-mail: kontakt@elviglow.com",
       social: "Instagram / Facebook: @ElviGlow",
-      booking: "Rezerwacje online: wklej link do rezerwacji",
+      booking: "Rezerwacje: napisz wiadomość prywatną lub skorzystaj z linku w profilu",
       disclaimer: "Treści na stronie mają charakter edukacyjny i kosmetyczny. Nie zastępują konsultacji medycznej ani dermatologicznej.",
     },
     cta: {
@@ -464,13 +464,13 @@ export const translations = {
     home: {
       eyebrow: "Beauty • Wellness • Glow",
       title: "Your moment of luxury and glow",
-      lead: "ElviGlow is a conscious beauty salon for facial care and nails: cleansing, radiance, ampoules, microneedling, glow rituals and a calm atmosphere where every client understands what her skin needs.",
+      lead: "ElviGlow is a conscious beauty salon for facial care and nails: cleansing, radiance, ampoules, microneedling and glow rituals in a calm atmosphere. We help you understand what your skin needs and how to care for it regularly.",
       cardTitle: "ElviGlow",
       cardSubtitle: "Your moment of luxury and glow",
       philosophyEyebrow: "Philosophy",
       philosophyTitle: "Skincare should not be random.",
-      philosophyText1: "Clients often come only when the skin already looks tired, dry or the first lines become more visible. ElviGlow teaches that regular care is calmer, easier and often more sensible than fighting neglect later.",
-      philosophyText2: "We do not sell fear. We explain the mechanism: symptom → cause → right treatment → consistency. This helps the client feel that she is making the decision herself.",
+      philosophyText1: "Skin often shows tiredness, dryness or first lines before we decide to act. Regular care helps maintain freshness, glow and good skin condition before concerns become more visible.",
+      philosophyText2: "At ElviGlow, care starts with understanding: what you notice on your skin, why it may appear and which ritual is the best beginning.",
       pillars: [
         ["Glow", "Cleansing, freshness and a radiant look after the treatment."],
         ["Premium", "Ampoules, masks and a more refined care ritual."],
@@ -482,7 +482,7 @@ export const translations = {
     treatments: {
       eyebrow: "Treatment offer",
       title: "Choose a ritual for your skin",
-      lead: "ElviGlow packages are arranged so a client can start gently, choose premium care or discuss a more advanced regeneration plan during consultation.",
+      lead: "ElviGlow packages are arranged so you can start gently, choose premium care or discuss a more advanced regeneration plan during consultation.",
       tabs: { facial: "Facial packages", premium: "Premium treatments", microneedling: "Microneedling" },
       intros: {
         facial: "A good start for regular care: cleansing, hydration and the first fresh glow.",
@@ -491,7 +491,7 @@ export const translations = {
       },
       consultationTitle: "First the skin need, then the package.",
       consultationSteps: [
-        "We look at what the client notices: dryness, pores, dull color, loss of glow, first lines or less firmness.",
+        "We look at what your skin needs most: dryness, pores, dull tone, loss of glow, first lines or reduced firmness.",
         "We explain the mechanism simply: what the skin lacks and why cream alone may not be enough.",
         "We match the treatment to the goal: cleansing, glow, nourishment, lifting effect or regeneration.",
         "We decide whether one treatment is enough, or whether a series or membership makes more sense.",
@@ -501,25 +501,25 @@ export const translations = {
     nails: {
       eyebrow: "Nails",
       title: "Hands that look clean, feminine and cared for",
-      lead: "The nail price list is set at a mid-range level for the Dutch market: elegant, accessible and not positioned as the cheapest option.",
+      lead: "Manicure, BIAB, gel styling and pedicure in the calm ElviGlow style — clean, feminine and well cared for.",
       introTitle: "Nails are part of the first impression.",
       introText: "Well-kept hands create a sense of elegance just like radiant skin. At ElviGlow, nails can be a separate service or part of a full beauty ritual.",
       services: [
         { name: "Classic manicure", price: "30 €", text: "Nail plate and cuticle care, shaping and a clean elegant finish." },
         { name: "Gel polish manicure / gellak", price: "40 €", text: "Long-lasting color, clean shape and an elegant everyday look." },
         { name: "BIAB natural / nail strengthening", price: "50 €", text: "For natural nails that need strength, smoother structure and a well-kept appearance." },
-        { name: "BIAB + color or French", price: "55–60 €", text: "A more refined finish for clients who want durable styling and an elegant result." },
+        { name: "BIAB + color or French", price: "55–60 €", text: "A more refined finish for anyone who wants durable styling and an elegant result." },
         { name: "BIAB / gel refill", price: "45–50 €", text: "Regular refresh to keep the nails looking cared for between appointments." },
-        { name: "New set with extensions", price: "70 €", text: "For clients who want extra length and an elegant shape from the start." },
+        { name: "New set with extensions", price: "70 €", text: "For anyone who wants extra length and an elegant shape from the start." },
         { name: "Removal of old styling", price: "20 €", text: "Safe removal of old product and preparation of the natural nail for further care." },
         { name: "Classic pedicure", price: "45 €", text: "Foot, nail and cuticle care as part of a complete wellness ritual." },
         { name: "Pedicure + gel polish", price: "55 €", text: "Well-kept feet with long-lasting color — ideal before holidays, summer season or regular care." },
       ],
-      note: "Prices are set as a Dutch mid-range starting point. After the first clients, they can be adjusted upward or bundled with facial treatments.",
+      note: "We choose the service based on your nail condition, desired look and how long the styling should last.",
     },
     academy: {
       eyebrow: "Skin Academy",
-      title: "A client does not just buy a treatment. She starts understanding her skin.",
+      title: "Understand your skin before choosing a treatment.",
       lead: "First we show the skin concern, then the simple mechanism, and only after that the care direction. This helps you understand why a treatment or regular rhythm may make sense.",
       preventionTitle: "It is better to prevent than to fight established changes later.",
       preventionCards: [
@@ -537,7 +537,7 @@ export const translations = {
       ],
       builder: {
         title: "Mini skin map",
-        text: "Choose answers and see an educational care direction. It helps the client feel: ‘this is about me’. ",
+        text: "Choose answers and see an educational care direction. It is a simple way to better understand your skin needs. ",
         ageLabel: "Age / skin stage",
         problemLabel: "Main concern",
         rhythmLabel: "Care rhythm",
@@ -558,7 +558,7 @@ export const translations = {
         { age: "30+", title: "First signs of slowing down", text: "Skin more often needs support in hydration, elasticity, glow and stress recovery." },
         { age: "40+", title: "Regeneration and skin quality", text: "Series, ampoules, lifting treatments and well-chosen microneedling become more important." },
       ],
-      topicsTitle: "What should the client know?",
+      topicsTitle: "What is worth knowing about skin?",
       topics: [
         { title: "Why is one treatment not always enough?", text: "Because skin renews through a process. One ritual can refresh, while a series helps stabilize the result and work deeper." },
         { title: "Why do pores and dull tone return?", text: "The issue is often inconsistent cleansing, dead skin cells, dryness or a care routine that does not fit the skin." },
@@ -573,7 +573,7 @@ export const translations = {
     memberships: {
       eyebrow: "Memberships",
       title: "Consistency that builds the effect",
-      lead: "Memberships are for clients who prefer to keep the skin under care instead of returning only when the problem is already visible.",
+      lead: "Memberships are for people who want regular skin care instead of returning only when the problem is already clearly visible.",
       items: [
         { name: "Skin in Balance", price: "69 €/month", includes: ["1 cleansing treatment per month", "Free mask every second visit"], effect: "Regular care and maintaining skin in good condition." },
         { name: "Premium Care", price: "129 €/month", includes: ["2 monthly basic treatments", "Sheet mask to take home"], effect: "Systematic cleansing and brightening of the skin." },
@@ -583,12 +583,12 @@ export const translations = {
     contact: {
       eyebrow: "Contact",
       title: "Book a visit or ask for the best direction for your skin",
-      lead: "Add the real salon address, phone, email and booking link here. For now, safe placeholders are included.",
-      address: "Salon address: to add",
-      phone: "Phone: +31 000 000 000",
+      lead: "Message us to book a visit or ask which treatment could be the best first step for your skin.",
+      address: "",
+      phone: "",
       email: "E-mail: contact@elviglow.com",
       social: "Instagram / Facebook: @ElviGlow",
-      booking: "Online booking: paste booking link",
+      booking: "Booking: send a private message or use the link in the profile",
       disclaimer: "The content on this website is educational and cosmetic. It does not replace medical or dermatological consultation.",
     },
     cta: {
@@ -624,13 +624,13 @@ export const translations = {
     home: {
       eyebrow: "Beauty • Wellness • Glow",
       title: "Jouw moment van luxe en glow",
-      lead: "ElviGlow is een salon voor bewuste gezichtsverzorging en nagels: reiniging, glow, ampullen, microneedling, glow rituelen en een rustige sfeer waarin de klant begrijpt wat haar huid nodig heeft.",
+      lead: "ElviGlow is een salon voor bewuste gezichtsverzorging en nagels: reiniging, glow, ampullen, microneedling en verzorgingsrituelen in een rustige sfeer. We helpen je begrijpen wat jouw huid nodig heeft en hoe je haar regelmatig verzorgt.",
       cardTitle: "ElviGlow",
       cardSubtitle: "Jouw moment van luxe en glow",
       philosophyEyebrow: "Filosofie",
       philosophyTitle: "Huidverzorging mag niet toevallig zijn.",
-      philosophyText1: "Klanten komen vaak pas wanneer de huid al moe, droog of minder stevig is. ElviGlow leert dat regelmatige verzorging rustiger, makkelijker en vaak verstandiger is dan later herstellen wat lang is uitgesteld.",
-      philosophyText2: "We verkopen geen angst. We leggen het mechanisme uit: symptoom → oorzaak → juiste behandeling → regelmaat. Zo voelt de klant dat zij zelf een goede keuze maakt.",
+      philosophyText1: "De huid laat vermoeidheid, droogte of eerste lijntjes vaak eerder zien dan we beginnen te handelen. Regelmatige verzorging helpt frisheid, glow en een goede huidconditie te behouden voordat zorgen duidelijker worden.",
+      philosophyText2: "Bij ElviGlow begint verzorging met begrijpen: wat je op je huid ziet, waarom het kan ontstaan en welk ritueel een goede start is.",
       pillars: [
         ["Glow", "Reiniging, frisheid en een stralende uitstraling na de behandeling."],
         ["Premium", "Ampullen, maskers en een verfijnder verzorgingsritueel."],
@@ -642,7 +642,7 @@ export const translations = {
     treatments: {
       eyebrow: "Behandelaanbod",
       title: "Kies een ritueel voor jouw huid",
-      lead: "ElviGlow pakketten zijn zo opgebouwd dat de klant zacht kan starten, premium verzorging kan kiezen of na overleg een geavanceerder regeneratieplan kan bespreken.",
+      lead: "ElviGlow pakketten zijn zo opgebouwd dat je zacht kunt starten, premium verzorging kunt kiezen of na overleg een geavanceerder regeneratieplan kunt bespreken.",
       tabs: { facial: "Gezichtspakketten", premium: "Premium behandelingen", microneedling: "Microneedling" },
       intros: {
         facial: "Een goede start voor regelmatige verzorging: reiniging, hydratatie en de eerste frisse glow.",
@@ -651,7 +651,7 @@ export const translations = {
       },
       consultationTitle: "Eerst de huidbehoefte, daarna het pakket.",
       consultationSteps: [
-        "We kijken naar wat de klant ziet: droogte, poriën, doffe kleur, verlies van glow, eerste lijntjes of minder stevigheid.",
+        "We kijken naar wat jouw huid het meest nodig heeft: droogte, poriën, doffe teint, verlies van glow, eerste lijntjes of minder stevigheid.",
         "We leggen het mechanisme eenvoudig uit: wat mist de huid en waarom is alleen crème soms niet genoeg.",
         "We koppelen de behandeling aan het doel: reiniging, glow, voeding, lifting effect of regeneratie.",
         "We bepalen of één behandeling genoeg is, of dat een serie of abonnement logischer is.",
@@ -661,26 +661,26 @@ export const translations = {
     nails: {
       eyebrow: "Nagels",
       title: "Handen die schoon, vrouwelijk en verzorgd ogen",
-      lead: "De nagelprijzen zijn ingesteld op een middenklasse niveau voor de Nederlandse markt: elegant, toegankelijk en niet gepositioneerd als de goedkoopste optie.",
+      lead: "Manicure, BIAB, gelstyling en pedicure in de rustige stijl van ElviGlow — netjes, vrouwelijk en verzorgd.",
       introTitle: "Nagels zijn onderdeel van de eerste indruk.",
       introText: "Verzorgde handen geven hetzelfde gevoel van elegantie als een stralende huid. Bij ElviGlow kunnen nagels een losse service zijn of onderdeel van een volledig beautyritueel.",
       services: [
         { name: "Klassieke manicure", price: "30 €", text: "Verzorging van nagelplaat en nagelriemen, vorm vijlen en een nette afwerking." },
         { name: "Gellak manicure", price: "40 €", text: "Langhoudende kleur, strakke vorm en een elegante dagelijkse look." },
         { name: "BIAB naturel / versteviging", price: "50 €", text: "Voor natuurlijke nagels die versteviging, een gladde structuur en een verzorgde uitstraling nodig hebben." },
-        { name: "BIAB + kleur of French", price: "55–60 €", text: "Een verfijnder resultaat voor klanten die duurzame styling en een elegante afwerking willen." },
+        { name: "BIAB + kleur of French", price: "55–60 €", text: "Een verfijnder resultaat voor wie duurzame styling en een elegante afwerking wil." },
         { name: "BIAB / gel bijwerken", price: "45–50 €", text: "Regelmatig bijwerken zodat de nagels verzorgd blijven tussen afspraken." },
-        { name: "Nieuwe set met verlenging", price: "70 €", text: "Voor klanten die extra lengte en een elegante vorm vanaf de basis willen." },
+        { name: "Nieuwe set met verlenging", price: "70 €", text: "Voor wie extra lengte en een elegante vorm vanaf de basis wil." },
         { name: "Verwijderen oude styling", price: "20 €", text: "Veilig verwijderen van oud product en voorbereiding van de natuurlijke nagel voor verdere verzorging." },
         { name: "Klassieke pedicure", price: "45 €", text: "Voet-, nagel- en nagelriemverzorging als onderdeel van een volledig wellnessritueel." },
         { name: "Pedicure + gellak", price: "55 €", text: "Verzorgde voeten met langhoudende kleur — ideaal voor vakantie, zomer of regelmatige verzorging." },
       ],
-      note: "Deze prijzen zijn een middenklasse startpunt voor Nederland. Na de eerste klanten kunnen ze licht omhoog of gecombineerd worden met gezichtsbehandelingen.",
+      note: "We kiezen de service op basis van de conditie van je nagels, de gewenste look en hoe lang de styling moet blijven zitten.",
     },
     academy: {
       eyebrow: "Huidacademie",
-      title: "Een klant koopt niet alleen een behandeling. Ze begint haar huid te begrijpen.",
-      lead: "Deze pagina werkt als een educatieve route: eerst het probleem, daarna het mechanisme, vervolgens de verzorgingsrichting en pas aan het einde een behandelsuggestie.",
+      title: "Begrijp je huid voordat je een behandeling kiest.",
+      lead: "Eerst herkennen we het symptoom, daarna leggen we het mechanisme eenvoudig uit en vervolgens kiezen we een passende verzorgingsrichting.",
       preventionTitle: "Voorkomen is beter dan later vechten tegen vaste huidveranderingen.",
       preventionCards: [
         { title: "Huid onthoudt regelmaat", text: "Eén behandeling kan frisheid geven, maar de grootste verandering komt door herhaling en een goed gekozen serie." },
@@ -697,7 +697,7 @@ export const translations = {
       ],
       builder: {
         title: "Mini huidkaart",
-        text: "Kies antwoorden en zie een educatieve verzorgingsrichting. Het helpt de klant voelen: ‘dit gaat over mij’. ",
+        text: "Kies antwoorden en zie een educatieve verzorgingsrichting. Het is een eenvoudige manier om je huidbehoeften beter te begrijpen. ",
         ageLabel: "Leeftijd / huidfase",
         problemLabel: "Belangrijkste probleem",
         rhythmLabel: "Verzorgingsritme",
@@ -718,7 +718,7 @@ export const translations = {
         { age: "30+", title: "Eerste tekenen van vertraging", text: "De huid heeft vaker ondersteuning nodig bij hydratatie, elasticiteit, glow en herstel na stress." },
         { age: "40+", title: "Regeneratie en huidkwaliteit", text: "Series, ampullen, lifting behandelingen en goed gekozen microneedling worden belangrijker." },
       ],
-      topicsTitle: "Wat moet de klant weten?",
+      topicsTitle: "Wat is goed om te weten over huid?",
       topics: [
         { title: "Waarom is één behandeling niet altijd genoeg?", text: "Omdat huidvernieuwing een proces is. Eén ritueel kan verfrissen, een serie helpt het resultaat te stabiliseren." },
         { title: "Waarom komen poriën en doffe teint terug?", text: "Vaak gaat het om onregelmatige reiniging, dode huidcellen, droogte of verzorging die niet past." },
@@ -733,7 +733,7 @@ export const translations = {
     memberships: {
       eyebrow: "Abonnementen",
       title: "Regelmaat die effect opbouwt",
-      lead: "Abonnementen zijn voor klanten die hun huid continu onder zorg willen houden in plaats van pas terug te komen wanneer het probleem zichtbaar is.",
+      lead: "Abonnementen zijn voor mensen die hun huid regelmatig willen verzorgen in plaats van pas terug te komen wanneer het probleem duidelijk zichtbaar is.",
       items: [
         { name: "Huid in Balans", price: "69 €/maand", includes: ["1 reinigende behandeling per maand", "Gratis masker bij elk tweede bezoek"], effect: "Regelmatige verzorging en het behouden van een goede huidconditie." },
         { name: "Premium Care", price: "129 €/maand", includes: ["2 basisbehandelingen per maand", "Sheet mask voor thuis"], effect: "Systematische reiniging en verheldering van de huid." },
@@ -743,12 +743,12 @@ export const translations = {
     contact: {
       eyebrow: "Contact",
       title: "Maak een afspraak of vraag naar de beste richting voor jouw huid",
-      lead: "Vul hier het echte salonadres, telefoonnummer, e-mail en boekingslink in. Voor nu staan er veilige placeholders.",
-      address: "Adres salon: aanvullen",
-      phone: "Telefoon: +31 000 000 000",
+      lead: "Stuur ons een bericht om een afspraak te maken of te vragen welke behandeling een goede eerste stap is voor jouw huid.",
+      address: "",
+      phone: "",
       email: "E-mail: contact@elviglow.com",
       social: "Instagram / Facebook: @ElviGlow",
-      booking: "Online reserveren: plak reserveringslink",
+      booking: "Reserveren: stuur een privébericht of gebruik de link in het profiel",
       disclaimer: "De inhoud op deze website is educatief en cosmetisch. Het vervangt geen medisch of dermatologisch consult.",
     },
     cta: {

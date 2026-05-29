@@ -251,7 +251,7 @@ function AcademyPage({ t, onNavigate }) {
 
       <section className="section advanced-path">
         <div className="section-heading center">
-          <p className="eyebrow">ElviGlow Method</p>
+          <p className="eyebrow">{t.academy.pathEyebrow || "ElviGlow"}</p>
           <h2>{t.academy.pathTitle}</h2>
           <p>{t.academy.pathText}</p>
         </div>
@@ -291,7 +291,7 @@ function AcademyPage({ t, onNavigate }) {
 
       <section className="section education-grid">
         <div>
-          <p className="eyebrow">ElviGlow Academy</p>
+          <p className="eyebrow">{t.academy.topicsEyebrow || "ElviGlow"}</p>
           <h2>{t.academy.topicsTitle}</h2>
         </div>
         <div className="knowledge-list">
@@ -306,7 +306,7 @@ function AcademyPage({ t, onNavigate }) {
 
       <section className="section rules-box">
         <div>
-          <p className="eyebrow">Safety</p>
+          <p className="eyebrow">{t.academy.safetyEyebrow || "ElviGlow"}</p>
           <h2>{t.common.notDiagnosis}</h2>
         </div>
         <ul>{t.academy.safety.map((rule) => <li key={rule}>{rule}</li>)}</ul>
@@ -330,7 +330,7 @@ function MembershipsPage({ t, onNavigate }) {
 }
 
 function ContactPage({ t }) {
-  const rows = [t.contact.address, t.contact.phone, t.contact.email, t.contact.social, t.contact.booking];
+  const rows = [t.contact.address, t.contact.phone, t.contact.email, t.contact.social, t.contact.booking].filter(Boolean);
   return (
     <>
       <PageHero eyebrow={t.contact.eyebrow} title={t.contact.title} text={t.contact.lead} />
