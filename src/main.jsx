@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import Layout from "./components/Layout";
 import OfferCard from "./components/OfferCard";
 import CtaStrip from "./components/CtaStrip";
+import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
 import "./index.css";
 
@@ -72,18 +73,24 @@ function HomePage({ onNavigate, t }) {
         ))}
       </section>
 
-      <section className="section split-feature">
-        <div className="image-frame soft">
-          <img src="/elviglow-price-card.png" alt="ElviGlow price card" />
-        </div>
-        <div>
+      <section className="section home-service-section">
+        <div className="section-heading center">
           <p className="eyebrow">ElviGlow</p>
           <h2>{t.home.offerTitle}</h2>
           <p>{t.home.offerText}</p>
-          <div className="hero-actions compact">
-            <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
-            <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
-          </div>
+        </div>
+        <div className="service-preview-grid">
+          {t.home.serviceCards.map((card) => (
+            <article className="glass-card" key={card.title}>
+              <span className="card-mark">✦</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="hero-actions centered-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.nav.academy}</button>
         </div>
       </section>
 
@@ -93,9 +100,6 @@ function HomePage({ onNavigate, t }) {
 }
 
 function TreatmentsPage({ t }) {
-  const [activeGroup, setActiveGroup] = useState("facial");
-  const groupItems = t.treatments.groups[activeGroup] || t.treatments.groups.facial;
-
   return (
     <>
       <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead} />
@@ -115,31 +119,7 @@ function TreatmentsPage({ t }) {
         </div>
       </section>
 
-      <section className="section tabs-page">
-        <div className="inner-tabs" role="tablist" aria-label="Treatment categories">
-          {Object.entries(t.treatments.tabs).map(([key, label]) => (
-            <button
-              key={key}
-              className={activeGroup === key ? "active" : ""}
-              onClick={() => setActiveGroup(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        <div className="category-intro">
-          <p className="eyebrow">ElviGlow</p>
-          <h2>{t.treatments.tabs[activeGroup]}</h2>
-          <p>{t.treatments.intros[activeGroup]}</p>
-        </div>
-
-        <div className="offer-grid">
-          {groupItems.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
-        </div>
-      </section>
-
-      <section className="section treatment-guide-section">
+      <section className="section treatment-guide-section first-in-flow">
         <div className="section-heading center">
           <p className="eyebrow">{t.treatments.guideEyebrow}</p>
           <h2>{t.treatments.guideTitle}</h2>
@@ -177,16 +157,21 @@ function NailsPage({ t, onNavigate }) {
         </div>
       </section>
 
-      <section className="section offer-grid nails-grid">
-        {t.nails.services.map((service) => (
-          <article className="offer-card nail-card" key={service.name}>
-            <div className="offer-topline">
-              <h3>{service.name}</h3>
-              <strong>{service.price}</strong>
-            </div>
-            <p>{service.text}</p>
-          </article>
-        ))}
+      <section className="section treatment-guide-section nails-info-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Nails</p>
+          <h2>{t.nails.infoTitle}</h2>
+          <p>{t.nails.infoLead}</p>
+        </div>
+        <div className="guide-grid">
+          {t.nails.infoCards.map((item) => (
+            <article className="guide-card" key={item.title}>
+              <span>✦</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <CtaStrip onNavigate={onNavigate} t={t} />
@@ -289,64 +274,7 @@ function PricingPage({ t }) {
   );
 }
 
-function SkinMapBuilder({ t }) {
-  const b = t.academy.builder;
-  const [age, setAge] = useState(1);
-  const [problem, setProblem] = useState(0);
-  const [rhythm, setRhythm] = useState(0);
-
-  const result = useMemo(() => {
-    const problemText = b.problemOptions[problem]?.toLowerCase() || "";
-    const rhythmText = b.rhythmOptions[rhythm]?.toLowerCase() || "";
-
-    if (rhythm >= 2 || rhythmText.includes("regular") || rhythmText.includes("regelmaat")) return b.results.membership;
-    if (problem >= 2 || age >= 2 || problemText.includes("firm") || problemText.includes("jędr") || problemText.includes("stevig")) return b.results.micro;
-    if (age >= 1 || problemText.includes("wrinkle") || problemText.includes("zmarszcz") || problemText.includes("lijntjes")) return b.results.premium;
-    return b.results.glow;
-  }, [age, problem, rhythm, b]);
-
-  const selectors = [
-    [b.ageLabel, b.ageOptions, age, setAge],
-    [b.problemLabel, b.problemOptions, problem, setProblem],
-    [b.rhythmLabel, b.rhythmOptions, rhythm, setRhythm],
-  ];
-
-  return (
-    <div className="skin-builder">
-      <div className="builder-copy">
-        <p className="eyebrow">ElviGlow</p>
-        <h2>{b.title}</h2>
-        <p>{b.text}</p>
-        <small>{t.common.notDiagnosis}</small>
-      </div>
-      <div className="builder-panel">
-        {selectors.map(([label, options, value, setter]) => (
-          <div className="choice-group" key={label}>
-            <strong>{label}</strong>
-            <div>
-              {options.map((option, index) => (
-                <button
-                  key={option}
-                  className={value === index ? "active" : ""}
-                  onClick={() => setter(index)}
-                  type="button"
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
-        <div className="builder-result">
-          <span>{t.common.suggested}</span>
-          <p>{result}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function AcademyPage({ t, onNavigate }) {
+function AcademyPage({ t, onNavigate, lang }) {
   return (
     <>
       <PageHero eyebrow={t.academy.eyebrow} title={t.academy.title} text={t.academy.lead} />
@@ -378,9 +306,7 @@ function AcademyPage({ t, onNavigate }) {
         </div>
       </section>
 
-      <section className="section">
-        <SkinMapBuilder t={t} />
-      </section>
+      <ElviSkinMiniMap lang={lang} />
 
       <section className="section age-section">
         <div className="section-heading center">
@@ -492,7 +418,7 @@ function App() {
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cennik") page = <PricingPage t={t} />;
-  if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} />;
 
