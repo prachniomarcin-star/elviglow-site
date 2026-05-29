@@ -368,22 +368,45 @@ function MembershipsPage({ t, onNavigate }) {
 }
 
 function ContactPage({ t }) {
-  const rows = [t.contact.address, t.contact.phone, t.contact.email, t.contact.social, t.contact.booking].filter(Boolean);
+  const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp";
+
   return (
     <>
       <PageHero eyebrow={t.contact.eyebrow} title={t.contact.title} text={t.contact.lead} />
-      <section className="section contact-layout">
-        <div className="contact-panel">
-          {rows.map((row) => <p key={row}>{row}</p>)}
+
+      <section className="section contact-new-layout">
+        <article className="contact-main-card">
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.contact.mainTitle}</h2>
+          <p>{t.contact.mainText}</p>
           <div className="hero-actions">
-            <a className="primary-btn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-            <a className="secondary-btn" href="mailto:kontakt@elviglow.com">E-mail</a>
+            <a className="primary-btn" href={instagramUrl} target="_blank" rel="noreferrer">{t.contact.instagramButton}</a>
+            <a className="secondary-btn" href="mailto:kontakt@elviglow.com">{t.contact.emailButton}</a>
           </div>
-          <small>{t.contact.disclaimer}</small>
+        </article>
+
+        <div className="contact-info-grid">
+          {t.contact.cards.map((card) => (
+            <article className="contact-info-card" key={card.title}>
+              <span>{card.icon}</span>
+              <div>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+                {card.type === "instagram" && <a href={instagramUrl} target="_blank" rel="noreferrer">@nagelsvoorjouenbeauty</a>}
+                {card.type === "email" && <a href="mailto:kontakt@elviglow.com">kontakt@elviglow.com</a>}
+              </div>
+            </article>
+          ))}
         </div>
-        <div className="contact-card-big">
-          <img src="/elviglow-contact-card.png" alt="ElviGlow contact card" />
+      </section>
+
+      <section className="section contact-note-box">
+        <div>
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.contact.beforeVisitTitle}</h2>
         </div>
+        <ul>{t.contact.beforeVisit.map((item) => <li key={item}>{item}</li>)}</ul>
+        <small>{t.contact.disclaimer}</small>
       </section>
     </>
   );
