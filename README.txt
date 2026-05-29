@@ -1,31 +1,20 @@
-ElviGlow mobile polished project
+ElviGlow - mobile header polish
 
-Wersja poprawiona pod telefon:
-- menu nie ucina zakładek na mobile,
-- zakładki mają jednolity format,
-- przyciski i karty są równe i czytelne,
-- teksty publiczne są bardziej klient-facing, bez technicznych opisów typu "strona działa jak...",
-- package-lock.json został usunięty, żeby npm/Vercel używał normalnego registry.
+Zmiana:
+- języki PL / EN / NL są na górze po prawej stronie,
+- logo i nazwa ElviGlow są większe i po lewej stronie,
+- zakładki są pod spodem w równym układzie 3 x 2 na telefonie,
+- układ jest dopasowany pod mobile i spójny między zakładkami.
 
-Uruchomienie lokalne:
-1. Wejdź do folderu projektu:
-   cd "C:\Users\Marcin\Desktop\wszystkie projekty\strona internetowa\elvi glove\elviglow-mobile-polished-project"
+Jak wdrożyć poprawkę do obecnego projektu:
+1. Rozpakuj paczkę.
+2. Skopiuj pliki do folderu projektu elviglow-site i zastąp istniejące.
+3. W PowerShell w folderze projektu uruchom:
 
-2. Ustaw normalny registry npm:
-   npm.cmd config set registry "https://registry.npmjs.org/"
+npm.cmd install
+npm.cmd run build
+git add .
+git commit -m "Improve mobile header"
+git push
 
-3. Zainstaluj paczki:
-   npm.cmd install
-
-4. Uruchom lokalnie:
-   npm.cmd run dev
-
-5. Build test:
-   npm.cmd run build
-
-Wdrożenie przez GitHub/Vercel:
-- Skopiuj zawartość tej paczki do swojego folderu projektu.
-- Zrób git add .
-- git commit -m "Mobile polish for ElviGlow"
-- git push
-- Vercel sam zrobi nowy deployment.
+Vercel sam zaktualizuje stronę po pushu.
