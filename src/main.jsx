@@ -100,6 +100,21 @@ function TreatmentsPage({ t }) {
     <>
       <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead} />
 
+      <section className="section consultation-section first-in-flow">
+        <div>
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.treatments.consultationTitle}</h2>
+        </div>
+        <div className="steps-list">
+          {t.treatments.consultationSteps.map((step, index) => (
+            <div className="step-row" key={step}>
+              <span>{index + 1}</span>
+              <p>{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section tabs-page">
         <div className="inner-tabs" role="tablist" aria-label="Treatment categories">
           {Object.entries(t.treatments.tabs).map(([key, label]) => (
@@ -121,21 +136,6 @@ function TreatmentsPage({ t }) {
 
         <div className="offer-grid">
           {groupItems.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
-        </div>
-      </section>
-
-      <section className="section consultation-section">
-        <div>
-          <p className="eyebrow">ElviGlow</p>
-          <h2>{t.treatments.consultationTitle}</h2>
-        </div>
-        <div className="steps-list">
-          {t.treatments.consultationSteps.map((step, index) => (
-            <div className="step-row" key={step}>
-              <span>{index + 1}</span>
-              <p>{step}</p>
-            </div>
-          ))}
         </div>
       </section>
     </>
