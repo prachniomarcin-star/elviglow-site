@@ -6,7 +6,7 @@ import CtaStrip from "./components/CtaStrip";
 import { translations } from "./data/i18n";
 import "./index.css";
 
-const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/akademia-skory", "/abonamenty", "/kontakt"];
+const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
 
 function normalizePath(pathname) {
   const clean = pathname.replace(/\/$/, "") || "/";
@@ -82,7 +82,7 @@ function HomePage({ onNavigate, t }) {
           <p>{t.home.offerText}</p>
           <div className="hero-actions compact">
             <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
-            <button className="secondary-btn" onClick={() => onNavigate("/paznokcie")}>{t.nav.nails}</button>
+            <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
           </div>
         </div>
       </section>
@@ -138,6 +138,23 @@ function TreatmentsPage({ t }) {
           {groupItems.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
         </div>
       </section>
+
+      <section className="section treatment-guide-section">
+        <div className="section-heading center">
+          <p className="eyebrow">{t.treatments.guideEyebrow}</p>
+          <h2>{t.treatments.guideTitle}</h2>
+          <p>{t.treatments.guideLead}</p>
+        </div>
+        <div className="guide-grid">
+          {t.treatments.treatmentGuide.map((item) => (
+            <article className="guide-card" key={item.title}>
+              <span>✦</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
@@ -173,6 +190,101 @@ function NailsPage({ t, onNavigate }) {
       </section>
 
       <CtaStrip onNavigate={onNavigate} t={t} />
+    </>
+  );
+}
+
+function PricingPage({ t }) {
+  const [active, setActive] = useState("face");
+  const pricing = t.pricing;
+
+  function renderFace() {
+    return (
+      <>
+        <div className="category-intro pricing-intro">
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{pricing.tabs.face}</h2>
+          <p>{pricing.faceIntro}</p>
+        </div>
+
+        <div className="pricing-group">
+          <h3>{pricing.headings.popular}</h3>
+          <div className="offer-grid">
+            {pricing.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+          </div>
+        </div>
+
+        <div className="pricing-group">
+          <h3>{pricing.headings.premium}</h3>
+          <div className="offer-grid">
+            {pricing.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+          </div>
+        </div>
+
+        <div className="pricing-group">
+          <h3>{pricing.headings.regeneration}</h3>
+          <div className="offer-grid">
+            {pricing.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+          </div>
+          <p className="pricing-note">{pricing.note}</p>
+        </div>
+      </>
+    );
+  }
+
+  function renderNails() {
+    return (
+      <>
+        <div className="category-intro pricing-intro">
+          <p className="eyebrow">ElviGlow Nails</p>
+          <h2>{pricing.tabs.nails}</h2>
+          <p>{pricing.nailsIntro}</p>
+        </div>
+        <div className="price-list-grid">
+          {pricing.nails.map((service) => (
+            <article className="price-row-card" key={service.name}>
+              <div>
+                <h3>{service.name}</h3>
+                <p>{service.text}</p>
+              </div>
+              <strong>{service.price}</strong>
+            </article>
+          ))}
+        </div>
+      </>
+    );
+  }
+
+  function renderCare() {
+    return (
+      <>
+        <div className="category-intro pricing-intro">
+          <p className="eyebrow">ElviGlow Care</p>
+          <h2>{pricing.tabs.care}</h2>
+          <p>{pricing.careIntro}</p>
+        </div>
+        <div className="offer-grid">
+          {pricing.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <PageHero eyebrow={pricing.eyebrow} title={pricing.title} text={pricing.lead} />
+      <section className="section tabs-page pricing-page">
+        <div className="inner-tabs pricing-tabs" role="tablist" aria-label="Pricing categories">
+          {Object.entries(pricing.tabs).map(([key, label]) => (
+            <button key={key} className={active === key ? "active" : ""} onClick={() => setActive(key)}>
+              {label}
+            </button>
+          ))}
+        </div>
+        {active === "face" && renderFace()}
+        {active === "nails" && renderNails()}
+        {active === "care" && renderCare()}
+      </section>
     </>
   );
 }
@@ -379,6 +491,7 @@ function App() {
   let page = <HomePage onNavigate={onNavigate} t={t} />;
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/cennik") page = <PricingPage t={t} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} />;

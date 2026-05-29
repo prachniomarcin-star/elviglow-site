@@ -5,8 +5,8 @@ const navKeys = [
   { key: "home", href: "/" },
   { key: "treatments", href: "/zabiegi" },
   { key: "nails", href: "/paznokcie" },
+  { key: "pricing", href: "/cennik" },
   { key: "academy", href: "/akademia-skory" },
-  { key: "memberships", href: "/abonamenty" },
   { key: "contact", href: "/kontakt" },
 ];
 
