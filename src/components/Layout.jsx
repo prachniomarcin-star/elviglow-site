@@ -1,3 +1,4 @@
+import { useState } from "react";
 import RouterLink from "./RouterLink";
 import { LANGUAGES } from "../data/i18n";
 
@@ -10,21 +11,77 @@ const navKeys = [
   { key: "contact", href: "/kontakt" },
 ];
 
+const mobileMainNav = navKeys.slice(0, 4);
+const mobileMoreNav = navKeys.slice(4);
+
 export default function Layout({ children, currentPath, onNavigate, lang, setLang, t }) {
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const activeLanguage = LANGUAGES.find((item) => item.code === lang) || LANGUAGES[0];
+  const isMoreActive = mobileMoreNav.some((item) => item.href === currentPath);
+
+  function handleLanguageChange(code) {
+    setLang(code);
+    setIsLangOpen(false);
+  }
+
+  function handleNavigate(path) {
+    setIsMoreOpen(false);
+    onNavigate(path);
+  }
+
   return (
     <div className="site-shell">
       <header className="topbar">
-        <RouterLink href="/" className="brand" onNavigate={onNavigate} aria-label="ElviGlow home">
-          <img src="/elviglow-logo.png" alt="ElviGlow" />
-          <span>ElviGlow</span>
-        </RouterLink>
+        <div className="brand-row">
+          <RouterLink href="/" className="brand" onNavigate={handleNavigate} aria-label="ElviGlow home">
+            <img src="/elviglow-logo.png" alt="ElviGlow" />
+            <span>
+              <strong>ElviGlow</strong>
+              <small>{t.home.cardSubtitle}</small>
+            </span>
+          </RouterLink>
 
-        <nav className="nav-tabs" aria-label="Main navigation">
+          <div className="top-actions">
+            <div className="language-menu">
+              <button
+                type="button"
+                className="language-trigger"
+                aria-expanded={isLangOpen}
+                onClick={() => setIsLangOpen((value) => !value)}
+              >
+                {activeLanguage.label}
+                <span aria-hidden="true">⌄</span>
+              </button>
+              {isLangOpen && (
+                <div className="language-options" role="menu">
+                  {LANGUAGES.map((item) => (
+                    <button
+                      key={item.code}
+                      type="button"
+                      className={lang === item.code ? "active" : ""}
+                      onClick={() => handleLanguageChange(item.code)}
+                      role="menuitem"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <RouterLink href="/kontakt" className="nav-cta" onNavigate={handleNavigate}>
+              {t.nav.book}
+            </RouterLink>
+          </div>
+        </div>
+
+        <nav className="nav-tabs desktop-nav" aria-label="Main navigation">
           {navKeys.map((item) => (
             <RouterLink
               key={item.href}
               href={item.href}
-              onNavigate={onNavigate}
+              onNavigate={handleNavigate}
               className={currentPath === item.href ? "active" : ""}
             >
               {t.nav[item.key]}
@@ -32,23 +89,44 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
           ))}
         </nav>
 
-        <div className="top-actions">
-          <div className="language-switch" aria-label="Language switcher">
-            {LANGUAGES.map((item) => (
-              <button
-                key={item.code}
-                type="button"
-                className={lang === item.code ? "active" : ""}
-                onClick={() => setLang(item.code)}
-              >
-                {item.label}
-              </button>
-            ))}
+        <nav className="nav-tabs mobile-nav" aria-label="Main navigation">
+          {mobileMainNav.map((item) => (
+            <RouterLink
+              key={item.href}
+              href={item.href}
+              onNavigate={handleNavigate}
+              className={currentPath === item.href ? "active" : ""}
+            >
+              {t.nav[item.key]}
+            </RouterLink>
+          ))}
+
+          <div className={`nav-more ${isMoreActive ? "active" : ""}`}>
+            <button
+              type="button"
+              className="nav-more-trigger"
+              aria-label="More pages"
+              aria-expanded={isMoreOpen}
+              onClick={() => setIsMoreOpen((value) => !value)}
+            >
+              •••
+            </button>
+            {isMoreOpen && (
+              <div className="nav-more-panel">
+                {mobileMoreNav.map((item) => (
+                  <RouterLink
+                    key={item.href}
+                    href={item.href}
+                    onNavigate={handleNavigate}
+                    className={currentPath === item.href ? "active" : ""}
+                  >
+                    {t.nav[item.key]}
+                  </RouterLink>
+                ))}
+              </div>
+            )}
           </div>
-          <RouterLink href="/kontakt" className="nav-cta" onNavigate={onNavigate}>
-            {t.nav.book}
-          </RouterLink>
-        </div>
+        </nav>
       </header>
 
       {children}
@@ -60,7 +138,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
         </div>
         <div className="footer-links">
           {navKeys.map((item) => (
-            <RouterLink key={item.href} href={item.href} onNavigate={onNavigate}>
+            <RouterLink key={item.href} href={item.href} onNavigate={handleNavigate}>
               {t.nav[item.key]}
             </RouterLink>
           ))}
