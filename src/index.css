@@ -1321,3 +1321,59 @@ li::marker { color: var(--brand); }
     letter-spacing: -0.045em;
   }
 }
+
+
+/* Footer cleanup: sticky top navigation is enough, so the repeated bottom menu is removed. */
+.footer.footer-simple {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 44px 0 34px;
+  margin-top: 24px;
+}
+
+.footer-brand {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.footer-brand img {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.footer-brand strong {
+  color: var(--brand-dark);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.footer-brand p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .footer.footer-simple {
+    width: min(100% - 32px, 1180px);
+    padding: 38px 0 28px;
+    margin-top: 10px;
+  }
+
+  .footer-brand img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
+}

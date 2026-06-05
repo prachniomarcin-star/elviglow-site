@@ -137,17 +137,11 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
 
       {children}
 
-      <footer className="footer">
-        <div>
+      <footer className="footer footer-simple">
+        <div className="footer-brand">
           <img src="/elviglow-logo.png" alt="ElviGlow" />
+          <strong>ElviGlow</strong>
           <p>{t.home.cardSubtitle}</p>
-        </div>
-        <div className="footer-links">
-          {navKeys.map((item) => (
-            <RouterLink key={item.href} href={item.href} onNavigate={handleNavigate}>
-              {t.nav[item.key]}
-            </RouterLink>
-          ))}
         </div>
       </footer>
     </div>
