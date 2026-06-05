@@ -6,8 +6,8 @@ const navKeys = [
   { key: "home", href: "/" },
   { key: "treatments", href: "/zabiegi" },
   { key: "nails", href: "/paznokcie" },
-  { key: "pricing", href: "/cennik" },
   { key: "academy", href: "/akademia-skory" },
+  { key: "pricing", href: "/cennik" },
   { key: "contact", href: "/kontakt" },
 ];
 
@@ -137,8 +137,8 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
 
       {children}
 
-      <footer className="footer footer-simple">
-        <div className="footer-brand">
+      <footer className="footer footer-minimal">
+        <div>
           <img src="/elviglow-logo.png" alt="ElviGlow" />
           <strong>ElviGlow</strong>
           <p>{t.home.cardSubtitle}</p>

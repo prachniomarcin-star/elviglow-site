@@ -88,7 +88,7 @@ function HomePage({ onNavigate, t }) {
             </article>
           ))}
         </div>
-        <div className="hero-actions centered-actions single-action">
+        <div className="hero-actions centered-actions">
           <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
         </div>
       </section>
@@ -274,6 +274,32 @@ function PricingPage({ t }) {
 }
 
 function AcademyPage({ t, onNavigate, lang }) {
+  const academyNextStep = {
+    pl: {
+      title: "Wiesz już, czego potrzebuje Twoja skóra?",
+      text: "Sprawdź cennik zabiegów albo napisz do nas, jeśli chcesz dobrać pierwszy rytuał do aktualnego stanu skóry.",
+      primary: "Zobacz cennik",
+      secondary: "Kontakt",
+    },
+    en: {
+      title: "Do you already know what your skin needs?",
+      text: "Check the price list or message us if you want to choose the first ritual for your current skin condition.",
+      primary: "View prices",
+      secondary: "Contact",
+    },
+    nl: {
+      title: "Weet je al wat je huid nodig heeft?",
+      text: "Bekijk de prijslijst of stuur ons een bericht als je het eerste ritueel wilt afstemmen op je huidige huidconditie.",
+      primary: "Bekijk prijzen",
+      secondary: "Contact",
+    },
+  }[lang] || {
+    title: t.cta.title,
+    text: t.cta.text,
+    primary: t.common.seePricing,
+    secondary: t.nav.contact,
+  };
+
   return (
     <>
       <PageHero eyebrow={t.academy.eyebrow} title={t.academy.title} text={t.academy.lead} />
@@ -349,7 +375,17 @@ function AcademyPage({ t, onNavigate, lang }) {
         <ul>{t.academy.safety.map((rule) => <li key={rule}>{rule}</li>)}</ul>
       </section>
 
-      <CtaStrip onNavigate={onNavigate} t={t} />
+      <section className="section cta-strip academy-next-step">
+        <div>
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{academyNextStep.title}</h2>
+          <p>{academyNextStep.text}</p>
+        </div>
+        <div className="hero-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.primary}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.secondary}</button>
+        </div>
+      </section>
     </>
   );
 }
