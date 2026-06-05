@@ -88,9 +88,8 @@ function HomePage({ onNavigate, t }) {
             </article>
           ))}
         </div>
-        <div className="hero-actions centered-actions">
+        <div className="hero-actions centered-actions single-action">
           <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.nav.academy}</button>
         </div>
       </section>
 
