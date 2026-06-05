@@ -674,8 +674,8 @@ translations.pl.treatments = {
     "Gdy występują świeże stany zapalne, aktywne zmiany lub skóra jest po niedawnym mocnym zabiegu.",
     "Gdy nie znamy jeszcze reakcji skóry — wtedy lepiej zacząć spokojniej i obserwować efekt.",
   ],
-  finalTitle: "Chcesz sprawdzić konkretne pakiety?",
-  finalText: "Po zapoznaniu się z zabiegami możesz przejść do cennika albo napisać wiadomość, jeśli chcesz dobrać pierwszy rytuał spokojnie i bez zgadywania.",
+  finalTitle: "Następny krok: poznaj potrzeby swojej skóry.",
+  finalText: "Zabiegi pokazują, co robimy w gabinecie. Teraz przejdź do zakładki Wiedza, aby lepiej zrozumieć typ cery, objawy i to, co może mieć znaczenie przy wyborze rytuału.",
 };
 
 translations.en.treatments = {
@@ -707,8 +707,8 @@ translations.en.treatments = {
     "When there are fresh inflammations, active changes or the skin has recently had a stronger treatment.",
     "When we do not yet know the skin reaction — then it is safer to start calmly and observe the effect.",
   ],
-  finalTitle: "Want to see the exact packages?",
-  finalText: "After reading about the treatments, you can go to the price list or send a message if you want help choosing your first ritual without guessing.",
+  finalTitle: "Next step: understand what your skin may need.",
+  finalText: "The treatments page shows what we do in the salon. Now go to Knowledge to better understand skin types, visible signs and what may matter when choosing a ritual.",
 };
 
 translations.nl.treatments = {
@@ -740,8 +740,8 @@ translations.nl.treatments = {
     "Bij verse ontstekingen, actieve huidveranderingen of kort na een sterke behandeling.",
     "Wanneer we de huidreactie nog niet kennen — dan starten we rustiger en observeren we het effect.",
   ],
-  finalTitle: "Wil je de pakketten bekijken?",
-  finalText: "Na de uitleg kun je naar de prijslijst gaan of een bericht sturen als je hulp wilt bij het kiezen van je eerste ritueel.",
+  finalTitle: "Volgende stap: begrijp wat je huid nodig kan hebben.",
+  finalText: "De behandelingenpagina laat zien wat we in de salon doen. Ga nu naar Kennis om huidtypen, signalen en de juiste verzorgingsrichting beter te begrijpen.",
 };
 
 translations.pl.knowledge = {
@@ -783,7 +783,7 @@ translations.pl.knowledge = {
     { age: "60+", title: "Komfort i delikatna konsekwencja", text: "Najważniejsze jest bezpieczeństwo, ukojenie, nawilżenie, odżywienie i zabiegi dobrane do reaktywności skóry." },
   ],
   finalTitle: "Masz już wstępny obraz swojej skóry?",
-  finalText: "Przejdź do Akademii skóry i zaznacz, co Cię dotyczy. Mini mapa pomoże wybrać spokojny kierunek pielęgnacji.",
+  finalText: "Przejdź do Akademii skóry i zaznacz, co Cię dotyczy. Tam mini mapa pomoże przełożyć wiedzę o skórze na konkretny kierunek pielęgnacji.",
 };
 
 translations.en.knowledge = {
@@ -825,7 +825,7 @@ translations.en.knowledge = {
     { age: "60+", title: "Comfort and gentle consistency", text: "Safety, soothing, hydration, nourishment and treatments matched to skin reactivity matter most." },
   ],
   finalTitle: "Do you have a clearer picture of your skin?",
-  finalText: "Go to the Skin Academy and select what applies to you. The mini map will help choose a calm care direction.",
+  finalText: "Go to the Skin Academy and select what applies to you. The mini map will turn your skin knowledge into a calm care direction.",
 };
 
 translations.nl.knowledge = {
@@ -867,7 +867,7 @@ translations.nl.knowledge = {
     { age: "60+", title: "Comfort en zachte consistentie", text: "Veiligheid, kalmering, hydratatie, voeding en behandelingen passend bij de huidreactiviteit staan centraal." },
   ],
   finalTitle: "Heb je een duidelijker beeld van je huid?",
-  finalText: "Ga naar de Huidacademie en kies wat bij jou past. De mini kaart helpt een rustige verzorgingsrichting kiezen.",
+  finalText: "Ga naar de Huidacademie en kies wat bij jou past. De mini kaart vertaalt je huidkennis naar een rustige verzorgingsrichting.",
 };
 
 translations.pl.academy = {

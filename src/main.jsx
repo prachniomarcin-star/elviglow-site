@@ -119,8 +119,8 @@ function TreatmentsPage({ t, onNavigate }) {
     <>
       <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead}>
         <div className="hero-actions">
-          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{t.nav.contact}</button>
+          <button className="primary-btn" onClick={() => onNavigate("/wiedza")}>{t.nav.knowledge}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.nav.academy}</button>
         </div>
       </PageHero>
 
@@ -186,10 +186,10 @@ function TreatmentsPage({ t, onNavigate }) {
       <DecisionCta
         title={t.treatments.finalTitle}
         text={t.treatments.finalText}
-        primaryLabel={t.common.seePricing}
-        primaryHref="/cennik"
-        secondaryLabel={t.nav.contact}
-        secondaryHref="/kontakt"
+        primaryLabel={t.nav.knowledge}
+        primaryHref="/wiedza"
+        secondaryLabel={t.nav.academy}
+        secondaryHref="/akademia-skory"
         onNavigate={onNavigate}
       />
     </>
@@ -312,8 +312,8 @@ function KnowledgePage({ t, onNavigate }) {
         text={knowledge.finalText}
         primaryLabel={t.nav.academy}
         primaryHref="/akademia-skory"
-        secondaryLabel={t.common.seePricing}
-        secondaryHref="/cennik"
+        secondaryLabel={t.nav.treatments}
+        secondaryHref="/zabiegi"
         onNavigate={onNavigate}
       />
     </>
