@@ -7,7 +7,7 @@ import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
 import "./index.css";
 
-const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
+const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/wiedza", "/akademia-skory", "/cennik", "/abonamenty", "/kontakt"];
 
 function normalizePath(pathname) {
   const clean = pathname.replace(/\/$/, "") || "/";
@@ -27,6 +27,22 @@ function PageHero({ eyebrow, title, text, children }) {
   );
 }
 
+function DecisionCta({ eyebrow = "ElviGlow", title, text, primaryLabel, primaryHref, secondaryLabel, secondaryHref, onNavigate }) {
+  return (
+    <section className="section decision-cta-panel">
+      <div>
+        <p className="eyebrow">{eyebrow}</p>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
+      <div className="hero-actions">
+        <button className="primary-btn" onClick={() => onNavigate(primaryHref)}>{primaryLabel}</button>
+        <button className="secondary-btn" onClick={() => onNavigate(secondaryHref)}>{secondaryLabel}</button>
+      </div>
+    </section>
+  );
+}
+
 function HomePage({ onNavigate, t }) {
   return (
     <>
@@ -37,7 +53,7 @@ function HomePage({ onNavigate, t }) {
           <p className="lead">{t.home.lead}</p>
           <div className="hero-actions">
             <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.common.seeTreatments}</button>
-            <button className="secondary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.common.learnMore}</button>
+            <button className="secondary-btn" onClick={() => onNavigate("/wiedza")}>{t.nav.knowledge}</button>
           </div>
         </div>
 
@@ -88,7 +104,7 @@ function HomePage({ onNavigate, t }) {
             </article>
           ))}
         </div>
-        <div className="hero-actions centered-actions">
+        <div className="hero-actions centered-actions single-centered-action">
           <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
         </div>
       </section>
@@ -98,22 +114,29 @@ function HomePage({ onNavigate, t }) {
   );
 }
 
-function TreatmentsPage({ t }) {
+function TreatmentsPage({ t, onNavigate }) {
   return (
     <>
-      <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead} />
-
-      <section className="section consultation-section first-in-flow">
-        <div>
-          <p className="eyebrow">ElviGlow</p>
-          <h2>{t.treatments.consultationTitle}</h2>
+      <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead}>
+        <div className="hero-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{t.nav.contact}</button>
         </div>
-        <div className="steps-list">
-          {t.treatments.consultationSteps.map((step, index) => (
-            <div className="step-row" key={step}>
+      </PageHero>
+
+      <section className="section treatment-flow-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.treatments.processTitle}</h2>
+          <p>{t.treatments.processLead}</p>
+        </div>
+        <div className="process-grid">
+          {t.treatments.processSteps.map((step, index) => (
+            <article className="process-card" key={step.title}>
               <span>{index + 1}</span>
-              <p>{step}</p>
-            </div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
           ))}
         </div>
       </section>
@@ -134,6 +157,41 @@ function TreatmentsPage({ t }) {
           ))}
         </div>
       </section>
+
+      <section className="section treatment-rituals-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.treatments.ritualsTitle}</h2>
+          <p>{t.treatments.ritualsLead}</p>
+        </div>
+        <div className="ritual-grid">
+          {t.treatments.ritualCards.map((card) => (
+            <article className="ritual-card" key={card.title}>
+              <p className="small-label">{card.label}</p>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section rules-box treatment-safety-box">
+        <div>
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.treatments.safetyTitle}</h2>
+        </div>
+        <ul>{t.treatments.safetyList.map((rule) => <li key={rule}>{rule}</li>)}</ul>
+      </section>
+
+      <DecisionCta
+        title={t.treatments.finalTitle}
+        text={t.treatments.finalText}
+        primaryLabel={t.common.seePricing}
+        primaryHref="/cennik"
+        secondaryLabel={t.nav.contact}
+        secondaryHref="/kontakt"
+        onNavigate={onNavigate}
+      />
     </>
   );
 }
@@ -174,6 +232,90 @@ function NailsPage({ t, onNavigate }) {
       </section>
 
       <CtaStrip onNavigate={onNavigate} t={t} />
+    </>
+  );
+}
+
+function KnowledgePage({ t, onNavigate }) {
+  const knowledge = t.knowledge;
+  return (
+    <>
+      <PageHero eyebrow={knowledge.eyebrow} title={knowledge.title} text={knowledge.lead}>
+        <div className="hero-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.nav.academy}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
+        </div>
+      </PageHero>
+
+      <section className="section knowledge-intro-grid">
+        <article className="knowledge-large-card">
+          <p className="eyebrow">{knowledge.typesEyebrow}</p>
+          <h2>{knowledge.typesTitle}</h2>
+          <p>{knowledge.typesLead}</p>
+        </article>
+        <div className="knowledge-note-card">
+          <h3>{knowledge.noteTitle}</h3>
+          <p>{knowledge.noteText}</p>
+        </div>
+      </section>
+
+      <section className="section skin-type-grid">
+        {knowledge.skinTypes.map((type) => (
+          <article className="skin-type-card" key={type.title}>
+            <span className="card-mark">✦</span>
+            <h3>{type.title}</h3>
+            <p><strong>{knowledge.labels.see}</strong> {type.see}</p>
+            <p><strong>{knowledge.labels.needs}</strong> {type.needs}</p>
+            <p><strong>{knowledge.labels.avoid}</strong> {type.avoid}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="section skin-signals-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{knowledge.signalsTitle}</h2>
+          <p>{knowledge.signalsLead}</p>
+        </div>
+        <div className="signal-grid">
+          {knowledge.signals.map((signal) => (
+            <article className="signal-card" key={signal.title}>
+              <h3>{signal.title}</h3>
+              <p>{signal.text}</p>
+              <span>{signal.direction}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section age-section knowledge-age-section">
+        <div className="section-heading center">
+          <p className="eyebrow">{knowledge.ageEyebrow}</p>
+          <h2>{knowledge.ageTitle}</h2>
+          <p>{knowledge.ageLead}</p>
+        </div>
+        <div className="age-timeline">
+          {knowledge.ageGuide.map((item) => (
+            <article key={item.age}>
+              <strong>{item.age}</strong>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <DecisionCta
+        title={knowledge.finalTitle}
+        text={knowledge.finalText}
+        primaryLabel={t.nav.academy}
+        primaryHref="/akademia-skory"
+        secondaryLabel={t.common.seePricing}
+        secondaryHref="/cennik"
+        onNavigate={onNavigate}
+      />
     </>
   );
 }
@@ -266,46 +408,25 @@ function PricingPage({ t }) {
           ))}
         </div>
         {active === "face" && renderFace()}
-        {active === "nails" && renderNails()}
         {active === "care" && renderCare()}
+        {active === "nails" && renderNails()}
       </section>
     </>
   );
 }
 
 function AcademyPage({ t, onNavigate, lang }) {
-  const academyNextStep = {
-    pl: {
-      title: "Wiesz już, czego potrzebuje Twoja skóra?",
-      text: "Sprawdź cennik zabiegów albo napisz do nas, jeśli chcesz dobrać pierwszy rytuał do aktualnego stanu skóry.",
-      primary: "Zobacz cennik",
-      secondary: "Kontakt",
-    },
-    en: {
-      title: "Do you already know what your skin needs?",
-      text: "Check the price list or message us if you want to choose the first ritual for your current skin condition.",
-      primary: "View prices",
-      secondary: "Contact",
-    },
-    nl: {
-      title: "Weet je al wat je huid nodig heeft?",
-      text: "Bekijk de prijslijst of stuur ons een bericht als je het eerste ritueel wilt afstemmen op je huidige huidconditie.",
-      primary: "Bekijk prijzen",
-      secondary: "Contact",
-    },
-  }[lang] || {
-    title: t.cta.title,
-    text: t.cta.text,
-    primary: t.common.seePricing,
-    secondary: t.nav.contact,
-  };
-
   return (
     <>
-      <PageHero eyebrow={t.academy.eyebrow} title={t.academy.title} text={t.academy.lead} />
+      <PageHero eyebrow={t.academy.eyebrow} title={t.academy.title} text={t.academy.lead}>
+        <div className="hero-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/wiedza")}>{t.nav.knowledge}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
+        </div>
+      </PageHero>
 
-      <section className="section card-grid-3">
-        {t.academy.preventionCards.map((card) => (
+      <section className="section card-grid-3 academy-focus-grid">
+        {t.academy.focusCards.map((card) => (
           <article className="glass-card" key={card.title}>
             <span className="card-mark">✦</span>
             <h3>{card.title}</h3>
@@ -333,41 +454,7 @@ function AcademyPage({ t, onNavigate, lang }) {
 
       <ElviSkinMiniMap lang={lang} />
 
-      <section className="section age-section">
-        <div className="section-heading center">
-          <p className="eyebrow">{t.academy.ageTitle}</p>
-          <h2>{t.academy.preventionTitle}</h2>
-          <p>{t.academy.ageLead}</p>
-        </div>
-        <div className="age-timeline">
-          {t.academy.ageGuide.map((item) => (
-            <article key={item.age}>
-              <strong>{item.age}</strong>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section education-grid">
-        <div>
-          <p className="eyebrow">{t.academy.topicsEyebrow || "ElviGlow"}</p>
-          <h2>{t.academy.topicsTitle}</h2>
-        </div>
-        <div className="knowledge-list">
-          {t.academy.topics.map((topic) => (
-            <article key={topic.title}>
-              <h3>{topic.title}</h3>
-              <p>{topic.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section rules-box">
+      <section className="section rules-box academy-rules-box">
         <div>
           <p className="eyebrow">{t.academy.safetyEyebrow || "ElviGlow"}</p>
           <h2>{t.common.notDiagnosis}</h2>
@@ -375,17 +462,15 @@ function AcademyPage({ t, onNavigate, lang }) {
         <ul>{t.academy.safety.map((rule) => <li key={rule}>{rule}</li>)}</ul>
       </section>
 
-      <section className="section cta-strip academy-next-step">
-        <div>
-          <p className="eyebrow">ElviGlow</p>
-          <h2>{academyNextStep.title}</h2>
-          <p>{academyNextStep.text}</p>
-        </div>
-        <div className="hero-actions">
-          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.primary}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.secondary}</button>
-        </div>
-      </section>
+      <DecisionCta
+        title={t.academy.finalTitle}
+        text={t.academy.finalText}
+        primaryLabel={t.common.seePricing}
+        primaryHref="/cennik"
+        secondaryLabel={t.nav.contact}
+        secondaryHref="/kontakt"
+        onNavigate={onNavigate}
+      />
     </>
   );
 }
@@ -473,10 +558,11 @@ function App() {
   }, [lang]);
 
   let page = <HomePage onNavigate={onNavigate} t={t} />;
-  if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} />;
+  if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/cennik") page = <PricingPage t={t} />;
+  if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
+  if (currentPath === "/cennik") page = <PricingPage t={t} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} />;
 
