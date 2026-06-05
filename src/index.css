@@ -1195,3 +1195,129 @@ li::marker { color: var(--brand); }
     gap: 18px;
   }
 }
+
+/* Final mobile navigation fix: no horizontal scroll, visible more menu, smaller tabs */
+@media (max-width: 740px) {
+  .topbar {
+    overflow: visible;
+  }
+
+  .brand-row {
+    position: relative;
+    z-index: 120;
+  }
+
+  .mobile-nav {
+    position: relative;
+    z-index: 110;
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) 54px;
+    gap: 7px;
+    overflow: visible !important;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .mobile-nav a,
+  .mobile-nav .nav-more-trigger {
+    width: 100%;
+    min-width: 0 !important;
+    min-height: 42px;
+    padding: 8px 6px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .mobile-nav .nav-more {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    z-index: 140;
+  }
+
+  .mobile-nav .nav-more-trigger {
+    letter-spacing: 0.12em;
+    font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mobile-nav .nav-more-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 999;
+    width: min(260px, calc(100vw - 28px));
+    min-width: 0;
+    padding: 8px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 50px rgba(92, 45, 38, 0.18);
+    backdrop-filter: blur(18px);
+  }
+
+  .mobile-nav .nav-more-panel a {
+    min-height: 46px;
+    justify-content: flex-start;
+    padding: 12px 14px;
+    border-radius: 18px;
+    font-size: 0.88rem;
+    letter-spacing: -0.02em;
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .mobile-nav .nav-more-panel a + a {
+    margin-top: 4px;
+  }
+
+  .language-menu {
+    position: relative;
+    z-index: 200;
+  }
+
+  .language-options {
+    z-index: 999;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) 48px;
+    gap: 6px;
+  }
+
+  .mobile-nav a,
+  .mobile-nav .nav-more-trigger {
+    min-height: 40px;
+    padding: 7px 4px;
+    font-size: 0.69rem;
+  }
+
+  .mobile-nav .nav-more-trigger {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .mobile-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) 44px;
+    gap: 5px;
+  }
+
+  .mobile-nav a,
+  .mobile-nav .nav-more-trigger {
+    font-size: 0.64rem;
+    letter-spacing: -0.045em;
+  }
+}

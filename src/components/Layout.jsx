@@ -48,7 +48,10 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
                 type="button"
                 className="language-trigger"
                 aria-expanded={isLangOpen}
-                onClick={() => setIsLangOpen((value) => !value)}
+                onClick={() => {
+                  setIsLangOpen((value) => !value);
+                  setIsMoreOpen(false);
+                }}
               >
                 {activeLanguage.label}
                 <span aria-hidden="true">⌄</span>
@@ -107,7 +110,10 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
               className="nav-more-trigger"
               aria-label="More pages"
               aria-expanded={isMoreOpen}
-              onClick={() => setIsMoreOpen((value) => !value)}
+              onClick={() => {
+                setIsMoreOpen((value) => !value);
+                setIsLangOpen(false);
+              }}
             >
               •••
             </button>
