@@ -6,6 +6,7 @@ const navKeys = [
   { key: "home", href: "/" },
   { key: "treatments", href: "/zabiegi" },
   { key: "nails", href: "/paznokcie" },
+  { key: "waxing", href: "/depilacja" },
   { key: "knowledge", href: "/wiedza" },
   { key: "academy", href: "/akademia-skory" },
   { key: "pricing", href: "/cennik" },
@@ -28,7 +29,6 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
 
   function handleNavigate(path) {
     setIsMoreOpen(false);
-    setIsLangOpen(false);
     onNavigate(path);
   }
 
@@ -139,7 +139,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
 
       {children}
 
-      <footer className="footer clean-footer">
+      <footer className="footer footer-minimal">
         <div>
           <img src="/elviglow-logo.png" alt="ElviGlow" />
           <strong>ElviGlow</strong>
