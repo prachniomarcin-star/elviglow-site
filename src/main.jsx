@@ -7,7 +7,7 @@ import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
 import "./index.css";
 
-const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/depilacja", "/wiedza", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
+const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/depilacja", "/cialo", "/wiedza", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
 
 function normalizePath(pathname) {
   const clean = pathname.replace(/\/$/, "") || "/";
@@ -257,6 +257,55 @@ function WaxingPage({ t, onNavigate }) {
   );
 }
 
+
+function BodyPage({ t, onNavigate }) {
+  return (
+    <>
+      <PageHero eyebrow={t.body.eyebrow} title={t.body.title} text={t.body.lead}>
+        <div className="hero-actions">
+          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{t.common.bookVisit}</button>
+        </div>
+      </PageHero>
+
+      <section className="section two-columns">
+        <div>
+          <p className="eyebrow">ElviGlow Body</p>
+          <h2>{t.body.introTitle}</h2>
+        </div>
+        <div className="text-panel">
+          <p>{t.body.introText}</p>
+        </div>
+      </section>
+
+      <section className="section waxing-groups-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Body</p>
+          <h2>{t.body.methodTitle}</h2>
+        </div>
+        <div className="waxing-groups-grid">
+          {t.body.groups.map((group) => (
+            <article className="waxing-group-card" key={group.title}>
+              <span className="card-mark">✦</span>
+              <h3>{group.title}</h3>
+              <p>{group.text}</p>
+              <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section rules-box">
+        <div>
+          <p className="eyebrow">ElviGlow</p>
+          <h2>{t.body.safetyTitle}</h2>
+        </div>
+        <ul>{t.body.safety.map((item) => <li key={item}>{item}</li>)}</ul>
+      </section>
+    </>
+  );
+}
+
 function KnowledgePage({ t, onNavigate }) {
   return (
     <>
@@ -424,6 +473,20 @@ function PricingPage({ t }) {
     );
   }
 
+
+  function renderBody() {
+    return (
+      <>
+        <div className="category-intro pricing-intro">
+          <p className="eyebrow">ElviGlow Body</p>
+          <h2>{pricing.tabs.body}</h2>
+          <p>{pricing.bodyIntro}</p>
+        </div>
+        <PriceListGroups groups={pricing.body} />
+      </>
+    );
+  }
+
   function renderCare() {
     return (
       <>
@@ -454,6 +517,7 @@ function PricingPage({ t }) {
         {active === "care" && renderCare()}
         {active === "nails" && renderNails()}
         {active === "waxing" && renderWaxing()}
+        {active === "body" && renderBody()}
       </section>
     </>
   );
@@ -662,6 +726,7 @@ function App() {
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cennik") page = <PricingPage t={t} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;

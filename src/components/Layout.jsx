@@ -7,6 +7,7 @@ const navKeys = [
   { key: "treatments", href: "/zabiegi" },
   { key: "nails", href: "/paznokcie" },
   { key: "waxing", href: "/depilacja" },
+  { key: "body", href: "/cialo" },
   { key: "knowledge", href: "/wiedza" },
   { key: "academy", href: "/akademia-skory" },
   { key: "pricing", href: "/cennik" },
