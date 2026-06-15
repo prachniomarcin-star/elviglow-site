@@ -432,6 +432,112 @@ const waxingNL = {
   ],
 };
 
+
+const bodyPL = {
+  eyebrow: "Modelowanie ciała",
+  title: "Dermomasaż vacuum i kriolipoliza płaskimi głowicami",
+  lead: "Proste zabiegi na ciało dla kobiet, które chcą pracować nad wygładzeniem skóry, napięciem i miejscowym modelowaniem sylwetki — spokojnie, estetycznie i bez obiecywania szybkiego odchudzania.",
+  introTitle: "Jak działają te zabiegi?",
+  introText: "Dermomasaż vacuum to masaż podciśnieniowy wybranej partii ciała. Ma wspierać mikrokrążenie, drenaż i wygładzenie wyglądu skóry. Kriolipoliza to miejscowe chłodzenie jednej wybranej partii ciała płaskimi głowicami. Tkanka tłuszczowa jest bardziej wrażliwa na zimno niż skóra, dlatego po zabiegu organizm stopniowo usuwa uszkodzone komórki tłuszczowe przez kolejne tygodnie.",
+  methodTitle: "Jak wygląda zabieg?",
+  safetyTitle: "Kiedy najpierw zapytać przed zabiegiem?",
+  safety: ["Przed kriolipolizą zawsze wykonujemy krótką kwalifikację i omawiamy przeciwwskazania.", "Zabiegu nie wykonujemy na aktywnie podrażnionej skórze ani w miejscu świeżych zmian skórnych.", "Przy problemach naczyniowych, zakrzepicy, ciąży, chorobach związanych z reakcją na zimno albo poważnych chorobach ogólnych najpierw potrzebna jest konsultacja medyczna."],
+  groups: [
+    {
+      title: "Dermomasaż vacuum",
+      text: "Zabieg wykonywany głowicą vacuum na wybranej partii ciała. Najlepiej sprawdza się jako seria, gdy celem jest gładszy wygląd skóry i praca nad cellulitem.",
+      items: ["1 zabieg", "Pakiet 5 zabiegów", "Pakiet 10 zabiegów"],
+    },
+    {
+      title: "Kriolipoliza płaskimi głowicami",
+      text: "Na skórę nakładana jest specjalna chusteczka ochronna, a następnie przykładane są płaskie głowice chłodzące. Nie stosujemy mocnego zasysania skóry i podczas jednej wizyty pracujemy tylko na jednej wybranej partii.",
+      items: ["Brzuch", "Boczki / talia", "Uda zewnętrzne", "Uda wewnętrzne", "Ramiona"],
+    },
+  ],
+  prices: [
+    { category: "Dermomasaż vacuum", items: [
+      { name: "Dermomasaż vacuum", price: "60 €", text: "Zabieg na wybraną partię ciała, dobierany do celu i reakcji skóry." },
+      { name: "Pakiet 5 zabiegów", price: "250 €", text: "Seria dla lepszego efektu wygładzenia i regularnej pracy ze skórą." },
+      { name: "Pakiet 10 zabiegów", price: "400 €", text: "Najkorzystniejsza seria do regularnej pracy nad jakością skóry." },
+    ]},
+    { category: "Kriolipoliza płaskimi głowicami", items: [
+      { name: "Kriolipoliza — 1 zabieg", price: "99 €", text: "Jeden zabieg obejmuje jedną wybraną partię ciała." },
+      { name: "Pakiet 3 zabiegów", price: "269 €", text: "Pakiet zabiegów do wykorzystania pojedynczo, po kwalifikacji." },
+      { name: "Pakiet 5 zabiegów", price: "429 €", text: "Seria zabiegów do wykorzystania stopniowo — bez łączenia kilku partii podczas jednej wizyty." },
+    ]},
+  ],
+};
+
+const bodyEN = {
+  eyebrow: "Body contouring",
+  title: "Vacuum dermomassage and cryolipolysis with flat applicators",
+  lead: "Simple body treatments for women who want to work on smoother-looking skin, firmness and local body contouring — calmly, aesthetically and without promising quick weight loss.",
+  introTitle: "How do these treatments work?",
+  introText: "Vacuum dermomassage is a vacuum massage on one selected body area. It supports microcirculation, drainage and a smoother-looking skin texture. Cryolipolysis is local cooling of one selected body area with flat applicators. Fat tissue is more sensitive to cold than the skin, so after the treatment the body gradually clears damaged fat cells over the following weeks.",
+  methodTitle: "What does the treatment look like?",
+  safetyTitle: "When should you ask before the treatment?",
+  safety: ["Before cryolipolysis we always do a short qualification and discuss contraindications.", "We do not perform the treatment on actively irritated skin or on fresh skin lesions.", "With vascular problems, thrombosis, pregnancy, cold-related conditions or serious general illness, medical consultation is needed first."],
+  groups: [
+    {
+      title: "Vacuum dermomassage",
+      text: "The treatment is performed with a vacuum head on one selected body area. It works best as a series when the goal is a smoother-looking skin texture and work on the appearance of cellulite.",
+      items: ["1 treatment", "Package of 5 treatments", "Package of 10 treatments"],
+    },
+    {
+      title: "Cryolipolysis with flat applicators",
+      text: "A protective anti-freeze wipe is placed on the skin, then flat cooling applicators are applied. We do not use strong suction and during one visit we work on one selected body area only.",
+      items: ["Abdomen", "Flanks / waist", "Outer thighs", "Inner thighs", "Arms"],
+    },
+  ],
+  prices: [
+    { category: "Vacuum dermomassage", items: [
+      { name: "Vacuum dermomassage", price: "60 €", text: "A treatment for one selected body area, adjusted to the goal and skin reaction." },
+      { name: "Package of 5 treatments", price: "250 €", text: "A series for a stronger smoothing effect and regular work with the skin." },
+      { name: "Package of 10 treatments", price: "400 €", text: "The best-value series for regular work on skin quality." },
+    ]},
+    { category: "Cryolipolysis with flat applicators", items: [
+      { name: "Cryolipolysis — 1 treatment", price: "99 €", text: "One treatment covers one selected body area." },
+      { name: "Package of 3 treatments", price: "269 €", text: "A package of treatments used one by one, after qualification." },
+      { name: "Package of 5 treatments", price: "429 €", text: "A series used gradually — without combining several areas during one visit." },
+    ]},
+  ],
+};
+
+const bodyNL = {
+  eyebrow: "Lichaamsbehandelingen",
+  title: "Vacuum dermomassage en cryolipolyse met vlakke applicatoren",
+  lead: "Eenvoudige lichaamsbehandelingen voor vrouwen die willen werken aan een gladdere huid, stevigheid en plaatselijke lichaamscontouren — rustig, esthetisch en zonder snelle afslankbeloftes.",
+  introTitle: "Hoe werken deze behandelingen?",
+  introText: "Vacuum dermomassage is een vacuümmassage op één gekozen lichaamszone. Het ondersteunt microcirculatie, drainage en een gladdere huidstructuur. Cryolipolyse is plaatselijke koeling van één gekozen lichaamszone met vlakke applicatoren. Vetweefsel is gevoeliger voor kou dan de huid, daarom ruimt het lichaam beschadigde vetcellen geleidelijk op in de weken na de behandeling.",
+  methodTitle: "Hoe ziet de behandeling eruit?",
+  safetyTitle: "Wanneer eerst overleggen vóór de behandeling?",
+  safety: ["Voor cryolipolyse doen we altijd een korte check en bespreken we contra-indicaties.", "We behandelen niet op actief geïrriteerde huid of verse huidveranderingen.", "Bij vaatproblemen, trombose, zwangerschap, kou-gerelateerde aandoeningen of ernstige algemene ziekten is eerst medisch overleg nodig."],
+  groups: [
+    {
+      title: "Vacuum dermomassage",
+      text: "De behandeling wordt uitgevoerd met een vacuumkop op één gekozen lichaamszone. Het werkt het beste als serie wanneer het doel een gladdere huidstructuur en het werken aan de uitstraling van cellulite is.",
+      items: ["1 behandeling", "Pakket 5 behandelingen", "Pakket 10 behandelingen"],
+    },
+    {
+      title: "Cryolipolyse met vlakke applicatoren",
+      text: "Op de huid wordt een beschermende anti-freeze doek geplaatst, daarna worden vlakke koelapplicatoren aangebracht. We gebruiken geen sterke zuiging en tijdens één bezoek behandelen we alleen één gekozen zone.",
+      items: ["Buik", "Flanken / taille", "Buitenkant dijen", "Binnenkant dijen", "Armen"],
+    },
+  ],
+  prices: [
+    { category: "Vacuum dermomassage", items: [
+      { name: "Vacuum dermomassage", price: "60 €", text: "Een behandeling voor één gekozen lichaamszone, afgestemd op doel en huidreactie." },
+      { name: "Pakket 5 behandelingen", price: "250 €", text: "Een serie voor meer gladheid en regelmatige verzorging van de huid." },
+      { name: "Pakket 10 behandelingen", price: "400 €", text: "De voordeligste serie voor regelmatige verbetering van huidkwaliteit." },
+    ]},
+    { category: "Cryolipolyse met vlakke applicatoren", items: [
+      { name: "Cryolipolyse — 1 behandeling", price: "99 €", text: "Eén behandeling omvat één gekozen lichaamszone." },
+      { name: "Pakket 3 behandelingen", price: "269 €", text: "Een pakket behandelingen dat stap voor stap wordt gebruikt, na een korte check." },
+      { name: "Pakket 5 behandelingen", price: "429 €", text: "Een serie die geleidelijk wordt gebruikt — zonder meerdere zones tijdens één bezoek te combineren." },
+    ]},
+  ],
+};
+
 const membershipsPL = [
   { name: "Cera w Równowadze", price: "69 €/mies.", includes: ["1 zabieg oczyszczająco-nawilżający w miesiącu", "Podstawowe dopasowanie pielęgnacji do aktualnego stanu skóry", "Regularne utrzymanie skóry w dobrej kondycji"], effect: "Czystsza, świeższa i bardziej zadbana skóra bez przypadkowej pielęgnacji." },
   { name: "Glow Premium", price: "129 €/mies.", includes: ["2 wizyty miesięcznie", "Oczyszczanie skóry", "Zabieg glow, liftingujący albo regenerujący dobrany do potrzeb skóry", "Maseczka pielęgnacyjna do domu"], effect: "Systematyczne oczyszczenie, rozświetlenie i poprawa wyglądu cery." },
@@ -577,12 +683,13 @@ const knowledgeNL = {
 const pricingPL = {
   eyebrow: "Cennik",
   title: "Wybierz kategorię i sprawdź ceny",
-  lead: "Cennik jest podzielony na spokojne sekcje: zabiegi twarzy, program regularnej pielęgnacji, paznokcie i stopy oraz depilację woskiem Lycon. Dzięki temu łatwiej znaleźć usługę bez przewijania długiej listy.",
-  tabs: { face: "Zabiegi twarzy", care: "Programy pielęgnacji", nails: "Paznokcie i stopy", waxing: "Depilacja Lycon" },
+  lead: "Cennik jest podzielony na spokojne sekcje: zabiegi twarzy, program regularnej pielęgnacji, paznokcie i stopy, depilację Lycon oraz modelowanie ciała. Dzięki temu łatwiej znaleźć usługę bez przewijania długiej listy.",
+  tabs: { face: "Zabiegi twarzy", care: "Programy pielęgnacji", nails: "Paznokcie i stopy", waxing: "Depilacja Lycon", body: "Modelowanie ciała" },
   faceIntro: "Dobierz zabieg do tego, czego aktualnie potrzebuje Twoja skóra: oczyszczenia, nawilżenia, rozświetlenia, napięcia albo głębszej regeneracji.",
   nailsIntro: "Estetyczne, czyste i trwałe wykończenie dłoni oraz stóp — od klasycznej pielęgnacji po BIAB i stylizacje z przedłużeniem.",
   careIntro: "Dla osób, które nie chcą przypadkowych zabiegów, tylko regularnej pracy ze skórą. Minimalny czas programu: 3 miesiące.",
   waxingIntro: "Depilacja woskiem Lycon dla kobiet: wąsik, brwi, pachy, przedramiona, łydki, całe nogi, plecy oraz bikini. Zakres jest prosty i zgodny z aktualną ofertą.",
+  bodyIntro: "Dermomasaż vacuum oraz kriolipoliza płaskimi głowicami. Prosty cennik: pojedynczy zabieg lub pakiet zabiegów. Przy kriolipolizie podczas jednej wizyty pracujemy tylko na jednej wybranej partii.",
   headings: { popular: "Najczęściej wybierane pakiety", premium: "Zabiegi z ampułką", regeneration: "Regeneracja skóry", includes: "Co zawiera program?" },
   note: "Microneedling dobieramy po konsultacji. Nie każdy zabieg jest dla każdej skóry — najpierw sprawdzamy, czego skóra naprawdę potrzebuje.",
 };
@@ -590,12 +697,13 @@ const pricingPL = {
 const pricingEN = {
   eyebrow: "Price list",
   title: "Choose a category and check the prices",
-  lead: "The price list is divided into calm sections: facial treatments, regular care programs, nails and feet, and Lycon waxing. This makes it easier to find the right service without scrolling through a long list.",
-  tabs: { face: "Facial treatments", care: "Care programs", nails: "Nails & feet", waxing: "Lycon waxing" },
+  lead: "The price list is divided into calm sections: facial treatments, regular care programs, nails and feet, Lycon waxing and body contouring. This makes it easier to find the right service without scrolling through a long list.",
+  tabs: { face: "Facial treatments", care: "Care programs", nails: "Nails & feet", waxing: "Lycon waxing", body: "Body contouring" },
   faceIntro: "Choose a treatment based on what your skin currently needs: cleansing, hydration, radiance, firmness or deeper regeneration.",
   nailsIntro: "Clean, aesthetic and long-lasting finishing for hands and feet — from classic care to BIAB and extensions.",
   careIntro: "For clients who do not want random treatments, but regular work with the skin. Minimum program duration: 3 months.",
   waxingIntro: "Lycon waxing for women: upper lip, brows, underarms, forearms, lower legs, full legs, back and bikini. The range is simple and aligned with the current offer.",
+  bodyIntro: "Vacuum dermomassage and cryolipolysis with flat applicators. Simple pricing: single treatment or treatment package. With cryolipolysis, during one visit we work on one selected area only.",
   headings: { popular: "Most chosen packages", premium: "Ampoule treatments", regeneration: "Skin regeneration", includes: "What is included?" },
   note: "Microneedling is chosen after consultation. Not every treatment is suitable for every skin — first we check what the skin really needs.",
 };
@@ -603,12 +711,13 @@ const pricingEN = {
 const pricingNL = {
   eyebrow: "Prijslijst",
   title: "Kies een categorie en bekijk de prijzen",
-  lead: "De prijslijst is verdeeld in rustige onderdelen: gezichtsbehandelingen, regelmatige verzorgingsprogramma's, nagels en voeten, en Lycon waxing. Zo vind je makkelijker de juiste dienst zonder lange lijsten.",
-  tabs: { face: "Gezichtsbehandelingen", care: "Verzorgingsprogramma's", nails: "Nagels & voeten", waxing: "Lycon waxing" },
+  lead: "De prijslijst is verdeeld in rustige onderdelen: gezichtsbehandelingen, regelmatige verzorgingsprogramma's, nagels en voeten, Lycon waxing en lichaamsbehandelingen. Zo vind je makkelijker de juiste dienst zonder lange lijsten.",
+  tabs: { face: "Gezichtsbehandelingen", care: "Verzorgingsprogramma's", nails: "Nagels & voeten", waxing: "Lycon waxing", body: "Lichaamsbehandelingen" },
   faceIntro: "Kies een behandeling op basis van wat je huid nu nodig heeft: reiniging, hydratatie, glow, stevigheid of diepere regeneratie.",
   nailsIntro: "Schone, esthetische en langdurige afwerking voor handen en voeten — van klassieke verzorging tot BIAB en verlenging.",
   careIntro: "Voor klanten die geen losse, toevallige behandelingen willen, maar regelmatige zorg voor de huid. Minimale duur van het programma: 3 maanden.",
   waxingIntro: "Lycon waxing voor vrouwen: bovenlip, wenkbrauwen, oksels, onderarmen, onderbenen, hele benen, rug en bikini. De omvang is duidelijk en afgestemd op de actuele aanbieding.",
+  bodyIntro: "Vacuum dermomassage en cryolipolyse met vlakke applicatoren. Eenvoudige prijzen: losse behandeling of pakket. Bij cryolipolyse behandelen we tijdens één bezoek alleen één gekozen zone.",
   headings: { popular: "Meest gekozen pakketten", premium: "Behandelingen met ampul", regeneration: "Huidregeneratie", includes: "Wat zit erbij?" },
   note: "Microneedling kiezen we na overleg. Niet elke behandeling past bij elke huid — eerst kijken we wat de huid echt nodig heeft.",
 };
@@ -621,6 +730,7 @@ export const translations = {
       treatments: "Zabiegi",
       nails: "Paznokcie",
       waxing: "Depilacja",
+      body: "Ciało",
       knowledge: "Wiedza",
       pricing: "Cennik",
       academy: "Akademia skóry",
@@ -657,12 +767,13 @@ export const translations = {
         ["Premium", "Ampułki, maski i bardziej dopracowany rytuał pielęgnacyjny."],
         ["Regeneracja", "Microneedling i zabiegi dla skóry wymagającej mocniejszego wsparcia."],
       ],
-      offerTitle: "Twarz, paznokcie, depilacja i świadoma pielęgnacja w jednym miejscu.",
-      offerText: "Najpierw pomagamy zrozumieć potrzeby skóry, potem dobieramy rytuał twarzy, paznokci, depilację Lycon lub regularny plan pielęgnacji — spokojnie, estetycznie i bez presji.",
+      offerTitle: "Twarz, paznokcie, depilacja, ciało i świadoma pielęgnacja w jednym miejscu.",
+      offerText: "Najpierw pomagamy zrozumieć potrzeby skóry, potem dobieramy rytuał twarzy, paznokci, depilację Lycon, zabieg na ciało lub regularny plan pielęgnacji — spokojnie, estetycznie i bez presji.",
       serviceCards: [
         { title: "Zabiegi twarzy", text: "Oczyszczanie, glow, ampułki, maski i microneedling dobierane do aktualnych potrzeb skóry." },
         { title: "Paznokcie i stopy", text: "Manicure, BIAB, stylizacja żelowa i pedicure w czystym, kobiecym stylu ElviGlow." },
-        { title: "Depilacja Lycon", text: "Depilacja woskiem dla kobiet: twarz, pachy, ręce, nogi, bikini i wybrane partie ciała." },
+        { title: "Depilacja Lycon", text: "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, ręce, nogi, plecy i bikini." },
+        { title: "Modelowanie ciała", text: "Dermomasaż vacuum i kriolipoliza płaskimi głowicami jako osobne zabiegi na ciało." },
         { title: "Wiedza i Akademia skóry", text: "Proste wyjaśnienia typów cery, objawów i tego, dlaczego regularność buduje efekt." },
       ],
     },
@@ -728,8 +839,9 @@ export const translations = {
       beforeTitle: "Przed i po depilacji",
       before: ["Dzień przed zabiegiem nie rób mocnego peelingu i nie podrażniaj skóry.", "Po depilacji unikaj sauny, solarium, basenu i intensywnego treningu przez około 24 godziny.", "Przy bardzo wrażliwej skórze, świeżych podrażnieniach lub aktywnych zmianach najpierw ustalamy bezpieczny zakres."],
     },
+    body: bodyPL,
     knowledge: knowledgePL,
-    pricing: { ...pricingPL, offers: offersPL, nails: nailsPL, memberships: membershipsPL, waxing: waxingPL.prices },
+    pricing: { ...pricingPL, offers: offersPL, nails: nailsPL, memberships: membershipsPL, waxing: waxingPL.prices, body: bodyPL.prices },
     academy: {
       eyebrow: "Akademia skóry",
       title: "Zrozum swoją skórę, zanim wybierzesz zabieg.",
@@ -807,7 +919,7 @@ export const translations = {
       ],
       beforeVisitTitle: "Co napisać w wiadomości?",
       beforeVisit: [
-        "Jaki temat Cię interesuje: twarz, paznokcie, pedicure, depilacja woskiem, microneedling albo program pielęgnacji.",
+        "Jaki temat Cię interesuje: twarz, paznokcie, pedicure, depilacja woskiem, ciało, microneedling albo program pielęgnacji.",
         "Jaki efekt chcesz uzyskać: oczyszczenie, glow, regeneracja, odświeżenie dłoni albo trwała stylizacja.",
         "Kiedy mniej więcej pasuje Ci termin wizyty.",
         "Przy skórze wrażliwej lub problematycznej opisz krótko, co aktualnie dzieje się na twarzy.",
@@ -823,7 +935,7 @@ export const translations = {
   },
   en: {
     languageName: "English",
-    nav: { home: "Home", treatments: "Treatments", nails: "Nails", waxing: "Waxing", knowledge: "Knowledge", pricing: "Prices", academy: "Skin Academy", contact: "Contact", book: "Book" },
+    nav: { home: "Home", treatments: "Treatments", nails: "Nails", waxing: "Waxing", body: "Body", knowledge: "Knowledge", pricing: "Prices", academy: "Skin Academy", contact: "Contact", book: "Book" },
     common: {
       seeTreatments: "See treatments", seePricing: "See prices", learnMore: "Learn more", bookVisit: "Book a visit", askOffer: "Ask for details",
       included: "Included", effect: "Effect", passes: "Passes", notDiagnosis: "This is not a medical diagnosis — it is a simple educational guide that helps choose the right care direction.", choose: "Choose", suggested: "Suggested direction", forWhom: "For whom", price: "Price",
@@ -853,8 +965,9 @@ export const translations = {
     },
     nails: { eyebrow: "Nails", title: "Hands that look clean, feminine and cared for", lead: "Manicure, BIAB, gel styling and pedicure in the calm ElviGlow style — aesthetic, clean and feminine.", introTitle: "Nails are part of the first impression.", introText: "Well-groomed hands build a feeling of elegance just like radiant skin. At ElviGlow, nails can be a separate service or a complement to your beauty ritual.", services: nailsEN, note: "First we look at the condition of the nail plate and cuticles, then choose the method: classic manicure, gel polish, BIAB, gel, extensions or pedicure.", infoTitle: "What do we do in nail care?", infoLead: "The nails page helps explain the available styling directions. The full price list stays in the Prices tab.", infoCards: [{ title: "Classic manicure and gel polish", text: "For hands that should look neat, fresh and elegant every day. We match colour, shape and finish to the client’s style." }, { title: "BIAB and nail strengthening", text: "For thin, weakened nails or nails that need a smoother structure. A good direction for a natural but stronger effect." }, { title: "Gel and extensions", text: "For clients who want to change length, shape or create a stronger styling effect. We first check nail condition and choose a safe direction." }, { title: "Pedicure and feet", text: "Care for feet, nails and cuticles. It can be classic, with colour or in a more relaxing wellness version." }, { title: "Safe removal", text: "Old styling should be removed calmly and without damaging the nail plate. This matters if nails are to stay in good condition." }, { title: "Shape and colour choice", text: "Not every styling suits every nail plate. We match the effect to nail length, hand shape, work and expectations." }] },
     waxing: { eyebrow: "Lycon waxing", title: "Smooth skin without random hair removal", lead: "Lycon waxing for women in clear ranges: upper lip, brows, underarms, forearms, lower legs, full legs, back and bikini. We do not offer full-face waxing — only selected precise facial services stay in the offer.", introTitle: "Comfort, precision and clean care", introText: "Small and delicate areas need precision, while larger areas need even rhythm and clean application. After waxing, soothing and simple aftercare matter too.", methodTitle: "How do we choose the waxing method?", methodCards: [{ title: "Precise areas", text: "Upper lip, brows, underarms and bikini need calmer work and control of skin reaction." }, { title: "Larger areas", text: "Forearms, lower legs, full legs and back need even application and hygienic pace." }, { title: "Intimate areas", text: "The range is agreed before the treatment, without rush and with full respect for comfort." }], groups: waxingEN.groups, beforeTitle: "Before and after waxing", before: ["Do not use strong exfoliation or irritate the skin the day before waxing.", "After waxing, avoid sauna, solarium, swimming pool and intense training for about 24 hours.", "With very sensitive skin, fresh irritation or active changes, we first choose a safe range."] },
+    body: bodyEN,
     knowledge: knowledgeEN,
-    pricing: { ...pricingEN, offers: offersEN, nails: nailsEN, memberships: membershipsEN, waxing: waxingEN.prices },
+    pricing: { ...pricingEN, offers: offersEN, nails: nailsEN, memberships: membershipsEN, waxing: waxingEN.prices, body: bodyEN.prices },
     academy: {
       eyebrow: "Skin Academy", title: "Understand your skin before choosing a treatment.", lead: "First we recognise the visible concern, then we explain a simple mechanism and only then choose the care direction. This makes it easier to understand why treatment or regularity may make sense.", preventionTitle: "It is easier to prevent than to fight fixed changes.",
       preventionCards: [{ title: "Skin responds to regularity", text: "One treatment can bring freshness, but the biggest change is built by consistency and a smart series." }, { title: "Wrinkles do not appear in one day", text: "First hydration, elasticity and regeneration slow down. This is the moment to act preventively." }, { title: "Home care has limits", text: "Cream is important, but it may not be enough when the concern involves deeper regeneration, skin texture or strong dryness." }],
@@ -865,22 +978,23 @@ export const translations = {
       topicsTitle: "What is worth knowing about skin?", topics: [{ title: "Why is one treatment not always enough?", text: "Because skin renews through a process. One ritual can refresh, but a series supports a deeper and longer-lasting effect." }, { title: "Why do pores and dull tone come back?", text: "Often the issue is cleansing regularity, dead skin cells, dryness or care that does not match the skin." }, { title: "Why start earlier?", text: "It is easier to maintain good skin quality than to fight fixed changes later." }], safety: ["We do not perform aggressive treatments without assessing the skin and discussing contraindications.", "For very sensitive skin, active inflammation or fresh irritation, we choose a gentler ritual.", "After regeneration treatments, aftercare and skin protection matter."],
     },
     memberships: { eyebrow: "Care programs", title: "Regularity that builds results", lead: "Programs are for clients who want to care for the skin regularly instead of returning only when the concern is already visible.", items: membershipsEN },
-    contact: { eyebrow: "Contact", title: "Book a visit or ask about care", lead: "Message us on Instagram or by e-mail. We will help you choose a treatment, appointment or the best first step for your skin, hands or feet.", mainTitle: "The easiest way: send a private message", mainText: "Briefly describe what you need: facial treatment, nails, pedicure, waxing, care program or skin consultation. We will reply and help choose the right direction.", instagramButton: "Open Instagram", emailButton: "Send e-mail", cards: [{ icon: "✦", title: "Instagram", text: "The easiest place for bookings, questions and viewing current salon work.", type: "instagram" }, { icon: "✉", title: "E-mail", text: "For longer questions, collaboration or calmly arranging visit details.", type: "email" }, { icon: "♡", title: "Bookings", text: "Write which service interests you, when you are available and whether this is your first ElviGlow visit.", type: "booking" }, { icon: "☾", title: "Before your visit", text: "For skin treatments, mention irritation, active skin changes, recent treatments or very sensitive skin.", type: "care" }], beforeVisitTitle: "What to write in your message?", beforeVisit: ["Which topic interests you: face, nails, pedicure, waxing, microneedling or care program.", "What result you want: cleansing, glow, regeneration, fresh hands or long-lasting styling.", "When you are roughly available for a visit.", "If your skin is sensitive or problematic, briefly describe what is happening on your face now."], disclaimer: "The content on this website is educational and cosmetic. It does not replace medical or dermatological consultation." },
+    contact: { eyebrow: "Contact", title: "Book a visit or ask about care", lead: "Message us on Instagram or by e-mail. We will help you choose a treatment, appointment or the best first step for your skin, hands or feet.", mainTitle: "The easiest way: send a private message", mainText: "Briefly describe what you need: facial treatment, nails, pedicure, waxing, body treatment, care program or skin consultation. We will reply and help choose the right direction.", instagramButton: "Open Instagram", emailButton: "Send e-mail", cards: [{ icon: "✦", title: "Instagram", text: "The easiest place for bookings, questions and viewing current salon work.", type: "instagram" }, { icon: "✉", title: "E-mail", text: "For longer questions, collaboration or calmly arranging visit details.", type: "email" }, { icon: "♡", title: "Bookings", text: "Write which service interests you, when you are available and whether this is your first ElviGlow visit.", type: "booking" }, { icon: "☾", title: "Before your visit", text: "For skin treatments, mention irritation, active skin changes, recent treatments or very sensitive skin.", type: "care" }], beforeVisitTitle: "What to write in your message?", beforeVisit: ["Which topic interests you: face, nails, pedicure, waxing, microneedling or care program.", "What result you want: cleansing, glow, regeneration, fresh hands or long-lasting styling.", "When you are roughly available for a visit.", "If your skin is sensitive or problematic, briefly describe what is happening on your face now."], disclaimer: "The content on this website is educational and cosmetic. It does not replace medical or dermatological consultation." },
     cta: { title: "Not sure where to start?", text: "Visit the Skin Academy or check the price list. First we understand the skin need, then we choose the ritual.", primary: "Skin Academy", secondary: "Contact" },
   },
   nl: {
     languageName: "Nederlands",
-    nav: { home: "Home", treatments: "Behandelingen", nails: "Nagels", waxing: "Waxing", knowledge: "Kennis", pricing: "Prijzen", academy: "Huidacademie", contact: "Contact", book: "Afspraak" },
+    nav: { home: "Home", treatments: "Behandelingen", nails: "Nagels", waxing: "Waxing", body: "Lichaam", knowledge: "Kennis", pricing: "Prijzen", academy: "Huidacademie", contact: "Contact", book: "Afspraak" },
     common: { seeTreatments: "Bekijk behandelingen", seePricing: "Bekijk prijzen", learnMore: "Meer weten", bookVisit: "Maak afspraak", askOffer: "Vraag details", included: "In behandeling", effect: "Effect", passes: "Kaarten", notDiagnosis: "Dit is geen medische diagnose — het is een eenvoudige educatieve gids die helpt een verzorgingsrichting te kiezen.", choose: "Kies", suggested: "Voorgestelde richting", forWhom: "Voor wie", price: "Prijs" },
-    home: { eyebrow: "Beauty • Wellness • Glow", title: "Jouw moment van luxe en glow", lead: "ElviGlow is een bewuste beautysalon voor gezichtsverzorging, nagels en Lycon waxing: reiniging, glow, ampullen, microneedling, glow-rituelen en gladde huid in een rustige sfeer. We helpen je begrijpen wat je huid nodig heeft en hoe je haar regelmatig verzorgt.", cardTitle: "ElviGlow", cardSubtitle: "Jouw moment van luxe en glow", philosophyEyebrow: "Filosofie", philosophyTitle: "Verzorging hoort niet toevallig te zijn.", philosophyText1: "De huid laat vaak vermoeidheid, droogte of eerste lijntjes zien voordat we beginnen te handelen. Regelmatige verzorging helpt frisheid, glow en goede huidconditie te behouden voordat het probleem zichtbaarder wordt.", philosophyText2: "Bij ElviGlow begint verzorging met begrijpen: wat je ziet op de huid, waarom het kan ontstaan en welk ritueel een goede eerste stap is.", pillars: [["Glow", "Reiniging, frisheid en een stralende uitstraling na de behandeling."], ["Premium", "Ampullen, maskers en een verfijnder verzorgingsritueel."], ["Regeneratie", "Microneedling en behandelingen voor huid die meer ondersteuning nodig heeft."]], offerTitle: "Gezicht, nagels, waxing en bewuste verzorging op één plek.", offerText: "Eerst helpen we de huidbehoefte begrijpen, daarna kiezen we een gezichtsritueel, nagelverzorging, Lycon waxing of regelmatig verzorgingsprogramma — rustig, esthetisch en zonder druk.", serviceCards: [{ title: "Gezichtsbehandelingen", text: "Reiniging, glow, ampullen, maskers en microneedling afgestemd op de actuele huidbehoefte." }, { title: "Nagels en voeten", text: "Manicure, BIAB, gelstyling en pedicure in de schone, vrouwelijke ElviGlow-stijl." }, { title: "Lycon waxing", text: "Waxing voor vrouwen: gezicht, oksels, armen, benen, bikini en geselecteerde zones." }, { title: "Kennis en Huidacademie", text: "Eenvoudige uitleg over huidtypes, zichtbare signalen en waarom regelmaat resultaat opbouwt." }] },
+    home: { eyebrow: "Beauty • Wellness • Glow", title: "Jouw moment van luxe en glow", lead: "ElviGlow is een bewuste beautysalon voor gezichtsverzorging, nagels en Lycon waxing: reiniging, glow, ampullen, microneedling, glow-rituelen en gladde huid in een rustige sfeer. We helpen je begrijpen wat je huid nodig heeft en hoe je haar regelmatig verzorgt.", cardTitle: "ElviGlow", cardSubtitle: "Jouw moment van luxe en glow", philosophyEyebrow: "Filosofie", philosophyTitle: "Verzorging hoort niet toevallig te zijn.", philosophyText1: "De huid laat vaak vermoeidheid, droogte of eerste lijntjes zien voordat we beginnen te handelen. Regelmatige verzorging helpt frisheid, glow en goede huidconditie te behouden voordat het probleem zichtbaarder wordt.", philosophyText2: "Bij ElviGlow begint verzorging met begrijpen: wat je ziet op de huid, waarom het kan ontstaan en welk ritueel een goede eerste stap is.", pillars: [["Glow", "Reiniging, frisheid en een stralende uitstraling na de behandeling."], ["Premium", "Ampullen, maskers en een verfijnder verzorgingsritueel."], ["Regeneratie", "Microneedling en behandelingen voor huid die meer ondersteuning nodig heeft."]], offerTitle: "Gezicht, nagels, waxing, lichaam en bewuste verzorging op één plek.", offerText: "Eerst helpen we de huidbehoefte begrijpen, daarna kiezen we een gezichtsritueel, nagelverzorging, Lycon waxing, lichaamsbehandeling of regelmatig verzorgingsprogramma — rustig, esthetisch en zonder druk.", serviceCards: [{ title: "Gezichtsbehandelingen", text: "Reiniging, glow, ampullen, maskers en microneedling afgestemd op de actuele huidbehoefte." }, { title: "Nagels en voeten", text: "Manicure, BIAB, gelstyling en pedicure in de schone, vrouwelijke ElviGlow-stijl." }, { title: "Lycon waxing", text: "Waxing voor vrouwen: bovenlip, wenkbrauwen, oksels, armen, benen, rug en bikini." }, { title: "Lichaamsbehandelingen", text: "Vacuum dermomassage en cryolipolyse met vlakke applicatoren als aparte lichaamsbehandelingen." }, { title: "Kennis en Huidacademie", text: "Eenvoudige uitleg over huidtypes, zichtbare signalen en waarom regelmaat resultaat opbouwt." }] },
     treatments: { eyebrow: "Behandelingen", title: "Kies een ritueel voor je huid", lead: "ElviGlow pakketten zijn zo opgebouwd dat je zacht kunt starten, premium verzorging kunt kiezen of na overleg naar diepere regeneratie kunt gaan.", tabs: { facial: "Verzorgingspakketten", premium: "Premium behandelingen", microneedling: "Microneedling" }, intros: { facial: "Een zachte start met regelmatige verzorging: reiniging, hydratatie en een eerste frisse glow.", premium: "Voor huid die sterkere ondersteuning met actieve ingrediënten en een verfijnder ritueel nodig heeft.", microneedling: "Een meer geavanceerde regeneratierichting wanneer de huid werk nodig heeft aan structuur, elasticiteit en tekenen van veroudering." }, consultationTitle: "Eerst de huidbehoefte, daarna het pakket.", consultationSteps: ["We kijken wat de huid het meest stoort: droogte, poriën, doffe teint, verlies van glow, eerste lijntjes of minder stevigheid.", "We leggen het mechanisme eenvoudig uit: wat de huid kan missen en waarom crème alleen soms niet genoeg is.", "We stemmen de behandeling af op het doel: reiniging, glow, voeding, lifting-effect of regeneratie.", "We bepalen of één behandeling genoeg is, of dat een serie of verzorgingsprogramma beter past."], guideEyebrow: "Uitleg behandelingen", guideTitle: "Wat betekenen de behandelingen in de praktijk?", guideLead: "Je hoeft geen apparaatnamen of technieken te kennen. Het belangrijkste is wat de huid nodig heeft en welk effect we willen bereiken.", flowTitle: "Eerst de huid begrijpen, daarna de behandeling kiezen.", flowText: "Na de behandelingen ga je naar Kennis en daarna naar de Huidacademie. Zo wordt de keuze rustiger en bewuster.", flowPrimary: "Ga naar Kennis", flowSecondary: "Huidacademie", treatmentGuide: treatmentGuideNL, groups: offersNL },
     nails: { eyebrow: "Nagels", title: "Handen die schoon, vrouwelijk en verzorgd ogen", lead: "Manicure, BIAB, gelstyling en pedicure in de rustige ElviGlow-stijl — esthetisch, schoon en vrouwelijk.", introTitle: "Nagels zijn deel van de eerste indruk.", introText: "Verzorgde handen geven een gevoel van elegantie, net als een stralende huid. Bij ElviGlow kunnen nagels een losse dienst zijn of een aanvulling op je beautyroutine.", services: nailsNL, note: "Eerst kijken we naar de conditie van de nagelplaat en nagelriemen, daarna kiezen we de methode: klassieke manicure, gellak, BIAB, gel, verlenging of pedicure.", infoTitle: "Wat doen we bij nagelverzorging?", infoLead: "De nagelpagina legt de mogelijkheden uit. De volledige prijslijst blijft in de tab Prijzen.", infoCards: [{ title: "Klassieke manicure en gellak", text: "Voor handen die er dagelijks netjes, fris en elegant uitzien. We stemmen kleur, vorm en afwerking af op de stijl van de klant." }, { title: "BIAB en nagelversteviging", text: "Voor dunne, zwakkere nagels of nagels die een gladdere structuur nodig hebben. Een goede richting voor een natuurlijk maar sterker effect." }, { title: "Gel en verlenging", text: "Voor klanten die lengte, vorm of een duidelijkere styling willen. We controleren eerst de nagelconditie en kiezen een veilige richting." }, { title: "Pedicure en voeten", text: "Verzorging van voeten, nagels en nagelriemen. Klassiek, met kleur of in een meer ontspannende wellnessversie." }, { title: "Veilig verwijderen", text: "Oude styling moet rustig en zonder schade aan de nagelplaat worden verwijderd. Dit is belangrijk voor gezonde nagels." }, { title: "Vorm en kleur kiezen", text: "Niet elke styling past bij elke nagelplaat. We stemmen het effect af op lengte, handvorm, werk en wensen." }] },
     waxing: { eyebrow: "Lycon waxing", title: "Gladde huid zonder toevallige ontharing", lead: "Lycon waxing voor vrouwen in duidelijke zones: bovenlip, wenkbrauwen, oksels, onderarmen, onderbenen, hele benen, rug en bikini. We doen geen volledige gezichtswaxing — alleen geselecteerde precieze gezichtsbehandelingen blijven in de aanbieding.", introTitle: "Comfort, precisie en schone verzorging", introText: "Kleine en gevoelige zones vragen precisie, grotere zones vragen een gelijkmatig ritme en schone applicatie. Na waxing zijn kalmering en eenvoudige nazorg ook belangrijk.", methodTitle: "Hoe kiezen we de waxingmethode?", methodCards: [{ title: "Precieze zones", text: "Bovenlip, wenkbrauwen, oksels en bikini vragen rustiger werken en controle van de huidreactie." }, { title: "Grotere zones", text: "Onderarmen, onderbenen, hele benen en rug vragen gelijkmatige applicatie en hygiënisch tempo." }, { title: "Intieme zones", text: "De omvang spreken we vóór de behandeling rustig af, met volledig respect voor comfort." }], groups: waxingNL.groups, beforeTitle: "Voor en na waxing", before: ["Gebruik de dag vóór waxing geen sterke peeling en irriteer de huid niet.", "Vermijd na waxing ongeveer 24 uur sauna, solarium, zwembad en intensief sporten.", "Bij zeer gevoelige huid, verse irritatie of actieve plekjes kiezen we eerst een veilige omvang."] },
+    body: bodyNL,
     knowledge: knowledgeNL,
-    pricing: { ...pricingNL, offers: offersNL, nails: nailsNL, memberships: membershipsNL, waxing: waxingNL.prices },
+    pricing: { ...pricingNL, offers: offersNL, nails: nailsNL, memberships: membershipsNL, waxing: waxingNL.prices, body: bodyNL.prices },
     academy: { eyebrow: "Huidacademie", title: "Begrijp je huid voordat je een behandeling kiest.", lead: "Eerst herkennen we het zichtbare probleem, dan leggen we een eenvoudig mechanisme uit en pas daarna kiezen we de verzorgingsrichting. Zo begrijp je beter waarom behandeling of regelmaat zinvol kan zijn.", preventionTitle: "Voorkomen is makkelijker dan vaste veranderingen herstellen.", preventionCards: [{ title: "Huid reageert op regelmaat", text: "Eén behandeling kan frisheid geven, maar de grootste verandering ontstaat door consistentie en een slimme serie." }, { title: "Rimpels ontstaan niet in één dag", text: "Eerst nemen hydratatie, elasticiteit en regeneratie af. Dat is het moment om preventief te handelen." }, { title: "Thuisverzorging heeft grenzen", text: "Crème is belangrijk, maar niet altijd genoeg bij diepere regeneratie, huidstructuur of sterke droogte." }], pathTitle: "Bewuste verzorgingsroute ElviGlow", pathText: "Een eenvoudige kaart: zichtbaar probleem, mogelijke oorzaak, doel en plan. Zo begrijp je welke richting bij je huid kan passen.", pathSteps: [["1", "Probleem", "Wat zie je: droogte, poriën, doffe teint, minder stevigheid, eerste lijntjes?"], ["2", "Mechanisme", "Waarom kan dit gebeuren: dehydratatie, tragere regeneratie, onzuiverheden, verlies van elasticiteit?"], ["3", "Doel", "Wat heeft de huid nodig: reiniging, glow, voeding, lifting-effect of regeneratie?"], ["4", "Plan", "Starten we met één behandeling, een serie of een maandelijks ritme?"]], builder: { title: "Mini huidkaart", text: "Kies antwoorden en zie een educatieve verzorgingsrichting.", ageLabel: "Leeftijd / huidfase", problemLabel: "Belangrijkste probleem", rhythmLabel: "Verzorgingsritme", ageOptions: ["20–29", "30–39", "40–49", "50+", "60+"], problemOptions: ["Droogte en vermoeidheid", "Poriën en onzuiverheden", "Eerste lijntjes", "Minder stevigheid"], rhythmOptions: ["Eerste bezoek", "Af en toe", "Ik wil regelmaat"], results: { glow: "Goede start: reiniging, hydratatie en glow. Start met Glow Effect of Stralende Huid.", premium: "Premium richting: ampul, masker en werken aan huidkwaliteit. Bekijk Ampul Glow of Ampul Lifting.", micro: "Regeneratierichting: bij vaste veranderingen of structuurwerk kan microneedling besproken worden.", membership: "Regelmaat kan het meeste zin hebben: een programma of serie in plaats van losse bezoeken om de paar maanden." } }, ageTitle: "Wanneer beginnen?", ageLead: "Het gaat niet om angst voor leeftijd, maar om niet wachten tot de huid al intensieve opbouw nodig heeft.", ageGuide: [{ age: "20+", title: "Preventie en schone huid", text: "Leer de huid regelmaat: reiniging, hydratatie, SPF en zachte glow-behandelingen." }, { age: "30+", title: "Eerste tekenen van vertraging", text: "De huid heeft vaker ondersteuning nodig bij hydratatie, elasticiteit, glow en herstel na stress." }, { age: "40+", title: "Regeneratie en huidkwaliteit", text: "Series, ampullen, liftingbehandelingen en zorgvuldig gekozen microneedling worden belangrijker." }, { age: "50+", title: "Diepere ondersteuning en regelmaat", text: "De huid verliest meestal meer stevigheid, hydratatie en vernieuwingssnelheid. Een rustige serie-aanpak kan regeneratie, ampullen, liftingverzorging en een passende thuisroutine ondersteunen." }, { age: "60+", title: "Comfort, voeding en huidkwaliteit", text: "De prioriteit is zachte maar consequente ondersteuning: hydratatie, voeding, huidcomfort en veilige behandelingen gekozen na beoordeling van de huidreactiviteit." }], topicsTitle: "Wat is goed om te weten over huid?", topics: [{ title: "Waarom is één behandeling niet altijd genoeg?", text: "Omdat de huid via een proces vernieuwt. Eén ritueel kan verfrissen, maar een serie ondersteunt een dieper en langer effect." }, { title: "Waarom komen poriën en doffe teint terug?", text: "Vaak gaat het om reinigingsritme, dode huidcellen, droogte of verzorging die niet bij de huid past." }, { title: "Waarom eerder starten?", text: "Het is makkelijker goede huidkwaliteit te behouden dan later vaste veranderingen intensief te corrigeren." }], safety: ["We doen geen agressieve behandelingen zonder de huid te beoordelen en contra-indicaties te bespreken.", "Bij zeer gevoelige huid, actieve ontsteking of verse irritatie kiezen we een zachter ritueel.", "Na regeneratieve behandelingen zijn nazorg en huidbescherming belangrijk."] },
     memberships: { eyebrow: "Verzorgingsprogramma's", title: "Regelmaat die resultaat opbouwt", lead: "Programma's zijn voor klanten die hun huid regelmatig willen verzorgen in plaats van pas terug te komen wanneer het probleem al zichtbaar is.", items: membershipsNL },
-    contact: { eyebrow: "Contact", title: "Maak een afspraak of vraag naar verzorging", lead: "Stuur ons een bericht via Instagram of e-mail. We helpen je een behandeling, afspraak of goede eerste stap voor je huid, handen of voeten te kiezen.", mainTitle: "Het makkelijkst: stuur een privébericht", mainText: "Beschrijf kort wat je nodig hebt: gezichtsbehandeling, nagels, pedicure, waxing, verzorgingsprogramma of huidconsult. We antwoorden en helpen de juiste richting kiezen.", instagramButton: "Open Instagram", emailButton: "Stuur e-mail", cards: [{ icon: "✦", title: "Instagram", text: "De makkelijkste plek voor afspraken, vragen en het bekijken van actueel salonwerk.", type: "instagram" }, { icon: "✉", title: "E-mail", text: "Voor langere vragen, samenwerking of rustig de details van je bezoek afstemmen.", type: "email" }, { icon: "♡", title: "Afspraken", text: "Schrijf welke dienst je interesseert, wanneer je beschikbaar bent en of dit je eerste bezoek aan ElviGlow is.", type: "booking" }, { icon: "☾", title: "Voor je bezoek", text: "Bij huidbehandelingen is het handig om irritatie, actieve huidveranderingen, recente behandelingen of zeer gevoelige huid te noemen.", type: "care" }], beforeVisitTitle: "Wat schrijf je in je bericht?", beforeVisit: ["Welk onderwerp je interesseert: gezicht, nagels, pedicure, waxing, microneedling of verzorgingsprogramma.", "Welk effect je wilt: reiniging, glow, regeneratie, frisse handen of langdurige styling.", "Wanneer je ongeveer beschikbaar bent voor een afspraak.", "Als je huid gevoelig of problematisch is, beschrijf kort wat er nu op je gezicht gebeurt."], disclaimer: "De inhoud op deze website is educatief en cosmetisch. Het vervangt geen medische of dermatologische consultatie." },
+    contact: { eyebrow: "Contact", title: "Maak een afspraak of vraag naar verzorging", lead: "Stuur ons een bericht via Instagram of e-mail. We helpen je een behandeling, afspraak of goede eerste stap voor je huid, handen of voeten te kiezen.", mainTitle: "Het makkelijkst: stuur een privébericht", mainText: "Beschrijf kort wat je nodig hebt: gezichtsbehandeling, nagels, pedicure, waxing, lichaamsbehandeling, verzorgingsprogramma of huidconsult. We antwoorden en helpen de juiste richting kiezen.", instagramButton: "Open Instagram", emailButton: "Stuur e-mail", cards: [{ icon: "✦", title: "Instagram", text: "De makkelijkste plek voor afspraken, vragen en het bekijken van actueel salonwerk.", type: "instagram" }, { icon: "✉", title: "E-mail", text: "Voor langere vragen, samenwerking of rustig de details van je bezoek afstemmen.", type: "email" }, { icon: "♡", title: "Afspraken", text: "Schrijf welke dienst je interesseert, wanneer je beschikbaar bent en of dit je eerste bezoek aan ElviGlow is.", type: "booking" }, { icon: "☾", title: "Voor je bezoek", text: "Bij huidbehandelingen is het handig om irritatie, actieve huidveranderingen, recente behandelingen of zeer gevoelige huid te noemen.", type: "care" }], beforeVisitTitle: "Wat schrijf je in je bericht?", beforeVisit: ["Welk onderwerp je interesseert: gezicht, nagels, pedicure, waxing, microneedling of verzorgingsprogramma.", "Welk effect je wilt: reiniging, glow, regeneratie, frisse handen of langdurige styling.", "Wanneer je ongeveer beschikbaar bent voor een afspraak.", "Als je huid gevoelig of problematisch is, beschrijf kort wat er nu op je gezicht gebeurt."], disclaimer: "De inhoud op deze website is educatief en cosmetisch. Het vervangt geen medische of dermatologische consultatie." },
     cta: { title: "Weet je niet waar je moet beginnen?", text: "Ga naar de Huidacademie of bekijk de prijslijst. Eerst begrijpen we de huidbehoefte, daarna kiezen we het ritueel.", primary: "Huidacademie", secondary: "Contact" },
   },
 };
