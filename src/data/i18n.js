@@ -327,7 +327,7 @@ const waxingPL = {
     },
     {
       title: "Ciało",
-      text: "Najczęściej wybierane partie ciała: pachy, przedramiona, nogi i plecy — bez rozbudowywania oferty o dodatkowe obszary.",
+      text: "Najczęściej wybierane partie ciała: pachy, przedramiona, łydki, całe nogi i plecy.",
       items: ["Pachy", "Przedramiona", "Łydki", "Całe nogi", "Plecy"],
     },
     {
@@ -365,7 +365,7 @@ const waxingEN = {
     },
     {
       title: "Body",
-      text: "The most commonly chosen body areas: underarms, forearms, lower legs, full legs and back — without adding extra areas to the offer.",
+      text: "The available body areas: underarms, forearms, lower legs, full legs and back.",
       items: ["Underarms", "Forearms", "Lower legs", "Full legs", "Back"],
     },
     {
@@ -403,7 +403,7 @@ const waxingNL = {
     },
     {
       title: "Lichaam",
-      text: "De meest gekozen lichaamszones: oksels, onderarmen, onderbenen, hele benen en rug — zonder extra zones aan de aanbieding toe te voegen.",
+      text: "De beschikbare lichaamszones: oksels, onderarmen, onderbenen, hele benen en rug.",
       items: ["Oksels", "Onderarmen", "Onderbenen", "Hele benen", "Rug"],
     },
     {
