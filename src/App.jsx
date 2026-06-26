@@ -1,90 +1,34 @@
 const treatments = [
   {
-    category: "Pakiety zabiegowe",
+    category: "Oczyszczenie i świeży wygląd skóry",
     icon: "🌸",
     items: [
-      {
-        name: "Pakiet Startowy „Efekt Glow”",
-        price: "69 €",
-        details: ["Oczyszczanie skóry", "Peeling kawitacyjny", "Maska nawilżająca"],
-        effect: "Oczyszczona, nawilżona i promienna cera już po pierwszej wizycie.",
-        passes: "Karnet 3: 195 € | Karnet 5: 315 €",
-      },
-      {
-        name: "Pakiet „Promienna Cera”",
-        price: "89 €",
-        details: ["Oczyszczanie porów", "Peeling kawitacyjny", "Infuzja tlenowa z ampułką"],
-        effect: "Gładka, czysta i rozświetlona skóra.",
-        passes: "Karnet 3: 255 € | Karnet 5: 405 €",
-      },
-      {
-        name: "Pakiet „Liftingująca Pielęgnacja”",
-        price: "99 €",
-        details: ["Oczyszczanie", "Wprowadzanie serum ultradźwiękami", "Masaż chłodzący", "Maska liftingująca"],
-        effect: "Nawilżenie, napięcie skóry i świeższy wygląd twarzy.",
-        passes: "Karnet 3: 285 € | Karnet 5: 450 €",
-      },
-      {
-        name: "Pakiet Duet „Przyjaciółka”",
-        price: "129 €",
-        details: ["Pielęgnacja dla 2 osób", "Maska dobrana do typu skóry", "Relaksujący masaż twarzy"],
-        effect: "Wspólny rytuał pielęgnacyjny i chwila relaksu.",
-        passes: "Karnet 3: 369 € | Karnet 5: 595 €",
-      },
+      { name: "Oxybrazja", price: "59 €", details: ["Oczyszczenie skóry", "Delikatne złuszczanie wodno-tlenowe", "Ukojenie i wykończenie pielęgnacyjne"], effect: "Delikatne odświeżenie, wygładzenie i oczyszczenie skóry bez mocnego podrażnienia.", passes: "" },
+      { name: "Zabieg odświeżający z maską", price: "59 €", details: ["Oczyszczenie skóry", "Maska dobrana do potrzeb skóry", "Spokojne wykończenie zabiegu"], effect: "Dla skóry zmęczonej, suchej, poszarzałej lub potrzebującej lekkiego nawilżenia i ukojenia.", passes: "" },
+      { name: "Oczyszczanie Glow", price: "69 €", details: ["Oczyszczanie skóry", "Praca nad porami i nierówną strukturą", "Maska lub wykończenie dobrane do skóry"], effect: "Dla skóry zanieczyszczonej, z rozszerzonymi porami, nierówną strukturą lub brakiem świeżości.", passes: "" },
+      { name: "Oczyszczanie + oxybrazja", price: "79 €", details: ["Oczyszczanie skóry", "Oxybrazja", "Maska lub ukojenie po zabiegu"], effect: "Połączenie oczyszczenia i delikatnego złuszczenia dla gładszej, świeższej skóry.", passes: "" },
     ],
   },
   {
-    category: "Zabiegi Premium z ampułką",
+    category: "Nawilżenie, ampułki i lifting",
     icon: "💎",
     items: [
-      {
-        name: "Pakiet „Ampułka”",
-        price: "109 €",
-        details: ["Oczyszczanie", "Ampułka dobrana do potrzeb skóry", "Masaż chłodzący"],
-        effect: "Intensywne odżywienie i naturalny blask skóry.",
-        passes: "Karnet 3: 315 € | Karnet 5: 495 €",
-      },
-      {
-        name: "Pakiet „Ampułka Lifting”",
-        price: "129 €",
-        details: ["Oczyszczanie", "Ampułka liftingująca wprowadzana ultradźwiękami", "Maska liftingująca"],
-        effect: "Poprawa napięcia skóry i świeższy wygląd twarzy.",
-        passes: "Karnet 3: 375 € | Karnet 5: 585 €",
-      },
+      { name: "Pielęgnacja z ampułką", price: "79 €", details: ["Oczyszczenie skóry", "Ampułka dobrana do aktualnych potrzeb", "Pielęgnacyjne wykończenie zabiegu"], effect: "Ampułka dobierana do potrzeb skóry: nawilżenie, ukojenie, rozświetlenie lub regeneracja.", passes: "" },
+      { name: "Glow Therapy z ampułką i maską", price: "89 €", details: ["Oczyszczenie skóry", "Ampułka dobrana do potrzeb skóry", "Maska pielęgnacyjna"], effect: "Dla skóry suchej, szarej, zmęczonej lub pozbawionej blasku.", passes: "" },
+      { name: "Intensywne nawilżenie skóry", price: "89 €", details: ["Oczyszczenie skóry", "Pielęgnacja nawilżająca", "Maska lub wykończenie dobrane do skóry"], effect: "Dla skóry napiętej, odwodnionej, przesuszonej lub osłabionej.", passes: "" },
+      { name: "Pielęgnacja liftingująca", price: "95 €", details: ["Oczyszczenie skóry", "Pielęgnacja wspierająca napięcie", "Maska liftingująca"], effect: "Dla skóry, która traci jędrność, wygląda na zmęczoną lub potrzebuje poprawy napięcia.", passes: "" },
+      { name: "Pielęgnacja liftingująca z ampułką", price: "109 €", details: ["Oczyszczenie skóry", "Ampułka liftingująca", "Maska liftingująca"], effect: "Mocniejszy zabieg pielęgnacyjny z dodatkowym wsparciem składników aktywnych.", passes: "" },
+      { name: "Anti-Aging Glow Treatment", price: "119 €", details: ["Oczyszczenie skóry", "Pielęgnacja anti-aging", "Ampułka lub maska dobrana do skóry"], effect: "Dla skóry dojrzałej, zmęczonej, z utratą jędrności, drobnymi zmarszczkami lub nierównym kolorytem.", passes: "" },
     ],
   },
   {
     category: "Microneedling",
     icon: "✨",
     items: [
-      {
-        name: "Microneedling twarz",
-        price: "109 €",
-        details: ["Przygotowanie skóry do zabiegu", "Microneedling z ampułką", "Maska łagodząca"],
-        effect: "Regeneracja skóry, wygładzenie, rozświetlenie i poprawa struktury.",
-        passes: "Karnet 3: 299 € | Karnet 4: 389 € | Karnet 6: 549 €",
-      },
-      {
-        name: "Microneedling twarz + szyja",
-        price: "129 €",
-        details: ["Przygotowanie skóry do zabiegu", "Microneedling z ampułką", "Maska łagodząca"],
-        effect: "Intensywniejsza regeneracja i poprawa jakości skóry.",
-        passes: "Karnet 3: 355 € | Karnet 4: 465 € | Karnet 6: 655 €",
-      },
-      {
-        name: "Microneedling twarz + szyja + dekolt",
-        price: "149 €",
-        details: ["Przygotowanie skóry do zabiegu", "Microneedling z ampułką", "Maska łagodząca"],
-        effect: "Głębsza regeneracja i poprawa jakości skóry na większym obszarze.",
-        passes: "Karnet 3: 419 € | Karnet 4: 539 € | Karnet 6: 759 €",
-      },
-      {
-        name: "Microneedling Anti-aging",
-        price: "159 €",
-        details: ["Oczyszczanie i przygotowanie skóry", "Microneedling z ampułką przeciwstarzeniową", "Maska anti-aging"],
-        effect: "Zagęszczenie skóry, poprawa elastyczności i redukcja oznak starzenia.",
-        passes: "Karnet 3: 455 € | Karnet 4: 579 € | Karnet 6: 819 €",
-      },
+      { name: "Microneedling — twarz", price: "99 €", details: ["Przygotowanie skóry", "Microneedling z ampułką", "Maska łagodząca"], effect: "Regeneracja skóry, wygładzenie, rozświetlenie i poprawa struktury.", passes: "Pakiet 3 zabiegów: 279 € | Pakiet 5 zabiegów: 449 €" },
+      { name: "Microneedling — twarz + szyja", price: "119 €", details: ["Przygotowanie skóry", "Microneedling twarzy i szyi z ampułką", "Maska łagodząca"], effect: "Intensywniejsza regeneracja i poprawa jakości skóry na twarzy oraz szyi.", passes: "Pakiet 3 zabiegów: 339 € | Pakiet 5 zabiegów: 549 €" },
+      { name: "Microneedling — twarz + szyja + dekolt", price: "139 €", details: ["Przygotowanie skóry", "Microneedling twarzy, szyi i dekoltu z ampułką", "Maska łagodząca"], effect: "Głębsza regeneracja i poprawa jakości skóry na większym obszarze.", passes: "Pakiet 3 zabiegów: 399 € | Pakiet 5 zabiegów: 649 €" },
+      { name: "Microneedling Anti-Aging / Regeneration", price: "149 €", details: ["Oczyszczenie i przygotowanie skóry", "Microneedling z ampułką regenerującą", "Maska łagodząca"], effect: "Zagęszczenie skóry, poprawa elastyczności i redukcja oznak starzenia.", passes: "Pakiet 3 zabiegów: 429 € | Pakiet 5 zabiegów: 699 €" },
     ],
   },
 ];
@@ -114,7 +58,7 @@ const benefits = [
   "Indywidualne dobranie zabiegu do potrzeb skóry",
   "Rytuał relaksu, pielęgnacji i blasku",
   "Pakiety dla jednej osoby i dla dwóch osób",
-  "Karnety oraz abonamenty dla regularnej pielęgnacji",
+  "Pakiety microneedlingu i programy regularnej pielęgnacji",
 ];
 
 const faqs = [
@@ -123,8 +67,8 @@ const faqs = [
     a: "Dla osób, które chcą zadbać o oczyszczenie, nawilżenie, rozświetlenie i świeższy wygląd skóry. Dobór zabiegu najlepiej ustalić po krótkiej konsultacji.",
   },
   {
-    q: "Czy można kupić karnet?",
-    a: "Tak. Wybrane zabiegi mają karnety 3, 4, 5 lub 6 wizyt. To dobra opcja, gdy chcesz pielęgnować skórę regularnie i korzystniej cenowo.",
+    q: "Czy są dostępne pakiety?",
+    a: "Tak. Pakiety są dostępne przy microneedlingu, a dermomasaż i kriolipoliza zostają z dotychczasowymi pakietami. Dobór serii najlepiej potwierdzić po konsultacji.",
   },
   {
     q: "Czy jest opcja dla dwóch osób?",
@@ -231,9 +175,9 @@ function App() {
       <section className="section treatments" id="zabiegi">
         <div className="section-heading center">
           <p className="eyebrow">Oferta</p>
-          <h2>Pakiety zabiegowe ElviGlow</h2>
+          <h2>Zabiegi twarzy ElviGlow</h2>
           <p>
-            Wybierz delikatny rytuał glow, zabieg premium z ampułką albo intensywniejszą regenerację
+            Wybierz delikatne odświeżenie, pielęgnację z ampułką albo intensywniejszą regenerację
             w formie microneedlingu.
           </p>
         </div>
