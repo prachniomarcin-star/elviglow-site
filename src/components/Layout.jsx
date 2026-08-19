@@ -38,7 +38,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
       <header className="topbar">
         <div className="brand-row">
           <RouterLink href="/" className="brand" onNavigate={handleNavigate} aria-label="ElviGlow home">
-            <img src="/elviglow-logo.png" alt="ElviGlow" />
+            <img src="/elviglow-logo.webp" alt="ElviGlow" />
             <span>
               <strong>ElviGlow</strong>
               <small>{t.home.cardSubtitle}</small>
@@ -140,13 +140,32 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
 
       {children}
 
-      <footer className="footer footer-minimal">
-        <div>
-          <img src="/elviglow-logo.png" alt="ElviGlow" />
-          <strong>ElviGlow</strong>
-          <p>{t.home.cardSubtitle}</p>
+      <footer className="footer footer-premium">
+        <div className="footer-brand">
+          <img src="/elviglow-logo.webp" alt="ElviGlow" />
+          <div>
+            <strong>ElviGlow</strong>
+            <p>{t.home.cardSubtitle}</p>
+            <small>Deventer • Skin • Beauty • Care</small>
+          </div>
+        </div>
+        <div className="footer-links">
+          <RouterLink href="/zabiegi" onNavigate={handleNavigate}>{t.nav.treatments}</RouterLink>
+          <RouterLink href="/akademia-skory" onNavigate={handleNavigate}>{t.nav.academy}</RouterLink>
+          <RouterLink href="/cennik" onNavigate={handleNavigate}>{t.nav.pricing}</RouterLink>
+          <RouterLink href="/kontakt" onNavigate={handleNavigate}>{t.nav.contact}</RouterLink>
+          <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </footer>
+
+      <div className="mobile-booking-bar" aria-label="Quick actions">
+        <RouterLink href="/akademia-skory" className="mobile-booking-secondary" onNavigate={handleNavigate}>
+          {t.nav.academy}
+        </RouterLink>
+        <RouterLink href="/kontakt" className="mobile-booking-primary" onNavigate={handleNavigate}>
+          {t.nav.book}
+        </RouterLink>
+      </div>
     </div>
   );
 }

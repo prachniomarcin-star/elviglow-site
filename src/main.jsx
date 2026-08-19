@@ -9,6 +9,126 @@ import "./index.css";
 
 const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/depilacja", "/cialo", "/wiedza", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
 
+const BASE_URL = "https://elviglow-site.vercel.app";
+
+const homeExperience = {
+  pl: {
+    eyebrow: "Huidverbetering • Deventer",
+    title: "Zacznij od skóry. Nie od nazwy zabiegu.",
+    lead: "Suchość, rozszerzone pory, szary koloryt, utrata jędrności? W ElviGlow najpierw patrzymy na problem i potrzeby skóry, a dopiero potem dobieramy zabieg oraz rytm pielęgnacji.",
+    primary: "Dobierz kierunek pielęgnacji",
+    secondary: "Zobacz zabiegi",
+    trust: ["Deventer", "Dobór do aktualnego stanu skóry", "Spokojna konsultacja bez presji"],
+    visualKicker: "SKIN FIRST",
+    visualTitle: "Nie musisz wiedzieć, czy potrzebujesz oxybrazji, ampułki czy microneedlingu.",
+    visualText: "Wystarczy, że wiesz, co przeszkadza Ci w wyglądzie skóry. Resztę układamy krok po kroku.",
+    visualProblems: ["suchość", "pory", "brak glow", "zmarszczki", "jędrność"],
+    problemEyebrow: "Zacznij od problemu",
+    problemTitle: "Co najbardziej przeszkadza Ci w skórze?",
+    problemLead: "Nie wybieraj zabiegu po nazwie. Wybierz objaw, który widzisz — a Akademia skóry pokaże Ci spokojny kierunek działania.",
+    problems: [
+      ["Suchość i napięcie", "Skóra szybko traci komfort, wygląda na cienką lub zmęczoną.", "Nawilżenie i bariera"],
+      ["Pory i nierówna struktura", "Makijaż podkreśla strukturę, a skóra szybko traci świeżość.", "Oczyszczenie i wygładzenie"],
+      ["Szary, zmęczony koloryt", "Pielęgnujesz skórę, ale nadal brakuje jej świeżości i światła.", "Glow i odżywienie"],
+      ["Utrata jędrności", "Owal i napięcie skóry nie wyglądają już tak jak wcześniej.", "Lifting i regeneracja"],
+      ["Pierwsze lub utrwalone zmarszczki", "Chcesz działać świadomie, zanim zmiany staną się mocniej widoczne.", "Anti-aging i plan serii"],
+    ],
+    pathEyebrow: "Jak pracujemy",
+    pathTitle: "Problem → mechanizm → plan",
+    pathLead: "ElviGlow nie ma być katalogiem przypadkowych usług. Ma pomóc Ci zrozumieć skórę i wybrać najmądrzejszy następny krok.",
+    path: [
+      ["01", "Widzimy objaw", "Najpierw to, co naprawdę widzisz i czujesz na skórze."],
+      ["02", "Wyjaśniamy kierunek", "Bez obietnic cudów — tłumaczymy, czego skóra może potrzebować."],
+      ["03", "Dobieramy rytm", "Pojedynczy zabieg, seria albo regularna pielęgnacja — zależnie od celu."],
+    ],
+    academyCta: "Sprawdź mini mapę skóry",
+  },
+  en: {
+    eyebrow: "Skin improvement • Deventer",
+    title: "Start with your skin. Not a treatment name.",
+    lead: "Dryness, visible pores, dull tone or loss of firmness? At ElviGlow we first look at the skin concern and its current needs, then choose the treatment and care rhythm.",
+    primary: "Find your care direction",
+    secondary: "See treatments",
+    trust: ["Deventer", "Care matched to current skin needs", "Calm consultation without pressure"],
+    visualKicker: "SKIN FIRST",
+    visualTitle: "You do not need to know whether you need oxybrasion, an ampoule or microneedling.",
+    visualText: "It is enough to know what bothers you about your skin. We build the rest step by step.",
+    visualProblems: ["dryness", "pores", "dullness", "lines", "firmness"],
+    problemEyebrow: "Start with the concern",
+    problemTitle: "What bothers you most about your skin?",
+    problemLead: "Do not choose by treatment name. Choose the concern you see — the Skin Academy will show you a calm direction forward.",
+    problems: [
+      ["Dryness and tightness", "Skin quickly loses comfort and can look thin or tired.", "Hydration and barrier"],
+      ["Pores and uneven texture", "Make-up highlights texture and the skin quickly loses freshness.", "Cleansing and smoothing"],
+      ["Dull, tired tone", "You care for your skin, yet it still lacks freshness and light.", "Glow and nourishment"],
+      ["Loss of firmness", "The facial contour and skin tension no longer look the way they used to.", "Lifting and regeneration"],
+      ["First or established lines", "You want to act consciously before changes become more visible.", "Anti-aging and series plan"],
+    ],
+    pathEyebrow: "How we work",
+    pathTitle: "Concern → mechanism → plan",
+    pathLead: "ElviGlow should not feel like a random service catalogue. It should help you understand your skin and choose the smartest next step.",
+    path: [
+      ["01", "We see the concern", "We start with what you actually see and feel on your skin."],
+      ["02", "We explain the direction", "No miracle promises — we explain what the skin may need."],
+      ["03", "We choose the rhythm", "One treatment, a series or regular care depending on the goal."],
+    ],
+    academyCta: "Open the mini skin map",
+  },
+  nl: {
+    eyebrow: "Huidverbetering • Deventer",
+    title: "Begin bij je huid. Niet bij de naam van een behandeling.",
+    lead: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? Bij ElviGlow kijken we eerst naar het huidprobleem en de actuele behoefte. Daarna kiezen we de behandeling en het juiste verzorgingsritme.",
+    primary: "Vind jouw verzorgingsrichting",
+    secondary: "Bekijk behandelingen",
+    trust: ["Deventer", "Afgestemd op de actuele huidconditie", "Rustig advies zonder druk"],
+    visualKicker: "SKIN FIRST",
+    visualTitle: "Je hoeft niet te weten of je oxybrasie, een ampul of microneedling nodig hebt.",
+    visualText: "Het is genoeg dat je weet wat je aan je huid stoort. De rest bouwen we stap voor stap op.",
+    visualProblems: ["droogte", "poriën", "dofheid", "lijntjes", "stevigheid"],
+    problemEyebrow: "Begin bij het probleem",
+    problemTitle: "Wat stoort je het meest aan je huid?",
+    problemLead: "Kies niet op basis van een behandelnaam. Kies wat je ziet — de Huidacademie laat daarna een rustige richting zien.",
+    problems: [
+      ["Droogte en trekkerigheid", "De huid verliest snel comfort en kan dun of vermoeid ogen.", "Hydratatie en huidbarrière"],
+      ["Poriën en ongelijke structuur", "Make-up benadrukt de structuur en de huid verliest snel frisheid.", "Reiniging en gladheid"],
+      ["Doffe, vermoeide teint", "Je verzorgt je huid, maar toch ontbreekt frisheid en glow.", "Glow en voeding"],
+      ["Minder stevigheid", "De gezichtscontour en spanning van de huid zijn veranderd.", "Lifting en regeneratie"],
+      ["Eerste of zichtbare lijntjes", "Je wilt bewust handelen voordat veranderingen sterker zichtbaar worden.", "Anti-aging en behandelplan"],
+    ],
+    pathEyebrow: "Zo werken we",
+    pathTitle: "Probleem → mechanisme → plan",
+    pathLead: "ElviGlow is geen willekeurige lijst behandelingen. We helpen je de huid te begrijpen en de slimste volgende stap te kiezen.",
+    path: [
+      ["01", "We zien het probleem", "We beginnen met wat je echt ziet en voelt aan je huid."],
+      ["02", "We leggen de richting uit", "Geen wonderbeloftes — we leggen uit wat de huid mogelijk nodig heeft."],
+      ["03", "We kiezen het ritme", "Eén behandeling, een kuur of regelmatige verzorging — afhankelijk van je doel."],
+    ],
+    academyCta: "Open de mini huidkaart",
+  },
+};
+
+const contactLocationCopy = {
+  pl: { title: "Deventer", text: "Salon działa w Deventer. Dokładne szczegóły wizyty i lokalizacji potwierdzamy przy rezerwacji." },
+  en: { title: "Deventer", text: "The salon operates in Deventer. Exact visit and location details are confirmed when booking." },
+  nl: { title: "Deventer", text: "De salon is in Deventer. De exacte bezoek- en locatiegegevens bevestigen we bij de afspraak." },
+};
+
+const seoByPath = {
+  "/": {
+    title: "ElviGlow Deventer | Huidverbetering, microneedling & beauty",
+    description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen. Kies eerst op huidbehoefte, daarna op behandeling.",
+  },
+  "/zabiegi": { title: "Gezichtsbehandelingen Deventer | ElviGlow", description: "Gezichtsbehandelingen in Deventer: reiniging, oxybrasie, ampullen, lifting care en microneedling afgestemd op de actuele huidconditie." },
+  "/paznokcie": { title: "Nagels & BIAB Deventer | ElviGlow", description: "Manicure, BIAB, gel en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
+  "/depilacja": { title: "Lycon waxing Deventer | ElviGlow", description: "Lycon waxing voor vrouwen in Deventer: precieze en grotere zones met aandacht voor comfort en huidreactie." },
+  "/cialo": { title: "Lichaamsbehandelingen Deventer | ElviGlow", description: "Vacuum dermomassage en cryolipolyse in Deventer. Heldere uitleg, eenvoudige pakketten en één gekozen zone per cryolipolysebezoek." },
+  "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
+  "/akademia-skory": { title: "Huidacademie & mini huidkaart | ElviGlow", description: "Leer je huid beter begrijpen met de ElviGlow Huidacademie en mini huidkaart: probleem, mechanisme, doel en verzorgingsrichting." },
+  "/cennik": { title: "Prijslijst ElviGlow Deventer", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
+  "/abonamenty": { title: "Verzorgingsprogramma's | ElviGlow Deventer", description: "Regelmatige huidverzorgingsprogramma's voor klanten die liever met een plan werken dan met losse, toevallige behandelingen." },
+  "/kontakt": { title: "Contact & afspraak | ElviGlow Deventer", description: "Neem contact op met ElviGlow in Deventer voor een afspraak, huidbehandeling, microneedling, nagels, waxing of lichaamsbehandeling." },
+};
+
 function normalizePath(pathname) {
   const clean = pathname.replace(/\/$/, "") || "/";
   return allowedPaths.includes(clean) ? clean : "/";
@@ -27,32 +147,79 @@ function PageHero({ eyebrow, title, text, children }) {
   );
 }
 
-function HomePage({ onNavigate, t }) {
+function HomePage({ onNavigate, t, lang }) {
+  const x = homeExperience[lang] || homeExperience.nl;
+
   return (
     <>
-      <section className="home-hero">
+      <section className="home-hero home-hero-premium">
         <div className="hero-copy">
-          <p className="eyebrow">{t.home.eyebrow}</p>
-          <h1>{t.home.title}</h1>
-          <p className="lead">{t.home.lead}</p>
+          <p className="eyebrow">{x.eyebrow}</p>
+          <h1>{x.title}</h1>
+          <p className="lead">{x.lead}</p>
           <div className="hero-actions">
-            <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.common.seeTreatments}</button>
-            <button className="secondary-btn" onClick={() => onNavigate("/akademia-skory")}>{t.common.learnMore}</button>
+            <button className="primary-btn" onClick={() => onNavigate("/akademia-skory")}>{x.primary}</button>
+            <button className="secondary-btn" onClick={() => onNavigate("/zabiegi")}>{x.secondary}</button>
+          </div>
+          <div className="trust-row" aria-label="ElviGlow">
+            {x.trust.map((item) => <span key={item}>✦ {item}</span>)}
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="logo-card">
-            <img src="/elviglow-logo.png" alt="Logo ElviGlow" />
-          </div>
-          <div className="floating-note">
-            <span>{t.home.cardTitle}</span>
-            <p>{t.home.cardSubtitle}</p>
+        <div className="hero-visual skin-first-visual">
+          <div className="skin-focus-card">
+            <div className="skin-focus-head">
+              <span className="skin-focus-kicker">{x.visualKicker}</span>
+              <img src="/elviglow-logo.webp" alt="ElviGlow" />
+            </div>
+            <h2>{x.visualTitle}</h2>
+            <p>{x.visualText}</p>
+            <div className="skin-focus-chips">
+              {x.visualProblems.map((item) => <span key={item}>{item}</span>)}
+            </div>
+            <button className="skin-focus-link" onClick={() => onNavigate("/akademia-skory")}>
+              {x.academyCta} <span aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section className="section two-columns">
+      <section className="section problem-first-section">
+        <div className="section-heading center">
+          <p className="eyebrow">{x.problemEyebrow}</p>
+          <h2>{x.problemTitle}</h2>
+          <p>{x.problemLead}</p>
+        </div>
+        <div className="problem-grid">
+          {x.problems.map(([title, text, direction], index) => (
+            <button className="problem-card" key={title} onClick={() => onNavigate("/akademia-skory")}>
+              <span className="problem-number">0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <strong>{direction} <span aria-hidden="true">→</span></strong>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="section pathway-section">
+        <div className="pathway-copy">
+          <p className="eyebrow">{x.pathEyebrow}</p>
+          <h2>{x.pathTitle}</h2>
+          <p>{x.pathLead}</p>
+          <button className="secondary-btn" onClick={() => onNavigate("/wiedza")}>{t.nav.knowledge}</button>
+        </div>
+        <div className="pathway-list">
+          {x.path.map(([number, title, text]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <div><h3>{title}</h3><p>{text}</p></div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section two-columns philosophy-polish">
         <div>
           <p className="eyebrow">{t.home.philosophyEyebrow}</p>
           <h2>{t.home.philosophyTitle}</h2>
@@ -63,7 +230,7 @@ function HomePage({ onNavigate, t }) {
         </div>
       </section>
 
-      <section className="section card-grid-3">
+      <section className="section card-grid-3 pillar-polish">
         {t.home.pillars.map(([title, text]) => (
           <article className="glass-card" key={title}>
             <span className="card-mark">✦</span>
@@ -81,7 +248,7 @@ function HomePage({ onNavigate, t }) {
         </div>
         <div className="service-preview-grid">
           {t.home.serviceCards.map((card) => (
-            <article className="glass-card" key={card.title}>
+            <article className="glass-card service-preview-card" key={card.title}>
               <span className="card-mark">✦</span>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -90,6 +257,7 @@ function HomePage({ onNavigate, t }) {
         </div>
         <div className="hero-actions centered-actions">
           <button className="primary-btn" onClick={() => onNavigate("/zabiegi")}>{t.nav.treatments}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
         </div>
       </section>
 
@@ -652,7 +820,7 @@ function MembershipsPage({ t, onNavigate }) {
   );
 }
 
-function ContactPage({ t }) {
+function ContactPage({ t, lang }) {
   const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp";
 
   return (
@@ -671,6 +839,13 @@ function ContactPage({ t }) {
         </article>
 
         <div className="contact-info-grid">
+          <article className="contact-info-card">
+            <span>⌖</span>
+            <div>
+              <h3>{(contactLocationCopy[lang] || contactLocationCopy.nl).title}</h3>
+              <p>{(contactLocationCopy[lang] || contactLocationCopy.nl).text}</p>
+            </div>
+          </article>
           {t.contact.cards.map((card) => (
             <article className="contact-info-card" key={card.title}>
               <span>{card.icon}</span>
@@ -697,9 +872,18 @@ function ContactPage({ t }) {
   );
 }
 
+function getInitialLanguage() {
+  const saved = localStorage.getItem("elviglow-lang");
+  if (["pl", "en", "nl"].includes(saved)) return saved;
+  const browser = (navigator.language || "").toLowerCase();
+  if (browser.startsWith("pl")) return "pl";
+  if (browser.startsWith("nl")) return "nl";
+  return "en";
+}
+
 function App() {
   const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
-  const [lang, setLangState] = useState(() => localStorage.getItem("elviglow-lang") || "pl");
+  const [lang, setLangState] = useState(getInitialLanguage);
   const t = translations[lang] || translations.pl;
 
   function onNavigate(path) {
@@ -722,7 +906,36 @@ function App() {
     return () => window.removeEventListener("popstate", handlePop);
   }, [lang]);
 
-  let page = <HomePage onNavigate={onNavigate} t={t} />;
+  useEffect(() => {
+    const seo = seoByPath[currentPath] || seoByPath["/"];
+    document.title = seo.title;
+
+    const upsertMeta = (selector, attribute, value) => {
+      let node = document.head.querySelector(selector);
+      if (!node) {
+        node = document.createElement("meta");
+        const match = selector.match(/meta\[(name|property)="([^"]+)"\]/);
+        if (match) node.setAttribute(match[1], match[2]);
+        document.head.appendChild(node);
+      }
+      node.setAttribute(attribute, value);
+    };
+
+    upsertMeta('meta[name="description"]', "content", seo.description);
+    upsertMeta('meta[property="og:title"]', "content", seo.title);
+    upsertMeta('meta[property="og:description"]', "content", seo.description);
+    upsertMeta('meta[property="og:url"]', "content", `${BASE_URL}${currentPath === "/" ? "" : currentPath}`);
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${BASE_URL}${currentPath === "/" ? "" : currentPath}`;
+  }, [currentPath, lang]);
+
+  let page = <HomePage onNavigate={onNavigate} t={t} lang={lang} />;
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
@@ -731,7 +944,7 @@ function App() {
   if (currentPath === "/cennik") page = <PricingPage t={t} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/kontakt") page = <ContactPage t={t} />;
+  if (currentPath === "/kontakt") page = <ContactPage t={t} lang={lang} />;
 
   return (
     <Layout currentPath={currentPath} onNavigate={onNavigate} lang={lang} setLang={setLang} t={t}>
@@ -740,4 +953,6 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+const rootElement = document.getElementById("root");
+rootElement.replaceChildren();
+createRoot(rootElement).render(<App />);
