@@ -82,35 +82,27 @@ const offersPL = {
   microneedling: [
     {
       name: "Microneedling — twarz",
-      price: "99 €",
+      price: "89 €",
       tags: ["struktura skóry", "pory", "regeneracja"],
       includes: ["Przygotowanie skóry", "Microneedling z ampułką", "Maska łagodząca"],
       effect: "Dla skóry, która potrzebuje pracy nad strukturą, porami, regeneracją i bardziej równą powierzchnią.",
-      passes: "Pakiet 3 zabiegów: 279 € | Pakiet 5 zabiegów: 449 €",
+      passes: "Pakiet 3 zabiegów: 249 € | Pakiet 5 zabiegów: 399 €",
     },
     {
       name: "Microneedling — twarz + szyja",
-      price: "119 €",
+      price: "109 €",
       tags: ["twarz i szyja", "regeneracja", "napięcie"],
       includes: ["Przygotowanie skóry", "Microneedling twarzy i szyi z ampułką", "Maska łagodząca"],
       effect: "Intensywniejsza regeneracja i poprawa jakości skóry na twarzy oraz szyi.",
-      passes: "Pakiet 3 zabiegów: 339 € | Pakiet 5 zabiegów: 549 €",
+      passes: "Pakiet 3 zabiegów: 299 € | Pakiet 5 zabiegów: 479 €",
     },
     {
       name: "Microneedling — twarz + szyja + dekolt",
-      price: "139 €",
+      price: "129 €",
       tags: ["pełniejszy obszar", "regeneracja", "jakość skóry"],
       includes: ["Przygotowanie skóry", "Microneedling twarzy, szyi i dekoltu z ampułką", "Maska łagodząca"],
       effect: "Głębsza regeneracja i poprawa jakości skóry na większym obszarze.",
-      passes: "Pakiet 3 zabiegów: 399 € | Pakiet 5 zabiegów: 649 €",
-    },
-    {
-      name: "Microneedling Anti-Aging / Regeneration",
-      price: "149 €",
-      tags: ["anti-aging", "napięcie", "regeneracja"],
-      includes: ["Oczyszczenie i przygotowanie skóry", "Microneedling z ampułką regenerującą", "Maska łagodząca"],
-      effect: "Dla skóry dojrzałej lub wymagającej mocniejszej regeneracji, napięcia i wsparcia jakości skóry.",
-      passes: "Pakiet 3 zabiegów: 429 € | Pakiet 5 zabiegów: 699 €",
+      passes: "Pakiet 3 zabiegów: 349 € | Pakiet 5 zabiegów: 559 €",
     },
   ],
 };
@@ -193,35 +185,27 @@ const offersEN = {
   microneedling: [
     {
       name: "Microneedling — face",
-      price: "99 €",
+      price: "89 €",
       tags: ["skin texture", "pores", "regeneration"],
       includes: ["Skin preparation", "Microneedling with ampoule", "Soothing mask"],
       effect: "For skin that needs support with texture, pores, regeneration and a more even surface.",
-      passes: "Package of 3 treatments: 279 € | Package of 5 treatments: 449 €",
+      passes: "Package of 3 treatments: 249 € | Package of 5 treatments: 399 €",
     },
     {
       name: "Microneedling — face + neck",
-      price: "119 €",
+      price: "109 €",
       tags: ["face and neck", "regeneration", "firmness"],
       includes: ["Skin preparation", "Microneedling for face and neck with ampoule", "Soothing mask"],
       effect: "Stronger regeneration and support for skin quality on the face and neck.",
-      passes: "Package of 3 treatments: 339 € | Package of 5 treatments: 549 €",
+      passes: "Package of 3 treatments: 299 € | Package of 5 treatments: 479 €",
     },
     {
       name: "Microneedling — face + neck + décolleté",
-      price: "139 €",
+      price: "129 €",
       tags: ["larger area", "regeneration", "skin quality"],
       includes: ["Skin preparation", "Microneedling for face, neck and décolleté with ampoule", "Soothing mask"],
       effect: "Deeper regeneration and support for skin quality over a larger area.",
-      passes: "Package of 3 treatments: 399 € | Package of 5 treatments: 649 €",
-    },
-    {
-      name: "Microneedling Anti-Aging / Regeneration",
-      price: "149 €",
-      tags: ["anti-aging", "firmness", "regeneration"],
-      includes: ["Cleansing and skin preparation", "Microneedling with regenerative ampoule", "Soothing mask"],
-      effect: "For mature skin or skin that needs stronger support for regeneration, firmness and overall quality.",
-      passes: "Package of 3 treatments: 429 € | Package of 5 treatments: 699 €",
+      passes: "Package of 3 treatments: 349 € | Package of 5 treatments: 559 €",
     },
   ],
 };
@@ -304,35 +288,27 @@ const offersNL = {
   microneedling: [
     {
       name: "Microneedling — gezicht",
-      price: "99 €",
+      price: "89 €",
       tags: ["huidstructuur", "poriën", "regeneratie"],
       includes: ["Voorbereiding van de huid", "Microneedling met ampul", "Kalmerend masker"],
       effect: "Voor huid die ondersteuning nodig heeft bij structuur, poriën, regeneratie en een egaler oppervlak.",
-      passes: "Pakket 3 behandelingen: 279 € | Pakket 5 behandelingen: 449 €",
+      passes: "Pakket 3 behandelingen: 249 € | Pakket 5 behandelingen: 399 €",
     },
     {
       name: "Microneedling — gezicht + hals",
-      price: "119 €",
+      price: "109 €",
       tags: ["gezicht en hals", "regeneratie", "stevigheid"],
       includes: ["Voorbereiding van de huid", "Microneedling voor gezicht en hals met ampul", "Kalmerend masker"],
       effect: "Sterkere regeneratie en ondersteuning van huidkwaliteit op gezicht en hals.",
-      passes: "Pakket 3 behandelingen: 339 € | Pakket 5 behandelingen: 549 €",
+      passes: "Pakket 3 behandelingen: 299 € | Pakket 5 behandelingen: 479 €",
     },
     {
       name: "Microneedling — gezicht + hals + decolleté",
-      price: "139 €",
+      price: "129 €",
       tags: ["groter gebied", "regeneratie", "huidkwaliteit"],
       includes: ["Voorbereiding van de huid", "Microneedling voor gezicht, hals en decolleté met ampul", "Kalmerend masker"],
       effect: "Diepere regeneratie en ondersteuning van huidkwaliteit op een groter gebied.",
-      passes: "Pakket 3 behandelingen: 399 € | Pakket 5 behandelingen: 649 €",
-    },
-    {
-      name: "Microneedling Anti-Aging / Regeneratie",
-      price: "149 €",
-      tags: ["anti-aging", "stevigheid", "regeneratie"],
-      includes: ["Reiniging en huidvoorbereiding", "Microneedling met regenererende ampul", "Kalmerend masker"],
-      effect: "Voor rijpere huid of huid die meer ondersteuning nodig heeft voor regeneratie, stevigheid en huidkwaliteit.",
-      passes: "Pakket 3 behandelingen: 429 € | Pakket 5 behandelingen: 699 €",
+      passes: "Pakket 3 behandelingen: 349 € | Pakket 5 behandelingen: 559 €",
     },
   ],
 };
@@ -607,19 +583,19 @@ const bodyNL = {
 const membershipsPL = [
   { name: "Cera w Równowadze", price: "69 €/mies.", includes: ["1 zabieg oczyszczająco-nawilżający w miesiącu", "Podstawowe dopasowanie pielęgnacji do aktualnego stanu skóry", "Regularne utrzymanie skóry w dobrej kondycji"], effect: "Czystsza, świeższa i bardziej zadbana skóra bez przypadkowej pielęgnacji." },
   { name: "Glow Premium", price: "129 €/mies.", includes: ["2 wizyty miesięcznie", "Oczyszczanie skóry", "Zabieg glow, liftingujący albo regenerujący dobrany do potrzeb skóry", "Maseczka pielęgnacyjna do domu"], effect: "Systematyczne oczyszczenie, rozświetlenie i poprawa wyglądu cery." },
-  { name: "Regeneracja Pro", price: "239 €/mies.", includes: ["1 microneedling w miesiącu", "1 zabieg regenerujący z ampułką", "15% rabatu na dodatkowy zabieg", "Plan pracy ze skórą na kolejne wizyty"], effect: "Intensywna regeneracja, poprawa jakości skóry i mocniejsza praca nad jej strukturą." },
+  { name: "Regeneracja Pro", price: "149 €/mies.", includes: ["1 microneedling twarzy w cyklu, jeśli stan skóry na to pozwala", "1 zabieg regenerujący z ampułką", "10% rabatu na dodatkowy zabieg", "Plan pracy ze skórą na kolejne wizyty", "Microneedling w rytmie około 4–6 tygodni, po ocenie skóry"], effect: "Regularna regeneracja i praca nad jakością skóry w korzystniejszej cenie niż przy dwóch osobnych wizytach." },
 ];
 
 const membershipsEN = [
   { name: "Skin in Balance", price: "69 €/month", includes: ["1 cleansing and hydrating treatment per month", "Basic care matching to the current skin condition", "Regular maintenance of good skin condition"], effect: "Cleaner, fresher and better cared-for skin without random care choices." },
   { name: "Glow Premium", price: "129 €/month", includes: ["2 visits per month", "Skin cleansing", "A glow, lifting or regenerating treatment matched to the skin", "Care mask to take home"], effect: "Systematic cleansing, radiance and improvement in the look of the skin." },
-  { name: "Regeneration Pro", price: "239 €/month", includes: ["1 microneedling per month", "1 regenerating ampoule treatment", "15% discount on an additional treatment", "Skin plan for upcoming visits"], effect: "Intensive regeneration, support for skin quality and stronger work on texture." },
+  { name: "Regeneration Pro", price: "149 €/month", includes: ["1 face microneedling treatment per cycle when the skin condition allows it", "1 regenerating ampoule treatment", "10% discount on an additional treatment", "Skin plan for upcoming visits", "Microneedling scheduled roughly every 4–6 weeks after skin assessment"], effect: "Regular regeneration and work on skin quality at a better value than booking the two visits separately." },
 ];
 
 const membershipsNL = [
   { name: "Huid in Balans", price: "69 €/maand", includes: ["1 reinigende en hydraterende behandeling per maand", "Basis afstemming van verzorging op de actuele huidconditie", "Regelmatig behoud van een goede huidconditie"], effect: "Een schonere, frissere en beter verzorgde huid zonder toevallige verzorging." },
   { name: "Glow Premium", price: "129 €/maand", includes: ["2 bezoeken per maand", "Huidreiniging", "Een glow-, lifting- of regenererende behandeling afgestemd op de huid", "Verzorgingsmasker voor thuis"], effect: "Systematische reiniging, glow en verbetering van de uitstraling van de huid." },
-  { name: "Regeneratie Pro", price: "239 €/maand", includes: ["1 microneedling per maand", "1 regenererende behandeling met ampul", "15% korting op een extra behandeling", "Huidplan voor komende bezoeken"], effect: "Intensieve regeneratie, ondersteuning van huidkwaliteit en sterkere focus op structuur." },
+  { name: "Regeneratie Pro", price: "149 €/maand", includes: ["1 microneedling van het gezicht per cyclus als de huidconditie dit toelaat", "1 regenererende behandeling met ampul", "10% korting op een extra behandeling", "Huidplan voor komende bezoeken", "Microneedling ongeveer elke 4–6 weken, na beoordeling van de huid"], effect: "Regelmatige regeneratie en werken aan huidkwaliteit met meer voordeel dan twee losse bezoeken." },
 ];
 
 const treatmentGuidePL = [
