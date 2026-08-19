@@ -950,15 +950,35 @@ const bookingCopy = {
   },
 };
 
-const openingHours = [
-  ["Pon / Mon / Ma", "09:00–16:00"],
-  ["Wt / Tue / Di", "09:00–17:00"],
-  ["Śr / Wed / Wo", "09:00–16:00"],
-  ["Czw / Thu / Do", "09:00–17:00"],
-  ["Pt / Fri / Vr", "09:00–16:00"],
-  ["Sob / Sat / Za", "co druga / every other / om de week • 09:00–15:00"],
-  ["Niedz / Sun / Zo", "zamknięte / closed / gesloten"],
-];
+const openingHours = {
+  pl: [
+    ["Poniedziałek", "09:00–16:00"],
+    ["Wtorek", "09:00–17:00"],
+    ["Środa", "09:00–16:00"],
+    ["Czwartek", "09:00–17:00"],
+    ["Piątek", "09:00–16:00"],
+    ["Sobota", "co druga • 09:00–15:00"],
+    ["Niedziela", "nieczynne"],
+  ],
+  en: [
+    ["Monday", "09:00–16:00"],
+    ["Tuesday", "09:00–17:00"],
+    ["Wednesday", "09:00–16:00"],
+    ["Thursday", "09:00–17:00"],
+    ["Friday", "09:00–16:00"],
+    ["Saturday", "every other • 09:00–15:00"],
+    ["Sunday", "closed"],
+  ],
+  nl: [
+    ["Maandag", "09:00–16:00"],
+    ["Dinsdag", "09:00–17:00"],
+    ["Woensdag", "09:00–16:00"],
+    ["Donderdag", "09:00–17:00"],
+    ["Vrijdag", "09:00–16:00"],
+    ["Zaterdag", "om de week • 09:00–15:00"],
+    ["Zondag", "gesloten"],
+  ],
+};
 
 function ContactPage({ t, lang }) {
   const copy = bookingCopy[lang] || bookingCopy.nl;
@@ -1091,7 +1111,7 @@ function ContactPage({ t, lang }) {
             <h2>{copy.hoursTitle}</h2>
             <p>{copy.hoursLead}</p>
             <div className="booking-hours-list">
-              {openingHours.map(([day, hours]) => (
+              {(openingHours[lang] || openingHours.nl).map(([day, hours]) => (
                 <div key={day}><span>{day}</span><strong>{hours}</strong></div>
               ))}
             </div>
