@@ -27,8 +27,8 @@ const routes = {
   "/": {
     title: "ElviGlow Deventer | Huidverbetering, microneedling & beauty",
     description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen.",
-    h1: "Begin bij je huid. Niet bij de naam van een behandeling.",
-    intro: "Droogte, poriën, een doffe teint of minder stevigheid? Bij ElviGlow kijken we eerst naar het huidprobleem en de actuele behoefte. Daarna kiezen we een behandeling en verzorgingsritme.",
+    h1: "Ziet je huid er moe uit ondanks je dagelijkse verzorging?",
+    intro: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? We kijken eerst naar wat je huid werkelijk nodig heeft. Pas daarna kiezen we de behandeling en het verzorgingsplan.",
   },
   "/zabiegi": {
     title: "Gezichtsbehandelingen Deventer | ElviGlow",
