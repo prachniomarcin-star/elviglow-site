@@ -1,18 +1,15 @@
-ELVIGLOW V2 COMPACT PATCH
+ELVIGLOW V3 — INTUICYJNY HERO
 
-Podmien w repo elviglow-site tylko 3 pliki:
+Podmień tylko 2 pliki w repozytorium elviglow-site:
 1. src/main.jsx
 2. src/index.css
-3. scripts/postbuild-seo.mjs
-
-Potem wróć do GitHub Desktop. Nie commituj jeszcze, dopóki nie sprawdzisz listy zmian.
 
 Zmiany:
-- mniejsza typografia i bardziej premium skala,
-- niższy hero na desktopie,
-- CTA widoczne wcześniej,
-- krótszy, mocniejszy pierwszy komunikat,
-- prawa karta nie konkuruje już drugim wielkim nagłówkiem,
-- mniejsze karty i nagłówki w dalszych sekcjach,
-- kompaktowy navbar,
-- odpowiednie zmniejszenie również na mobile.
+- polska wersja: "Huidverbetering" -> "Pielęgnacja skóry"
+- tagi suchość/pory/brak glow/zmarszczki/jędrność są teraz prawdziwymi przyciskami
+- kliknięcie tagu przewija do odpowiedniej karty problemu niżej
+- link do Akademii skóry jest teraz normalnym, wyraźnym przyciskiem
+- zachowane obecne rozmiary i odstępy z V2
+- poprawki także dla EN/NL
+
+Po podmianie: commit na elviglow-premium-update i Push origin.

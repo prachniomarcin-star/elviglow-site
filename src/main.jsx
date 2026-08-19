@@ -13,7 +13,7 @@ const BASE_URL = "https://elviglow-site.vercel.app";
 
 const homeExperience = {
   pl: {
-    eyebrow: "Huidverbetering • Deventer",
+    eyebrow: "Pielęgnacja skóry • Deventer",
     title: "Twoja skóra wygląda na zmęczoną mimo pielęgnacji?",
     lead: "Suchość, rozszerzone pory, szary koloryt lub utrata jędrności? Najpierw sprawdzamy, czego potrzebuje Twoja skóra. Dopiero potem dobieramy zabieg i plan pielęgnacji.",
     primary: "Dobierz zabieg do skóry",
@@ -23,6 +23,7 @@ const homeExperience = {
     visualTitle: "Nie wybieraj zabiegu w ciemno.",
     visualText: "Wybierz to, co najbardziej przeszkadza Ci w skórze. Pokażemy Ci spokojny kierunek działania i dopiero wtedy dobierzemy zabieg.",
     visualProblems: ["suchość", "pory", "brak glow", "zmarszczki", "jędrność"],
+    visualPrompt: "Kliknij problem, który najbardziej pasuje:",
     problemEyebrow: "Zacznij od problemu",
     problemTitle: "Co najbardziej przeszkadza Ci w skórze?",
     problemLead: "Nie wybieraj zabiegu po nazwie. Wybierz objaw, który widzisz — a Akademia skóry pokaże Ci spokojny kierunek działania.",
@@ -41,7 +42,7 @@ const homeExperience = {
       ["02", "Wyjaśniamy kierunek", "Bez obietnic cudów — tłumaczymy, czego skóra może potrzebować."],
       ["03", "Dobieramy rytm", "Pojedynczy zabieg, seria albo regularna pielęgnacja — zależnie od celu."],
     ],
-    academyCta: "Sprawdź kierunek dla swojej skóry",
+    academyCta: "Przejdź do Akademii skóry",
   },
   en: {
     eyebrow: "Skin improvement • Deventer",
@@ -54,6 +55,7 @@ const homeExperience = {
     visualTitle: "Do not choose a treatment blindly.",
     visualText: "Choose what bothers you most about your skin. We show you a clear direction first and choose the treatment afterwards.",
     visualProblems: ["dryness", "pores", "dullness", "lines", "firmness"],
+    visualPrompt: "Choose the concern that fits best:",
     problemEyebrow: "Start with the concern",
     problemTitle: "What bothers you most about your skin?",
     problemLead: "Do not choose by treatment name. Choose the concern you see — the Skin Academy will show you a calm direction forward.",
@@ -72,7 +74,7 @@ const homeExperience = {
       ["02", "We explain the direction", "No miracle promises — we explain what the skin may need."],
       ["03", "We choose the rhythm", "One treatment, a series or regular care depending on the goal."],
     ],
-    academyCta: "Find a direction for my skin",
+    academyCta: "Go to the Skin Academy",
   },
   nl: {
     eyebrow: "Huidverbetering • Deventer",
@@ -85,6 +87,7 @@ const homeExperience = {
     visualTitle: "Kies je behandeling niet blind.",
     visualText: "Kies wat je het meest aan je huid stoort. Eerst krijg je een duidelijke richting; daarna kiezen we pas de behandeling.",
     visualProblems: ["droogte", "poriën", "dofheid", "lijntjes", "stevigheid"],
+    visualPrompt: "Kies wat het beste bij je huid past:",
     problemEyebrow: "Begin bij het probleem",
     problemTitle: "Wat stoort je het meest aan je huid?",
     problemLead: "Kies niet op basis van een behandelnaam. Kies wat je ziet — de Huidacademie laat daarna een rustige richting zien.",
@@ -103,7 +106,7 @@ const homeExperience = {
       ["02", "We leggen de richting uit", "Geen wonderbeloftes — we leggen uit wat de huid mogelijk nodig heeft."],
       ["03", "We kiezen het ritme", "Eén behandeling, een kuur of regelmatige verzorging — afhankelijk van je doel."],
     ],
-    academyCta: "Vind de richting voor mijn huid",
+    academyCta: "Ga naar de Huidacademie",
   },
 };
 
@@ -174,10 +177,20 @@ function HomePage({ onNavigate, t, lang }) {
             </div>
             <h2>{x.visualTitle}</h2>
             <p>{x.visualText}</p>
-            <div className="skin-focus-chips">
-              {x.visualProblems.map((item) => <span key={item}>{item}</span>)}
+            <p className="skin-focus-prompt">{x.visualPrompt}</p>
+            <div className="skin-focus-chips" aria-label={x.visualPrompt}>
+              {x.visualProblems.map((item, index) => (
+                <button
+                  type="button"
+                  className="skin-focus-chip"
+                  key={item}
+                  onClick={() => document.getElementById(`skin-problem-${index}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
-            <button className="skin-focus-link" onClick={() => onNavigate("/akademia-skory")}>
+            <button className="secondary-btn skin-focus-cta" onClick={() => onNavigate("/akademia-skory")}>
               {x.academyCta} <span aria-hidden="true">→</span>
             </button>
           </div>
@@ -192,7 +205,7 @@ function HomePage({ onNavigate, t, lang }) {
         </div>
         <div className="problem-grid">
           {x.problems.map(([title, text, direction], index) => (
-            <button className="problem-card" key={title} onClick={() => onNavigate("/akademia-skory")}>
+            <button id={`skin-problem-${index}`} className="problem-card" key={title} onClick={() => onNavigate("/akademia-skory")}>
               <span className="problem-number">0{index + 1}</span>
               <h3>{title}</h3>
               <p>{text}</p>
