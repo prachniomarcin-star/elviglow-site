@@ -833,44 +833,285 @@ function MembershipsPage({ t, onNavigate }) {
   );
 }
 
+const bookingCopy = {
+  pl: {
+    eyebrow: "Rezerwacja • ElviGlow",
+    title: "Umów wizytę przez WhatsApp lub Instagram",
+    lead: "Nie pokazujemy publicznego kalendarza. Wybierz usługę i preferowany termin, a przygotujemy gotową wiadomość do wysłania. Elwira potwierdzi dostępność osobiście.",
+    formTitle: "Przygotuj wiadomość",
+    formText: "To nie jest automatyczna rezerwacja — termin jest potwierdzany w rozmowie.",
+    service: "Usługa",
+    servicePlaceholder: "Wybierz usługę",
+    date: "Preferowana data",
+    time: "Preferowana godzina rozpoczęcia",
+    timePlaceholder: "Najpierw wybierz datę",
+    firstVisit: "To moja pierwsza wizyta w ElviGlow",
+    note: "Dodatkowa wiadomość (opcjonalnie)",
+    notePlaceholder: "Np. zależy mi na oczyszczeniu, mam wrażliwą skórę albo chcę konkretny kolor paznokci.",
+    whatsapp: "Wyślij przez WhatsApp",
+    instagram: "Skopiuj wiadomość i otwórz Instagram",
+    copied: "Wiadomość skopiowana — wklej ją w DM na Instagramie.",
+    preview: "Podgląd wiadomości",
+    chooseDate: "Wybierz datę, aby zobaczyć możliwe godziny.",
+    closed: "W niedzielę salon jest nieczynny. Wybierz inny dzień.",
+    saturday: "Sobota jest dostępna co drugi tydzień — dostępność potwierdzimy w wiadomości.",
+    hoursTitle: "Godziny przyjmowania klientek",
+    hoursLead: "Podana godzina końcowa oznacza najpóźniejszą godzinę rozpoczęcia wizyty.",
+    channelsTitle: "Najwygodniejszy kontakt",
+    channelsText: "Rezerwacje ustalamy przez WhatsApp lub Instagram. E-mail zostawiamy do dłuższych pytań.",
+    emailLabel: "E-mail",
+    phoneLabel: "WhatsApp",
+    services: ["Zabieg na twarz", "Microneedling", "Paznokcie", "Pedicure", "Depilacja Lycon", "Zabieg na ciało", "Program pielęgnacji", "Nie wiem — potrzebuję doboru"],
+    weekdays: ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
+    messageIntro: "Dzień dobry, chciałabym umówić wizytę w ElviGlow.",
+    messageService: "Usługa",
+    messageDate: "Preferowana data",
+    messageTime: "Preferowana godzina",
+    messageFirst: "Pierwsza wizyta",
+    yes: "tak",
+    no: "nie",
+    messageNote: "Dodatkowo",
+  },
+  en: {
+    eyebrow: "Booking • ElviGlow",
+    title: "Book your visit via WhatsApp or Instagram",
+    lead: "We do not display a public calendar. Choose a service and preferred time and we will prepare a ready-to-send message. Elvira will confirm availability personally.",
+    formTitle: "Prepare your message",
+    formText: "This is not an automatic booking — the appointment is confirmed in conversation.",
+    service: "Service",
+    servicePlaceholder: "Choose a service",
+    date: "Preferred date",
+    time: "Preferred start time",
+    timePlaceholder: "Choose a date first",
+    firstVisit: "This is my first visit to ElviGlow",
+    note: "Additional message (optional)",
+    notePlaceholder: "For example: I want cleansing, I have sensitive skin, or I have a specific nail colour in mind.",
+    whatsapp: "Send via WhatsApp",
+    instagram: "Copy message and open Instagram",
+    copied: "Message copied — paste it into an Instagram DM.",
+    preview: "Message preview",
+    chooseDate: "Choose a date to see possible times.",
+    closed: "The salon is closed on Sundays. Please choose another day.",
+    saturday: "Saturday is available every other week — we will confirm availability in the conversation.",
+    hoursTitle: "Client hours",
+    hoursLead: "The closing time shown is the latest possible appointment start time.",
+    channelsTitle: "Best way to contact us",
+    channelsText: "Bookings are arranged through WhatsApp or Instagram. E-mail is available for longer questions.",
+    emailLabel: "E-mail",
+    phoneLabel: "WhatsApp",
+    services: ["Facial treatment", "Microneedling", "Nails", "Pedicure", "Lycon waxing", "Body treatment", "Care programme", "I am not sure — I need advice"],
+    weekdays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    messageIntro: "Hello, I would like to book a visit at ElviGlow.",
+    messageService: "Service",
+    messageDate: "Preferred date",
+    messageTime: "Preferred time",
+    messageFirst: "First visit",
+    yes: "yes",
+    no: "no",
+    messageNote: "Additional note",
+  },
+  nl: {
+    eyebrow: "Afspraak • ElviGlow",
+    title: "Maak een afspraak via WhatsApp of Instagram",
+    lead: "We tonen geen openbare agenda. Kies een behandeling en een gewenst moment; de website maakt een bericht voor je klaar. Elvira bevestigt de beschikbaarheid persoonlijk.",
+    formTitle: "Maak je bericht klaar",
+    formText: "Dit is geen automatische boeking — de afspraak wordt in het gesprek bevestigd.",
+    service: "Behandeling",
+    servicePlaceholder: "Kies een behandeling",
+    date: "Gewenste datum",
+    time: "Gewenste starttijd",
+    timePlaceholder: "Kies eerst een datum",
+    firstVisit: "Dit is mijn eerste bezoek aan ElviGlow",
+    note: "Extra bericht (optioneel)",
+    notePlaceholder: "Bijvoorbeeld: ik wil mijn huid laten reinigen, ik heb een gevoelige huid of ik wil een specifieke nagelkleur.",
+    whatsapp: "Verstuur via WhatsApp",
+    instagram: "Kopieer bericht en open Instagram",
+    copied: "Bericht gekopieerd — plak het in een DM op Instagram.",
+    preview: "Voorbeeld van je bericht",
+    chooseDate: "Kies een datum om mogelijke tijden te zien.",
+    closed: "Op zondag is de salon gesloten. Kies een andere dag.",
+    saturday: "Zaterdag is om de week beschikbaar — we bevestigen de beschikbaarheid in het gesprek.",
+    hoursTitle: "Tijden voor afspraken",
+    hoursLead: "De eindtijd is de laatst mogelijke starttijd van een afspraak.",
+    channelsTitle: "Snelste contact",
+    channelsText: "Afspraken regelen we via WhatsApp of Instagram. E-mail is er voor langere vragen.",
+    emailLabel: "E-mail",
+    phoneLabel: "WhatsApp",
+    services: ["Gezichtsbehandeling", "Microneedling", "Nagels", "Pedicure", "Lycon waxing", "Lichaamsbehandeling", "Verzorgingsprogramma", "Ik weet het nog niet — graag advies"],
+    weekdays: ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
+    messageIntro: "Hallo, ik wil graag een afspraak maken bij ElviGlow.",
+    messageService: "Behandeling",
+    messageDate: "Gewenste datum",
+    messageTime: "Gewenste tijd",
+    messageFirst: "Eerste bezoek",
+    yes: "ja",
+    no: "nee",
+    messageNote: "Extra informatie",
+  },
+};
+
+const openingHours = [
+  ["Pon / Mon / Ma", "09:00–16:00"],
+  ["Wt / Tue / Di", "09:00–17:00"],
+  ["Śr / Wed / Wo", "09:00–16:00"],
+  ["Czw / Thu / Do", "09:00–17:00"],
+  ["Pt / Fri / Vr", "09:00–16:00"],
+  ["Sob / Sat / Za", "co druga / every other / om de week • 09:00–15:00"],
+  ["Niedz / Sun / Zo", "zamknięte / closed / gesloten"],
+];
+
 function ContactPage({ t, lang }) {
-  const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp";
+  const copy = bookingCopy[lang] || bookingCopy.nl;
+  const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty";
+  const whatsappNumber = "31682224999";
+  const whatsappDisplay = "+31 6 82224999";
+  const email = "elviglow47@gmail.com";
+  const [service, setService] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [firstVisit, setFirstVisit] = useState(false);
+  const [note, setNote] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const now = new Date();
+  const minDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  const chosenDate = date ? new Date(`${date}T12:00:00`) : null;
+  const dayIndex = chosenDate ? chosenDate.getDay() : null;
+  const isClosed = dayIndex === 0;
+  const isSaturday = dayIndex === 6;
+  const maxHourByDay = { 1: 16, 2: 17, 3: 16, 4: 17, 5: 16, 6: 15 };
+  const maxHour = dayIndex == null ? null : maxHourByDay[dayIndex];
+  const timeSlots = [];
+
+  if (maxHour != null) {
+    for (let hour = 9; hour <= maxHour; hour += 1) {
+      timeSlots.push(`${String(hour).padStart(2, "0")}:00`);
+      if (hour < maxHour) timeSlots.push(`${String(hour).padStart(2, "0")}:30`);
+    }
+  }
+
+  const formattedDate = chosenDate
+    ? new Intl.DateTimeFormat(lang === "pl" ? "pl-PL" : lang === "nl" ? "nl-NL" : "en-GB", { weekday: "long", day: "2-digit", month: "2-digit", year: "numeric" }).format(chosenDate)
+    : "—";
+
+  const messageLines = [
+    copy.messageIntro,
+    `${copy.messageService}: ${service || "—"}`,
+    `${copy.messageDate}: ${formattedDate}`,
+    `${copy.messageTime}: ${time || "—"}`,
+    `${copy.messageFirst}: ${firstVisit ? copy.yes : copy.no}`,
+  ];
+  if (note.trim()) messageLines.push(`${copy.messageNote}: ${note.trim()}`);
+  const message = messageLines.join("\n");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const canSend = Boolean(service && date && time && !isClosed);
+
+  function handleDateChange(value) {
+    setDate(value);
+    setTime("");
+    setCopied(false);
+  }
+
+  function openInstagram() {
+    window.open(instagramUrl, "_blank", "noopener,noreferrer");
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(message).then(() => setCopied(true)).catch(() => setCopied(false));
+    }
+  }
 
   return (
     <>
-      <PageHero eyebrow={t.contact.eyebrow} title={t.contact.title} text={t.contact.lead} />
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead} />
 
-      <section className="section contact-new-layout">
-        <article className="contact-main-card">
-          <p className="eyebrow">ElviGlow</p>
-          <h2>{t.contact.mainTitle}</h2>
-          <p>{t.contact.mainText}</p>
-          <div className="hero-actions">
-            <a className="primary-btn" href={instagramUrl} target="_blank" rel="noreferrer">{t.contact.instagramButton}</a>
-            <a className="secondary-btn" href="mailto:kontakt@elviglow.com">{t.contact.emailButton}</a>
+      <section className="section booking-layout">
+        <article className="booking-card">
+          <div className="booking-card-head">
+            <div>
+              <p className="eyebrow">ElviGlow</p>
+              <h2>{copy.formTitle}</h2>
+              <p>{copy.formText}</p>
+            </div>
+            <span className="booking-channel-badge">WhatsApp + Instagram</span>
           </div>
+
+          <div className="booking-form-grid">
+            <label className="booking-field">
+              <span>{copy.service}</span>
+              <select value={service} onChange={(event) => { setService(event.target.value); setCopied(false); }}>
+                <option value="">{copy.servicePlaceholder}</option>
+                {copy.services.map((item) => <option key={item} value={item}>{item}</option>)}
+              </select>
+            </label>
+
+            <label className="booking-field">
+              <span>{copy.date}</span>
+              <input type="date" min={minDate} value={date} onChange={(event) => handleDateChange(event.target.value)} />
+            </label>
+
+            <label className="booking-field">
+              <span>{copy.time}</span>
+              <select value={time} disabled={!date || isClosed} onChange={(event) => { setTime(event.target.value); setCopied(false); }}>
+                <option value="">{date ? copy.time : copy.timePlaceholder}</option>
+                {timeSlots.map((slot) => <option key={slot} value={slot}>{slot}</option>)}
+              </select>
+            </label>
+
+            <label className="booking-check">
+              <input type="checkbox" checked={firstVisit} onChange={(event) => { setFirstVisit(event.target.checked); setCopied(false); }} />
+              <span>{copy.firstVisit}</span>
+            </label>
+          </div>
+
+          {date && isClosed && <p className="booking-alert">{copy.closed}</p>}
+          {date && isSaturday && !isClosed && <p className="booking-info">{copy.saturday}</p>}
+          {!date && <p className="booking-info subtle">{copy.chooseDate}</p>}
+
+          <label className="booking-field booking-field-full">
+            <span>{copy.note}</span>
+            <textarea rows="4" value={note} placeholder={copy.notePlaceholder} onChange={(event) => { setNote(event.target.value); setCopied(false); }} />
+          </label>
+
+          <div className="booking-preview">
+            <span>{copy.preview}</span>
+            <p>{message}</p>
+          </div>
+
+          <div className="booking-actions">
+            <a className={`primary-btn booking-whatsapp ${!canSend ? "is-disabled" : ""}`} href={canSend ? whatsappUrl : undefined} target="_blank" rel="noreferrer" aria-disabled={!canSend}>
+              {copy.whatsapp}
+            </a>
+            <button className="secondary-btn" type="button" disabled={!canSend} onClick={openInstagram}>{copy.instagram}</button>
+          </div>
+          {copied && <p className="booking-copied" role="status">{copy.copied}</p>}
         </article>
 
-        <div className="contact-info-grid">
-          <article className="contact-info-card">
-            <span>⌖</span>
-            <div>
-              <h3>{(contactLocationCopy[lang] || contactLocationCopy.nl).title}</h3>
-              <p>{(contactLocationCopy[lang] || contactLocationCopy.nl).text}</p>
+        <aside className="booking-side">
+          <article className="booking-hours-card">
+            <p className="eyebrow">Deventer</p>
+            <h2>{copy.hoursTitle}</h2>
+            <p>{copy.hoursLead}</p>
+            <div className="booking-hours-list">
+              {openingHours.map(([day, hours]) => (
+                <div key={day}><span>{day}</span><strong>{hours}</strong></div>
+              ))}
             </div>
           </article>
-          {t.contact.cards.map((card) => (
-            <article className="contact-info-card" key={card.title}>
-              <span>{card.icon}</span>
-              <div>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-                {card.type === "instagram" && <a href={instagramUrl} target="_blank" rel="noreferrer">@nagelsvoorjouenbeauty</a>}
-                {card.type === "email" && <a href="mailto:kontakt@elviglow.com">kontakt@elviglow.com</a>}
-              </div>
-            </article>
-          ))}
-        </div>
+
+          <article className="booking-contact-card">
+            <p className="eyebrow">ElviGlow</p>
+            <h3>{copy.channelsTitle}</h3>
+            <p>{copy.channelsText}</p>
+            <a className="booking-contact-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer">
+              <span>WA</span><div><small>{copy.phoneLabel}</small><strong>{whatsappDisplay}</strong></div>
+            </a>
+            <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer">
+              <span>IG</span><div><small>Instagram</small><strong>@nagelsvoorjouenbeauty</strong></div>
+            </a>
+            <a className="booking-contact-link" href={`mailto:${email}`}>
+              <span>✉</span><div><small>{copy.emailLabel}</small><strong>{email}</strong></div>
+            </a>
+          </article>
+        </aside>
       </section>
 
       <section className="section contact-note-box">

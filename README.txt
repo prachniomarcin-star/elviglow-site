@@ -1,15 +1,31 @@
-ElviGlow V6 — production domain patch
+ELVIGLOW V7 — WHATSAPP / INSTAGRAM BOOKING
 
-Cel:
-- ustawia docelowy adres https://elviglow.com jako canonical / SEO / Open Graph / sitemap / robots
-- nie zmienia wygladu V5
-- nie dodaje jeszcze systemu rezerwacji
-
-Podmien w repo elviglow-site na galezi elviglow-premium-update:
+Podmień 3 pliki w repozytorium elviglow-site:
 - src/main.jsx
-- scripts/postbuild-seo.mjs
+- src/index.css
 - index.html
-- public/sitemap.xml
-- public/robots.txt
 
-Nastepnie commit i push. Po udanym Preview mozna scalic galez do main.
+Co zmienia V7:
+- profesjonalna sekcja umawiania wizyty bez publicznego kalendarza,
+- wybór usługi, preferowanej daty i godziny,
+- automatyczne przygotowanie treści wiadomości,
+- WhatsApp: +31 6 82224999,
+- Instagram: @nagelsvoorjouenbeauty,
+- e-mail: elviglow47@gmail.com,
+- godziny przyjmowania klientek:
+  Pon 09:00–16:00
+  Wt  09:00–17:00
+  Śr  09:00–16:00
+  Czw 09:00–17:00
+  Pt  09:00–16:00
+  Sob co druga 09:00–15:00
+  Niedziela zamknięte
+- podana godzina końcowa jest ostatnią możliwą godziną rozpoczęcia wizyty,
+- niedziela jest blokowana w formularzu,
+- sobota ma komunikat, że dostępność jest co drugi tydzień i wymaga potwierdzenia,
+- schema.org ma zaktualizowany telefon, e-mail i godziny pn–pt.
+
+Zalecany commit:
+Add WhatsApp and Instagram booking flow
+
+Najbezpieczniej wdrożyć na osobnej gałęzi, sprawdzić Preview w Vercel i dopiero potem scalić do main.
