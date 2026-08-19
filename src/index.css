@@ -1892,3 +1892,73 @@ summary:focus-visible {
     font-size: 0.92rem;
   }
 }
+
+/* ElviGlow v5 — consistent compact scale on secondary desktop pages
+   Brings Zabiegi / Paznokcie / Depilacja / Ciało / Wiedza / Akademia / Cennik / Kontakt
+   closer to the calmer proportions of the refined homepage. Mobile remains unchanged. */
+@media (min-width: 1041px) {
+  .page-hero {
+    width: min(1120px, calc(100% - 56px));
+    padding-top: 58px;
+    padding-bottom: 28px;
+  }
+
+  .page-hero > div {
+    max-width: 900px;
+  }
+
+  .page-hero h1 {
+    max-width: 900px;
+    font-size: clamp(2.85rem, 4.15vw, 4.35rem);
+    line-height: 1.01;
+    letter-spacing: -0.045em;
+  }
+
+  .page-hero .lead {
+    max-width: 760px;
+    margin-top: 20px;
+    font-size: clamp(0.98rem, 1.12vw, 1.08rem);
+    line-height: 1.68;
+  }
+
+  /* Secondary-page sections should feel like the homepage rather than oversized editorial spreads. */
+  .section:not(.problem-first-section):not(.pathway-section) h2 {
+    font-size: clamp(2.05rem, 3.15vw, 3.35rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+  }
+
+  .section:not(.problem-first-section):not(.pathway-section) .lead {
+    font-size: clamp(0.98rem, 1.08vw, 1.06rem);
+  }
+
+  .section:not(.problem-first-section):not(.pathway-section) {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  .two-columns,
+  .split-feature,
+  .consultation-section,
+  .education-grid,
+  .contact-layout {
+    gap: 36px;
+  }
+
+  .text-panel,
+  .glass-card,
+  .offer-card,
+  .path-card,
+  .contact-panel,
+  .rules-box,
+  .skin-builder {
+    padding: 24px;
+  }
+
+  .offer-card h3,
+  .glass-card h3,
+  .path-card h3,
+  .knowledge-list h3 {
+    line-height: 1.06;
+  }
+}
