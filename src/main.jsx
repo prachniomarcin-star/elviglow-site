@@ -9,7 +9,7 @@ import "./index.css";
 
 const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/depilacja", "/cialo", "/wiedza", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
 
-const BASE_URL = "https://elviglow-site.vercel.app";
+const BASE_URL = "https://elviglow.com";
 
 const homeExperience = {
   pl: {

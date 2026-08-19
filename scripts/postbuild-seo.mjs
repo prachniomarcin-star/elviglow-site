@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const dist = path.resolve("dist");
-const base = "https://elviglow-site.vercel.app";
+const base = "https://elviglow.com";
 const sourceFile = path.join(dist, "index.html");
 
 if (!fs.existsSync(sourceFile)) {
