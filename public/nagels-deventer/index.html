@@ -202,6 +202,11 @@
   </footer>
 <script>
 (() => {
+  // These local SEO pages are intentionally Dutch.
+  // Keep the main ElviGlow app in Dutch when the visitor continues browsing.
+  localStorage.setItem("elviglow-lang", "nl");
+  document.documentElement.lang = "nl";
+
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
@@ -227,12 +232,16 @@
     button.addEventListener("click", () => {
       const lang = button.getAttribute("data-lang");
       localStorage.setItem("elviglow-lang", lang);
+
       if (lang === "nl") {
         langMenu.classList.remove("open");
         langTrigger.setAttribute("aria-expanded", "false");
-      } else {
-        window.location.href = "/";
+        return;
       }
+
+      // For PL/EN, continue to the closest matching main ElviGlow page,
+      // rather than unexpectedly jumping to the homepage.
+      window.location.href = "/paznokcie";
     });
   });
 
