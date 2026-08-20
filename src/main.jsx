@@ -973,15 +973,9 @@ const bookingServices = {
   pl: [
     { id: "face", label: "Zabiegi twarzy", items: [
       { id: "oxy", name: "Oxybrazja", price: "59 €", duration: "ok. 60 min" },
-      { id: "refresh-mask", name: "Zabieg odświeżający z maską", price: "59 €", duration: "ok. 60 min" },
       { id: "cleansing-glow", name: "Oczyszczanie Glow", price: "69 €", duration: "ok. 75 min" },
-      { id: "cleansing-oxy", name: "Oczyszczanie + oxybrazja", price: "79 €", duration: "ok. 90 min" },
-      { id: "ampoule", name: "Pielęgnacja z ampułką", price: "79 €", duration: "ok. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 75 min" },
-      { id: "hydration", name: "Intensywne nawilżenie skóry", price: "89 €", duration: "ok. 75 min" },
       { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 75 min" },
-      { id: "lifting-ampoule", name: "Pielęgnacja liftingująca z ampułką", price: "109 €", duration: "ok. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "ok. 90 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
       { id: "micro-face", name: "Microneedling — twarz", price: "89 €", duration: "ok. 75 min" },
@@ -1034,15 +1028,9 @@ const bookingServices = {
   en: [
     { id: "face", label: "Facial treatments", items: [
       { id: "oxy", name: "Oxybrasion", price: "59 €", duration: "approx. 60 min" },
-      { id: "refresh-mask", name: "Refreshing Treatment with Mask", price: "59 €", duration: "approx. 60 min" },
       { id: "cleansing-glow", name: "Cleansing Glow", price: "69 €", duration: "approx. 75 min" },
-      { id: "cleansing-oxy", name: "Cleansing + Oxybrasion", price: "79 €", duration: "approx. 90 min" },
-      { id: "ampoule", name: "Ampoule Care", price: "79 €", duration: "approx. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 75 min" },
-      { id: "hydration", name: "Intensive Skin Hydration", price: "89 €", duration: "approx. 75 min" },
       { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 75 min" },
-      { id: "lifting-ampoule", name: "Lifting Care with Ampoule", price: "109 €", duration: "approx. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "approx. 90 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
       { id: "micro-face", name: "Microneedling — face", price: "89 €", duration: "approx. 75 min" },
@@ -1095,15 +1083,9 @@ const bookingServices = {
   nl: [
     { id: "face", label: "Gezichtsbehandelingen", items: [
       { id: "oxy", name: "Oxybrasie", price: "59 €", duration: "ca. 60 min" },
-      { id: "refresh-mask", name: "Verfrissende behandeling met masker", price: "59 €", duration: "ca. 60 min" },
       { id: "cleansing-glow", name: "Reiniging Glow", price: "69 €", duration: "ca. 75 min" },
-      { id: "cleansing-oxy", name: "Reiniging + oxybrasie", price: "79 €", duration: "ca. 90 min" },
-      { id: "ampoule", name: "Verzorging met ampul", price: "79 €", duration: "ca. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 75 min" },
-      { id: "hydration", name: "Intensieve hydratatie van de huid", price: "89 €", duration: "ca. 75 min" },
       { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 75 min" },
-      { id: "lifting-ampoule", name: "Lifting verzorging met ampul", price: "109 €", duration: "ca. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "ca. 90 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
       { id: "micro-face", name: "Microneedling — gezicht", price: "89 €", duration: "ca. 75 min" },
