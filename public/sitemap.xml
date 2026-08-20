@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://elviglow.com/</loc><priority>1.0</priority></url>
   <url><loc>https://elviglow.com/zabiegi</loc><priority>0.9</priority></url>
-  <url><loc>https://elviglow.com/microneedling-deventer</loc><priority>0.9</priority></url>
-  <url><loc>https://elviglow.com/huidverbetering-deventer</loc><priority>0.9</priority></url>
-  <url><loc>https://elviglow.com/gezichtsbehandeling-deventer</loc><priority>0.9</priority></url>
-  <url><loc>https://elviglow.com/nagels-deventer</loc><priority>0.8</priority></url>
-  <url><loc>https://elviglow.com/lycon-waxing-deventer</loc><priority>0.8</priority></url>
   <url><loc>https://elviglow.com/akademia-skory</loc><priority>0.9</priority></url>
   <url><loc>https://elviglow.com/wiedza</loc><priority>0.8</priority></url>
   <url><loc>https://elviglow.com/cennik</loc><priority>0.8</priority></url>
@@ -15,4 +10,19 @@
   <url><loc>https://elviglow.com/cialo</loc><priority>0.7</priority></url>
   <url><loc>https://elviglow.com/abonamenty</loc><priority>0.7</priority></url>
   <url><loc>https://elviglow.com/kontakt</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/microneedling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/pl/microneedling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/en/microneedling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/huidverbetering-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/pl/huidverbetering-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/en/huidverbetering-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/gezichtsbehandeling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/pl/gezichtsbehandeling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/en/gezichtsbehandeling-deventer</loc><priority>0.9</priority></url>
+  <url><loc>https://elviglow.com/nagels-deventer</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/pl/nagels-deventer</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/en/nagels-deventer</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/lycon-waxing-deventer</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/pl/lycon-waxing-deventer</loc><priority>0.8</priority></url>
+  <url><loc>https://elviglow.com/en/lycon-waxing-deventer</loc><priority>0.8</priority></url>
 </urlset>

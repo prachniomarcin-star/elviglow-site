@@ -344,3 +344,45 @@ h3{font-size:clamp(1.35rem,2.2vw,1.9rem)}
     font-size:clamp(2.45rem,10.8vw,3.6rem);
   }
 }
+
+
+/* =========================================================
+   V14 — visual continuity with the main ElviGlow pages
+   ========================================================= */
+.hero{
+  padding:46px 0 28px;
+}
+.hero h1{
+  font-size:clamp(2.65rem,4.55vw,4.6rem);
+  max-width:930px;
+  line-height:.98;
+}
+.hero .lead{
+  max-width:760px;
+  font-size:clamp(1.02rem,1.32vw,1.16rem);
+}
+.section{
+  padding:44px 0;
+}
+.section-head{
+  max-width:760px;
+}
+@media(max-width:1120px){
+  .hero h1{
+    font-size:clamp(2.6rem,6.2vw,4.25rem);
+  }
+}
+@media(max-width:740px){
+  .hero{
+    padding:36px 0 24px;
+  }
+  .hero h1{
+    font-size:clamp(2.35rem,10.2vw,3.45rem);
+  }
+  .hero .lead{
+    font-size:1rem;
+  }
+  .section{
+    padding:36px 0;
+  }
+}

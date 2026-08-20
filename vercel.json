@@ -1,20 +1,60 @@
 {
   "rewrites": [
     {
+      "source": "/pl/microneedling-deventer",
+      "destination": "/pl/microneedling-deventer/index.html"
+    },
+    {
+      "source": "/en/microneedling-deventer",
+      "destination": "/en/microneedling-deventer/index.html"
+    },
+    {
       "source": "/microneedling-deventer",
       "destination": "/microneedling-deventer/index.html"
+    },
+    {
+      "source": "/pl/huidverbetering-deventer",
+      "destination": "/pl/huidverbetering-deventer/index.html"
+    },
+    {
+      "source": "/en/huidverbetering-deventer",
+      "destination": "/en/huidverbetering-deventer/index.html"
     },
     {
       "source": "/huidverbetering-deventer",
       "destination": "/huidverbetering-deventer/index.html"
     },
     {
+      "source": "/pl/gezichtsbehandeling-deventer",
+      "destination": "/pl/gezichtsbehandeling-deventer/index.html"
+    },
+    {
+      "source": "/en/gezichtsbehandeling-deventer",
+      "destination": "/en/gezichtsbehandeling-deventer/index.html"
+    },
+    {
       "source": "/gezichtsbehandeling-deventer",
       "destination": "/gezichtsbehandeling-deventer/index.html"
     },
     {
+      "source": "/pl/nagels-deventer",
+      "destination": "/pl/nagels-deventer/index.html"
+    },
+    {
+      "source": "/en/nagels-deventer",
+      "destination": "/en/nagels-deventer/index.html"
+    },
+    {
       "source": "/nagels-deventer",
       "destination": "/nagels-deventer/index.html"
+    },
+    {
+      "source": "/pl/lycon-waxing-deventer",
+      "destination": "/pl/lycon-waxing-deventer/index.html"
+    },
+    {
+      "source": "/en/lycon-waxing-deventer",
+      "destination": "/en/lycon-waxing-deventer/index.html"
     },
     {
       "source": "/lycon-waxing-deventer",
