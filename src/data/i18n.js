@@ -14,6 +14,13 @@ const offersPL = {
       effect: "Lekki zabieg oczyszczająco-bankietowy przed ważnym wyjściem — szybki efekt świeższej, gładszej i bardziej promiennej skóry bez intensywnego podrażnienia.",
     },
     {
+      name: "Mikrodermabrazja",
+      price: "50 €",
+      tags: ["wygładzenie", "złuszczanie", "odświeżenie"],
+      includes: ["Przygotowanie skóry", "Mikrodermabrazja diamentowa", "Maska nawilżająca po zabiegu"],
+      effect: "Dla skóry szarej, szorstkiej lub o nierównej strukturze — wygładza i odświeża powierzchnię skóry, a maska nawilżająca koi ją po zabiegu.",
+    },
+    {
       name: "Oczyszczanie wodorowe",
       price: "69 €",
       tags: ["oczyszczanie", "pory", "infuzja tlenowa"],
@@ -73,6 +80,13 @@ const offersEN = {
       tags: ["event-ready treatment", "quick glow", "smoothing"],
       includes: ["Skin preparation", "Gentle water-oxygen exfoliation", "Soothing care finish"],
       effect: "A light cleansing, event-ready treatment before an important occasion — a quick fresher, smoother and more radiant look without intensive irritation.",
+    },
+    {
+      name: "Microdermabrasion",
+      price: "50 €",
+      tags: ["smoothing", "exfoliation", "refreshing"],
+      includes: ["Skin preparation", "Diamond microdermabrasion", "Hydrating mask after the treatment"],
+      effect: "For dull, rough or uneven-textured skin — smooths and refreshes the skin surface, followed by a hydrating mask to soothe the skin.",
     },
     {
       name: "Hydrogen Cleansing",
@@ -136,6 +150,13 @@ const offersNL = {
       effect: "Een lichte reinigende glowbehandeling vóór een belangrijke gelegenheid — snel een frissere, gladdere en stralendere uitstraling zonder intensieve irritatie.",
     },
     {
+      name: "Microdermabrasie",
+      price: "50 €",
+      tags: ["gladheid", "exfoliatie", "verfrissing"],
+      includes: ["Voorbereiding van de huid", "Diamantmicrodermabrasie", "Hydraterend masker na de behandeling"],
+      effect: "Voor een doffe, ruwe huid of een ongelijkmatige huidstructuur — maakt het huidoppervlak gladder en frisser, gevolgd door een hydraterend masker om de huid te kalmeren.",
+    },
+    {
       name: "Waterstofreiniging",
       price: "69 €",
       tags: ["reiniging", "poriën", "zuurstofinfusie"],
@@ -192,12 +213,12 @@ const nailsPL = [
   { name: "Manicure hybrydowy / gellak", price: "50 €", text: "Trwały kolor i elegancki efekt na co dzień." },
   { name: "Przedłużanie żelem lub akrylem", price: "65 €", text: "Nowy set z przedłużeniem paznokci żelem lub akrylem." },
   { name: "Przedłużanie żelem lub akrylem + hybryda / gellak", price: "70 €", text: "Nowy set z przedłużeniem oraz trwałym kolorem." },
-  { name: "Uzupełnienie do 4 tygodni", price: "55 €", text: "Uzupełnienie stylizacji wykonanej do 4 tygodni wcześniej. Po 4 tygodniach obowiązuje cena nowego setu." },
+  { name: "Uzupełnienie do 4 tygodni", price: "55 €", text: "Uzupełnienie możliwe maksymalnie do 4 tygodni od wykonania nowego setu. Po 4 tygodniach obowiązuje nowy set." },
   { name: "Usunięcie stylizacji", price: "20 €", text: "Bezpieczne zdjęcie starej stylizacji i przygotowanie paznokci." },
   { name: "Pedicure klasyczny", price: "40 €", text: "Pielęgnacja stóp, paznokci i skórek." },
   { name: "Pedicure + gellak", price: "50 €", text: "Zadbane stopy z trwałym kolorem." },
-  { name: "Pakiet: manicure klasyczny + pedicure klasyczny", price: "65 €", text: "10 € taniej niż dwa osobne zabiegi." },
-  { name: "Pakiet: hybryda / gellak dłonie + pedicure z gellak", price: "90 €", text: "10 € taniej niż dwa osobne zabiegi." },
+  { name: "Pakiet: manicure klasyczny + pedicure klasyczny", price: "70 €", text: "Kompleksowa pielęgnacja dłoni i stóp podczas jednej wizyty." },
+  { name: "Pakiet: hybryda / gellak dłonie + pedicure z gellak", price: "95 €", text: "Spójna stylizacja gellak dłoni i stóp w jednym pakiecie." },
 ];
 
 const nailsEN = [
@@ -205,12 +226,12 @@ const nailsEN = [
   { name: "Hybrid manicure / gellak", price: "50 €", text: "Long-lasting colour and an elegant everyday finish." },
   { name: "Gel or acrylic extensions", price: "65 €", text: "A new set with gel or acrylic nail extensions." },
   { name: "Gel or acrylic extensions + hybrid / gellak", price: "70 €", text: "A new extension set finished with long-lasting colour." },
-  { name: "Refill up to 4 weeks", price: "55 €", text: "Refill for a set applied up to 4 weeks earlier. After 4 weeks, the price of a new set applies." },
+  { name: "Refill up to 4 weeks", price: "55 €", text: "A refill is available only within a maximum of 4 weeks from the application of a new set. After 4 weeks, a new set is required." },
   { name: "Removal", price: "20 €", text: "Safe removal of old styling and nail preparation." },
   { name: "Classic pedicure", price: "40 €", text: "Foot, toenail and cuticle care." },
   { name: "Pedicure + gellak", price: "50 €", text: "Well-groomed feet with long-lasting colour." },
-  { name: "Package: classic manicure + classic pedicure", price: "65 €", text: "Save 10 € compared with booking both treatments separately." },
-  { name: "Package: hybrid / gellak hands + pedicure with gellak", price: "90 €", text: "Save 10 € compared with booking both treatments separately." },
+  { name: "Package: classic manicure + classic pedicure", price: "70 €", text: "Complete hand and foot care during one visit." },
+  { name: "Package: hybrid / gellak hands + pedicure with gellak", price: "95 €", text: "A coordinated gellak finish for hands and feet in one package." },
 ];
 
 const nailsNL = [
@@ -218,12 +239,12 @@ const nailsNL = [
   { name: "Hybride manicure / gellak", price: "50 €", text: "Langhoudende kleur en een elegante dagelijkse afwerking." },
   { name: "Verlenging met gel of acryl", price: "65 €", text: "Een nieuwe set met verlenging van de nagels met gel of acryl." },
   { name: "Verlenging met gel of acryl + hybride / gellak", price: "70 €", text: "Een nieuwe set met verlenging en een langhoudende kleur." },
-  { name: "Opvullen tot 4 weken", price: "55 €", text: "Opvullen van een set die maximaal 4 weken geleden is geplaatst. Na 4 weken geldt de prijs van een nieuwe set." },
+  { name: "Opvullen tot 4 weken", price: "55 €", text: "Opvullen is alleen mogelijk tot maximaal 4 weken na het plaatsen van een nieuwe set. Na 4 weken is een nieuwe set nodig." },
   { name: "Verwijderen", price: "20 €", text: "Veilig verwijderen van oude styling en voorbereiding van de nagels." },
   { name: "Klassieke pedicure", price: "40 €", text: "Verzorging van voeten, teennagels en nagelriemen." },
   { name: "Pedicure + gellak", price: "50 €", text: "Verzorgde voeten met langhoudende kleur." },
-  { name: "Pakket: klassieke manicure + klassieke pedicure", price: "65 €", text: "10 € voordeliger dan beide behandelingen apart boeken." },
-  { name: "Pakket: hybride / gellak handen + pedicure met gellak", price: "90 €", text: "10 € voordeliger dan beide behandelingen apart boeken." },
+  { name: "Pakket: klassieke manicure + klassieke pedicure", price: "70 €", text: "Complete verzorging van handen en voeten tijdens één bezoek." },
+  { name: "Pakket: hybride / gellak handen + pedicure met gellak", price: "95 €", text: "Een verzorgde gellak-afwerking voor handen en voeten in één pakket." },
 ];
 
 
@@ -451,19 +472,19 @@ const bodyNL = {
 const membershipsPL = [
   { name: "Cera w Równowadze", price: "69 €/mies.", includes: ["1 zabieg oczyszczająco-nawilżający w miesiącu", "Podstawowe dopasowanie pielęgnacji do aktualnego stanu skóry", "Regularne utrzymanie skóry w dobrej kondycji"], effect: "Czystsza, świeższa i bardziej zadbana skóra bez przypadkowej pielęgnacji." },
   { name: "Glow Premium", price: "129 €/mies.", includes: ["2 wizyty miesięcznie", "Oczyszczanie skóry", "Zabieg glow, liftingujący albo regenerujący dobrany do potrzeb skóry", "Maseczka pielęgnacyjna do domu"], effect: "Systematyczne oczyszczenie, rozświetlenie i poprawa wyglądu cery." },
-  { name: "Regeneracja Pro", price: "149 €/mies.", includes: ["1 microneedling twarzy w cyklu, jeśli stan skóry na to pozwala", "1 zabieg regenerujący z ampułką", "10% rabatu na dodatkowy zabieg", "Plan pracy ze skórą na kolejne wizyty", "Microneedling w rytmie około 4–6 tygodni, po ocenie skóry"], effect: "Regularna regeneracja i praca nad jakością skóry w korzystniejszej cenie niż przy dwóch osobnych wizytach." },
+  { name: "Regeneracja Pro", price: "149 €/mies.", includes: ["1 microneedling twarzy w cyklu, jeśli stan skóry na to pozwala", "1 zabieg regenerujący z ampułką", "Plan pracy ze skórą na kolejne wizyty", "Microneedling w rytmie około 4–6 tygodni, po ocenie skóry"], effect: "Regularna regeneracja i praca nad jakością skóry w korzystniejszej cenie niż przy dwóch osobnych wizytach." },
 ];
 
 const membershipsEN = [
   { name: "Skin in Balance", price: "69 €/month", includes: ["1 cleansing and hydrating treatment per month", "Basic care matching to the current skin condition", "Regular maintenance of good skin condition"], effect: "Cleaner, fresher and better cared-for skin without random care choices." },
   { name: "Glow Premium", price: "129 €/month", includes: ["2 visits per month", "Skin cleansing", "A glow, lifting or regenerating treatment matched to the skin", "Care mask to take home"], effect: "Systematic cleansing, radiance and improvement in the look of the skin." },
-  { name: "Regeneration Pro", price: "149 €/month", includes: ["1 face microneedling treatment per cycle when the skin condition allows it", "1 regenerating ampoule treatment", "10% discount on an additional treatment", "Skin plan for upcoming visits", "Microneedling scheduled roughly every 4–6 weeks after skin assessment"], effect: "Regular regeneration and work on skin quality at a better value than booking the two visits separately." },
+  { name: "Regeneration Pro", price: "149 €/month", includes: ["1 face microneedling treatment per cycle when the skin condition allows it", "1 regenerating ampoule treatment", "Skin plan for upcoming visits", "Microneedling scheduled roughly every 4–6 weeks after skin assessment"], effect: "Regular regeneration and work on skin quality at a better value than booking the two visits separately." },
 ];
 
 const membershipsNL = [
   { name: "Huid in Balans", price: "69 €/maand", includes: ["1 reinigende en hydraterende behandeling per maand", "Basis afstemming van verzorging op de actuele huidconditie", "Regelmatig behoud van een goede huidconditie"], effect: "Een schonere, frissere en beter verzorgde huid zonder toevallige verzorging." },
   { name: "Glow Premium", price: "129 €/maand", includes: ["2 bezoeken per maand", "Huidreiniging", "Een glow-, lifting- of regenererende behandeling afgestemd op de huid", "Verzorgingsmasker voor thuis"], effect: "Systematische reiniging, glow en verbetering van de uitstraling van de huid." },
-  { name: "Regeneratie Pro", price: "149 €/maand", includes: ["1 microneedling van het gezicht per cyclus als de huidconditie dit toelaat", "1 regenererende behandeling met ampul", "10% korting op een extra behandeling", "Huidplan voor komende bezoeken", "Microneedling ongeveer elke 4–6 weken, na beoordeling van de huid"], effect: "Regelmatige regeneratie en werken aan huidkwaliteit met meer voordeel dan twee losse bezoeken." },
+  { name: "Regeneratie Pro", price: "149 €/maand", includes: ["1 microneedling van het gezicht per cyclus als de huidconditie dit toelaat", "1 regenererende behandeling met ampul", "Huidplan voor komende bezoeken", "Microneedling ongeveer elke 4–6 weken, na beoordeling van de huid"], effect: "Regelmatige regeneratie en werken aan huidkwaliteit met meer voordeel dan twee losse bezoeken." },
 ];
 
 const treatmentGuidePL = [

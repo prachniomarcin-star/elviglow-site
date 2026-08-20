@@ -7,6 +7,7 @@ export const treatmentGroups = [
       "Dla klientek, które chcą zacząć od prostego zabiegu: odświeżenie, oczyszczenie, wygładzenie i lekki glow bez wysokiego progu wejścia.",
     items: [
       { name: "Oxybrazja", price: "59 €", duration: "ok. 45–60 min", details: ["Przygotowanie skóry", "Delikatne złuszczanie wodno-tlenowe", "Ukojenie i wykończenie pielęgnacyjne"], effect: "Lekki zabieg oczyszczająco-bankietowy przed ważnym wyjściem — szybki efekt świeższej, gładszej i bardziej promiennej skóry bez intensywnego podrażnienia.", bestFor: "Gdy zależy Ci na szybkim odświeżeniu i glow przed ważną okazją." },
+      { name: "Mikrodermabrazja", price: "50 €", duration: "ok. 45–60 min", details: ["Przygotowanie skóry", "Mikrodermabrazja diamentowa", "Maska nawilżająca po zabiegu"], effect: "Mechaniczne złuszczenie martwego naskórka pomaga wygładzić, odświeżyć i poprawić wygląd powierzchni skóry, a maska nawilżająca koi ją po zabiegu.", bestFor: "Skóra szara, szorstka, z nierówną strukturą lub potrzebująca wyraźnego wygładzenia i odświeżenia." },
       { name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 60 min", details: ["Peeling kawitacyjny", "Oczyszczanie wodorowe", "Infuzja tlenowa z ampułką dobraną do skóry", "W razie potrzeby oczyszczanie manualne"], effect: "Kompleksowe oczyszczenie, odświeżenie i wygładzenie skóry z pielęgnacją dobraną do jej aktualnych potrzeb.", bestFor: "Skóra zanieczyszczona, z widocznymi porami, nierówną strukturą albo brakiem świeżości." },
     ],
   },
@@ -54,7 +55,7 @@ export const memberships = [
     name: "Regeneracja Pro",
     price: "229 €/mies.",
     tag: "najmocniejsza opieka",
-    details: ["1x microneedling w miesiącu", "1x zabieg pielęgnacyjny z ampułką", "15% rabatu na dodatkowy zabieg"],
+    details: ["1x microneedling w miesiącu", "1x zabieg pielęgnacyjny z ampułką"],
     effect: "Intensywna regeneracja i widoczna poprawa jakości skóry.",
   },
 ];

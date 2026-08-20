@@ -973,6 +973,7 @@ const bookingServices = {
   pl: [
     { id: "face", label: "Zabiegi twarzy", items: [
       { id: "oxy", name: "Oxybrazja", price: "59 €", duration: "ok. 60 min" },
+      { id: "microdermabrasion", name: "Mikrodermabrazja", price: "50 €", duration: "ok. 60 min" },
       { id: "cleansing-glow", name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 75 min" },
       { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 75 min" },
@@ -995,8 +996,8 @@ const bookingServices = {
       { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "ok. 75 min" },
     ]},
     { id: "nail-packages", label: "Pakiety paznokci", items: [
-      { id: "nail-package-classic", name: "Manicure klasyczny + pedicure klasyczny", price: "65 €", duration: "czas ustalimy przy rezerwacji" },
-      { id: "nail-package-gellak", name: "Hybryda / gellak dłonie + pedicure z gellak", price: "90 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-package-classic", name: "Manicure klasyczny + pedicure klasyczny", price: "70 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-package-gellak", name: "Hybryda / gellak dłonie + pedicure z gellak", price: "95 €", duration: "czas ustalimy przy rezerwacji" },
     ]},
     { id: "wax", label: "Depilacja Lycon", items: [
       { id: "wax-lip", name: "Wąsik", price: "10 €", duration: "ok. 15 min" },
@@ -1028,6 +1029,7 @@ const bookingServices = {
   en: [
     { id: "face", label: "Facial treatments", items: [
       { id: "oxy", name: "Oxybrasion", price: "59 €", duration: "approx. 60 min" },
+      { id: "microdermabrasion", name: "Microdermabrasion", price: "50 €", duration: "approx. 60 min" },
       { id: "cleansing-glow", name: "Hydrogen Cleansing", price: "69 €", duration: "approx. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 75 min" },
       { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 75 min" },
@@ -1050,8 +1052,8 @@ const bookingServices = {
       { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "approx. 75 min" },
     ]},
     { id: "nail-packages", label: "Nail packages", items: [
-      { id: "nail-package-classic", name: "Classic manicure + classic pedicure", price: "65 €", duration: "time agreed when booking" },
-      { id: "nail-package-gellak", name: "Hybrid / gellak hands + pedicure with gellak", price: "90 €", duration: "time agreed when booking" },
+      { id: "nail-package-classic", name: "Classic manicure + classic pedicure", price: "70 €", duration: "time agreed when booking" },
+      { id: "nail-package-gellak", name: "Hybrid / gellak hands + pedicure with gellak", price: "95 €", duration: "time agreed when booking" },
     ]},
     { id: "wax", label: "Lycon waxing", items: [
       { id: "wax-lip", name: "Upper lip", price: "10 €", duration: "approx. 15 min" },
@@ -1083,6 +1085,7 @@ const bookingServices = {
   nl: [
     { id: "face", label: "Gezichtsbehandelingen", items: [
       { id: "oxy", name: "Oxybrasie", price: "59 €", duration: "ca. 60 min" },
+      { id: "microdermabrasion", name: "Microdermabrasie", price: "50 €", duration: "ca. 60 min" },
       { id: "cleansing-glow", name: "Waterstofreiniging", price: "69 €", duration: "ca. 75 min" },
       { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 75 min" },
       { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 75 min" },
@@ -1105,8 +1108,8 @@ const bookingServices = {
       { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "ca. 75 min" },
     ]},
     { id: "nail-packages", label: "Nagelpakketten", items: [
-      { id: "nail-package-classic", name: "Klassieke manicure + klassieke pedicure", price: "65 €", duration: "tijd spreken we af bij de boeking" },
-      { id: "nail-package-gellak", name: "Hybride / gellak handen + pedicure met gellak", price: "90 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-package-classic", name: "Klassieke manicure + klassieke pedicure", price: "70 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-package-gellak", name: "Hybride / gellak handen + pedicure met gellak", price: "95 €", duration: "tijd spreken we af bij de boeking" },
     ]},
     { id: "wax", label: "Lycon waxing", items: [
       { id: "wax-lip", name: "Bovenlip", price: "10 €", duration: "ca. 15 min" },
