@@ -14,6 +14,30 @@ const navKeys = [
   { key: "contact", href: "/kontakt" },
 ];
 
+const localSeoLinks = {
+  pl: [
+    ["/microneedling-deventer", "Microneedling Deventer"],
+    ["/huidverbetering-deventer", "Pielęgnacja skóry Deventer"],
+    ["/gezichtsbehandeling-deventer", "Zabiegi twarzy Deventer"],
+    ["/nagels-deventer", "Paznokcie Deventer"],
+    ["/lycon-waxing-deventer", "Lycon waxing Deventer"],
+  ],
+  en: [
+    ["/microneedling-deventer", "Microneedling Deventer"],
+    ["/huidverbetering-deventer", "Skin improvement Deventer"],
+    ["/gezichtsbehandeling-deventer", "Facial treatments Deventer"],
+    ["/nagels-deventer", "Nails Deventer"],
+    ["/lycon-waxing-deventer", "Lycon waxing Deventer"],
+  ],
+  nl: [
+    ["/microneedling-deventer", "Microneedling Deventer"],
+    ["/huidverbetering-deventer", "Huidverbetering Deventer"],
+    ["/gezichtsbehandeling-deventer", "Gezichtsbehandeling Deventer"],
+    ["/nagels-deventer", "Nagels Deventer"],
+    ["/lycon-waxing-deventer", "Lycon waxing Deventer"],
+  ],
+};
+
 const mobileMainNav = navKeys.slice(0, 4);
 const mobileMoreNav = navKeys.slice(4);
 
@@ -22,6 +46,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const activeLanguage = LANGUAGES.find((item) => item.code === lang) || LANGUAGES[0];
   const isMoreActive = mobileMoreNav.some((item) => item.href === currentPath);
+  const seoLinks = localSeoLinks[lang] || localSeoLinks.nl;
 
   function handleLanguageChange(code) {
     setLang(code);
@@ -154,6 +179,9 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
           <RouterLink href="/akademia-skory" onNavigate={handleNavigate}>{t.nav.academy}</RouterLink>
           <RouterLink href="/cennik" onNavigate={handleNavigate}>{t.nav.pricing}</RouterLink>
           <RouterLink href="/kontakt" onNavigate={handleNavigate}>{t.nav.contact}</RouterLink>
+          {seoLinks.map(([href, label]) => (
+            <a href={href} key={href}>{label}</a>
+          ))}
           <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </footer>

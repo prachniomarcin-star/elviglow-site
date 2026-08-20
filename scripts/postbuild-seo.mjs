@@ -116,7 +116,15 @@ function fallback(data) {
       <p>${escapeHtml(data.intro)}</p>
       ${common}
       <nav aria-label="Belangrijkste pagina's">
-        <a href="/zabiegi">Gezichtsbehandelingen</a> · <a href="/akademia-skory">Huidacademie</a> · <a href="/cennik">Prijslijst</a> · <a href="/kontakt">Contact</a>
+        <a href="/zabiegi">Gezichtsbehandelingen</a> ·
+        <a href="/microneedling-deventer">Microneedling Deventer</a> ·
+        <a href="/huidverbetering-deventer">Huidverbetering Deventer</a> ·
+        <a href="/gezichtsbehandeling-deventer">Gezichtsbehandeling Deventer</a> ·
+        <a href="/nagels-deventer">Nagels Deventer</a> ·
+        <a href="/lycon-waxing-deventer">Lycon waxing Deventer</a> ·
+        <a href="/akademia-skory">Huidacademie</a> ·
+        <a href="/cennik">Prijslijst</a> ·
+        <a href="/kontakt">Contact</a>
       </nav>
     </section>
   </main>`;

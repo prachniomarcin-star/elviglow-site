@@ -1,14 +1,64 @@
 {
   "rewrites": [
-    { "source": "/zabiegi", "destination": "/zabiegi/index.html" },
-    { "source": "/paznokcie", "destination": "/paznokcie/index.html" },
-    { "source": "/depilacja", "destination": "/depilacja/index.html" },
-    { "source": "/cialo", "destination": "/cialo/index.html" },
-    { "source": "/wiedza", "destination": "/wiedza/index.html" },
-    { "source": "/akademia-skory", "destination": "/akademia-skory/index.html" },
-    { "source": "/cennik", "destination": "/cennik/index.html" },
-    { "source": "/abonamenty", "destination": "/abonamenty/index.html" },
-    { "source": "/kontakt", "destination": "/kontakt/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/microneedling-deventer",
+      "destination": "/microneedling-deventer/index.html"
+    },
+    {
+      "source": "/huidverbetering-deventer",
+      "destination": "/huidverbetering-deventer/index.html"
+    },
+    {
+      "source": "/gezichtsbehandeling-deventer",
+      "destination": "/gezichtsbehandeling-deventer/index.html"
+    },
+    {
+      "source": "/nagels-deventer",
+      "destination": "/nagels-deventer/index.html"
+    },
+    {
+      "source": "/lycon-waxing-deventer",
+      "destination": "/lycon-waxing-deventer/index.html"
+    },
+    {
+      "source": "/zabiegi",
+      "destination": "/zabiegi/index.html"
+    },
+    {
+      "source": "/paznokcie",
+      "destination": "/paznokcie/index.html"
+    },
+    {
+      "source": "/depilacja",
+      "destination": "/depilacja/index.html"
+    },
+    {
+      "source": "/cialo",
+      "destination": "/cialo/index.html"
+    },
+    {
+      "source": "/wiedza",
+      "destination": "/wiedza/index.html"
+    },
+    {
+      "source": "/akademia-skory",
+      "destination": "/akademia-skory/index.html"
+    },
+    {
+      "source": "/cennik",
+      "destination": "/cennik/index.html"
+    },
+    {
+      "source": "/abonamenty",
+      "destination": "/abonamenty/index.html"
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/kontakt/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
