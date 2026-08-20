@@ -6,8 +6,8 @@ export const treatmentGroups = [
     description:
       "Dla klientek, które chcą zacząć od prostego zabiegu: odświeżenie, oczyszczenie, wygładzenie i lekki glow bez wysokiego progu wejścia.",
     items: [
-      { name: "Oxybrazja", price: "59 €", duration: "ok. 45–60 min", details: ["Przygotowanie skóry", "Delikatne złuszczanie wodno-tlenowe", "Ukojenie i wykończenie pielęgnacyjne"], effect: "Delikatne odświeżenie, wygładzenie i oczyszczenie skóry bez mocnego podrażnienia.", bestFor: "Skóra wrażliwa, sucha, poszarzała lub potrzebująca lekkiego wygładzenia." },
-      { name: "Oczyszczanie Glow", price: "69 €", duration: "ok. 60 min", details: ["Przygotowanie skóry", "Praca nad porami i nierówną strukturą", "Maska lub wykończenie dobrane do skóry"], effect: "Czystsza, gładsza i świeżej wyglądająca cera.", bestFor: "Skóra zanieczyszczona, z rozszerzonymi porami albo brakiem świeżości." },
+      { name: "Oxybrazja", price: "59 €", duration: "ok. 45–60 min", details: ["Przygotowanie skóry", "Delikatne złuszczanie wodno-tlenowe", "Ukojenie i wykończenie pielęgnacyjne"], effect: "Lekki zabieg oczyszczająco-bankietowy przed ważnym wyjściem — szybki efekt świeższej, gładszej i bardziej promiennej skóry bez intensywnego podrażnienia.", bestFor: "Gdy zależy Ci na szybkim odświeżeniu i glow przed ważną okazją." },
+      { name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 60 min", details: ["Peeling kawitacyjny", "Oczyszczanie wodorowe", "Infuzja tlenowa z ampułką dobraną do skóry", "W razie potrzeby oczyszczanie manualne"], effect: "Kompleksowe oczyszczenie, odświeżenie i wygładzenie skóry z pielęgnacją dobraną do jej aktualnych potrzeb.", bestFor: "Skóra zanieczyszczona, z widocznymi porami, nierówną strukturą albo brakiem świeżości." },
     ],
   },
   {
@@ -17,7 +17,7 @@ export const treatmentGroups = [
     description:
       "Dla skóry, która potrzebuje mocniejszego wsparcia: nawilżenia, ampułki, blasku albo pielęgnacji liftingującej.",
     items: [
-      { name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 60–75 min", details: ["Przygotowanie skóry", "Ampułka dobrana do potrzeb skóry", "Maska pielęgnacyjna"], effect: "Skóra wygląda świeżej, jaśniej i bardziej promiennie.", bestFor: "Skóra sucha, szara, zmęczona, odwodniona lub bez blasku." },
+      { name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 60–75 min", details: ["Przygotowanie skóry", "Ampułka rozświetlająca", "Maska pielęgnacyjna"], effect: "Skóra wygląda świeżej, jaśniej i bardziej promiennie.", bestFor: "Skóra sucha, szara, zmęczona, odwodniona lub bez blasku." },
       { name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 60–75 min", details: ["Przygotowanie skóry", "Pielęgnacja wspierająca napięcie", "Maska liftingująca"], effect: "Nawilżenie, napięcie skóry i świeższy wygląd twarzy.", bestFor: "Skóra, która traci jędrność albo wygląda na zmęczoną." },
     ],
   },
