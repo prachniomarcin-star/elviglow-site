@@ -122,7 +122,7 @@ const seoByPath = {
     description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen. Kies eerst op huidbehoefte, daarna op behandeling.",
   },
   "/zabiegi": { title: "Gezichtsbehandelingen Deventer | ElviGlow", description: "Gezichtsbehandelingen in Deventer: reiniging, oxybrasie, ampullen, lifting care en microneedling afgestemd op de actuele huidconditie." },
-  "/paznokcie": { title: "Nagels & BIAB Deventer | ElviGlow", description: "Manicure, BIAB, gel en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
+  "/paznokcie": { title: "Nagels & Gellak Deventer | ElviGlow", description: "Manicure, gellak en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
   "/depilacja": { title: "Lycon waxing Deventer | ElviGlow", description: "Lycon waxing voor vrouwen in Deventer: precieze en grotere zones met aandacht voor comfort en huidreactie." },
   "/cialo": { title: "Lichaamsbehandelingen Deventer | ElviGlow", description: "Vacuum dermomassage en cryolipolyse in Deventer. Heldere uitleg, eenvoudige pakketten en één gekozen zone per cryolipolysebezoek." },
   "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
@@ -985,11 +985,6 @@ const bookingServices = {
     { id: "nails", label: "Paznokcie", items: [
       { id: "manicure-classic", name: "Manicure klasyczny", price: "35 €", duration: "ok. 45 min" },
       { id: "manicure-gellak", name: "Manicure hybrydowy / gellak", price: "45 €", duration: "ok. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / wzmocnienie płytki", price: "55 €", duration: "ok. 75 min" },
-      { id: "biab-color", name: "BIAB + kolor", price: "60 €", duration: "ok. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "ok. 100 min" },
-      { id: "biab-refill", name: "Uzupełnienie BIAB / żel", price: "50–55 €", duration: "ok. 90 min" },
-      { id: "nail-extension", name: "Nowa stylizacja z przedłużeniem", price: "od 75 €", duration: "ok. 120 min" },
       { id: "nail-removal", name: "Usunięcie stylizacji", price: "20 €", duration: "ok. 30 min" },
     ]},
     { id: "pedicure", label: "Pedicure", items: [
@@ -1040,11 +1035,6 @@ const bookingServices = {
     { id: "nails", label: "Nails", items: [
       { id: "manicure-classic", name: "Classic manicure", price: "35 €", duration: "approx. 45 min" },
       { id: "manicure-gellak", name: "Hybrid manicure / gellak", price: "45 €", duration: "approx. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / nail strengthening", price: "55 €", duration: "approx. 75 min" },
-      { id: "biab-color", name: "BIAB + colour", price: "60 €", duration: "approx. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "approx. 100 min" },
-      { id: "biab-refill", name: "BIAB / gel refill", price: "50–55 €", duration: "approx. 90 min" },
-      { id: "nail-extension", name: "New set with extensions", price: "from 75 €", duration: "approx. 120 min" },
       { id: "nail-removal", name: "Removal", price: "20 €", duration: "approx. 30 min" },
     ]},
     { id: "pedicure", label: "Pedicure", items: [
@@ -1095,11 +1085,6 @@ const bookingServices = {
     { id: "nails", label: "Nagels", items: [
       { id: "manicure-classic", name: "Klassieke manicure", price: "35 €", duration: "ca. 45 min" },
       { id: "manicure-gellak", name: "Hybride manicure / gellak", price: "45 €", duration: "ca. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / versteviging", price: "55 €", duration: "ca. 75 min" },
-      { id: "biab-color", name: "BIAB + kleur", price: "60 €", duration: "ca. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "ca. 100 min" },
-      { id: "biab-refill", name: "BIAB / gel opvullen", price: "50–55 €", duration: "ca. 90 min" },
-      { id: "nail-extension", name: "Nieuwe set met verlenging", price: "vanaf 75 €", duration: "ca. 120 min" },
       { id: "nail-removal", name: "Verwijderen", price: "20 €", duration: "ca. 30 min" },
     ]},
     { id: "pedicure", label: "Pedicure", items: [
