@@ -57,14 +57,53 @@
   </script>
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="/"><img src="/elviglow-logo.webp" alt="ElviGlow" /><span>ElviGlow</span></a>
-    <nav aria-label="Hoofdnavigatie">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="ElviGlow home">
+      <img src="/elviglow-logo.webp" alt="ElviGlow" />
+      <span><strong>ElviGlow</strong><small>Skin • Beauty • Care</small></span>
+    </a>
+
+    <nav class="nav-tabs desktop-nav" aria-label="Hoofdnavigatie">
+      <a href="/">Home</a>
       <a href="/zabiegi">Behandelingen</a>
+      <a href="/paznokcie">Nagels</a>
+      <a href="/depilacja">Ontharing</a>
+      <a href="/cialo">Lichaam</a>
       <a href="/wiedza">Huidkennis</a>
+      <a href="/akademia-skory">Huidacademie</a>
       <a href="/cennik">Prijzen</a>
       <a href="/kontakt">Contact</a>
-      <a class="book" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
+    </nav>
+
+    <div class="top-actions">
+      <div class="language-menu" id="seo-language-menu">
+        <button class="language-trigger" type="button" aria-expanded="false">
+          NL <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="language-options" role="menu">
+          <button type="button" data-lang="pl">PL</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" class="active" data-lang="nl">NL</button>
+        </div>
+      </div>
+      <a class="nav-cta" href="/kontakt">Afspraak maken</a>
+    </div>
+
+    <nav class="nav-tabs mobile-nav" aria-label="Mobiele navigatie">
+      <a href="/">Home</a>
+      <a href="/zabiegi">Behand.</a>
+      <a href="/paznokcie">Nagels</a>
+      <a href="/depilacja">Waxing</a>
+      <div class="nav-more" id="seo-nav-more">
+        <button class="nav-more-trigger" type="button" aria-expanded="false">•••</button>
+        <div class="nav-more-panel">
+          <a href="/cialo">Lichaam</a>
+          <a href="/wiedza">Huidkennis</a>
+          <a href="/akademia-skory">Huidacademie</a>
+          <a href="/cennik">Prijzen</a>
+          <a href="/kontakt">Contact</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -159,5 +198,53 @@
       </div>
     </div>
   </footer>
+<script>
+(() => {
+  const langMenu = document.getElementById("seo-language-menu");
+  const langTrigger = langMenu?.querySelector(".language-trigger");
+  const more = document.getElementById("seo-nav-more");
+  const moreTrigger = more?.querySelector(".nav-more-trigger");
+
+  langTrigger?.addEventListener("click", () => {
+    const open = !langMenu.classList.contains("open");
+    langMenu.classList.toggle("open", open);
+    langTrigger.setAttribute("aria-expanded", String(open));
+    more?.classList.remove("open");
+    moreTrigger?.setAttribute("aria-expanded", "false");
+  });
+
+  moreTrigger?.addEventListener("click", () => {
+    const open = !more.classList.contains("open");
+    more.classList.toggle("open", open);
+    moreTrigger.setAttribute("aria-expanded", String(open));
+    langMenu?.classList.remove("open");
+    langTrigger?.setAttribute("aria-expanded", "false");
+  });
+
+  langMenu?.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const lang = button.getAttribute("data-lang");
+      localStorage.setItem("elviglow-lang", lang);
+      if (lang === "nl") {
+        langMenu.classList.remove("open");
+        langTrigger.setAttribute("aria-expanded", "false");
+      } else {
+        window.location.href = "/";
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (langMenu && !langMenu.contains(event.target)) {
+      langMenu.classList.remove("open");
+      langTrigger?.setAttribute("aria-expanded", "false");
+    }
+    if (more && !more.contains(event.target)) {
+      more.classList.remove("open");
+      moreTrigger?.setAttribute("aria-expanded", "false");
+    }
+  });
+})();
+</script>
 </body>
 </html>
