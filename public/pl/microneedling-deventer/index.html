@@ -33,6 +33,13 @@
       "name": "ElviGlow",
       "url": "https://elviglow.com/",
       "telephone": "+31682224999",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Jan Wansinkstraat 59",
+                  "postalCode": "7415 PB",
+                  "addressLocality": "Deventer",
+                  "addressCountry": "NL"
+                },
       "image": "https://elviglow.com/elviglow-logo.png",
       "areaServed": {
         "@type": "City",
@@ -63,38 +70,36 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/" data-main-link aria-label="ElviGlow home">
-      <img src="/elviglow-logo.webp" alt="ElviGlow" />
-      <span><strong>ElviGlow</strong></span>
-    </a>
+    <div class="brand-row">
+      <a class="brand" href="/" aria-label="ElviGlow home">
+        <img src="/elviglow-logo.webp" alt="ElviGlow" />
+        <span><strong>ElviGlow</strong><small>Skóra • Beauty • Pielęgnacja</small></span>
+      </a>
 
-    <nav class="nav-tabs desktop-nav" aria-label="Main navigation">
-      <a href="/" data-main-link>Home</a><a class="active" href="/zabiegi" data-main-link>Zabiegi</a><a href="/paznokcie" data-main-link>Paznokcie</a><a href="/depilacja" data-main-link>Depilacja</a><a href="/cialo" data-main-link>Ciało</a><a href="/wiedza" data-main-link>Wiedza</a><a href="/akademia-skory" data-main-link>Akademia skóry</a><a href="/cennik" data-main-link>Cennik</a><a href="/kontakt" data-main-link>Kontakt</a>
-    </nav>
-
-    <div class="top-actions">
-      <div class="language-menu" id="seo-language-menu">
-        <button class="language-trigger" type="button" aria-expanded="false">
-          PL <span aria-hidden="true">⌄</span>
-        </button>
-        <div class="language-options" role="menu">
-          <a class="active" href="/pl/microneedling-deventer" data-lang-link="pl">PL</a><a href="/en/microneedling-deventer" data-lang-link="en">EN</a><a href="/microneedling-deventer" data-lang-link="nl">NL</a>
+      <div class="top-actions">
+        <div class="language-menu" id="seo-language-menu">
+          <button class="language-trigger" type="button" aria-expanded="false">
+            PL <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-options" role="menu"><a href="/pl/microneedling-deventer" data-lang-link="pl" class="active">PL</a><a href="/en/microneedling-deventer" data-lang-link="en">EN</a><a href="/microneedling-deventer" data-lang-link="nl">NL</a></div>
         </div>
+        <a class="nav-cta" href="/kontakt">Umów wizytę</a>
       </div>
-      <a class="nav-cta" href="/kontakt" data-main-link>Umów wizytę</a>
     </div>
 
+    <nav class="nav-tabs desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/zabiegi" class="active">Zabiegi</a><a href="/paznokcie">Paznokcie</a><a href="/depilacja">Depilacja</a><a href="/cialo">Ciało</a><a href="/wiedza">Wiedza</a><a href="/akademia-skory">Akademia skóry</a><a href="/cennik">Cennik</a><a href="/kontakt">Kontakt</a></nav>
+
     <nav class="nav-tabs mobile-nav" aria-label="Mobile navigation">
-      <a href="/" data-main-link>Home</a><a class="active" href="/zabiegi" data-main-link>Zabiegi</a><a href="/paznokcie" data-main-link>Paznokcie</a><a href="/depilacja" data-main-link>Depilacja</a>
+      <a href="/">Home</a><a href="/zabiegi" class="active">Zabiegi</a><a href="/paznokcie">Paznokcie</a><a href="/depilacja">Depilacja</a>
       <div class="nav-more" id="seo-nav-more">
         <button class="nav-more-trigger" type="button" aria-expanded="false">•••</button>
-        <div class="nav-more-panel"><a href="/cialo" data-main-link>Ciało</a><a href="/wiedza" data-main-link>Wiedza</a><a href="/akademia-skory" data-main-link>Akademia skóry</a><a href="/cennik" data-main-link>Cennik</a><a href="/kontakt" data-main-link>Kontakt</a></div>
+        <div class="nav-more-panel"><a href="/cialo">Ciało</a><a href="/wiedza">Wiedza</a><a href="/akademia-skory">Akademia skóry</a><a href="/cennik">Cennik</a><a href="/kontakt">Kontakt</a></div>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="article-hero">
       <p class="eyebrow">ElviGlow • Deventer</p>
       <h1>Microneedling w Deventer: praca nad strukturą skóry</h1>
       <p class="lead">Chcesz pracować nad widocznymi porami, nierówną strukturą, drobnymi liniami albo spadkiem jędrności? W ElviGlow intensywność i obszar zabiegu dobieramy dopiero po ocenie aktualnej kondycji skóry.</p>
@@ -105,7 +110,7 @@
       <div class="trust"><span>✦ Od 89 €</span><span>✦ Indywidualne dopasowanie</span><span>✦ Twarz • szyja • dekolt</span></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Najpierw zrozum, potem wybierz zabieg</p>
         <h2>Kiedy microneedling może być dobrym kierunkiem?</h2>
@@ -114,7 +119,7 @@
       <div class="grid"><article class="card"><div class="mark">✦</div><h3>Widoczne pory i struktura</h3><p>Dla skóry, która wygląda na nierówną lub bardziej szorstką i przy której sama pielęgnacja powierzchniowa nie daje oczekiwanego efektu.</p></article><article class="card"><div class="mark">✦</div><h3>Drobne linie i jędrność</h3><p>Opcja dla osób, które chcą pracować nad jakością i wyglądem skóry bez wybierania najmocniejszego zabiegu w ciemno.</p></article><article class="card"><div class="mark">✦</div><h3>Obszar dopasowany do celu</h3><p>Możesz wybrać twarz, twarz + szyję albo twarz + szyję + dekolt. Wielkość obszaru wpływa na cenę i czas.</p></article></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Ceny</p>
         <h2>Jasno, zanim się umówisz</h2>
@@ -123,7 +128,7 @@
       <div class="price-list"><div class="price-row"><div><h3>Microneedling — twarz</h3><p>Przygotowanie skóry, microneedling z ampułką i maska łagodząca.</p></div><strong>89 €</strong></div><div class="price-row"><div><h3>Microneedling — twarz + szyja</h3><p>Rozszerzony zabieg na twarz i szyję.</p></div><strong>109 €</strong></div><div class="price-row"><div><h3>Microneedling — twarz + szyja + dekolt</h3><p>Większy obszar zabiegowy z tą samą spokojną procedurą.</p></div><strong>129 €</strong></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Jak wygląda wizyta</p>
         <h2>Od pytania do zabiegu</h2>
@@ -131,7 +136,7 @@
       <div class="steps"><div class="step"><span>01</span><div><h3>Krótka ocena</h3><p>Rozmawiamy o tym, co widzisz na skórze, jaki masz cel i czy microneedling jest w tym momencie odpowiednim wyborem.</p></div></div><div class="step"><span>02</span><div><h3>Przygotowanie i zabieg</h3><p>Skóra zostaje przygotowana, następnie wykonywany jest microneedling z odpowiednio dobraną ampułką.</p></div></div><div class="step"><span>03</span><div><h3>Łagodne zakończenie</h3><p>Po zabiegu stosujemy maskę łagodzącą i przekazujemy proste zalecenia pozabiegowe.</p></div></div><div class="step"><span>04</span><div><h3>Kontynuacja tylko wtedy, gdy ma sens</h3><p>Serię omawiamy dopiero wtedy, gdy skóra reaguje spokojnie i cel jest jasno określony.</p></div></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Dobrze wiedzieć przed wizytą</h2>
@@ -140,7 +145,7 @@
       <p class="note">Treść ma charakter kosmetyczny i edukacyjny. Nie zastępuje diagnozy medycznej ani konsultacji dermatologicznej.</p>
     </section>
 
-    <section class="cta wrap">
+    <section class="cta">
       <div>
         <p class="eyebrow">ElviGlow • Deventer</p>
         <h2>Nie wiesz, czy microneedling pasuje do Twojej skóry?</h2>
@@ -154,37 +159,31 @@
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <div class="footer-inner">
-      <div><strong>ElviGlow</strong><br /><small>Deventer • Skóra • Beauty • Pielęgnacja</small></div>
-      <div class="footer-links">
-        <a href="/" data-main-link>Home</a>
-        <a href="/zabiegi" data-main-link>Zabiegi</a>
-        <a href="/akademia-skory" data-main-link>Akademia skóry</a>
-        <a href="/cennik" data-main-link>Cennik</a>
-        <a href="/kontakt" data-main-link>Kontakt</a>
+  <footer class="footer footer-premium">
+    <div class="footer-brand">
+      <img src="/elviglow-logo.webp" alt="ElviGlow" />
+      <div>
+        <strong>ElviGlow</strong>
+        <p>Skóra • Beauty • Pielęgnacja</p>
+        <small>Deventer • Skin • Beauty • Care</small>
       </div>
     </div>
+    <div class="footer-links">
+      <a href="/zabiegi">Zabiegi</a><a href="/akademia-skory">Akademia skóry</a><a href="/cennik">Cennik</a><a href="/kontakt">Kontakt</a>
+      <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
   </footer>
+  <div class="mobile-booking-bar" aria-label="Quick actions">
+    <a href="/akademia-skory" class="mobile-booking-secondary">Akademia skóry</a>
+    <a href="/kontakt" class="mobile-booking-primary">Umów wizytę</a>
+  </div>
 
   <script>
 (() => {
-  const pageLang = "pl";
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
   const moreTrigger = more?.querySelector(".nav-more-trigger");
-
-  // Important: do not change the saved language just because the page was opened.
-  // Language changes only after the visitor chooses it or continues to the main site.
-  document.querySelectorAll("[data-main-link]").forEach((link) => {
-    link.addEventListener("click", () => localStorage.setItem("elviglow-lang", pageLang));
-  });
-  document.querySelectorAll("[data-lang-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
-    });
-  });
 
   langTrigger?.addEventListener("click", () => {
     const open = !langMenu.classList.contains("open");
@@ -193,6 +192,7 @@
     more?.classList.remove("open");
     moreTrigger?.setAttribute("aria-expanded", "false");
   });
+
   moreTrigger?.addEventListener("click", () => {
     const open = !more.classList.contains("open");
     more.classList.toggle("open", open);
@@ -200,6 +200,14 @@
     langMenu?.classList.remove("open");
     langTrigger?.setAttribute("aria-expanded", "false");
   });
+
+  // The site's language changes only when the visitor explicitly chooses PL / EN / NL.
+  document.querySelectorAll("[data-lang-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (langMenu && !langMenu.contains(event.target)) {
       langMenu.classList.remove("open");

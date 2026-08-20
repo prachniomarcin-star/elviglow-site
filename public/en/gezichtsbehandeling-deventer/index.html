@@ -33,6 +33,13 @@
       "name": "ElviGlow",
       "url": "https://elviglow.com/",
       "telephone": "+31682224999",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Jan Wansinkstraat 59",
+                  "postalCode": "7415 PB",
+                  "addressLocality": "Deventer",
+                  "addressCountry": "NL"
+                },
       "image": "https://elviglow.com/elviglow-logo.png",
       "areaServed": {
         "@type": "City",
@@ -63,38 +70,36 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/" data-main-link aria-label="ElviGlow home">
-      <img src="/elviglow-logo.webp" alt="ElviGlow" />
-      <span><strong>ElviGlow</strong></span>
-    </a>
+    <div class="brand-row">
+      <a class="brand" href="/" aria-label="ElviGlow home">
+        <img src="/elviglow-logo.webp" alt="ElviGlow" />
+        <span><strong>ElviGlow</strong><small>Skin • Beauty • Care</small></span>
+      </a>
 
-    <nav class="nav-tabs desktop-nav" aria-label="Main navigation">
-      <a href="/" data-main-link>Home</a><a class="active" href="/zabiegi" data-main-link>Treatments</a><a href="/paznokcie" data-main-link>Nails</a><a href="/depilacja" data-main-link>Waxing</a><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a>
-    </nav>
-
-    <div class="top-actions">
-      <div class="language-menu" id="seo-language-menu">
-        <button class="language-trigger" type="button" aria-expanded="false">
-          EN <span aria-hidden="true">⌄</span>
-        </button>
-        <div class="language-options" role="menu">
-          <a href="/pl/gezichtsbehandeling-deventer" data-lang-link="pl">PL</a><a class="active" href="/en/gezichtsbehandeling-deventer" data-lang-link="en">EN</a><a href="/gezichtsbehandeling-deventer" data-lang-link="nl">NL</a>
+      <div class="top-actions">
+        <div class="language-menu" id="seo-language-menu">
+          <button class="language-trigger" type="button" aria-expanded="false">
+            EN <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-options" role="menu"><a href="/pl/gezichtsbehandeling-deventer" data-lang-link="pl">PL</a><a href="/en/gezichtsbehandeling-deventer" data-lang-link="en" class="active">EN</a><a href="/gezichtsbehandeling-deventer" data-lang-link="nl">NL</a></div>
         </div>
+        <a class="nav-cta" href="/kontakt">Book</a>
       </div>
-      <a class="nav-cta" href="/kontakt" data-main-link>Book</a>
     </div>
 
+    <nav class="nav-tabs desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/zabiegi" class="active">Treatments</a><a href="/paznokcie">Nails</a><a href="/depilacja">Waxing</a><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></nav>
+
     <nav class="nav-tabs mobile-nav" aria-label="Mobile navigation">
-      <a href="/" data-main-link>Home</a><a class="active" href="/zabiegi" data-main-link>Treat.</a><a href="/paznokcie" data-main-link>Nails</a><a href="/depilacja" data-main-link>Waxing</a>
+      <a href="/">Home</a><a href="/zabiegi" class="active">Treatments</a><a href="/paznokcie">Nails</a><a href="/depilacja">Waxing</a>
       <div class="nav-more" id="seo-nav-more">
         <button class="nav-more-trigger" type="button" aria-expanded="false">•••</button>
-        <div class="nav-more-panel"><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a></div>
+        <div class="nav-more-panel"><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></div>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="article-hero">
       <p class="eyebrow">Facial treatments • Deventer</p>
       <h1>Facial treatments in Deventer without choosing blindly</h1>
       <p class="lead">Want fresher skin, deeper cleansing, more glow or support for texture? At ElviGlow you do not choose only by treatment name. We match your skin goal to the treatment that fits.</p>
@@ -105,7 +110,7 @@
       <div class="trust"><span>✦ From €50</span><span>✦ Cleansing • glow • lifting</span><span>✦ Personal approach</span></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Understand first, then choose</p>
         <h2>From a gentle refresh to more intensive regeneration</h2>
@@ -114,7 +119,7 @@
       <div class="grid"><article class="card"><div class="mark">✦</div><h3>Cleansing</h3><p>For visible pores, impurities and skin that needs deeper but controlled cleansing.</p></article><article class="card"><div class="mark">✦</div><h3>Glow and care</h3><p>For dry, dull or tired skin that mainly needs freshness, comfort and care.</p></article><article class="card"><div class="mark">✦</div><h3>Texture and firmness</h3><p>For a goal that goes beyond quick glow and moves more towards skin quality or regeneration.</p></article></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Prices</p>
         <h2>Clear before you book</h2>
@@ -123,7 +128,7 @@
       <div class="price-list"><div class="price-row"><div><h3>Microdermabrasion</h3><p>Diamond microdermabrasion with a hydrating mask.</p></div><strong>€50</strong></div><div class="price-row"><div><h3>Oxybrasion</h3><p>Gentle water-oxygen exfoliation and soothing finish.</p></div><strong>€59</strong></div><div class="price-row"><div><h3>Hydrogen cleansing</h3><p>Cavitation peeling, hydrogen cleansing, oxygen infusion with ampoule and manual cleansing when needed.</p></div><strong>€69</strong></div><div class="price-row"><div><h3>Glow Therapy with ampoule and mask</h3><p>For dry, dull or tired skin.</p></div><strong>€89</strong></div><div class="price-row"><div><h3>Lifting care</h3><p>For skin that looks less firm or tired.</p></div><strong>€95</strong></div><div class="price-row"><div><h3>Microneedling — face</h3><p>For texture, pores and regeneration.</p></div><strong>€89</strong></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">How an appointment works</p>
         <h2>From question to treatment</h2>
@@ -131,7 +136,7 @@
       <div class="steps"><div class="step"><span>01</span><div><h3>Choose your skin goal</h3><p>For example cleansing, glow, smoothness, firmness or texture.</p></div></div><div class="step"><span>02</span><div><h3>Share relevant details</h3><p>Sensitivity, recent irritation or other relevant information should be mentioned beforehand.</p></div></div><div class="step"><span>03</span><div><h3>Treatment matched to the goal</h3><p>The treatment is performed calmly without unnecessary extra steps.</p></div></div><div class="step"><span>04</span><div><h3>Aftercare</h3><p>You receive simple guidance for the first days and your daily routine.</p></div></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Frequently asked questions</p>
         <h2>Good to know before your visit</h2>
@@ -140,7 +145,7 @@
       <p class="note">Results and skin responses differ per person. Cosmetic care does not replace medical assessment.</p>
     </section>
 
-    <section class="cta wrap">
+    <section class="cta">
       <div>
         <p class="eyebrow">ElviGlow • Deventer</p>
         <h2>Prefer to choose by skin goal rather than treatment name?</h2>
@@ -154,37 +159,31 @@
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <div class="footer-inner">
-      <div><strong>ElviGlow</strong><br /><small>Deventer • Skin • Beauty • Care</small></div>
-      <div class="footer-links">
-        <a href="/" data-main-link>Home</a>
-        <a href="/zabiegi" data-main-link>Treatments</a>
-        <a href="/akademia-skory" data-main-link>Skin Academy</a>
-        <a href="/cennik" data-main-link>Prices</a>
-        <a href="/kontakt" data-main-link>Contact</a>
+  <footer class="footer footer-premium">
+    <div class="footer-brand">
+      <img src="/elviglow-logo.webp" alt="ElviGlow" />
+      <div>
+        <strong>ElviGlow</strong>
+        <p>Skin • Beauty • Care</p>
+        <small>Deventer • Skin • Beauty • Care</small>
       </div>
     </div>
+    <div class="footer-links">
+      <a href="/zabiegi">Treatments</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a>
+      <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
   </footer>
+  <div class="mobile-booking-bar" aria-label="Quick actions">
+    <a href="/akademia-skory" class="mobile-booking-secondary">Skin Academy</a>
+    <a href="/kontakt" class="mobile-booking-primary">Book</a>
+  </div>
 
   <script>
 (() => {
-  const pageLang = "en";
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
   const moreTrigger = more?.querySelector(".nav-more-trigger");
-
-  // Important: do not change the saved language just because the page was opened.
-  // Language changes only after the visitor chooses it or continues to the main site.
-  document.querySelectorAll("[data-main-link]").forEach((link) => {
-    link.addEventListener("click", () => localStorage.setItem("elviglow-lang", pageLang));
-  });
-  document.querySelectorAll("[data-lang-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
-    });
-  });
 
   langTrigger?.addEventListener("click", () => {
     const open = !langMenu.classList.contains("open");
@@ -193,6 +192,7 @@
     more?.classList.remove("open");
     moreTrigger?.setAttribute("aria-expanded", "false");
   });
+
   moreTrigger?.addEventListener("click", () => {
     const open = !more.classList.contains("open");
     more.classList.toggle("open", open);
@@ -200,6 +200,14 @@
     langMenu?.classList.remove("open");
     langTrigger?.setAttribute("aria-expanded", "false");
   });
+
+  // The site's language changes only when the visitor explicitly chooses PL / EN / NL.
+  document.querySelectorAll("[data-lang-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (langMenu && !langMenu.contains(event.target)) {
       langMenu.classList.remove("open");

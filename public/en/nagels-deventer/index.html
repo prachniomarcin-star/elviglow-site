@@ -33,6 +33,13 @@
       "name": "ElviGlow",
       "url": "https://elviglow.com/",
       "telephone": "+31682224999",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Jan Wansinkstraat 59",
+                  "postalCode": "7415 PB",
+                  "addressLocality": "Deventer",
+                  "addressCountry": "NL"
+                },
       "image": "https://elviglow.com/elviglow-logo.png",
       "areaServed": {
         "@type": "City",
@@ -63,38 +70,36 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/" data-main-link aria-label="ElviGlow home">
-      <img src="/elviglow-logo.webp" alt="ElviGlow" />
-      <span><strong>ElviGlow</strong></span>
-    </a>
+    <div class="brand-row">
+      <a class="brand" href="/" aria-label="ElviGlow home">
+        <img src="/elviglow-logo.webp" alt="ElviGlow" />
+        <span><strong>ElviGlow</strong><small>Skin • Beauty • Care</small></span>
+      </a>
 
-    <nav class="nav-tabs desktop-nav" aria-label="Main navigation">
-      <a href="/" data-main-link>Home</a><a href="/zabiegi" data-main-link>Treatments</a><a class="active" href="/paznokcie" data-main-link>Nails</a><a href="/depilacja" data-main-link>Waxing</a><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a>
-    </nav>
-
-    <div class="top-actions">
-      <div class="language-menu" id="seo-language-menu">
-        <button class="language-trigger" type="button" aria-expanded="false">
-          EN <span aria-hidden="true">⌄</span>
-        </button>
-        <div class="language-options" role="menu">
-          <a href="/pl/nagels-deventer" data-lang-link="pl">PL</a><a class="active" href="/en/nagels-deventer" data-lang-link="en">EN</a><a href="/nagels-deventer" data-lang-link="nl">NL</a>
+      <div class="top-actions">
+        <div class="language-menu" id="seo-language-menu">
+          <button class="language-trigger" type="button" aria-expanded="false">
+            EN <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-options" role="menu"><a href="/pl/nagels-deventer" data-lang-link="pl">PL</a><a href="/en/nagels-deventer" data-lang-link="en" class="active">EN</a><a href="/nagels-deventer" data-lang-link="nl">NL</a></div>
         </div>
+        <a class="nav-cta" href="/kontakt">Book</a>
       </div>
-      <a class="nav-cta" href="/kontakt" data-main-link>Book</a>
     </div>
 
+    <nav class="nav-tabs desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/zabiegi">Treatments</a><a href="/paznokcie" class="active">Nails</a><a href="/depilacja">Waxing</a><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></nav>
+
     <nav class="nav-tabs mobile-nav" aria-label="Mobile navigation">
-      <a href="/" data-main-link>Home</a><a href="/zabiegi" data-main-link>Treat.</a><a class="active" href="/paznokcie" data-main-link>Nails</a><a href="/depilacja" data-main-link>Waxing</a>
+      <a href="/">Home</a><a href="/zabiegi">Treatments</a><a href="/paznokcie" class="active">Nails</a><a href="/depilacja">Waxing</a>
       <div class="nav-more" id="seo-nav-more">
         <button class="nav-more-trigger" type="button" aria-expanded="false">•••</button>
-        <div class="nav-more-panel"><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a></div>
+        <div class="nav-more-panel"><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></div>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="article-hero">
       <p class="eyebrow">Nails • Deventer</p>
       <h1>Nails in Deventer: manicure, gellak and pedicure</h1>
       <p class="lead">From classic manicure to gellak, extensions, refills and pedicure. At ElviGlow you can see in advance what you are booking, what it costs and what type of appointment is needed.</p>
@@ -105,7 +110,7 @@
       <div class="trust"><span>✦ Manicure from €35</span><span>✦ Gellak €50</span><span>✦ Pedicure from €40</span></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Understand first, then choose</p>
         <h2>Choose exactly what you need</h2>
@@ -114,7 +119,7 @@
       <div class="grid"><article class="card"><div class="mark">✦</div><h3>Manicure and gellak</h3><p>For cared-for natural nails, neat shape and durable colour.</p></article><article class="card"><div class="mark">✦</div><h3>Extensions and refill</h3><p>A new set with gel or acrylic, or a refill when the existing set is still within the agreed period.</p></article><article class="card"><div class="mark">✦</div><h3>Pedicure</h3><p>Classic foot and nail care or pedicure with gellak.</p></article></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Prices</p>
         <h2>Clear before you book</h2>
@@ -123,7 +128,7 @@
       <div class="price-list"><div class="price-row"><div><h3>Classic manicure</h3><p>Care of nail plate, cuticles and shape.</p></div><strong>€35</strong></div><div class="price-row"><div><h3>Manicure + gellak</h3><p>Durable colour with a neat finish.</p></div><strong>€50</strong></div><div class="price-row"><div><h3>Gel or acrylic extensions</h3><p>New set with extensions.</p></div><strong>€65</strong></div><div class="price-row"><div><h3>Extensions + gellak</h3><p>New set with extensions and colour.</p></div><strong>€70</strong></div><div class="price-row"><div><h3>Refill up to 4 weeks</h3><p>After 4 weeks a new set applies.</p></div><strong>€55</strong></div><div class="price-row"><div><h3>Removal</h3><p>Removal and preparation of the natural nail.</p></div><strong>€20</strong></div><div class="price-row"><div><h3>Classic pedicure</h3><p>Care of feet, nails and cuticles.</p></div><strong>€40</strong></div><div class="price-row"><div><h3>Pedicure + gellak</h3><p>Pedicure with durable colour.</p></div><strong>€50</strong></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">How an appointment works</p>
         <h2>From question to treatment</h2>
@@ -131,7 +136,7 @@
       <div class="steps"><div class="step"><span>01</span><div><h3>Choose the exact treatment</h3><p>Select manicure, gellak, extensions, refill, removal or pedicure in the form.</p></div></div><div class="step"><span>02</span><div><h3>Share your preference</h3><p>For example colour, length or details about your existing set.</p></div></div><div class="step"><span>03</span><div><h3>We reserve the right amount of time</h3><p>The service determines the required time. Extensions and refill details are confirmed when booking.</p></div></div><div class="step"><span>04</span><div><h3>Appointment via WhatsApp or Instagram</h3><p>The requested date and time are confirmed personally.</p></div></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Frequently asked questions</p>
         <h2>Good to know before your visit</h2>
@@ -140,7 +145,7 @@
       <p class="note">Final treatment time can vary due to length, existing styling, nail condition and desired finish.</p>
     </section>
 
-    <section class="cta wrap">
+    <section class="cta">
       <div>
         <p class="eyebrow">ElviGlow • Deventer</p>
         <h2>Looking for manicure, extensions or pedicure in Deventer?</h2>
@@ -154,37 +159,31 @@
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <div class="footer-inner">
-      <div><strong>ElviGlow</strong><br /><small>Deventer • Skin • Beauty • Care</small></div>
-      <div class="footer-links">
-        <a href="/" data-main-link>Home</a>
-        <a href="/zabiegi" data-main-link>Treatments</a>
-        <a href="/akademia-skory" data-main-link>Skin Academy</a>
-        <a href="/cennik" data-main-link>Prices</a>
-        <a href="/kontakt" data-main-link>Contact</a>
+  <footer class="footer footer-premium">
+    <div class="footer-brand">
+      <img src="/elviglow-logo.webp" alt="ElviGlow" />
+      <div>
+        <strong>ElviGlow</strong>
+        <p>Skin • Beauty • Care</p>
+        <small>Deventer • Skin • Beauty • Care</small>
       </div>
     </div>
+    <div class="footer-links">
+      <a href="/zabiegi">Treatments</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a>
+      <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
   </footer>
+  <div class="mobile-booking-bar" aria-label="Quick actions">
+    <a href="/akademia-skory" class="mobile-booking-secondary">Skin Academy</a>
+    <a href="/kontakt" class="mobile-booking-primary">Book</a>
+  </div>
 
   <script>
 (() => {
-  const pageLang = "en";
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
   const moreTrigger = more?.querySelector(".nav-more-trigger");
-
-  // Important: do not change the saved language just because the page was opened.
-  // Language changes only after the visitor chooses it or continues to the main site.
-  document.querySelectorAll("[data-main-link]").forEach((link) => {
-    link.addEventListener("click", () => localStorage.setItem("elviglow-lang", pageLang));
-  });
-  document.querySelectorAll("[data-lang-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
-    });
-  });
 
   langTrigger?.addEventListener("click", () => {
     const open = !langMenu.classList.contains("open");
@@ -193,6 +192,7 @@
     more?.classList.remove("open");
     moreTrigger?.setAttribute("aria-expanded", "false");
   });
+
   moreTrigger?.addEventListener("click", () => {
     const open = !more.classList.contains("open");
     more.classList.toggle("open", open);
@@ -200,6 +200,14 @@
     langMenu?.classList.remove("open");
     langTrigger?.setAttribute("aria-expanded", "false");
   });
+
+  // The site's language changes only when the visitor explicitly chooses PL / EN / NL.
+  document.querySelectorAll("[data-lang-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (langMenu && !langMenu.contains(event.target)) {
       langMenu.classList.remove("open");

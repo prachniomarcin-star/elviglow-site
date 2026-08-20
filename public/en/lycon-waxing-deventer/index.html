@@ -33,6 +33,13 @@
       "name": "ElviGlow",
       "url": "https://elviglow.com/",
       "telephone": "+31682224999",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Jan Wansinkstraat 59",
+                  "postalCode": "7415 PB",
+                  "addressLocality": "Deventer",
+                  "addressCountry": "NL"
+                },
       "image": "https://elviglow.com/elviglow-logo.png",
       "areaServed": {
         "@type": "City",
@@ -63,38 +70,36 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/" data-main-link aria-label="ElviGlow home">
-      <img src="/elviglow-logo.webp" alt="ElviGlow" />
-      <span><strong>ElviGlow</strong></span>
-    </a>
+    <div class="brand-row">
+      <a class="brand" href="/" aria-label="ElviGlow home">
+        <img src="/elviglow-logo.webp" alt="ElviGlow" />
+        <span><strong>ElviGlow</strong><small>Skin • Beauty • Care</small></span>
+      </a>
 
-    <nav class="nav-tabs desktop-nav" aria-label="Main navigation">
-      <a href="/" data-main-link>Home</a><a href="/zabiegi" data-main-link>Treatments</a><a href="/paznokcie" data-main-link>Nails</a><a class="active" href="/depilacja" data-main-link>Waxing</a><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a>
-    </nav>
-
-    <div class="top-actions">
-      <div class="language-menu" id="seo-language-menu">
-        <button class="language-trigger" type="button" aria-expanded="false">
-          EN <span aria-hidden="true">⌄</span>
-        </button>
-        <div class="language-options" role="menu">
-          <a href="/pl/lycon-waxing-deventer" data-lang-link="pl">PL</a><a class="active" href="/en/lycon-waxing-deventer" data-lang-link="en">EN</a><a href="/lycon-waxing-deventer" data-lang-link="nl">NL</a>
+      <div class="top-actions">
+        <div class="language-menu" id="seo-language-menu">
+          <button class="language-trigger" type="button" aria-expanded="false">
+            EN <span aria-hidden="true">⌄</span>
+          </button>
+          <div class="language-options" role="menu"><a href="/pl/lycon-waxing-deventer" data-lang-link="pl">PL</a><a href="/en/lycon-waxing-deventer" data-lang-link="en" class="active">EN</a><a href="/lycon-waxing-deventer" data-lang-link="nl">NL</a></div>
         </div>
+        <a class="nav-cta" href="/kontakt">Book</a>
       </div>
-      <a class="nav-cta" href="/kontakt" data-main-link>Book</a>
     </div>
 
+    <nav class="nav-tabs desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/zabiegi">Treatments</a><a href="/paznokcie">Nails</a><a href="/depilacja" class="active">Waxing</a><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></nav>
+
     <nav class="nav-tabs mobile-nav" aria-label="Mobile navigation">
-      <a href="/" data-main-link>Home</a><a href="/zabiegi" data-main-link>Treat.</a><a href="/paznokcie" data-main-link>Nails</a><a class="active" href="/depilacja" data-main-link>Waxing</a>
+      <a href="/">Home</a><a href="/zabiegi">Treatments</a><a href="/paznokcie">Nails</a><a href="/depilacja" class="active">Waxing</a>
       <div class="nav-more" id="seo-nav-more">
         <button class="nav-more-trigger" type="button" aria-expanded="false">•••</button>
-        <div class="nav-more-panel"><a href="/cialo" data-main-link>Body</a><a href="/wiedza" data-main-link>Knowledge</a><a href="/akademia-skory" data-main-link>Skin Academy</a><a href="/cennik" data-main-link>Prices</a><a href="/kontakt" data-main-link>Contact</a></div>
+        <div class="nav-more-panel"><a href="/cialo">Body</a><a href="/wiedza">Knowledge</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a></div>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="article-hero">
       <p class="eyebrow">Lycon waxing • Deventer</p>
       <h1>Lycon waxing in Deventer for precise and larger areas</h1>
       <p class="lead">From brows and upper lip to underarms, legs and bikini. ElviGlow works with Lycon waxing and clear prices per area, so you know what you are booking in advance.</p>
@@ -105,7 +110,7 @@
       <div class="trust"><span>✦ From €10</span><span>✦ Lycon waxing</span><span>✦ Bikini • legs • facial zones</span></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Understand first, then choose</p>
         <h2>Comfort, precision and a clear area choice</h2>
@@ -114,7 +119,7 @@
       <div class="grid"><article class="card"><div class="mark">✦</div><h3>Precise facial areas</h3><p>Upper lip and brows are booked separately, so you do not automatically pay for a full-face service.</p></article><article class="card"><div class="mark">✦</div><h3>Body areas</h3><p>Underarms, forearms, lower legs, full legs and back each have a fixed price.</p></article><article class="card"><div class="mark">✦</div><h3>Bikini and Brazilian</h3><p>Bikini line and Brazilian waxing are separate treatments with enough time reserved.</p></article></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Prices</p>
         <h2>Clear before you book</h2>
@@ -123,7 +128,7 @@
       <div class="price-list"><div class="price-row"><div><h3>Upper lip</h3><p>Small, precise facial area.</p></div><strong>€10</strong></div><div class="price-row"><div><h3>Brows</h3><p>Waxing and shaping.</p></div><strong>€15</strong></div><div class="price-row"><div><h3>Brows + tint</h3><p>Brow treatment with colour.</p></div><strong>€25</strong></div><div class="price-row"><div><h3>Underarms</h3><p>Waxing of both underarms.</p></div><strong>€20</strong></div><div class="price-row"><div><h3>Forearms</h3><p>Waxing of the forearms.</p></div><strong>€25</strong></div><div class="price-row"><div><h3>Lower legs</h3><p>Waxing of the lower legs.</p></div><strong>€30</strong></div><div class="price-row"><div><h3>Full legs</h3><p>Waxing of both legs.</p></div><strong>€35</strong></div><div class="price-row"><div><h3>Back</h3><p>Waxing of the back.</p></div><strong>€36</strong></div><div class="price-row"><div><h3>Bikini line</h3><p>Waxing along the bikini line.</p></div><strong>€40</strong></div><div class="price-row"><div><h3>Brazilian waxing</h3><p>More extensive intimate waxing.</p></div><strong>€50</strong></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">How an appointment works</p>
         <h2>From question to treatment</h2>
@@ -131,7 +136,7 @@
       <div class="steps"><div class="step"><span>01</span><div><h3>Choose the area</h3><p>Select exactly which area you want treated.</p></div></div><div class="step"><span>02</span><div><h3>Prepare the skin gently</h3><p>Avoid unnecessary irritation just before the appointment and mention any relevant details.</p></div></div><div class="step"><span>03</span><div><h3>Waxing by appointment</h3><p>We work hygienically and reserve enough time for the selected area.</p></div></div><div class="step"><span>04</span><div><h3>Calm aftercare</h3><p>You receive simple guidance to limit friction and unnecessary irritation for a short time.</p></div></div></div>
     </section>
 
-    <section class="section wrap">
+    <section class="article-section">
       <div class="section-head">
         <p class="eyebrow">Frequently asked questions</p>
         <h2>Good to know before your visit</h2>
@@ -140,7 +145,7 @@
       <p class="note">Waxing is not performed over damaged, strongly irritated or actively inflamed skin.</p>
     </section>
 
-    <section class="cta wrap">
+    <section class="cta">
       <div>
         <p class="eyebrow">ElviGlow • Deventer</p>
         <h2>Which area would you like to wax?</h2>
@@ -154,37 +159,31 @@
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <div class="footer-inner">
-      <div><strong>ElviGlow</strong><br /><small>Deventer • Skin • Beauty • Care</small></div>
-      <div class="footer-links">
-        <a href="/" data-main-link>Home</a>
-        <a href="/zabiegi" data-main-link>Treatments</a>
-        <a href="/akademia-skory" data-main-link>Skin Academy</a>
-        <a href="/cennik" data-main-link>Prices</a>
-        <a href="/kontakt" data-main-link>Contact</a>
+  <footer class="footer footer-premium">
+    <div class="footer-brand">
+      <img src="/elviglow-logo.webp" alt="ElviGlow" />
+      <div>
+        <strong>ElviGlow</strong>
+        <p>Skin • Beauty • Care</p>
+        <small>Deventer • Skin • Beauty • Care</small>
       </div>
     </div>
+    <div class="footer-links">
+      <a href="/zabiegi">Treatments</a><a href="/akademia-skory">Skin Academy</a><a href="/cennik">Prices</a><a href="/kontakt">Contact</a>
+      <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
   </footer>
+  <div class="mobile-booking-bar" aria-label="Quick actions">
+    <a href="/akademia-skory" class="mobile-booking-secondary">Skin Academy</a>
+    <a href="/kontakt" class="mobile-booking-primary">Book</a>
+  </div>
 
   <script>
 (() => {
-  const pageLang = "en";
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
   const moreTrigger = more?.querySelector(".nav-more-trigger");
-
-  // Important: do not change the saved language just because the page was opened.
-  // Language changes only after the visitor chooses it or continues to the main site.
-  document.querySelectorAll("[data-main-link]").forEach((link) => {
-    link.addEventListener("click", () => localStorage.setItem("elviglow-lang", pageLang));
-  });
-  document.querySelectorAll("[data-lang-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
-    });
-  });
 
   langTrigger?.addEventListener("click", () => {
     const open = !langMenu.classList.contains("open");
@@ -193,6 +192,7 @@
     more?.classList.remove("open");
     moreTrigger?.setAttribute("aria-expanded", "false");
   });
+
   moreTrigger?.addEventListener("click", () => {
     const open = !more.classList.contains("open");
     more.classList.toggle("open", open);
@@ -200,6 +200,14 @@
     langMenu?.classList.remove("open");
     langTrigger?.setAttribute("aria-expanded", "false");
   });
+
+  // The site's language changes only when the visitor explicitly chooses PL / EN / NL.
+  document.querySelectorAll("[data-lang-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
+    });
+  });
+
   document.addEventListener("click", (event) => {
     if (langMenu && !langMenu.contains(event.target)) {
       langMenu.classList.remove("open");
