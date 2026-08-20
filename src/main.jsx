@@ -707,22 +707,22 @@ function PricingPage({ t }) {
 function AcademyPage({ t, onNavigate, lang }) {
   const academyNextStep = {
     pl: {
-      title: "Wiesz już, czego potrzebuje Twoja skóra?",
-      text: "Sprawdź cennik zabiegów albo napisz do nas, jeśli chcesz dobrać pierwszy rytuał do aktualnego stanu skóry.",
-      primary: "Zobacz cennik",
-      secondary: "Kontakt",
+      title: "Znalazłaś kierunek dla swojej skóry?",
+      text: "Po rekomendacji możesz od razu umówić wizytę albo sprawdzić aktualną cenę wybranego zabiegu.",
+      primary: "Umów wizytę",
+      secondary: "Zobacz cennik",
     },
     en: {
-      title: "Do you already know what your skin needs?",
-      text: "Check the price list or message us if you want to choose the first ritual for your current skin condition.",
-      primary: "View prices",
-      secondary: "Contact",
+      title: "Found the right direction for your skin?",
+      text: "After the recommendation, you can book a visit straight away or check the current price of the selected treatment.",
+      primary: "Book a visit",
+      secondary: "View prices",
     },
     nl: {
-      title: "Weet je al wat je huid nodig heeft?",
-      text: "Bekijk de prijslijst of stuur ons een bericht als je het eerste ritueel wilt afstemmen op je huidige huidconditie.",
-      primary: "Bekijk prijzen",
-      secondary: "Contact",
+      title: "Heb je een passende richting voor je huid gevonden?",
+      text: "Na de aanbeveling kun je direct een afspraak maken of de actuele prijs van de gekozen behandeling bekijken.",
+      primary: "Maak afspraak",
+      secondary: "Bekijk prijzen",
     },
   }[lang] || {
     title: t.cta.title,
@@ -762,7 +762,7 @@ function AcademyPage({ t, onNavigate, lang }) {
         </div>
       </section>
 
-      <ElviSkinMiniMap lang={lang} />
+      <ElviSkinMiniMap lang={lang} onNavigate={onNavigate} />
 
       <section className="section age-section">
         <div className="section-heading center">
@@ -813,8 +813,8 @@ function AcademyPage({ t, onNavigate, lang }) {
           <p>{academyNextStep.text}</p>
         </div>
         <div className="hero-actions">
-          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.primary}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.secondary}</button>
+          <button className="primary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.primary}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.secondary}</button>
         </div>
       </section>
     </>
@@ -974,14 +974,14 @@ const bookingServices = {
     { id: "face", label: "Zabiegi twarzy", items: [
       { id: "oxy", name: "Oxybrazja", price: "59 €", duration: "ok. 60 min" },
       { id: "microdermabrasion", name: "Mikrodermabrazja", price: "50 €", duration: "ok. 60 min" },
-      { id: "cleansing-glow", name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 75 min" },
-      { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 75 min" },
+      { id: "cleansing-glow", name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 60 min" },
+      { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 60 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — twarz", price: "89 €", duration: "ok. 75 min" },
-      { id: "micro-neck", name: "Microneedling — twarz + szyja", price: "109 €", duration: "ok. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — twarz + szyja + dekolt", price: "129 €", duration: "ok. 105 min" },
+      { id: "micro-face", name: "Microneedling — twarz", price: "89 €", duration: "ok. 30 min" },
+      { id: "micro-neck", name: "Microneedling — twarz + szyja", price: "109 €", duration: "ok. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — twarz + szyja + dekolt", price: "139 €", duration: "ok. 60 min" },
     ]},
     { id: "nails", label: "Paznokcie", items: [
       { id: "manicure-classic", name: "Manicure klasyczny", price: "35 €", duration: "ok. 45 min" },
@@ -1030,14 +1030,14 @@ const bookingServices = {
     { id: "face", label: "Facial treatments", items: [
       { id: "oxy", name: "Oxybrasion", price: "59 €", duration: "approx. 60 min" },
       { id: "microdermabrasion", name: "Microdermabrasion", price: "50 €", duration: "approx. 60 min" },
-      { id: "cleansing-glow", name: "Hydrogen Cleansing", price: "69 €", duration: "approx. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 75 min" },
-      { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 75 min" },
+      { id: "cleansing-glow", name: "Hydrogen Cleansing", price: "69 €", duration: "approx. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 60 min" },
+      { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 60 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — face", price: "89 €", duration: "approx. 75 min" },
-      { id: "micro-neck", name: "Microneedling — face + neck", price: "109 €", duration: "approx. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — face + neck + décolleté", price: "129 €", duration: "approx. 105 min" },
+      { id: "micro-face", name: "Microneedling — face", price: "89 €", duration: "approx. 30 min" },
+      { id: "micro-neck", name: "Microneedling — face + neck", price: "109 €", duration: "approx. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — face + neck + décolleté", price: "139 €", duration: "approx. 60 min" },
     ]},
     { id: "nails", label: "Nails", items: [
       { id: "manicure-classic", name: "Classic manicure", price: "35 €", duration: "approx. 45 min" },
@@ -1086,14 +1086,14 @@ const bookingServices = {
     { id: "face", label: "Gezichtsbehandelingen", items: [
       { id: "oxy", name: "Oxybrasie", price: "59 €", duration: "ca. 60 min" },
       { id: "microdermabrasion", name: "Microdermabrasie", price: "50 €", duration: "ca. 60 min" },
-      { id: "cleansing-glow", name: "Waterstofreiniging", price: "69 €", duration: "ca. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 75 min" },
-      { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 75 min" },
+      { id: "cleansing-glow", name: "Waterstofreiniging", price: "69 €", duration: "ca. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 60 min" },
+      { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 60 min" },
     ]},
     { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — gezicht", price: "89 €", duration: "ca. 75 min" },
-      { id: "micro-neck", name: "Microneedling — gezicht + hals", price: "109 €", duration: "ca. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — gezicht + hals + decolleté", price: "129 €", duration: "ca. 105 min" },
+      { id: "micro-face", name: "Microneedling — gezicht", price: "89 €", duration: "ca. 30 min" },
+      { id: "micro-neck", name: "Microneedling — gezicht + hals", price: "109 €", duration: "ca. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — gezicht + hals + decolleté", price: "139 €", duration: "ca. 60 min" },
     ]},
     { id: "nails", label: "Nagels", items: [
       { id: "manicure-classic", name: "Klassieke manicure", price: "35 €", duration: "ca. 45 min" },
