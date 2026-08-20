@@ -189,3 +189,158 @@ h3{font-size:clamp(1.35rem,2.2vw,1.9rem)}
   h1{font-size:clamp(2.55rem,11.2vw,3.75rem);line-height:.97}
   .section{padding:38px 0;scroll-margin-top:156px}
 }
+
+
+/* =========================================================
+   V12 — header 1:1 closer to the current ElviGlow desktop UI
+   ========================================================= */
+.topbar{
+  width:min(1460px,calc(100% - 24px));
+  grid-template-columns:auto minmax(0,1fr) auto;
+  padding:9px 12px;
+  gap:14px;
+  min-height:72px;
+}
+.brand{
+  gap:10px;
+  font-size:1.08rem;
+  min-width:145px;
+}
+.brand img{
+  width:52px;
+  height:52px;
+}
+.brand span{
+  display:block;
+}
+.brand small{
+  display:none !important;
+}
+.desktop-nav{
+  gap:0;
+  justify-content:center;
+  overflow:hidden;
+}
+.desktop-nav a{
+  padding:10px 10px;
+  font-size:.90rem;
+  letter-spacing:-.01em;
+}
+.top-actions{
+  gap:8px;
+  min-width:max-content;
+}
+.language-trigger{
+  min-width:74px;
+  justify-content:center;
+  min-height:46px;
+  padding:9px 13px;
+}
+.nav-cta{
+  min-height:46px;
+  padding:11px 17px;
+  font-size:.92rem;
+}
+.language-options{
+  top:calc(100% + 10px);
+  right:0;
+  z-index:100;
+}
+
+/* On medium desktop widths, shrink nav slightly before switching mobile. */
+@media(max-width:1380px){
+  .topbar{
+    width:min(1320px,calc(100% - 20px));
+    gap:9px;
+  }
+  .brand{
+    min-width:130px;
+    font-size:1rem;
+  }
+  .brand img{
+    width:48px;
+    height:48px;
+  }
+  .desktop-nav a{
+    padding:9px 7px;
+    font-size:.82rem;
+  }
+  .language-trigger{
+    min-width:66px;
+    padding:8px 10px;
+  }
+  .nav-cta{
+    padding:10px 14px;
+    font-size:.86rem;
+  }
+}
+
+/* Switch to the real compact/mobile pattern before the desktop header can collide. */
+@media(max-width:1120px){
+  .topbar{
+    grid-template-columns:minmax(0,1fr) auto;
+    width:min(100% - 20px,1220px);
+    border-radius:30px;
+  }
+  .desktop-nav{
+    display:none !important;
+  }
+  .mobile-nav{
+    grid-column:1/-1;
+    display:grid !important;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    width:100%;
+    gap:8px;
+  }
+  .mobile-nav>a,
+  .nav-more-trigger{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 6px;
+    border:1px solid rgba(185,109,98,.16);
+    background:rgba(255,255,255,.76);
+    font-size:.78rem;
+    line-height:1.08;
+    text-align:center;
+    white-space:normal;
+  }
+}
+
+/* Keep local SEO hero visually strong, but not larger than the live site. */
+.hero h1{
+  font-size:clamp(2.8rem,5.35vw,5.15rem);
+  max-width:1000px;
+}
+
+@media(max-width:740px){
+  .topbar{
+    width:min(100% - 16px,1220px);
+    min-height:auto;
+  }
+  .brand{
+    min-width:0;
+  }
+  .brand img{
+    width:48px;
+    height:48px;
+  }
+  .brand span strong{
+    font-size:1rem;
+  }
+  .language-trigger{
+    min-width:60px;
+  }
+  .mobile-nav{
+    gap:7px;
+  }
+  .mobile-nav>a,
+  .nav-more-trigger{
+    font-size:.71rem;
+    padding:7px 4px;
+  }
+  .hero h1{
+    font-size:clamp(2.45rem,10.8vw,3.6rem);
+  }
+}
