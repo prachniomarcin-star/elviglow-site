@@ -1012,6 +1012,8 @@ const openingHours = {
 };
 
 
+const googleReviewSnippets = { pl: [], en: [], nl: [] };
+
 function trackGrowthEvent(eventName, params = {}) {
   if (typeof window === "undefined") return;
   if (typeof window.gtag === "function") {
@@ -1262,6 +1264,32 @@ function ContactPage({ t, lang }) {
     <>
       <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead} />
 
+      <section className="section booking-review-strip">
+        <div className="booking-review-strip-copy">
+          <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
+          <h2>{growthCopy.reviewTitle}</h2>
+          <p>{growthCopy.reviewText}</p>
+        </div>
+        <div className="booking-review-strip-action">
+          <a className="primary-btn" href={googleReviewUrl} target="_blank" rel="noreferrer"
+             onClick={() => trackGrowthEvent("google_review_click", { page: "contact_top", lang })}>
+            ★ {growthCopy.reviewButton}
+          </a>
+        </div>
+        {googleReviewSnippets[lang]?.length > 0 && (
+          <div className="booking-review-list">
+            {googleReviewSnippets[lang].slice(0, 3).map((review) => (
+              <article className="booking-review-item" key={`${review.author}-${review.text}`}>
+                <div className="booking-review-stars">{"★".repeat(review.rating)}</div>
+                <p>“{review.text}”</p>
+                <strong>{review.author}</strong>
+                {review.date ? <small>{review.date}</small> : null}
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+
       <section className="section booking-layout">
         <article className="booking-card">
           <div className="booking-card-head">
@@ -1440,39 +1468,6 @@ function ContactPage({ t, lang }) {
               <span>✉</span><div><small>{copy.emailLabel}</small><strong>{email}</strong></div>
             </a>
           </article>
-
-          <article className="booking-contact-card booking-review-card">
-            <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
-            <h3>{growthCopy.reviewTitle}</h3>
-            <p>{growthCopy.reviewText}</p>
-            <a
-              className="primary-btn booking-growth-btn"
-              href={googleReviewUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => trackGrowthEvent("google_review_click", { page: "contact", lang })}
-            >
-              ★ {growthCopy.reviewButton}
-            </a>
-          </article>
-
-          {lang === "pl" && (
-            <article className="booking-contact-card booking-polish-local-card">
-              <p className="eyebrow">{growthCopy.polishEyebrow}</p>
-              <h3>{growthCopy.polishTitle}</h3>
-              <p>{growthCopy.polishText}</p>
-              <a
-                className="secondary-btn booking-growth-btn"
-                href="/pl/kosmetyczka-deventer"
-                onClick={() => {
-                  localStorage.setItem("elviglow-lang", "pl");
-                  trackGrowthEvent("polish_local_landing_click", { page: "contact", lang: "pl" });
-                }}
-              >
-                {growthCopy.polishButton}
-              </a>
-            </article>
-          )}
         </aside>
       </section>
 
