@@ -129,7 +129,7 @@ const seoByPath = {
   "/cialo": { title: "Lichaamsbehandelingen Deventer | ElviGlow", description: "Vacuum dermomassage en cryolipolyse in Deventer. Heldere uitleg, eenvoudige pakketten en één gekozen zone per cryolipolysebezoek." },
   "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
   "/akademia-skory": { title: "Huidacademie & mini huidkaart | ElviGlow", description: "Leer je huid beter begrijpen met de ElviGlow Huidacademie en mini huidkaart: probleem, mechanisme, doel en verzorgingsrichting." },
-  "/cennik": { title: "Prijslijst ElviGlow Deventer", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
+  "/cennik": { title: "Prijslijst beauty & huid Deventer | ElviGlow", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
   "/abonamenty": { title: "Verzorgingsprogramma's | ElviGlow Deventer", description: "Regelmatige huidverzorgingsprogramma's voor klanten die liever met een plan werken dan met losse, toevallige behandelingen." },
   "/kontakt": { title: "Contact & afspraak | ElviGlow Deventer", description: "Neem contact op met ElviGlow in Deventer voor een afspraak, huidbehandeling, microneedling, nagels, waxing of lichaamsbehandeling." },
 };
@@ -1011,6 +1011,17 @@ const openingHours = {
   ],
 };
 
+
+function trackGrowthEvent(eventName, params = {}) {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push({ event: eventName, ...params });
+  }
+}
+
 function ContactPage({ t, lang }) {
   const copy = bookingCopy[lang] || bookingCopy.nl;
   const multiCopy = {
@@ -1070,6 +1081,39 @@ function ContactPage({ t, lang }) {
     bodyAreaPlaceholder: "Kies een zone",
     messageArea: "Zone",
   };
+
+  const growthCopy = {
+    pl: {
+      reviewEyebrow: "OPINIE GOOGLE",
+      reviewTitle: "Byłaś zadowolona z wizyty?",
+      reviewText: "Krótka, prawdziwa opinia pomaga innym klientkom znaleźć ElviGlow w Google i łatwiej zdecydować się na pierwszą wizytę.",
+      reviewButton: "Dodaj opinię w Google",
+      polishEyebrow: "OBSŁUGA PO POLSKU",
+      polishTitle: "Szukasz polskiej kosmetyczki w Deventer?",
+      polishText: "Zobacz najważniejsze informacje o ElviGlow po polsku: zabiegi, depilacja, paznokcie, adres i sposób umawiania wizyty.",
+      polishButton: "Polska kosmetyczka Deventer",
+    },
+    en: {
+      reviewEyebrow: "GOOGLE REVIEWS",
+      reviewTitle: "Were you happy with your visit?",
+      reviewText: "A short, genuine review helps other clients find ElviGlow on Google and feel more confident before a first visit.",
+      reviewButton: "Leave a Google review",
+    },
+    nl: {
+      reviewEyebrow: "GOOGLE REVIEWS",
+      reviewTitle: "Tevreden over je bezoek?",
+      reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden en makkelijker voor een eerste afspraak te kiezen.",
+      reviewButton: "Schrijf een Google-review",
+    },
+  }[lang] || {
+    reviewEyebrow: "GOOGLE REVIEWS",
+    reviewTitle: "Tevreden over je bezoek?",
+    reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden.",
+    reviewButton: "Schrijf een Google-review",
+  };
+
+  const googleReviewUrl = "https://g.page/r/CTlVO8SKXGw-EBM/review";
+
 
   const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty";
   const whatsappNumber = "31682224999";
@@ -1386,16 +1430,49 @@ function ContactPage({ t, lang }) {
             <p className="eyebrow">ElviGlow</p>
             <h3>{copy.channelsTitle}</h3>
             <p>{copy.channelsText}</p>
-            <a className="booking-contact-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer">
+            <a className="booking-contact-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" onClick={() => trackGrowthEvent("whatsapp_contact_click", { page: "contact", lang })}>
               <span>WA</span><div><small>{copy.phoneLabel}</small><strong>{whatsappDisplay}</strong></div>
             </a>
-            <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer">
+            <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer" onClick={() => trackGrowthEvent("instagram_contact_click", { page: "contact", lang })}>
               <span>IG</span><div><small>Instagram</small><strong>@nagelsvoorjouenbeauty</strong></div>
             </a>
             <a className="booking-contact-link" href={`mailto:${email}`}>
               <span>✉</span><div><small>{copy.emailLabel}</small><strong>{email}</strong></div>
             </a>
           </article>
+
+          <article className="booking-contact-card booking-review-card">
+            <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
+            <h3>{growthCopy.reviewTitle}</h3>
+            <p>{growthCopy.reviewText}</p>
+            <a
+              className="primary-btn booking-growth-btn"
+              href={googleReviewUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackGrowthEvent("google_review_click", { page: "contact", lang })}
+            >
+              ★ {growthCopy.reviewButton}
+            </a>
+          </article>
+
+          {lang === "pl" && (
+            <article className="booking-contact-card booking-polish-local-card">
+              <p className="eyebrow">{growthCopy.polishEyebrow}</p>
+              <h3>{growthCopy.polishTitle}</h3>
+              <p>{growthCopy.polishText}</p>
+              <a
+                className="secondary-btn booking-growth-btn"
+                href="/pl/kosmetyczka-deventer"
+                onClick={() => {
+                  localStorage.setItem("elviglow-lang", "pl");
+                  trackGrowthEvent("polish_local_landing_click", { page: "contact", lang: "pl" });
+                }}
+              >
+                {growthCopy.polishButton}
+              </a>
+            </article>
+          )}
         </aside>
       </section>
 

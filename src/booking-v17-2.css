@@ -128,3 +128,21 @@
 .booking-field-full {
   grid-column: 1 / -1;
 }
+
+
+/* V17.4 — growth cards */
+.booking-review-card {
+  background:
+    radial-gradient(circle at 92% 7%, rgba(185,109,98,.13), transparent 11rem),
+    rgba(255,255,255,.76);
+}
+
+.booking-growth-btn {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.booking-polish-local-card {
+  border-style: dashed;
+}

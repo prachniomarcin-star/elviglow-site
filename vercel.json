@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/pl/kosmetyczka-deventer",
+      "destination": "/pl/kosmetyczka-deventer/index.html"
+    },
+    {
       "source": "/kennis/waxen-eerste-keer",
       "destination": "/kennis/waxen-eerste-keer/index.html"
     },

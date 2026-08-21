@@ -67,7 +67,7 @@ const routes = {
     intro: "De ElviGlow Huidacademie maakt huidverzorging begrijpelijker. Gebruik de mini huidkaart om van een zichtbaar probleem naar een mogelijke volgende stap te gaan.",
   },
   "/cennik": {
-    title: "Prijslijst ElviGlow Deventer",
+    title: "Prijslijst beauty & huid Deventer | ElviGlow",
     description: "Actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, waxing en lichaamsbehandelingen.",
     h1: "Prijslijst ElviGlow",
     intro: "Bekijk prijzen per categorie: gezicht, verzorgingsprogramma's, nagels en voeten, Lycon waxing en lichaamsbehandelingen.",
