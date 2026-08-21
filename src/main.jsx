@@ -5,6 +5,7 @@ import OfferCard from "./components/OfferCard";
 import CtaStrip from "./components/CtaStrip";
 import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
+import { bookingServices, getPricingCatalog, bodyAreas } from "./data/serviceCatalog";
 import "./index.css";
 import "./booking-v17-2.css";
 
@@ -123,7 +124,7 @@ const seoByPath = {
     description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen. Kies eerst op huidbehoefte, daarna op behandeling.",
   },
   "/zabiegi": { title: "Gezichtsbehandelingen Deventer | ElviGlow", description: "Gezichtsbehandelingen in Deventer: reiniging, oxybrasie, ampullen, lifting care en microneedling afgestemd op de actuele huidconditie." },
-  "/paznokcie": { title: "Nagels & BIAB Deventer | ElviGlow", description: "Manicure, BIAB, gel en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
+  "/paznokcie": { title: "Nagels & pedicure Deventer | ElviGlow", description: "Manicure, gellak, gel- of acrylverlenging en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
   "/depilacja": { title: "Lycon waxing Deventer | ElviGlow", description: "Lycon waxing voor vrouwen in Deventer: precieze en grotere zones met aandacht voor comfort en huidreactie." },
   "/cialo": { title: "Lichaamsbehandelingen Deventer | ElviGlow", description: "Vacuum dermomassage en cryolipolyse in Deventer. Heldere uitleg, eenvoudige pakketten en één gekozen zone per cryolipolysebezoek." },
   "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
@@ -332,7 +333,16 @@ function TreatmentsPage({ t, onNavigate }) {
   );
 }
 
-function NailsPage({ t, onNavigate }) {
+function NailsPage({ t, onNavigate, lang }) {
+  const pedicureInfo = {
+    pl: "Pielęgnacja stóp, paznokci i skórek. W aktualnej ofercie jest pedicure klasyczny oraz pedicure z gellak.",
+    en: "Foot, toenail and cuticle care. The current offer includes classic pedicure and pedicure with gellak.",
+    nl: "Verzorging van voeten, teennagels en nagelriemen. In de actuele aanbieding staan klassieke pedicure en pedicure met gellak.",
+  }[lang] || "Verzorging van voeten, teennagels en nagelriemen. In de actuele aanbieding staan klassieke pedicure en pedicure met gellak.";
+
+  const nailInfoCards = t.nails.infoCards.map((item, index) =>
+    index === 1 ? { ...item, text: pedicureInfo } : item
+  );
   return (
     <>
       <PageHero eyebrow={t.nails.eyebrow} title={t.nails.title} text={t.nails.lead}>
@@ -357,7 +367,7 @@ function NailsPage({ t, onNavigate }) {
           <p>{t.nails.infoLead}</p>
         </div>
         <div className="guide-grid">
-          {t.nails.infoCards.map((item) => (
+          {nailInfoCards.map((item) => (
             <article className="guide-card" key={item.title}>
               <span>✦</span>
               <h3>{item.title}</h3>
@@ -581,9 +591,10 @@ function PriceListGroups({ groups }) {
   );
 }
 
-function PricingPage({ t }) {
+function PricingPage({ t, lang }) {
   const [active, setActive] = useState("face");
   const pricing = t.pricing;
+  const catalog = getPricingCatalog(lang);
 
   function renderFace() {
     return (
@@ -597,21 +608,21 @@ function PricingPage({ t }) {
         <div className="pricing-group">
           <h3>{pricing.headings.popular}</h3>
           <div className="offer-grid">
-            {pricing.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.premium}</h3>
           <div className="offer-grid">
-            {pricing.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.regeneration}</h3>
           <div className="offer-grid">
-            {pricing.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
           <p className="pricing-note">{pricing.note}</p>
         </div>
@@ -628,7 +639,7 @@ function PricingPage({ t }) {
           <p>{pricing.nailsIntro}</p>
         </div>
         <div className="price-list-grid">
-          {pricing.nails.map((service) => (
+          {catalog.nails.map((service) => (
             <article className="price-row-card" key={service.name}>
               <div>
                 <h3>{service.name}</h3>
@@ -650,7 +661,7 @@ function PricingPage({ t }) {
           <h2>{pricing.tabs.waxing}</h2>
           <p>{pricing.waxingIntro}</p>
         </div>
-        <PriceListGroups groups={pricing.waxing} />
+        <PriceListGroups groups={catalog.waxing} />
       </>
     );
   }
@@ -664,7 +675,7 @@ function PricingPage({ t }) {
           <h2>{pricing.tabs.body}</h2>
           <p>{pricing.bodyIntro}</p>
         </div>
-        <PriceListGroups groups={pricing.body} />
+        <PriceListGroups groups={catalog.body} />
       </>
     );
   }
@@ -678,7 +689,7 @@ function PricingPage({ t }) {
           <p>{pricing.careIntro}</p>
         </div>
         <div className="offer-grid">
-          {pricing.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
+          {catalog.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
         </div>
       </>
     );
@@ -970,192 +981,6 @@ const bookingCopy = {
 };
 
 
-const bookingServices = {
-  pl: [
-    { id: "face", label: "Zabiegi twarzy", items: [
-      { id: "oxy", name: "Oxybrazja", price: "59 €", duration: "ok. 60 min" },
-      { id: "refresh-mask", name: "Zabieg odświeżający z maską", price: "59 €", duration: "ok. 60 min" },
-      { id: "cleansing-glow", name: "Oczyszczanie Glow", price: "69 €", duration: "ok. 75 min" },
-      { id: "cleansing-oxy", name: "Oczyszczanie + oxybrazja", price: "79 €", duration: "ok. 90 min" },
-      { id: "ampoule", name: "Pielęgnacja z ampułką", price: "79 €", duration: "ok. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 75 min" },
-      { id: "hydration", name: "Intensywne nawilżenie skóry", price: "89 €", duration: "ok. 75 min" },
-      { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 75 min" },
-      { id: "lifting-ampoule", name: "Pielęgnacja liftingująca z ampułką", price: "109 €", duration: "ok. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "ok. 90 min" },
-    ]},
-    { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — twarz", price: "89 €", duration: "ok. 75 min" },
-      { id: "micro-neck", name: "Microneedling — twarz + szyja", price: "109 €", duration: "ok. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — twarz + szyja + dekolt", price: "129 €", duration: "ok. 105 min" },
-    ]},
-    { id: "nails", label: "Paznokcie", items: [
-      { id: "manicure-classic", name: "Manicure klasyczny", price: "35 €", duration: "ok. 45 min" },
-      { id: "manicure-gellak", name: "Manicure hybrydowy / gellak", price: "45 €", duration: "ok. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / wzmocnienie płytki", price: "55 €", duration: "ok. 75 min" },
-      { id: "biab-color", name: "BIAB + kolor", price: "60 €", duration: "ok. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "ok. 100 min" },
-      { id: "biab-refill", name: "Uzupełnienie BIAB / żel", price: "50–55 €", duration: "ok. 90 min" },
-      { id: "nail-extension", name: "Nowa stylizacja z przedłużeniem", price: "od 75 €", duration: "ok. 120 min" },
-      { id: "nail-removal", name: "Usunięcie stylizacji", price: "20 €", duration: "ok. 30 min" },
-    ]},
-    { id: "pedicure", label: "Pedicure", items: [
-      { id: "pedi-classic", name: "Pedicure klasyczny", price: "50 €", duration: "ok. 60 min" },
-      { id: "pedi-gellak", name: "Pedicure + gellak", price: "60 €", duration: "ok. 75 min" },
-      { id: "pedi-spa", name: "Pedicure SPA / wellness", price: "70 €", duration: "ok. 75 min" },
-      { id: "pedi-spa-gellak", name: "Pedicure SPA + gellak", price: "75 €", duration: "ok. 90 min" },
-    ]},
-    { id: "wax", label: "Depilacja Lycon", items: [
-      { id: "wax-lip", name: "Wąsik", price: "10 €", duration: "ok. 15 min" },
-      { id: "wax-brows", name: "Brwi", price: "15 €", duration: "ok. 20 min" },
-      { id: "wax-brows-tint", name: "Brwi + henna", price: "25 €", duration: "ok. 30 min" },
-      { id: "wax-underarms", name: "Pachy", price: "20 €", duration: "ok. 20 min" },
-      { id: "wax-forearms", name: "Przedramiona", price: "25 €", duration: "ok. 30 min" },
-      { id: "wax-lowerlegs", name: "Łydki", price: "30 €", duration: "ok. 30 min" },
-      { id: "wax-legs", name: "Całe nogi", price: "35 €", duration: "ok. 45 min" },
-      { id: "wax-back", name: "Plecy", price: "36 €", duration: "ok. 45 min" },
-      { id: "wax-bikini", name: "Linia bikini", price: "40 €", duration: "ok. 30 min" },
-      { id: "wax-brazilian", name: "Bikini brazylijskie", price: "50 €", duration: "ok. 45 min" },
-    ]},
-    { id: "body", label: "Zabiegi na ciało", items: [
-      { id: "dermomassage", name: "Dermomasaż vacuum", price: "60 €", duration: "ok. 60 min" },
-      { id: "cryo-abdomen", name: "Kriolipoliza — brzuch", price: "99 €", duration: "ok. 75 min" },
-      { id: "cryo-waist", name: "Kriolipoliza — boczki / talia", price: "99 €", duration: "ok. 75 min" },
-      { id: "cryo-outer-thigh", name: "Kriolipoliza — uda zewnętrzne", price: "99 €", duration: "ok. 75 min" },
-      { id: "cryo-inner-thigh", name: "Kriolipoliza — uda wewnętrzne", price: "99 €", duration: "ok. 75 min" },
-      { id: "cryo-arms", name: "Kriolipoliza — ramiona", price: "99 €", duration: "ok. 75 min" },
-    ]},
-    { id: "care", label: "Program pielęgnacji", items: [
-      { id: "care-advice", name: "Chcę dobrać program pielęgnacji", price: "od 69 €/mies.", duration: "czas pierwszej wizyty ustalimy po rozmowie" },
-    ]},
-    { id: "advice", label: "Konsultacja / nie wiem", items: [
-      { id: "general-advice", name: "Nie wiem — potrzebuję konsultacji i doboru", price: "do ustalenia", duration: "ustalimy po rozmowie" },
-    ]},
-  ],
-  en: [
-    { id: "face", label: "Facial treatments", items: [
-      { id: "oxy", name: "Oxybrasion", price: "59 €", duration: "approx. 60 min" },
-      { id: "refresh-mask", name: "Refreshing Treatment with Mask", price: "59 €", duration: "approx. 60 min" },
-      { id: "cleansing-glow", name: "Cleansing Glow", price: "69 €", duration: "approx. 75 min" },
-      { id: "cleansing-oxy", name: "Cleansing + Oxybrasion", price: "79 €", duration: "approx. 90 min" },
-      { id: "ampoule", name: "Ampoule Care", price: "79 €", duration: "approx. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 75 min" },
-      { id: "hydration", name: "Intensive Skin Hydration", price: "89 €", duration: "approx. 75 min" },
-      { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 75 min" },
-      { id: "lifting-ampoule", name: "Lifting Care with Ampoule", price: "109 €", duration: "approx. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "approx. 90 min" },
-    ]},
-    { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — face", price: "89 €", duration: "approx. 75 min" },
-      { id: "micro-neck", name: "Microneedling — face + neck", price: "109 €", duration: "approx. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — face + neck + décolleté", price: "129 €", duration: "approx. 105 min" },
-    ]},
-    { id: "nails", label: "Nails", items: [
-      { id: "manicure-classic", name: "Classic manicure", price: "35 €", duration: "approx. 45 min" },
-      { id: "manicure-gellak", name: "Hybrid manicure / gellak", price: "45 €", duration: "approx. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / nail strengthening", price: "55 €", duration: "approx. 75 min" },
-      { id: "biab-color", name: "BIAB + colour", price: "60 €", duration: "approx. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "approx. 100 min" },
-      { id: "biab-refill", name: "BIAB / gel refill", price: "50–55 €", duration: "approx. 90 min" },
-      { id: "nail-extension", name: "New set with extensions", price: "from 75 €", duration: "approx. 120 min" },
-      { id: "nail-removal", name: "Removal", price: "20 €", duration: "approx. 30 min" },
-    ]},
-    { id: "pedicure", label: "Pedicure", items: [
-      { id: "pedi-classic", name: "Classic pedicure", price: "50 €", duration: "approx. 60 min" },
-      { id: "pedi-gellak", name: "Pedicure + gellak", price: "60 €", duration: "approx. 75 min" },
-      { id: "pedi-spa", name: "SPA / wellness pedicure", price: "70 €", duration: "approx. 75 min" },
-      { id: "pedi-spa-gellak", name: "SPA pedicure + gellak", price: "75 €", duration: "approx. 90 min" },
-    ]},
-    { id: "wax", label: "Lycon waxing", items: [
-      { id: "wax-lip", name: "Upper lip", price: "10 €", duration: "approx. 15 min" },
-      { id: "wax-brows", name: "Brows", price: "15 €", duration: "approx. 20 min" },
-      { id: "wax-brows-tint", name: "Brows + tint", price: "25 €", duration: "approx. 30 min" },
-      { id: "wax-underarms", name: "Underarms", price: "20 €", duration: "approx. 20 min" },
-      { id: "wax-forearms", name: "Forearms", price: "25 €", duration: "approx. 30 min" },
-      { id: "wax-lowerlegs", name: "Lower legs", price: "30 €", duration: "approx. 30 min" },
-      { id: "wax-legs", name: "Full legs", price: "35 €", duration: "approx. 45 min" },
-      { id: "wax-back", name: "Back", price: "36 €", duration: "approx. 45 min" },
-      { id: "wax-bikini", name: "Bikini line", price: "40 €", duration: "approx. 30 min" },
-      { id: "wax-brazilian", name: "Brazilian bikini", price: "50 €", duration: "approx. 45 min" },
-    ]},
-    { id: "body", label: "Body treatments", items: [
-      { id: "dermomassage", name: "Vacuum dermomassage", price: "60 €", duration: "approx. 60 min" },
-      { id: "cryo-abdomen", name: "Cryolipolysis — abdomen", price: "99 €", duration: "approx. 75 min" },
-      { id: "cryo-waist", name: "Cryolipolysis — flanks / waist", price: "99 €", duration: "approx. 75 min" },
-      { id: "cryo-outer-thigh", name: "Cryolipolysis — outer thighs", price: "99 €", duration: "approx. 75 min" },
-      { id: "cryo-inner-thigh", name: "Cryolipolysis — inner thighs", price: "99 €", duration: "approx. 75 min" },
-      { id: "cryo-arms", name: "Cryolipolysis — arms", price: "99 €", duration: "approx. 75 min" },
-    ]},
-    { id: "care", label: "Care programme", items: [
-      { id: "care-advice", name: "I want help choosing a care programme", price: "from 69 €/month", duration: "first-visit time agreed in conversation" },
-    ]},
-    { id: "advice", label: "Consultation / not sure", items: [
-      { id: "general-advice", name: "I am not sure — I need consultation and advice", price: "to be agreed", duration: "agreed in conversation" },
-    ]},
-  ],
-  nl: [
-    { id: "face", label: "Gezichtsbehandelingen", items: [
-      { id: "oxy", name: "Oxybrasie", price: "59 €", duration: "ca. 60 min" },
-      { id: "refresh-mask", name: "Verfrissende behandeling met masker", price: "59 €", duration: "ca. 60 min" },
-      { id: "cleansing-glow", name: "Reiniging Glow", price: "69 €", duration: "ca. 75 min" },
-      { id: "cleansing-oxy", name: "Reiniging + oxybrasie", price: "79 €", duration: "ca. 90 min" },
-      { id: "ampoule", name: "Verzorging met ampul", price: "79 €", duration: "ca. 75 min" },
-      { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 75 min" },
-      { id: "hydration", name: "Intensieve hydratatie van de huid", price: "89 €", duration: "ca. 75 min" },
-      { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 75 min" },
-      { id: "lifting-ampoule", name: "Lifting verzorging met ampul", price: "109 €", duration: "ca. 90 min" },
-      { id: "anti-aging-glow", name: "Anti-Aging Glow Treatment", price: "119 €", duration: "ca. 90 min" },
-    ]},
-    { id: "micro", label: "Microneedling", items: [
-      { id: "micro-face", name: "Microneedling — gezicht", price: "89 €", duration: "ca. 75 min" },
-      { id: "micro-neck", name: "Microneedling — gezicht + hals", price: "109 €", duration: "ca. 90 min" },
-      { id: "micro-decollete", name: "Microneedling — gezicht + hals + decolleté", price: "129 €", duration: "ca. 105 min" },
-    ]},
-    { id: "nails", label: "Nagels", items: [
-      { id: "manicure-classic", name: "Klassieke manicure", price: "35 €", duration: "ca. 45 min" },
-      { id: "manicure-gellak", name: "Hybride manicure / gellak", price: "45 €", duration: "ca. 60 min" },
-      { id: "biab-natural", name: "BIAB natural / versteviging", price: "55 €", duration: "ca. 75 min" },
-      { id: "biab-color", name: "BIAB + kleur", price: "60 €", duration: "ca. 90 min" },
-      { id: "biab-french", name: "BIAB French / babyboomer", price: "65 €", duration: "ca. 100 min" },
-      { id: "biab-refill", name: "BIAB / gel opvullen", price: "50–55 €", duration: "ca. 90 min" },
-      { id: "nail-extension", name: "Nieuwe set met verlenging", price: "vanaf 75 €", duration: "ca. 120 min" },
-      { id: "nail-removal", name: "Verwijderen", price: "20 €", duration: "ca. 30 min" },
-    ]},
-    { id: "pedicure", label: "Pedicure", items: [
-      { id: "pedi-classic", name: "Klassieke pedicure", price: "50 €", duration: "ca. 60 min" },
-      { id: "pedi-gellak", name: "Pedicure + gellak", price: "60 €", duration: "ca. 75 min" },
-      { id: "pedi-spa", name: "SPA / wellness pedicure", price: "70 €", duration: "ca. 75 min" },
-      { id: "pedi-spa-gellak", name: "SPA pedicure + gellak", price: "75 €", duration: "ca. 90 min" },
-    ]},
-    { id: "wax", label: "Lycon waxing", items: [
-      { id: "wax-lip", name: "Bovenlip", price: "10 €", duration: "ca. 15 min" },
-      { id: "wax-brows", name: "Wenkbrauwen", price: "15 €", duration: "ca. 20 min" },
-      { id: "wax-brows-tint", name: "Wenkbrauwen + henna", price: "25 €", duration: "ca. 30 min" },
-      { id: "wax-underarms", name: "Oksels", price: "20 €", duration: "ca. 20 min" },
-      { id: "wax-forearms", name: "Onderarmen", price: "25 €", duration: "ca. 30 min" },
-      { id: "wax-lowerlegs", name: "Onderbenen", price: "30 €", duration: "ca. 30 min" },
-      { id: "wax-legs", name: "Hele benen", price: "35 €", duration: "ca. 45 min" },
-      { id: "wax-back", name: "Rug", price: "36 €", duration: "ca. 45 min" },
-      { id: "wax-bikini", name: "Bikinilijn", price: "40 €", duration: "ca. 30 min" },
-      { id: "wax-brazilian", name: "Brazilian bikini", price: "50 €", duration: "ca. 45 min" },
-    ]},
-    { id: "body", label: "Lichaamsbehandelingen", items: [
-      { id: "dermomassage", name: "Vacuum dermomassage", price: "60 €", duration: "ca. 60 min" },
-      { id: "cryo-abdomen", name: "Cryolipolyse — buik", price: "99 €", duration: "ca. 75 min" },
-      { id: "cryo-waist", name: "Cryolipolyse — flanken / taille", price: "99 €", duration: "ca. 75 min" },
-      { id: "cryo-outer-thigh", name: "Cryolipolyse — buitenkant dijen", price: "99 €", duration: "ca. 75 min" },
-      { id: "cryo-inner-thigh", name: "Cryolipolyse — binnenkant dijen", price: "99 €", duration: "ca. 75 min" },
-      { id: "cryo-arms", name: "Cryolipolyse — armen", price: "99 €", duration: "ca. 75 min" },
-    ]},
-    { id: "care", label: "Verzorgingsprogramma", items: [
-      { id: "care-advice", name: "Ik wil een verzorgingsprogramma laten kiezen", price: "vanaf 69 €/maand", duration: "tijd voor het eerste bezoek spreken we af" },
-    ]},
-    { id: "advice", label: "Consult / ik weet het nog niet", items: [
-      { id: "general-advice", name: "Ik weet het nog niet — graag consult en advies", price: "in overleg", duration: "in overleg" },
-    ]},
-  ],
-};
-
 const openingHours = {
   pl: [
     ["Poniedziałek", "09:00–16:00"],
@@ -1198,6 +1023,10 @@ function ContactPage({ t, lang }) {
       chooseZone: "Wybierz przynajmniej jedną strefę depilacji.",
       messageZones: "Strefy",
       approx: "ok.",
+      bodyArea: "Partia kriolipolizy",
+      bodyAreaHelp: "Podczas jednej wizyty wybieramy tylko jedną partię ciała.",
+      bodyAreaPlaceholder: "Wybierz partię",
+      messageArea: "Partia",
     },
     en: {
       zonesTitle: "Choose one or more areas",
@@ -1208,6 +1037,10 @@ function ContactPage({ t, lang }) {
       chooseZone: "Choose at least one waxing area.",
       messageZones: "Areas",
       approx: "approx.",
+      bodyArea: "Cryolipolysis area",
+      bodyAreaHelp: "Only one body area is treated during one visit.",
+      bodyAreaPlaceholder: "Choose an area",
+      messageArea: "Area",
     },
     nl: {
       zonesTitle: "Kies één of meerdere zones",
@@ -1218,6 +1051,10 @@ function ContactPage({ t, lang }) {
       chooseZone: "Kies minimaal één waxzone.",
       messageZones: "Zones",
       approx: "ca.",
+      bodyArea: "Zone voor cryolipolyse",
+      bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
+      bodyAreaPlaceholder: "Kies een zone",
+      messageArea: "Zone",
     },
   }[lang] || {
     zonesTitle: "Kies één of meerdere zones",
@@ -1228,6 +1065,10 @@ function ContactPage({ t, lang }) {
     chooseZone: "Kies minimaal één waxzone.",
     messageZones: "Zones",
     approx: "ca.",
+    bodyArea: "Zone voor cryolipolyse",
+    bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
+    bodyAreaPlaceholder: "Kies een zone",
+    messageArea: "Zone",
   };
 
   const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty";
@@ -1238,6 +1079,7 @@ function ContactPage({ t, lang }) {
   const [category, setCategory] = useState("");
   const [serviceId, setServiceId] = useState("");
   const [waxIds, setWaxIds] = useState([]);
+  const [bodyArea, setBodyArea] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [firstVisit, setFirstVisit] = useState(false);
@@ -1248,6 +1090,11 @@ function ContactPage({ t, lang }) {
   const selectedCategory = serviceGroups.find((group) => group.id === category) || null;
   const selectedService = selectedCategory?.items.find((item) => item.id === serviceId) || null;
   const isWaxing = category === "wax";
+  const isBody = category === "body";
+  const bodyAreaOptions = isBody && selectedService?.areaType
+    ? (bodyAreas[lang]?.[selectedService.areaType] || bodyAreas.nl[selectedService.areaType] || [])
+    : [];
+  const requiresBodyArea = isBody && Boolean(selectedService?.areaType);
 
   const selectedWaxServices = isWaxing
     ? (selectedCategory?.items || []).filter((item) => waxIds.includes(item.id))
@@ -1328,6 +1175,10 @@ function ContactPage({ t, lang }) {
     messageLines.push(`${multiCopy.messageZones}: ${selectedWaxServices.length ? selectedWaxServices.map((item) => item.name).join(", ") : "—"}`);
   }
 
+  if (requiresBodyArea) {
+    messageLines.push(`${multiCopy.messageArea}: ${bodyArea || "—"}`);
+  }
+
   messageLines.push(
     `${copy.messagePrice}: ${displayPrice}`,
     `${copy.messageDuration}: ${displayDuration}`,
@@ -1340,7 +1191,7 @@ function ContactPage({ t, lang }) {
 
   const message = messageLines.join("\n");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-  const canSend = Boolean(category && selectedServices.length && date && time && !isClosed);
+  const canSend = Boolean(category && selectedServices.length && date && time && !isClosed && (!requiresBodyArea || bodyArea));
 
   function handleDateChange(value) {
     setDate(value);
@@ -1352,6 +1203,7 @@ function ContactPage({ t, lang }) {
     setCategory(value);
     setServiceId("");
     setWaxIds([]);
+    setBodyArea("");
     setCopied(false);
   }
 
@@ -1392,11 +1244,25 @@ function ContactPage({ t, lang }) {
                 <select
                   value={serviceId}
                   disabled={!selectedCategory}
-                  onChange={(event) => { setServiceId(event.target.value); setCopied(false); }}
+                  onChange={(event) => { setServiceId(event.target.value); setBodyArea(""); setCopied(false); }}
                 >
                   <option value="">{selectedCategory ? copy.service : copy.servicePlaceholder}</option>
                   {selectedCategory?.items.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
                 </select>
+              </label>
+            )}
+
+            {requiresBodyArea && (
+              <label className="booking-field booking-field-full">
+                <span>{multiCopy.bodyArea}</span>
+                <select
+                  value={bodyArea}
+                  onChange={(event) => { setBodyArea(event.target.value); setCopied(false); }}
+                >
+                  <option value="">{multiCopy.bodyAreaPlaceholder}</option>
+                  {bodyAreaOptions.map((area) => <option key={area} value={area}>{area}</option>)}
+                </select>
+                <small className="booking-field-help">{multiCopy.bodyAreaHelp}</small>
               </label>
             )}
 
@@ -1610,11 +1476,11 @@ function App() {
 
   let page = <HomePage onNavigate={onNavigate} t={t} lang={lang} />;
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/cennik") page = <PricingPage t={t} />;
+  if (currentPath === "/cennik") page = <PricingPage t={t} lang={lang} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} lang={lang} />;

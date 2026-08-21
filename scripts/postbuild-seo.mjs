@@ -14,33 +14,33 @@ const source = fs.readFileSync(sourceFile, "utf8");
 
 const common = `
   <p>ElviGlow is een beauty- en huidstudio in Deventer waar huidverbetering niet begint bij de naam van een apparaat of behandeling, maar bij wat je aan de huid ziet en voelt. Droogte, een doffe teint, zichtbare poriën, een ongelijke structuur, minder stevigheid of eerste lijntjes vragen niet automatisch om dezelfde aanpak. Daarom draait de website om begrijpen, kiezen en daarna pas behandelen.</p>
-  <p>Bij gezichtsverzorging kun je kiezen uit rustige reiniging en opfrissing, oxybrasie, verzorging met ampul en masker, liftinggerichte verzorging en microneedling. De behandeling wordt afgestemd op de actuele huidconditie en het doel. Soms is één bezoek een goede start; bij huidkwaliteit, structuur of een langer traject kan een serie of regelmatig verzorgingsritme logischer zijn. Niet elke behandeling is geschikt voor elke huid en daarom blijft een korte beoordeling belangrijk.</p>
-  <p>Microneedling is binnen ElviGlow een regeneratieve richting voor klanten die willen werken aan huidstructuur, poriën, stevigheid en zichtbare tekenen van huidveroudering. Er zijn behandelingen voor gezicht, gezicht en hals, en gezicht, hals en decolleté. De intensiteit en keuze van actieve verzorging horen bij de huid te passen. Bij een gevoelige, geïrriteerde of actieve huid wordt eerst gekeken of een zachtere richting verstandiger is.</p>
-  <p>Naast huidverzorging biedt ElviGlow manicure, BIAB, gelstyling en pedicure, Lycon waxing voor geselecteerde zones en lichaamsbehandelingen zoals vacuum dermomassage en cryolipolyse. Deze diensten blijven onderdeel van het salon, maar de kern van de ElviGlow-methode is duidelijk: geen willekeurige behandeling kiezen, maar een verzorgingsrichting die past bij de persoon, de huid en het gewenste resultaat.</p>
-  <p>De Huidacademie legt uit hoe je zichtbare huidproblemen kunt herkennen, waarom thuisverzorging soms voldoende is en wanneer professionele ondersteuning zinvol kan zijn. De mini huidkaart helpt op een eenvoudige, educatieve manier om van probleem naar mogelijke verzorgingsrichting te gaan. Dit is geen medische diagnose en vervangt geen dermatologisch advies.</p>
-  <p>ElviGlow wil een rustige plek zijn waar je vragen kunt stellen zonder druk om meteen de sterkste of duurste behandeling te kiezen. Je kunt eerst de behandelingen en prijzen bekijken, daarna meer leren in de Huidacademie en pas vervolgens contact opnemen voor een afspraak. Zo blijft de keuze overzichtelijk en weet je beter waarom een bepaalde behandeling of serie wordt voorgesteld.</p>
-  <p>Goede huidverzorging stopt niet bij de salon. Thuis blijven milde reiniging, hydratatie, een passende verzorging en dagelijkse zonbescherming belangrijke onderdelen van het geheel. Professionele behandelingen kunnen die basis aanvullen, maar horen niet als vervanging voor een rustige dagelijkse routine te worden gezien. Een behandeling werkt het prettigst wanneer de huid niet onnodig wordt overprikkeld door te veel actieve producten, sterke peelings of telkens wisselende routines.</p>
-  <p>Bij een eerste bezoek is het vaak slimmer om de huidreactie te leren kennen dan direct een lange serie vast te leggen. Als de huid rustig reageert en het doel duidelijk is, kan daarna worden besproken of herhaling zinvol is. Voor een snelle opfrissing kan één behandeling voldoende voelen; bij structuur, stevigheid of een langduriger verzorgingsdoel kan een serie logischer zijn. Het plan blijft afhankelijk van de huidconditie, tolerantie en het gewenste resultaat.</p>
-  <p>De website is opgebouwd voor klanten uit Deventer en omgeving die graag vooraf willen begrijpen wat een behandeling inhoudt. Daarom staan uitleg, prijzen, Huidacademie en contact los van elkaar maar wel in een logische volgorde. Je kunt zelfstandig oriënteren, een probleem herkennen, de mogelijke richting lezen en daarna pas beslissen of je een afspraak wilt maken. Dat maakt huidverzorging minder technisch en geeft meer controle over de keuze.</p>`;
+  <p>Bij gezichtsverzorging kun je kiezen uit microdermabrasie, oxybrasie, waterstofreiniging, Glow Therapy met ampul en masker, liftinggerichte verzorging en microneedling. De behandeling wordt afgestemd op de actuele huidconditie en het doel. Soms is één bezoek een goede start; bij huidkwaliteit, structuur of een langer traject kan een serie of regelmatig verzorgingsritme logischer zijn.</p>
+  <p>Microneedling is binnen ElviGlow een regeneratieve richting voor klanten die willen werken aan huidstructuur, poriën, stevigheid en zichtbare tekenen van huidveroudering. Er zijn behandelingen voor gezicht, gezicht en hals, en gezicht, hals en decolleté.</p>
+  <p>Naast huidverzorging biedt ElviGlow klassieke manicure, gellak, gel- of acrylverlenging, pedicure, Lycon waxing voor geselecteerde zones en lichaamsbehandelingen zoals vacuum dermomassage en cryolipolyse. De actuele prijzen staan in de prijslijst.</p>
+  <p>De Huidacademie legt uit hoe je zichtbare huidproblemen kunt herkennen, waarom thuisverzorging soms voldoende is en wanneer professionele ondersteuning zinvol kan zijn. De mini huidkaart helpt op een eenvoudige, educatieve manier om van probleem naar mogelijke verzorgingsrichting te gaan.</p>
+  <p>ElviGlow wil een rustige plek zijn waar je vragen kunt stellen zonder druk om meteen de sterkste of duurste behandeling te kiezen. Je kunt eerst de behandelingen en prijzen bekijken, daarna meer leren in de Huidacademie en pas vervolgens contact opnemen voor een afspraak.</p>
+  <p>Goede huidverzorging stopt niet bij de salon. Thuis blijven milde reiniging, hydratatie, een passende verzorging en dagelijkse zonbescherming belangrijke onderdelen van het geheel.</p>
+  <p>Bij een eerste bezoek is het vaak slimmer om de huidreactie te leren kennen dan direct een lange serie vast te leggen. Als de huid rustig reageert en het doel duidelijk is, kan daarna worden besproken of herhaling zinvol is.</p>
+  <p>De website is opgebouwd voor klanten uit Deventer en omgeving die graag vooraf willen begrijpen wat een behandeling inhoudt. Uitleg, prijzen, Huidacademie en contact staan daarom in een logische volgorde.</p>`;
 
 const routes = {
   "/": {
-    title: "ElviGlow Deventer | Huidverbetering, microneedling & beauty",
+    title: "ElviGlow Deventer | Huidverbetering & beauty",
     description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen.",
     h1: "Ziet je huid er moe uit ondanks je dagelijkse verzorging?",
     intro: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? We kijken eerst naar wat je huid werkelijk nodig heeft. Pas daarna kiezen we de behandeling en het verzorgingsplan.",
   },
   "/zabiegi": {
     title: "Gezichtsbehandelingen Deventer | ElviGlow",
-    description: "Gezichtsbehandelingen in Deventer: reiniging, oxybrasie, ampullen, lifting care en microneedling afgestemd op de huid.",
+    description: "Gezichtsbehandelingen in Deventer: microdermabrasie, oxybrasie, waterstofreiniging, Glow Therapy, lifting care en microneedling.",
     h1: "Gezichtsbehandelingen afgestemd op wat je huid nu nodig heeft",
-    intro: "Van zachte opfrissing en reiniging tot ampullen, lifting care en microneedling. Je hoeft geen behandeling op naam te kiezen: begin bij het huiddoel.",
+    intro: "Van zachte reiniging en opfrissing tot Glow Therapy, lifting care en microneedling. Je hoeft geen behandeling op naam te kiezen: begin bij het huiddoel.",
   },
   "/paznokcie": {
-    title: "Nagels & BIAB Deventer | ElviGlow",
-    description: "Manicure, BIAB, gel en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl.",
+    title: "Nagels & pedicure Deventer | ElviGlow",
+    description: "Manicure, gellak, gel- of acrylverlenging en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl.",
     h1: "Nagels en pedicure in Deventer",
-    intro: "Manicure, BIAB, gelstyling, verlenging en pedicure met aandacht voor de conditie van de nagelplaat, een nette afwerking en een stijl die bij je past.",
+    intro: "Klassieke manicure, gellak, gel- of acrylverlenging, opvullen, verwijderen en pedicure met aandacht voor een nette afwerking en de conditie van de nagelplaat.",
   },
   "/depilacja": {
     title: "Lycon waxing Deventer | ElviGlow",
@@ -68,9 +68,9 @@ const routes = {
   },
   "/cennik": {
     title: "Prijslijst ElviGlow Deventer",
-    description: "Actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, waxing en lichaam.",
+    description: "Actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, waxing en lichaamsbehandelingen.",
     h1: "Prijslijst ElviGlow",
-    intro: "Bekijk prijzen per categorie: gezicht, verzorgingsprogramma's, nagels en voeten, Lycon waxing en lichaamsbehandelingen. Zo vind je snel de juiste dienst.",
+    intro: "Bekijk prijzen per categorie: gezicht, verzorgingsprogramma's, nagels en voeten, Lycon waxing en lichaamsbehandelingen.",
   },
   "/abonamenty": {
     title: "Verzorgingsprogramma's | ElviGlow Deventer",
@@ -82,7 +82,7 @@ const routes = {
     title: "Contact & afspraak | ElviGlow Deventer",
     description: "Neem contact op met ElviGlow in Deventer voor huidverzorging, microneedling, nagels, waxing of lichaamsbehandelingen.",
     h1: "Contact met ElviGlow in Deventer",
-    intro: "Stuur een bericht met de dienst die je interesseert, je gewenste resultaat en wanneer je ongeveer beschikbaar bent. Bij huidbehandelingen kun je ook kort beschrijven wat je aan de huid ziet.",
+    intro: "Stuur een bericht met de dienst die je interesseert, je gewenste resultaat en wanneer je ongeveer beschikbaar bent.",
   },
 };
 
@@ -116,15 +116,7 @@ function fallback(data) {
       <p>${escapeHtml(data.intro)}</p>
       ${common}
       <nav aria-label="Belangrijkste pagina's">
-        <a href="/zabiegi">Gezichtsbehandelingen</a> ·
-        <a href="/microneedling-deventer">Microneedling Deventer</a> ·
-        <a href="/huidverbetering-deventer">Huidverbetering Deventer</a> ·
-        <a href="/gezichtsbehandeling-deventer">Gezichtsbehandeling Deventer</a> ·
-        <a href="/nagels-deventer">Nagels Deventer</a> ·
-        <a href="/lycon-waxing-deventer">Lycon waxing Deventer</a> ·
-        <a href="/akademia-skory">Huidacademie</a> ·
-        <a href="/cennik">Prijslijst</a> ·
-        <a href="/kontakt">Contact</a>
+        <a href="/zabiegi">Gezichtsbehandelingen</a> · <a href="/akademia-skory">Huidacademie</a> · <a href="/cennik">Prijslijst</a> · <a href="/kontakt">Contact</a>
       </nav>
     </section>
   </main>`;

@@ -114,3 +114,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* V17.3 — catalog synchronization + body-area helper */
+.booking-field-help {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.booking-field-full {
+  grid-column: 1 / -1;
+}
