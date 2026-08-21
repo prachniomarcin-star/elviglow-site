@@ -1,6 +1,70 @@
 {
   "rewrites": [
     {
+      "source": "/kennis/waxen-eerste-keer",
+      "destination": "/kennis/waxen-eerste-keer/index.html"
+    },
+    {
+      "source": "/pl/wiedza/depilacja-woskiem-pierwszy-raz",
+      "destination": "/pl/wiedza/depilacja-woskiem-pierwszy-raz/index.html"
+    },
+    {
+      "source": "/kennis/brazilian-wax-voorbereiden",
+      "destination": "/kennis/brazilian-wax-voorbereiden/index.html"
+    },
+    {
+      "source": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac",
+      "destination": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac/index.html"
+    },
+    {
+      "source": "/kennis/bikinilijn-of-brazilian-wax",
+      "destination": "/kennis/bikinilijn-of-brazilian-wax/index.html"
+    },
+    {
+      "source": "/pl/wiedza/bikini-czy-brazilian-wax",
+      "destination": "/pl/wiedza/bikini-czy-brazilian-wax/index.html"
+    },
+    {
+      "source": "/kennis/hoe-lang-glad-na-waxen",
+      "destination": "/kennis/hoe-lang-glad-na-waxen/index.html"
+    },
+    {
+      "source": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem",
+      "destination": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem/index.html"
+    },
+    {
+      "source": "/kennis/grove-porien-wat-helpt",
+      "destination": "/kennis/grove-porien-wat-helpt/index.html"
+    },
+    {
+      "source": "/pl/wiedza/rozszerzone-pory-co-pomaga",
+      "destination": "/pl/wiedza/rozszerzone-pory-co-pomaga/index.html"
+    },
+    {
+      "source": "/kennis/droge-huid-ondanks-creme",
+      "destination": "/kennis/droge-huid-ondanks-creme/index.html"
+    },
+    {
+      "source": "/pl/wiedza/sucha-skora-mimo-kremu",
+      "destination": "/pl/wiedza/sucha-skora-mimo-kremu/index.html"
+    },
+    {
+      "source": "/kennis/wat-niet-doen-na-microneedling",
+      "destination": "/kennis/wat-niet-doen-na-microneedling/index.html"
+    },
+    {
+      "source": "/pl/wiedza/czego-nie-robic-po-microneedlingu",
+      "destination": "/pl/wiedza/czego-nie-robic-po-microneedlingu/index.html"
+    },
+    {
+      "source": "/kennis/oxybrasie-of-waterstofreiniging",
+      "destination": "/kennis/oxybrasie-of-waterstofreiniging/index.html"
+    },
+    {
+      "source": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe",
+      "destination": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe/index.html"
+    },
+    {
       "source": "/pl/microneedling-deventer",
       "destination": "/pl/microneedling-deventer/index.html"
     },
