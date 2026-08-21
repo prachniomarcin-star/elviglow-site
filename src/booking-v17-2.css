@@ -156,3 +156,13 @@
 .booking-review-item small{margin-top:3px;color:var(--muted)}
 .booking-review-stars{color:var(--brand-dark);letter-spacing:.08em;font-size:.92rem}
 @media(max-width:820px){.booking-review-strip{grid-template-columns:1fr}.booking-review-strip-action .primary-btn{width:100%;text-align:center}.booking-review-list{grid-template-columns:1fr}}
+
+
+/* V17.4.2 — reviews directly after booking */
+.booking-layout + .booking-review-strip {
+  margin-top: -8px;
+}
+
+.booking-review-strip + .contact-note-box {
+  margin-top: 18px;
+}

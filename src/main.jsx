@@ -1264,32 +1264,6 @@ function ContactPage({ t, lang }) {
     <>
       <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead} />
 
-      <section className="section booking-review-strip">
-        <div className="booking-review-strip-copy">
-          <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
-          <h2>{growthCopy.reviewTitle}</h2>
-          <p>{growthCopy.reviewText}</p>
-        </div>
-        <div className="booking-review-strip-action">
-          <a className="primary-btn" href={googleReviewUrl} target="_blank" rel="noreferrer"
-             onClick={() => trackGrowthEvent("google_review_click", { page: "contact_top", lang })}>
-            ★ {growthCopy.reviewButton}
-          </a>
-        </div>
-        {googleReviewSnippets[lang]?.length > 0 && (
-          <div className="booking-review-list">
-            {googleReviewSnippets[lang].slice(0, 3).map((review) => (
-              <article className="booking-review-item" key={`${review.author}-${review.text}`}>
-                <div className="booking-review-stars">{"★".repeat(review.rating)}</div>
-                <p>“{review.text}”</p>
-                <strong>{review.author}</strong>
-                {review.date ? <small>{review.date}</small> : null}
-              </article>
-            ))}
-          </div>
-        )}
-      </section>
-
       <section className="section booking-layout">
         <article className="booking-card">
           <div className="booking-card-head">
@@ -1469,6 +1443,32 @@ function ContactPage({ t, lang }) {
             </a>
           </article>
         </aside>
+      </section>
+
+      <section className="section booking-review-strip">
+        <div className="booking-review-strip-copy">
+          <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
+          <h2>{growthCopy.reviewTitle}</h2>
+          <p>{growthCopy.reviewText}</p>
+        </div>
+        <div className="booking-review-strip-action">
+          <a className="primary-btn" href={googleReviewUrl} target="_blank" rel="noreferrer"
+             onClick={() => trackGrowthEvent("google_review_click", { page: "contact_top", lang })}>
+            ★ {growthCopy.reviewButton}
+          </a>
+        </div>
+        {googleReviewSnippets[lang]?.length > 0 && (
+          <div className="booking-review-list">
+            {googleReviewSnippets[lang].slice(0, 3).map((review) => (
+              <article className="booking-review-item" key={`${review.author}-${review.text}`}>
+                <div className="booking-review-stars">{"★".repeat(review.rating)}</div>
+                <p>“{review.text}”</p>
+                <strong>{review.author}</strong>
+                {review.date ? <small>{review.date}</small> : null}
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="section contact-note-box">
