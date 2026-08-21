@@ -1,0 +1,116 @@
+/* ElviGlow V17.2 — multi-zone waxing booking */
+.booking-wax-field {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(95,67,63,0.14);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.58);
+}
+
+.booking-wax-head strong {
+  display: block;
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 900;
+}
+
+.booking-wax-head p {
+  margin: 5px 0 0;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.booking-wax-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.booking-wax-option {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 11px;
+  align-items: center;
+  min-height: 64px;
+  padding: 11px 13px;
+  border: 1px solid rgba(95,67,63,0.15);
+  border-radius: 16px;
+  background: rgba(255,255,255,.84);
+  cursor: pointer;
+  transition: 160ms ease;
+}
+
+.booking-wax-option:hover {
+  border-color: rgba(185,109,98,.45);
+  transform: translateY(-1px);
+}
+
+.booking-wax-option.is-selected {
+  border-color: rgba(173,98,89,.6);
+  background: rgba(185,109,98,.10);
+  box-shadow: 0 0 0 3px rgba(185,109,98,.07);
+}
+
+.booking-wax-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
+}
+
+.booking-wax-option span {
+  display: grid;
+  gap: 3px;
+}
+
+.booking-wax-option strong {
+  color: var(--text);
+  font-size: .88rem;
+  line-height: 1.25;
+}
+
+.booking-wax-option small {
+  color: var(--muted);
+  font-size: .77rem;
+  line-height: 1.35;
+}
+
+.booking-wax-summary {
+  display: grid;
+  grid-template-columns: minmax(0,1.5fr) repeat(2,minmax(120px,.6fr));
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.booking-wax-summary > div {
+  padding: 12px 13px;
+  border-radius: 15px;
+  background: rgba(185,109,98,.08);
+}
+
+.booking-wax-summary span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.booking-wax-summary strong {
+  color: var(--brand-dark);
+  font-size: .87rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .booking-wax-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-wax-summary {
+    grid-template-columns: 1fr;
+  }
+}
