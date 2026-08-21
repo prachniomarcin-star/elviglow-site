@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Gezichtsbehandeling • vergelijking</p>
       <h1>Oxybrasie of waterstofreiniging: wat past beter bij jouw huiddoel?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Oxybrasie: wanneer logisch?</h2>
             <p>Oxybrasie past vooral bij iemand die een zachte, frisse behandeling zoekt en de huid oppervlakkig wil laten opfrissen.</p><p>Bij ElviGlow wordt de behandeling gebruikt als rustige route voor verfrissing en glow.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Waterstofreiniging: wanneer logisch?</h2>
             <p>Waterstofreiniging wordt gekozen wanneer reinigen een grotere rol speelt, bijvoorbeeld bij zichtbare poriën, onzuiverheden of een huid die verstopt oogt.</p><p>Bij ElviGlow bestaat deze behandeling uit cavitatiepeeling, waterstofreiniging en zuurstofinfusie met een passende ampul; indien nodig kan handmatige reiniging worden toegevoegd.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wat als je huid droog én verstopt is?</h2>
             <p>Dan is alleen de naam van de behandeling onvoldoende. De huid kan tegelijkertijd behoefte hebben aan reinigen én rust.</p><p>De intensiteit en volgorde worden daarom afgestemd op hoe de huid op dat moment reageert.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer liever geen intensieve behandeling?</h2>
             <p>Bij duidelijke irritatie, actieve ontsteking of beschadigde huid is het verstandig eerst te beoordelen of een behandeling op dat moment past.</p><p>Bij medische huidproblemen hoort beoordeling door een arts of dermatoloog.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> De &#x27;beste&#x27; behandeling is niet de behandeling met de meeste stappen, maar degene die past bij wat de huid op dat moment nodig heeft.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

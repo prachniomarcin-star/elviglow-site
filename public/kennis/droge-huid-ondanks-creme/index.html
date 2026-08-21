@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Huidkennis • droge huid</p>
       <h1>Droge huid ondanks crème: waarom blijft je huid toch trekkerig?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Te vaak of te sterk reinigen</h2>
             <p>Een agressieve cleanser, heet water of te vaak wassen kan natuurlijke lipiden van de huid verminderen en een strak gevoel versterken.</p><p>Een mildere reiniging en lauw water zijn vaak logischer wanneer de huid snel droog aanvoelt.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>De crème past niet bij wat de huid nodig heeft</h2>
             <p>Een zeer lichte lotion kan voor een droge huid te weinig afsluitend zijn. Tegelijk kan een overvolle routine met veel actieve ingrediënten juist irritatie geven.</p><p>Eenvoudige formules met hydraterende en barrière-ondersteunende ingrediënten zijn vaak een betere basis.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Te veel exfoliëren</h2>
             <p>Peelings, zuren en retinoïden kunnen nuttig zijn, maar te vaak gebruiken kan droogte en gevoeligheid verergeren.</p><p>Wanneer de huid prikt, brandt of schilfert, is &#x27;meer actief&#x27; meestal niet de eerste stap.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer een behandeling zinvol kan zijn</h2>
             <p>Een zachte, hydraterende of glow-gerichte behandeling kan comfort en huidgevoel ondersteunen, maar hoort bij een rustig plan.</p><p>Blijft de huid ondanks eenvoudige verzorging extreem droog, pijnlijk, jeukend of ontstoken, laat dan een arts of dermatoloog meekijken.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Een cosmetische behandeling kan droge huid ondersteunen, maar aanhoudende of ernstige droogte kan ook een medische oorzaak hebben.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

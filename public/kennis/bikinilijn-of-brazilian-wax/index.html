@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Waxing • bikini • Brazilian</p>
       <h1>Bikinilijn of Brazilian wax: wat is precies het verschil?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Bikinilijn</h2>
             <p>De bikinilijn is de meer beperkte optie. De behandeling richt zich op haren die langs de randen van ondergoed of bikini zichtbaar zijn.</p><p>Dit past goed wanneer je vooral een nette lijn wilt en niet het hele intieme gebied wilt laten waxen.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Brazilian wax</h2>
             <p>Een Brazilian wax is uitgebreider en behandelt een groter deel van het intieme gebied.</p><p>Hoeveel haar je wilt behouden of verwijderen bespreek je vooraf. Het doel is dat de behandeling aansluit op jouw voorkeur.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Welke kies je?</h2>
             <p>Kies de bikinilijn wanneer je vooral buiten de rand glad wilt zijn.</p><p>Kies Brazilian wanneer je een uitgebreidere intieme ontharing wilt.</p><p>Twijfel je? Stuur vooraf een bericht. Dan reserveren we meteen het juiste type afspraak.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Waarom dit ook voor de planning belangrijk is</h2>
             <p>Een grotere zone vraagt meer tijd. Daarom is &#x27;waxing&#x27; als algemene afspraak te vaag.</p><p>ElviGlow werkt met afzonderlijke diensten zodat de behandeling en tijd vooraf duidelijk zijn.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Je hoeft niet op de website alle details van je voorkeur te beschrijven. Een korte WhatsApp is genoeg om de juiste behandeling te bevestigen.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

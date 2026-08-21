@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Wiedza o skórze • suchość</p>
       <h1>Sucha skóra mimo kremu: dlaczego nadal jest ściągnięta?</h1>
       <p class="lead">Więcej kremu nie zawsze rozwiązuje problem. Skóra może pozostać sucha, jeśli oczyszczanie jest zbyt mocne, gorąca woda ją przesusza, kosmetyki drażnią albo bariera skórna jest chwilowo osłabiona.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/huidverbetering-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/huidverbetering-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Najpierw bariera</span><span>✦ Prostsza pielęgnacja</span><span>✦ Deventer</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Zbyt częste lub mocne oczyszczanie</h2>
             <p>Silny żel, gorąca woda albo bardzo częste mycie mogą usuwać naturalne lipidy i nasilać uczucie ściągnięcia.</p><p>Przy suchej skórze często lepiej sprawdza się łagodniejsze oczyszczanie i letnia woda.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Krem może nie odpowiadać potrzebom skóry</h2>
             <p>Bardzo lekka emulsja może być niewystarczająca dla suchej skóry. Z drugiej strony rozbudowana rutyna z wieloma aktywnymi składnikami może ją dodatkowo podrażniać.</p><p>Prostszy schemat z substancjami nawilżającymi i wspierającymi barierę jest często lepszą bazą.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Za dużo złuszczania</h2>
             <p>Kwasy, peelingi i retinoidy mogą mieć zastosowanie, ale zbyt częste używanie zwiększa ryzyko suchości i podrażnienia.</p><p>Jeśli skóra piecze, szczypie albo się łuszczy, dokładanie kolejnych aktywnych kosmetyków zwykle nie jest pierwszym krokiem.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Kiedy zabieg może pomóc</h2>
             <p>Delikatny zabieg nawilżający lub glow może wspierać komfort skóry, ale powinien być częścią spokojnego planu.</p><p>Jeśli skóra pozostaje bardzo sucha, bolesna, swędząca albo zaczerwieniona mimo prostej pielęgnacji, warto skonsultować się z lekarzem lub dermatologiem.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Zabieg kosmetyczny może wspierać suchą skórę, ale silna i utrzymująca się suchość może mieć również przyczynę medyczną.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/huidverbetering-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/huidverbetering-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

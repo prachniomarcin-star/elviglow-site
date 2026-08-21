@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Waxing • resultaat</p>
       <h1>Hoe lang blijft je huid glad na het waxen?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Waarom voelt waxing langer glad?</h2>
             <p>Bij scheren wordt het haar aan het huidoppervlak afgesneden. Bij waxing wordt het haar verwijderd, waardoor het langer duurt voordat een nieuw haar weer zichtbaar boven de huid komt.</p><p>Dat betekent niet dat alle haren tegelijk terugkomen. Sommige zaten tijdens de behandeling in een andere groeifase.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer zie je weer haartjes?</h2>
             <p>Bij veel mensen blijft het gebied meerdere weken duidelijk gladder, maar de eerste nieuwe haren kunnen eerder verschijnen.</p><p>De exacte timing verschilt per zone. Oksels, benen, gezicht en bikinizone hebben niet precies hetzelfde groeipatroon.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Waarom kan een volgende afspraak gelijkmatiger uitpakken?</h2>
             <p>Wie regelmatig waxt en tussendoor niet scheert, kan de afspraken beter afstemmen op de terugkerende haargroei.</p><p>Het doel is niet om een vaste belofte te doen over weken gladheid, maar om een ritme te vinden dat voor jouw haarcyclus werkt.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer plan je opnieuw?</h2>
             <p>Plan pas wanneer er weer voldoende haar is om goed te waxen.</p><p>Als je een vakantie of evenement hebt, is het slim om je waxmoment niet voor het eerst vlak voor die datum uit te proberen. Zo weet je hoe jouw huid reageert.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Een gladheidsduur is altijd individueel. Geen salon kan garanderen dat iedereen exact evenveel weken haarvrij blijft.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

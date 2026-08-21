@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Brazilian wax • Deventer</p>
       <h1>Brazilian wax: wat is handig om vóór je afspraak te weten?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Voor de afspraak</h2>
             <p>Laat het haar voldoende doorgroeien zodat de wax het kan meenemen.</p><p>Vermijd op de dag zelf sterke exfoliatie, agressieve actieve producten en onnodige wrijving op het gebied.</p><p>Kom schoon en comfortabel. Je hoeft je niet te schamen of &#x27;perfect&#x27; voorbereid te voelen; de behandeling is professioneel en discreet.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Bikinilijn of Brazilian?</h2>
             <p>De bikinilijn richt zich vooral op de haren die buiten of langs de rand van ondergoed of bikini zichtbaar zijn.</p><p>Een Brazilian is uitgebreider. Bespreek vooraf wat je precies wilt, zodat de afspraak en het resultaat overeenkomen met je verwachting.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Na de wax</h2>
             <p>Direct na de behandeling kan de huid wat rood of warm aanvoelen.</p><p>Vermijd sterke hitte, intensief sporten, zwembad en stevige wrijving zolang de huid nog gevoelig is.</p><p>Begin pas weer met scrubben wanneer de huid volledig rustig aanvoelt.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer beter uitstellen?</h2>
             <p>Bij open wondjes, actieve huidirritatie, ontstoken plekjes of een duidelijke huidreactie in het te behandelen gebied is uitstellen vaak verstandiger.</p><p>Gebruik je medicatie of huidproducten die de huid dunner of gevoeliger maken? Meld dit vooraf.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Een Brazilian wax is een persoonlijke behandeling. Bij ElviGlow wordt de afspraak één-op-één en uitsluitend op afspraak uitgevoerd.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

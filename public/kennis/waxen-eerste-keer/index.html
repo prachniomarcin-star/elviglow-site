@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Waxing • eerste keer • Deventer</p>
       <h1>Voor het eerst waxen? Zo bereid je je huid rustig voor</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>1. Laat de haren lang genoeg worden</h2>
             <p>Scheer het gebied niet vlak voor de afspraak. Als de haren te kort zijn, kan de wax ze minder goed meenemen.</p><p>Twijfel je over de lengte? Laat de haren liever staan en stuur vooraf een bericht. Te lang kan meestal makkelijker worden opgelost dan te kort.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>2. Houd de huid de dag ervoor rustig</h2>
             <p>Vermijd vlak voor de afspraak agressieve scrubs, sterke zuren, retinoïden of andere producten die de huid duidelijk gevoeliger maken op het te waxen gebied.</p><p>Kom bij voorkeur met een schone, droge huid zonder een dikke laag bodylotion, olie of deodorant op de zone die wordt behandeld.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>3. Wat voel je tijdens het waxen?</h2>
             <p>Waxen verwijdert het haar vanaf de wortel. Dat voel je, vooral de eerste keren of op gevoelige zones. De intensiteit verschilt sterk per persoon en per gebied.</p><p>Bij ElviGlow wordt per zone gewerkt. Dat maakt het makkelijker om tempo en techniek aan te passen aan het gebied.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>4. Wat doe je na de behandeling?</h2>
             <p>De huid kan kort rood of gevoelig zijn. Geef haar tijd om te kalmeren.</p><p>Vermijd sterke hitte, sauna, intensief sporten, zwemmen en stevige wrijving zolang de huid nog duidelijk rood of gevoelig is. Wacht ook met intensief scrubben tot de huid weer rustig aanvoelt.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Heb je een actieve huidirritatie, wondjes of een ontstoken huid op de zone die je wilt waxen? Meld dit vooraf. Dan beoordelen we of uitstellen verstandiger is.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

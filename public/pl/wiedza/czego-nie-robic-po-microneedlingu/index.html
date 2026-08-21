@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Microneedling • pielęgnacja po</p>
       <h1>Czego lepiej nie robić po microneedlingu?</h1>
       <p class="lead">Po microneedlingu skóra przez pewien czas jest bardziej reaktywna. Dlatego spokojna pielęgnacja jest ważniejsza niż nakładanie wielu kosmetyków. Dokładne zalecenia zależą od intensywności zabiegu i reakcji Twojej skóry.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/microneedling-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/microneedling-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Spokojna regeneracja</span><span>✦ SPF ma znaczenie</span><span>✦ Indywidualne zalecenia</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>1. Unikaj mocnego słońca i stosuj ochronę</h2>
             <p>Po zabiegu ważna jest konsekwentna ochrona przeciwsłoneczna. Unikaj niepotrzebnej ekspozycji na mocne słońce i stosuj wysoki filtr o szerokim spektrum zgodnie z zaleceniami pozabiegowymi.</p><p>Silne słońce na podrażnionej skórze może zwiększać ryzyko niepożądanych przebarwień.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>2. Bez sauny, gorącej kąpieli i mocnego treningu od razu po zabiegu</h2>
             <p>Wysoka temperatura i intensywny wysiłek mogą nasilać zaczerwienienie i podrażnienie.</p><p>Poczekaj przynajmniej do wyraźnego uspokojenia skóry i trzymaj się zaleceń po konkretnym zabiegu.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>3. Odłóż peelingi, kwasy i retinoidy</h2>
             <p>Bariera skórna jest przez pewien czas bardziej wrażliwa. Mocne peelingi, kwasy i retinoidy mogą wtedy podrażnić skórę.</p><p>Aktywne produkty wprowadzaj dopiero po regeneracji i zgodnie z zaleceniami.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>4. Uprość pielęgnację</h2>
             <p>Nie dotykaj niepotrzebnie twarzy i dbaj o czystość obszaru.</p><p>W pierwszym okresie stosuj tylko produkty odpowiednie po zabiegu. Więcej składników nie oznacza szybszej regeneracji.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Jeśli po microneedlingu pojawia się narastający ból, duży obrzęk, ropa, pęcherze albo reakcja wykraczająca poza typowe przejściowe zaczerwienienie, skontaktuj się z osobą wykonującą zabieg i w razie potrzeby z lekarzem.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/microneedling-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/microneedling-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

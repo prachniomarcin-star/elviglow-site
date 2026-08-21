@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Brazilian wax • Deventer</p>
       <h1>Brazilian wax: co warto wiedzieć przed depilacją brazylijską?</h1>
       <p class="lead">Brazilian wax to bardziej rozbudowana depilacja intymna niż sama linia bikini. Dobre przygotowanie sprawia, że wiesz, czego się spodziewać, ile czasu trzeba zarezerwować i jak później uspokoić skórę.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Depilacja intymna</span><span>✦ Lycon</span><span>✦ Tylko po umówieniu</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Przed wizytą</h2>
             <p>Pozwól włoskom odrosnąć na tyle, by wosk mógł je dobrze uchwycić.</p><p>W dniu zabiegu unikaj mocnego peelingu, drażniących kosmetyków i niepotrzebnego tarcia okolicy.</p><p>Przyjdź czysta i komfortowo ubrana. To profesjonalny zabieg wykonywany dyskretnie i bez oceniania.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Linia bikini czy Brazilian?</h2>
             <p>Linia bikini obejmuje przede wszystkim włoski widoczne poza krawędzią bielizny lub stroju kąpielowego.</p><p>Brazilian jest zabiegiem bardziej rozbudowanym. Warto wcześniej powiedzieć, jaki dokładnie efekt chcesz uzyskać.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Po depilacji</h2>
             <p>Skóra może być chwilowo zaczerwieniona i cieplejsza.</p><p>Dopóki jest wrażliwa, unikaj mocnego nagrzewania, intensywnego treningu, basenu i dużego tarcia.</p><p>Z peelingiem poczekaj, aż skóra całkowicie się uspokoi.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Kiedy lepiej przełożyć zabieg?</h2>
             <p>Przy otwartych rankach, silnym podrażnieniu, aktywnym stanie zapalnym lub mocnej reakcji skórnej bezpieczniej jest przełożyć depilację.</p><p>Jeśli stosujesz leki albo produkty, które zwiększają wrażliwość skóry, powiedz o tym przed wizytą.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Brazilian wax jest bardzo osobistym zabiegiem. W ElviGlow wizyta odbywa się indywidualnie i wyłącznie po wcześniejszym umówieniu.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

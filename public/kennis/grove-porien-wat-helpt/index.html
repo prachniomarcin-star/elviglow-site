@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Huidkennis • poriën</p>
       <h1>Grove poriën: wat helpt echt en wat is een onrealistische belofte?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer poriën vooral verstopt lijken</h2>
             <p>Als talg en oppervlakkige ophoping de poriën zichtbaarder maken, kan een grondige maar gecontroleerde reiniging logischer zijn dan meteen een intensief regeneratief traject.</p><p>Te agressief ontvetten kan juist irritatie veroorzaken en is geen duurzame strategie.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer structuur de hoofdrol speelt</h2>
             <p>Bij een grovere of ongelijkmatige huidstructuur kan een behandeling zoals microneedling of microdermabrasie onderdeel zijn van een plan, afhankelijk van de huidconditie.</p><p>Dat is geen garantie op &#x27;porieloze&#x27; huid. Het doel is een gelijkmatiger huidbeeld, niet het verwijderen van normale huidstructuren.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wat je thuis kunt doen</h2>
             <p>Gebruik milde reiniging en vermijd voortdurend schrobben of uitknijpen.</p><p>Dagelijkse zonbescherming helpt de huid te beschermen tegen verdere schade en verlies van stevigheid.</p><p>Als je actieve producten gebruikt, bouw ze rustig op en stop bij duidelijke irritatie.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>Wanneer professionele beoordeling zinvol is</h2>
             <p>Als je niet weet of je vooral last hebt van verstopping, textuur of huidverslapping, is het verstandiger eerst naar de huid te kijken dan een behandeling op naam te kiezen.</p><p>Bij actieve acne, ontstekingen of een medische huidklacht hoort beoordeling door een arts of dermatoloog.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Een cosmetische behandeling kan het uiterlijk van poriën verbeteren, maar gezonde huid heeft altijd poriën. &#x27;Poriën permanent sluiten&#x27; is geen realistisch doel.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

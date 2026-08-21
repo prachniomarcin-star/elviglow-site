@@ -87,3 +87,141 @@
   .article-intro-card { padding: 19px; border-radius: 22px; }
   .info-box { padding: 20px; border-radius: 22px; }
 }
+
+/* V17.1 — compact knowledge/article layout */
+.knowledge-article .article-hero {
+  padding-top: 46px;
+  padding-bottom: 24px;
+}
+
+.knowledge-article .article-hero > * {
+  max-width: 980px;
+}
+
+.knowledge-article .article-hero h1 {
+  max-width: 1020px;
+  font-size: clamp(2.9rem, 4.55vw, 4.7rem);
+  line-height: .98;
+}
+
+.knowledge-article .lead {
+  max-width: 840px;
+  font-size: clamp(1.03rem, 1.4vw, 1.18rem);
+}
+
+.knowledge-article .article-intro-card {
+  max-width: 980px;
+  margin-top: 24px;
+  padding: 22px 24px;
+}
+
+.knowledge-article .article-section {
+  padding: 14px 0;
+  scroll-margin-top: 118px;
+}
+
+.knowledge-article .article-section[id] .article-copy {
+  max-width: 980px;
+  padding: 28px 32px 30px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 96% 5%, rgba(185,109,98,.08), transparent 16rem),
+    rgba(255,255,255,.69);
+  box-shadow: var(--shadow-soft);
+}
+
+.knowledge-article .article-section[id] .article-copy h2 {
+  max-width: 850px;
+  margin: 0 0 16px;
+  font-size: clamp(1.95rem, 2.75vw, 2.9rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+
+.knowledge-article .article-section[id] .article-copy p {
+  max-width: 830px;
+  margin: 0;
+  font-size: 1.01rem;
+  line-height: 1.7;
+}
+
+.knowledge-article .article-section[id] .article-copy p + p {
+  margin-top: 12px;
+}
+
+.knowledge-article .note-section {
+  padding-top: 18px;
+  padding-bottom: 24px;
+}
+
+.knowledge-article .note-section .article-copy {
+  max-width: 980px;
+}
+
+.knowledge-article .faq-section {
+  padding-top: 30px;
+  padding-bottom: 34px;
+}
+
+.knowledge-article .faq-section .section-head {
+  margin-bottom: 22px;
+}
+
+.knowledge-article .faq-section .section-head .eyebrow {
+  margin-bottom: 8px;
+}
+
+.knowledge-article .faq-section h2 {
+  font-size: clamp(2.3rem, 3.5vw, 3.55rem);
+}
+
+.knowledge-article .faq details {
+  padding: 16px 20px;
+  border-radius: 22px;
+}
+
+.knowledge-article .cta {
+  margin-top: 22px;
+}
+
+.knowledge-article .cta h2 {
+  font-size: clamp(2.25rem, 3.3vw, 3.45rem);
+}
+
+.knowledge-article .related a {
+  line-height: 1.25;
+}
+
+@media (max-width: 740px) {
+  .knowledge-article .article-hero {
+    padding-top: 38px;
+    padding-bottom: 18px;
+  }
+
+  .knowledge-article .article-hero h1 {
+    font-size: clamp(2.55rem, 11vw, 3.65rem);
+  }
+
+  .knowledge-article .article-section {
+    padding: 9px 0;
+  }
+
+  .knowledge-article .article-section[id] .article-copy {
+    padding: 22px 20px 24px;
+    border-radius: 24px;
+  }
+
+  .knowledge-article .article-section[id] .article-copy h2 {
+    font-size: clamp(1.75rem, 8vw, 2.45rem);
+    margin-bottom: 14px;
+  }
+
+  .knowledge-article .faq-section h2 {
+    font-size: clamp(2.05rem, 9vw, 2.8rem);
+  }
+
+  .knowledge-article .cta h2 {
+    font-size: clamp(2rem, 9vw, 2.85rem);
+  }
+}

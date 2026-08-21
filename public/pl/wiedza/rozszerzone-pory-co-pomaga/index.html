@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Wiedza o skórze • pory</p>
       <h1>Rozszerzone pory: co naprawdę pomaga, a co jest tylko obietnicą?</h1>
       <p class="lead">Porów nie da się po prostu „zamknąć”. Mogą jednak wyglądać na mniejsze lub mniej widoczne w zależności od ilości sebum, zanieczyszczeń, struktury skóry i jej jędrności.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/huidverbetering-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/huidverbetering-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Bez obietnic cudów</span><span>✦ Najpierw przyczyna</span><span>✦ Deventer</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Gdy pory wyglądają na zapchane</h2>
             <p>Jeśli głównym problemem jest sebum i powierzchniowe zanieczyszczenie, sensowniej zacząć od dokładnego, ale kontrolowanego oczyszczania niż od razu wybierać najmocniejszy zabieg.</p><p>Ciągłe przesuszanie i mocne szorowanie skóry może zwiększać podrażnienie i nie jest długofalowym rozwiązaniem.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Gdy główny problem to struktura skóry</h2>
             <p>Przy nierównej lub bardziej szorstkiej strukturze częścią planu może być microneedling albo mikrodermabrazja, jeśli kondycja skóry na to pozwala.</p><p>Celem nie jest „skóra bez porów”, ale bardziej równomierny wygląd.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Co możesz robić w domu</h2>
             <p>Stosuj łagodne oczyszczanie i unikaj ciągłego wyciskania oraz szorowania.</p><p>Codzienna ochrona przeciwsłoneczna pomaga chronić skórę przed dalszym uszkodzeniem i utratą jędrności.</p><p>Aktywne kosmetyki wprowadzaj stopniowo i przerywaj, jeśli skóra wyraźnie się podrażnia.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Kiedy warto skonsultować dobór zabiegu</h2>
             <p>Jeśli nie wiesz, czy problemem jest głównie zapchanie, struktura czy spadek jędrności, lepiej najpierw obejrzeć skórę niż wybierać zabieg po nazwie.</p><p>Przy aktywnym trądziku, silnych stanach zapalnych albo podejrzeniu choroby skóry właściwa jest konsultacja z lekarzem lub dermatologiem.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Zabieg kosmetyczny może poprawić wygląd porów, ale zdrowa skóra zawsze ma pory. Obietnica ich trwałego „zamknięcia” nie jest realistyczna.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/huidverbetering-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/huidverbetering-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

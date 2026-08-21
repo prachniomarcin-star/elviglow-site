@@ -125,7 +125,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Microneedling • nazorg</p>
       <h1>Wat kun je beter niet doen na microneedling?</h1>
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>1. Vermijd sterke zon en gebruik zonbescherming</h2>
             <p>Na de behandeling is consequente zonbescherming belangrijk. Vermijd onnodige felle zon en gebruik een hoge, breedspectrum SPF zodra dat volgens je nazorgadvies kan.</p><p>Zonblootstelling op een geïrriteerde huid kan het risico op ongewenste verkleuring vergroten.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>2. Geen sauna, heet bad of intensief sporten direct erna</h2>
             <p>Sterke hitte en intensieve inspanning kunnen roodheid en irritatie versterken.</p><p>Wacht minimaal tot de huid duidelijk rustiger is en volg de instructies die je na jouw behandeling hebt gekregen.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>3. Stel scrubben, zuren en retinoïden uit</h2>
             <p>De huidbarrière is tijdelijk gevoeliger. Exfoliërende producten, sterke zuren en retinoïden kunnen dan te prikkelend zijn.</p><p>Bouw actieve producten pas weer op wanneer de huid hersteld is en volgens het advies dat je hebt gekregen.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Kennis</p>
             <h2>4. Houd de routine eenvoudig</h2>
             <p>Raak de huid niet onnodig aan en houd het behandelde gebied schoon.</p><p>Gebruik alleen producten die geschikt zijn voor de eerste herstelperiode. Meer ingrediënten betekenen niet automatisch sneller herstel.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Let op:</strong> Heb je na microneedling toenemende pijn, forse zwelling, pus, blaren of een reactie die niet past bij normale tijdelijke roodheid? Neem contact op met de behandelaar en laat medische klachten beoordelen.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Veelgestelde vragen</h2>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

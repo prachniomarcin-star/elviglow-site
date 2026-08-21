@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Depilacja woskiem • pierwszy raz • Deventer</p>
       <h1>Depilacja woskiem pierwszy raz? Tak przygotuj skórę bez stresu</h1>
       <p class="lead">Przed pierwszą depilacją najczęściej pojawiają się te same pytania: jak długie powinny być włoski, czy robić peeling, czy zabieg boli i czego nie robić po wosku. Dobre przygotowanie nie musi być skomplikowane.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Praktyczne przygotowanie</span><span>✦ Lycon waxing</span><span>✦ Deventer</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>1. Nie gol obszaru tuż przed wizytą</h2>
             <p>Jeśli włoski są zbyt krótkie, wosk może nie usunąć ich równomiernie.</p><p>Jeżeli nie wiesz, czy długość jest odpowiednia, lepiej zostawić włoski i zapytać przed wizytą. Zbyt długie łatwiej skorygować niż zbyt krótkie.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>2. Dzień wcześniej nie drażnij skóry</h2>
             <p>Nie rób mocnego peelingu i nie nakładaj na depilowany obszar silnie drażniących kwasów, retinoidów ani innych produktów, po których skóra jest wyraźnie bardziej wrażliwa.</p><p>Na wizytę najlepiej przyjść z czystą, suchą skórą bez grubej warstwy balsamu, olejku czy dezodorantu na depilowanym miejscu.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>3. Jak odczuwana jest depilacja woskiem?</h2>
             <p>Wosk usuwa włos wraz z jego częścią znajdującą się pod powierzchnią skóry, dlatego zabieg jest odczuwalny. Wrażenie zależy od okolicy, grubości włosów i indywidualnej wrażliwości.</p><p>Praca strefami pozwala dopasować tempo do miejsca i reakcji skóry.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>4. Co robić po depilacji?</h2>
             <p>Po zabiegu skóra może być przez krótki czas zaczerwieniona lub bardziej wrażliwa.</p><p>Dopóki skóra się nie uspokoi, unikaj mocnego nagrzewania, sauny, intensywnego treningu, basenu, tarcia i mocnego peelingu.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Jeśli na depilowanej strefie są otwarte ranki, mocne podrażnienie albo aktywny stan zapalny, napisz o tym przed wizytą. W takiej sytuacji czasem lepiej przełożyć zabieg.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/lycon-waxing-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);

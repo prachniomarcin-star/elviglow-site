@@ -125,14 +125,14 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="knowledge-article">
     <section class="article-hero">
       <p class="eyebrow">Zabiegi na twarz • porównanie</p>
       <h1>Oxybrazja czy oczyszczanie wodorowe: co lepiej pasuje do Twojej skóry?</h1>
       <p class="lead">Oba zabiegi mogą kojarzyć się z odświeżeniem twarzy, ale nie mają identycznego celu. Oxybrazja jest bardziej delikatnym odświeżeniem i złuszczaniem, a oczyszczanie wodorowe mocniej skupia się na oczyszczeniu.</p>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">Zapytaj o wizytę na WhatsApp</a>
-        <a class="btn secondary" href="/gezichtsbehandeling-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/gezichtsbehandeling-deventer">Zobacz pasujący zabieg</a>
       </div>
       <div class="trust"><span>✦ Wybór według problemu</span><span>✦ Bez przypadkowych zabiegów</span><span>✦ Deventer</span></div>
       <div class="article-intro-card">
@@ -144,37 +144,33 @@
 
     <section class="article-section" id="deel-1">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Oxybrazja — kiedy ma sens?</h2>
             <p>Oxybrazja pasuje osobom, które chcą delikatnego odświeżenia i powierzchniowego złuszczenia bez wybierania od razu intensywnego zabiegu.</p><p>W ElviGlow to spokojniejszy kierunek na świeżość i glow.</p>
           </div>
         </section><section class="article-section" id="deel-2">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Oczyszczanie wodorowe — kiedy ma sens?</h2>
             <p>Ten zabieg wybieramy częściej, gdy większym problemem są zanieczyszczenia, pory albo skóra wyglądająca na zapchaną.</p><p>W ElviGlow obejmuje peeling kawitacyjny, oczyszczanie wodorowe i infuzję tlenową z dobraną ampułką; jeśli jest potrzeba, może być uzupełnione oczyszczaniem manualnym.</p>
           </div>
         </section><section class="article-section" id="deel-3">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Co jeśli skóra jest sucha i jednocześnie zanieczyszczona?</h2>
             <p>Wtedy sama nazwa zabiegu nie wystarczy. Skóra może potrzebować zarówno oczyszczenia, jak i spokojnego wsparcia bariery.</p><p>Zakres dobieramy do aktualnego stanu skóry.</p>
           </div>
         </section><section class="article-section" id="deel-4">
           <div class="article-copy">
-            <p class="eyebrow">Wiedza</p>
             <h2>Kiedy lepiej odłożyć mocniejszy zabieg?</h2>
             <p>Przy wyraźnym podrażnieniu, aktywnym stanie zapalnym albo uszkodzonej skórze najpierw warto ocenić, czy zabieg w ogóle jest dobrym pomysłem.</p><p>Przy problemach medycznych właściwa jest konsultacja z lekarzem lub dermatologiem.</p>
           </div>
         </section>
 
-    <section class="article-section">
+    <section class="article-section note-section">
       <div class="article-copy">
         <div class="article-callout"><p><strong>Ważne:</strong> Najlepszy zabieg to nie ten z największą liczbą etapów, tylko ten, który odpowiada aktualnym potrzebom skóry.</p></div>
       </div>
     </section>
 
-    <section class="article-section">
+    <section class="article-section faq-section">
       <div class="section-head">
         <p class="eyebrow">Najczęstsze pytania</p>
         <h2>Najczęstsze pytania</h2>
@@ -192,7 +188,7 @@
       </div>
       <div class="actions">
         <a class="btn primary" href="https://wa.me/31682224999" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn secondary" href="/gezichtsbehandeling-deventer">Zobacz pasujący zabieg</a>
+        <a class="btn secondary" href="/pl/gezichtsbehandeling-deventer">Zobacz pasujący zabieg</a>
       </div>
     </section>
   </main>
@@ -255,7 +251,23 @@
     }
 
     const href = link.getAttribute("href") || "";
-    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/kennis/")) {
+
+    if (href.startsWith("/pl/")) {
+      localStorage.setItem("elviglow-lang", "pl");
+      return;
+    }
+
+    if (href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", "en");
+      return;
+    }
+
+    if (href.startsWith("/kennis/")) {
+      localStorage.setItem("elviglow-lang", "nl");
+      return;
+    }
+
+    if (href.startsWith("/")) {
       localStorage.setItem("elviglow-lang", pageLang);
     }
   }, true);
