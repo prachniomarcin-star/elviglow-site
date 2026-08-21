@@ -180,6 +180,7 @@
 
   <script>
 (() => {
+  const pageLang = "pl";
   const langMenu = document.getElementById("seo-language-menu");
   const langTrigger = langMenu?.querySelector(".language-trigger");
   const more = document.getElementById("seo-nav-more");
@@ -201,12 +202,24 @@
     langTrigger?.setAttribute("aria-expanded", "false");
   });
 
-  // The site's language changes only when the visitor explicitly chooses PL / EN / NL.
-  document.querySelectorAll("[data-lang-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("elviglow-lang", link.getAttribute("data-lang-link"));
-    });
-  });
+  // Opening the article alone does NOT change the site's saved language.
+  // When the visitor actually leaves the article for the normal ElviGlow site,
+  // keep the language of the article they were reading.
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+
+    const chosenLanguage = link.getAttribute("data-lang-link");
+    if (chosenLanguage) {
+      localStorage.setItem("elviglow-lang", chosenLanguage);
+      return;
+    }
+
+    const href = link.getAttribute("href") || "";
+    if (href.startsWith("/") && !href.startsWith("/pl/") && !href.startsWith("/en/")) {
+      localStorage.setItem("elviglow-lang", pageLang);
+    }
+  }, true);
 
   document.addEventListener("click", (event) => {
     if (langMenu && !langMenu.contains(event.target)) {

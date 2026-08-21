@@ -25,27 +25,18 @@
   };
 
   function currentLang() {
-    const lang = document.documentElement.lang || localStorage.getItem("elviglow-lang") || "nl";
-    return ["pl","en","nl"].includes(lang) ? lang : "nl";
+    const stored = localStorage.getItem("elviglow-lang");
+    if (["pl", "en", "nl"].includes(stored)) return stored;
+
+    const documentLang = (document.documentElement.lang || "").slice(0, 2).toLowerCase();
+    if (["pl", "en", "nl"].includes(documentLang)) return documentLang;
+
+    return "nl";
   }
 
-  function ensureCard() {
-    const side = document.querySelector(".booking-side");
-    if (!side) return;
-
-    const lang = currentLang();
-    const t = copy[lang];
-    let card = document.getElementById("elviglow-location-card");
-
-    if (!card) {
-      card = document.createElement("article");
-      card.id = "elviglow-location-card";
-      card.className = "elviglow-location-card";
-      const hours = side.querySelector(".booking-hours-card");
-      if (hours?.nextSibling) side.insertBefore(card, hours.nextSibling);
-      else side.appendChild(card);
-    }
-
+  function renderCard(card, lang) {
+    const t = copy[lang] || copy.nl;
+    card.dataset.lang = lang;
     card.innerHTML = `
       <div class="location-head">
         <span class="location-icon" aria-hidden="true">⌖</span>
@@ -61,7 +52,42 @@
     `;
   }
 
-  const observer = new MutationObserver(ensureCard);
+  function ensureCard() {
+    const side = document.querySelector(".booking-side");
+    if (!side) return;
+
+    const lang = currentLang();
+    let card = document.getElementById("elviglow-location-card");
+
+    // If the card is already correct, do not touch the DOM.
+    if (card && card.dataset.lang === lang) return;
+
+    if (!card) {
+      card = document.createElement("article");
+      card.id = "elviglow-location-card";
+      card.className = "elviglow-location-card";
+
+      const hours = side.querySelector(".booking-hours-card");
+      if (hours?.nextSibling) side.insertBefore(card, hours.nextSibling);
+      else side.appendChild(card);
+    }
+
+    renderCard(card, lang);
+  }
+
+  let scheduled = false;
+  function scheduleEnsureCard() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      ensureCard();
+    });
+  }
+
+  const observer = new MutationObserver(scheduleEnsureCard);
   observer.observe(document.body, { childList: true, subtree: true });
-  ensureCard();
+
+  window.addEventListener("storage", scheduleEnsureCard);
+  scheduleEnsureCard();
 })();
