@@ -96,4 +96,33 @@ for (const cluster of clusters) {
   }
 }
 
+const homeFile = path.join(dist, "index.html");
+if (fs.existsSync(homeFile)) {
+  const original = fs.readFileSync(homeFile, "utf8");
+  if (!original.includes("data-seo-face-home-static")) {
+    const staticLinks = `
+<section data-seo-face-home-static aria-label="Gezichtsbehandelingen in Deventer">
+  <h2>Gezichtsbehandelingen in Deventer</h2>
+  <p>
+    <a href="/gezichtsbehandeling-deventer">Gezichtsbehandeling Deventer</a> ·
+    <a href="/huidverbetering-deventer">Huidverbetering Deventer</a> ·
+    <a href="/microneedling-deventer">Microneedling Deventer</a> ·
+    <a href="/oxybrasie-deventer">Oxybrasie Deventer</a> ·
+    <a href="/waterstofreiniging-deventer">Waterstofreiniging Deventer</a>
+  </p>
+  <p>
+    <a href="/pl/gezichtsbehandeling-deventer">Zabiegi na twarz Deventer</a> ·
+    <a href="/pl/microneedling-deventer">Microneedling Deventer po polsku</a> ·
+    <a href="/pl/oxybrazja-deventer">Oxybrazja Deventer</a> ·
+    <a href="/pl/oczyszczanie-wodorowe-deventer">Oczyszczanie wodorowe Deventer</a>
+  </p>
+</section>`;
+    let html = original;
+    if (html.includes("</main>")) html = html.replace("</main>", `${staticLinks}\n</main>`);
+    else html = html.replace("</body>", `${staticLinks}\n</body>`);
+    fs.writeFileSync(homeFile, html);
+    updated += 1;
+  }
+}
+
 console.log(`Face cluster postbuild: linked ${updated} pages.`);
