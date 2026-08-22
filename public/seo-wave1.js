@@ -57,6 +57,8 @@
         ["/gezichtsbehandeling-deventer", "Gezichtsbehandeling Deventer"],
         ["/huidverbetering-deventer", "Huidverbetering Deventer"],
         ["/microneedling-deventer", "Microneedling Deventer"],
+        ["/oxybrasie-deventer", "Oxybrasie Deventer"],
+        ["/waterstofreiniging-deventer", "Waterstofreiniging Deventer"],
         ["/nagels-deventer", "Nagels Deventer"],
         ["/depilacja", "Waxen Deventer"],
         ["/lycon-waxing-deventer", "Lycon waxing Deventer"]
@@ -69,6 +71,8 @@
         ["/pl/gezichtsbehandeling-deventer", "Zabiegi na twarz Deventer"],
         ["/pl/huidverbetering-deventer", "Pielęgnacja skóry Deventer"],
         ["/pl/microneedling-deventer", "Microneedling Deventer"],
+        ["/pl/oxybrazja-deventer", "Oxybrazja Deventer"],
+        ["/pl/oczyszczanie-wodorowe-deventer", "Oczyszczanie wodorowe Deventer"],
         ["/pl/nagels-deventer", "Paznokcie Deventer"],
         ["/depilacja", "Depilacja woskiem Deventer"],
         ["/pl/lycon-waxing-deventer", "Depilacja Lycon Deventer"]
