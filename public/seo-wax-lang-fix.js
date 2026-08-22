@@ -21,6 +21,17 @@
         ["/pl/wiedza/depilacja-woskiem-pierwszy-raz", "Depilacja woskiem pierwszy raz"],
         ["/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem", "Jak długo skóra pozostaje gładka?"]
       ]
+    },
+    en: {
+      title: "Learn more about waxing in Deventer",
+      text: "Choosing between a bikini line and Brazilian wax, or booking for the first time? These guides help you prepare and know what to expect.",
+      aria: "Waxing Deventer guides",
+      items: [
+        ["/en/knowledge/brazilian-wax-preparation", "Brazilian wax: how to prepare"],
+        ["/en/knowledge/bikini-line-or-brazilian-wax", "Bikini line or Brazilian wax?"],
+        ["/en/knowledge/first-time-waxing", "First time waxing"],
+        ["/en/knowledge/how-long-does-waxing-last", "How long does waxing stay smooth?"]
+      ]
     }
   };
 
@@ -38,12 +49,6 @@
 
     const current = lang();
     let section = document.querySelector("[data-seo-wave1-wax-links]");
-
-    if (current === "en") {
-      section?.remove();
-      return;
-    }
-
     const copy = copies[current];
     if (!copy) return;
 
@@ -87,6 +92,7 @@
     const href = link.getAttribute("href") || "";
     if (href.startsWith("/pl/")) localStorage.setItem("elviglow-lang", "pl");
     else if (href.startsWith("/kennis/")) localStorage.setItem("elviglow-lang", "nl");
+    else if (href.startsWith("/en/")) localStorage.setItem("elviglow-lang", "en");
   });
 
   const observer = new MutationObserver(schedule);
