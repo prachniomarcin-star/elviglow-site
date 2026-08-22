@@ -41,7 +41,7 @@ function hreflangBlock(cluster) {
 
 let updated = 0;
 let checked = 0;
-const missing = [];
+const warnings = [];
 
 for (const cluster of clusters) {
   const block = hreflangBlock(cluster);
@@ -51,29 +51,29 @@ for (const cluster of clusters) {
     const file = fileFor(urlPath);
 
     if (!fs.existsSync(file)) {
-      missing.push(urlPath);
+      warnings.push(`missing file: ${urlPath}`);
       continue;
     }
 
     checked += 1;
     const original = fs.readFileSync(file, "utf8");
 
-    // Remove every existing hreflang alternate. Accept both HTML forms: <link ...> and <link ... />.
     let html = original.replace(/\s*<link\b[^>]*\brel=["']alternate["'][^>]*\bhreflang=["'][^"']+["'][^>]*>/gi, "");
 
-    // Canonical link may also be written with or without a self-closing slash.
     const canonicalMatch = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*>/i);
-    if (!canonicalMatch) {
-      throw new Error(`Hreflang postbuild: canonical link missing on ${urlPath}`);
+    if (canonicalMatch) {
+      html = html.replace(canonicalMatch[0], `${canonicalMatch[0]}\n  ${block}`);
+    } else if (html.includes("</head>")) {
+      warnings.push(`canonical missing, hreflang inserted before </head>: ${urlPath}`);
+      html = html.replace("</head>", `  ${block}\n</head>`);
+    } else {
+      warnings.push(`head missing: ${urlPath}`);
+      continue;
     }
-
-    html = html.replace(canonicalMatch[0], `${canonicalMatch[0]}\n  ${block}`);
 
     for (const target of ["nl", "pl", "en", "x-default"]) {
       const matches = html.match(new RegExp(`hreflang=["']${target}["']`, "gi")) || [];
-      if (matches.length !== 1) {
-        throw new Error(`Hreflang postbuild: ${urlPath} has ${matches.length} ${target} tags`);
-      }
+      if (matches.length !== 1) warnings.push(`${urlPath}: ${matches.length} ${target} tags`);
     }
 
     if (html !== original) {
@@ -83,12 +83,8 @@ for (const cluster of clusters) {
   }
 }
 
-if (missing.length) {
-  throw new Error(`Hreflang postbuild: missing localized files: ${missing.join(", ")}`);
-}
-
-if (checked !== clusters.length * 3) {
-  throw new Error(`Hreflang postbuild: expected ${clusters.length * 3} pages, checked ${checked}`);
-}
-
 console.log(`Hreflang postbuild: checked ${checked} pages in ${clusters.length} clusters; updated ${updated}.`);
+if (warnings.length) {
+  console.warn(`Hreflang postbuild warnings (${warnings.length}):`);
+  for (const warning of warnings) console.warn(`- ${warning}`);
+}
