@@ -85,6 +85,49 @@
           ]
         }
       ]
+    },
+    en: {
+      eyebrow: "Knowledge • ElviGlow",
+      title: "Guides that help you make a better choice",
+      text: "Understand the skin concern or treatment first. Then move on to prices or booking.",
+      read: "Read the guide →",
+      groups: [
+        {
+          id: "waxing",
+          title: "Waxing",
+          text: "Preparation, differences between treatment areas and what you can realistically expect after waxing.",
+          ctaHref: "/cennik#waxing",
+          cta: "View waxing prices",
+          items: [
+            ["/en/knowledge/brazilian-wax-preparation", "Brazilian wax: how to prepare", "What to do before your appointment and how to keep the skin comfortable afterwards."],
+            ["/en/knowledge/bikini-line-or-brazilian-wax", "Bikini line or Brazilian wax?", "The practical difference between a bikini-line wax and a more extensive intimate wax."],
+            ["/en/knowledge/first-time-waxing", "First time waxing", "How to prepare the skin and what to expect during your first waxing appointment."],
+            ["/en/knowledge/how-long-does-waxing-last", "How long does waxing stay smooth?", "Why waxing can stay smooth longer than shaving and why hairs do not all return at the same time."]
+          ]
+        },
+        {
+          id: "skin",
+          title: "Skin, pores and cleansing",
+          text: "Skin concerns can look similar while needing different treatment directions.",
+          ctaHref: "/cennik#face",
+          cta: "View facial treatment prices",
+          items: [
+            ["/en/knowledge/large-pores-what-helps", "Visible pores: what can actually help?", "What can influence the appearance of pores and which promises are unrealistic."],
+            ["/en/knowledge/dry-skin-despite-moisturiser", "Dry skin despite moisturiser", "Why adding more cream does not always solve tightness, dryness or barrier discomfort."],
+            ["/en/knowledge/oxybrasion-or-hydrogen-cleansing", "Oxybrasion or hydrogen cleansing?", "Two different goals: gentle surface refresh or a more cleansing-focused treatment direction."]
+          ]
+        },
+        {
+          id: "microneedling",
+          title: "Microneedling and recovery",
+          text: "The most important aftercare points when the skin needs calm, protection and time to recover.",
+          ctaHref: "/en/microneedling-deventer",
+          cta: "View microneedling Deventer",
+          items: [
+            ["/en/knowledge/what-not-to-do-after-microneedling", "What should you avoid after microneedling?", "Common aftercare mistakes and simple rules that help avoid unnecessary irritation after treatment."]
+          ]
+        }
+      ]
     }
   };
 
@@ -173,6 +216,7 @@
     const href = link.getAttribute("href") || "";
     if (href.startsWith("/pl/")) localStorage.setItem("elviglow-lang", "pl");
     if (href.startsWith("/kennis/")) localStorage.setItem("elviglow-lang", "nl");
+    if (href.startsWith("/en/")) localStorage.setItem("elviglow-lang", "en");
   });
 
   let queued = false;
