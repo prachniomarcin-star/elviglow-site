@@ -14,6 +14,14 @@
     }
   ],
   "rewrites": [
+    { "source": "/en/knowledge/brazilian-wax-preparation", "destination": "/en/knowledge/brazilian-wax-preparation/index.html" },
+    { "source": "/en/knowledge/bikini-line-or-brazilian-wax", "destination": "/en/knowledge/bikini-line-or-brazilian-wax/index.html" },
+    { "source": "/en/knowledge/first-time-waxing", "destination": "/en/knowledge/first-time-waxing/index.html" },
+    { "source": "/en/knowledge/how-long-does-waxing-last", "destination": "/en/knowledge/how-long-does-waxing-last/index.html" },
+    { "source": "/en/knowledge/large-pores-what-helps", "destination": "/en/knowledge/large-pores-what-helps/index.html" },
+    { "source": "/en/knowledge/dry-skin-despite-moisturiser", "destination": "/en/knowledge/dry-skin-despite-moisturiser/index.html" },
+    { "source": "/en/knowledge/oxybrasion-or-hydrogen-cleansing", "destination": "/en/knowledge/oxybrasion-or-hydrogen-cleansing/index.html" },
+    { "source": "/en/knowledge/what-not-to-do-after-microneedling", "destination": "/en/knowledge/what-not-to-do-after-microneedling/index.html" },
     { "source": "/oxybrasie-deventer", "destination": "/oxybrasie-deventer/index.html" },
     { "source": "/pl/oxybrazja-deventer", "destination": "/pl/oxybrazja-deventer/index.html" },
     { "source": "/waterstofreiniging-deventer", "destination": "/waterstofreiniging-deventer/index.html" },
