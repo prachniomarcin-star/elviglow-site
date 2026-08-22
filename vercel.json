@@ -14,173 +14,51 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/pl/kosmetyczka-deventer",
-      "destination": "/pl/kosmetyczka-deventer/index.html"
-    },
-    {
-      "source": "/kennis/waxen-eerste-keer",
-      "destination": "/kennis/waxen-eerste-keer/index.html"
-    },
-    {
-      "source": "/pl/wiedza/depilacja-woskiem-pierwszy-raz",
-      "destination": "/pl/wiedza/depilacja-woskiem-pierwszy-raz/index.html"
-    },
-    {
-      "source": "/kennis/brazilian-wax-voorbereiden",
-      "destination": "/kennis/brazilian-wax-voorbereiden/index.html"
-    },
-    {
-      "source": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac",
-      "destination": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac/index.html"
-    },
-    {
-      "source": "/kennis/bikinilijn-of-brazilian-wax",
-      "destination": "/kennis/bikinilijn-of-brazilian-wax/index.html"
-    },
-    {
-      "source": "/pl/wiedza/bikini-czy-brazilian-wax",
-      "destination": "/pl/wiedza/bikini-czy-brazilian-wax/index.html"
-    },
-    {
-      "source": "/kennis/hoe-lang-glad-na-waxen",
-      "destination": "/kennis/hoe-lang-glad-na-waxen/index.html"
-    },
-    {
-      "source": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem",
-      "destination": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem/index.html"
-    },
-    {
-      "source": "/kennis/grove-porien-wat-helpt",
-      "destination": "/kennis/grove-porien-wat-helpt/index.html"
-    },
-    {
-      "source": "/pl/wiedza/rozszerzone-pory-co-pomaga",
-      "destination": "/pl/wiedza/rozszerzone-pory-co-pomaga/index.html"
-    },
-    {
-      "source": "/kennis/droge-huid-ondanks-creme",
-      "destination": "/kennis/droge-huid-ondanks-creme/index.html"
-    },
-    {
-      "source": "/pl/wiedza/sucha-skora-mimo-kremu",
-      "destination": "/pl/wiedza/sucha-skora-mimo-kremu/index.html"
-    },
-    {
-      "source": "/kennis/wat-niet-doen-na-microneedling",
-      "destination": "/kennis/wat-niet-doen-na-microneedling/index.html"
-    },
-    {
-      "source": "/pl/wiedza/czego-nie-robic-po-microneedlingu",
-      "destination": "/pl/wiedza/czego-nie-robic-po-microneedlingu/index.html"
-    },
-    {
-      "source": "/kennis/oxybrasie-of-waterstofreiniging",
-      "destination": "/kennis/oxybrasie-of-waterstofreiniging/index.html"
-    },
-    {
-      "source": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe",
-      "destination": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe/index.html"
-    },
-    {
-      "source": "/pl/microneedling-deventer",
-      "destination": "/pl/microneedling-deventer/index.html"
-    },
-    {
-      "source": "/en/microneedling-deventer",
-      "destination": "/en/microneedling-deventer/index.html"
-    },
-    {
-      "source": "/microneedling-deventer",
-      "destination": "/microneedling-deventer/index.html"
-    },
-    {
-      "source": "/pl/huidverbetering-deventer",
-      "destination": "/pl/huidverbetering-deventer/index.html"
-    },
-    {
-      "source": "/en/huidverbetering-deventer",
-      "destination": "/en/huidverbetering-deventer/index.html"
-    },
-    {
-      "source": "/huidverbetering-deventer",
-      "destination": "/huidverbetering-deventer/index.html"
-    },
-    {
-      "source": "/pl/gezichtsbehandeling-deventer",
-      "destination": "/pl/gezichtsbehandeling-deventer/index.html"
-    },
-    {
-      "source": "/en/gezichtsbehandeling-deventer",
-      "destination": "/en/gezichtsbehandeling-deventer/index.html"
-    },
-    {
-      "source": "/gezichtsbehandeling-deventer",
-      "destination": "/gezichtsbehandeling-deventer/index.html"
-    },
-    {
-      "source": "/pl/nagels-deventer",
-      "destination": "/pl/nagels-deventer/index.html"
-    },
-    {
-      "source": "/en/nagels-deventer",
-      "destination": "/en/nagels-deventer/index.html"
-    },
-    {
-      "source": "/nagels-deventer",
-      "destination": "/nagels-deventer/index.html"
-    },
-    {
-      "source": "/pl/lycon-waxing-deventer",
-      "destination": "/pl/lycon-waxing-deventer/index.html"
-    },
-    {
-      "source": "/en/lycon-waxing-deventer",
-      "destination": "/en/lycon-waxing-deventer/index.html"
-    },
-    {
-      "source": "/lycon-waxing-deventer",
-      "destination": "/lycon-waxing-deventer/index.html"
-    },
-    {
-      "source": "/zabiegi",
-      "destination": "/zabiegi/index.html"
-    },
-    {
-      "source": "/paznokcie",
-      "destination": "/paznokcie/index.html"
-    },
-    {
-      "source": "/depilacja",
-      "destination": "/depilacja/index.html"
-    },
-    {
-      "source": "/cialo",
-      "destination": "/cialo/index.html"
-    },
-    {
-      "source": "/wiedza",
-      "destination": "/wiedza/index.html"
-    },
-    {
-      "source": "/akademia-skory",
-      "destination": "/akademia-skory/index.html"
-    },
-    {
-      "source": "/cennik",
-      "destination": "/cennik/index.html"
-    },
-    {
-      "source": "/abonamenty",
-      "destination": "/abonamenty/index.html"
-    },
-    {
-      "source": "/kontakt",
-      "destination": "/kontakt/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/oxybrasie-deventer", "destination": "/oxybrasie-deventer/index.html" },
+    { "source": "/pl/oxybrazja-deventer", "destination": "/pl/oxybrazja-deventer/index.html" },
+    { "source": "/waterstofreiniging-deventer", "destination": "/waterstofreiniging-deventer/index.html" },
+    { "source": "/pl/oczyszczanie-wodorowe-deventer", "destination": "/pl/oczyszczanie-wodorowe-deventer/index.html" },
+    { "source": "/pl/kosmetyczka-deventer", "destination": "/pl/kosmetyczka-deventer/index.html" },
+    { "source": "/kennis/waxen-eerste-keer", "destination": "/kennis/waxen-eerste-keer/index.html" },
+    { "source": "/pl/wiedza/depilacja-woskiem-pierwszy-raz", "destination": "/pl/wiedza/depilacja-woskiem-pierwszy-raz/index.html" },
+    { "source": "/kennis/brazilian-wax-voorbereiden", "destination": "/kennis/brazilian-wax-voorbereiden/index.html" },
+    { "source": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac", "destination": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac/index.html" },
+    { "source": "/kennis/bikinilijn-of-brazilian-wax", "destination": "/kennis/bikinilijn-of-brazilian-wax/index.html" },
+    { "source": "/pl/wiedza/bikini-czy-brazilian-wax", "destination": "/pl/wiedza/bikini-czy-brazilian-wax/index.html" },
+    { "source": "/kennis/hoe-lang-glad-na-waxen", "destination": "/kennis/hoe-lang-glad-na-waxen/index.html" },
+    { "source": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem", "destination": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem/index.html" },
+    { "source": "/kennis/grove-porien-wat-helpt", "destination": "/kennis/grove-porien-wat-helpt/index.html" },
+    { "source": "/pl/wiedza/rozszerzone-pory-co-pomaga", "destination": "/pl/wiedza/rozszerzone-pory-co-pomaga/index.html" },
+    { "source": "/kennis/droge-huid-ondanks-creme", "destination": "/kennis/droge-huid-ondanks-creme/index.html" },
+    { "source": "/pl/wiedza/sucha-skora-mimo-kremu", "destination": "/pl/wiedza/sucha-skora-mimo-kremu/index.html" },
+    { "source": "/kennis/wat-niet-doen-na-microneedling", "destination": "/kennis/wat-niet-doen-na-microneedling/index.html" },
+    { "source": "/pl/wiedza/czego-nie-robic-po-microneedlingu", "destination": "/pl/wiedza/czego-nie-robic-po-microneedlingu/index.html" },
+    { "source": "/kennis/oxybrasie-of-waterstofreiniging", "destination": "/kennis/oxybrasie-of-waterstofreiniging/index.html" },
+    { "source": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe", "destination": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe/index.html" },
+    { "source": "/pl/microneedling-deventer", "destination": "/pl/microneedling-deventer/index.html" },
+    { "source": "/en/microneedling-deventer", "destination": "/en/microneedling-deventer/index.html" },
+    { "source": "/microneedling-deventer", "destination": "/microneedling-deventer/index.html" },
+    { "source": "/pl/huidverbetering-deventer", "destination": "/pl/huidverbetering-deventer/index.html" },
+    { "source": "/en/huidverbetering-deventer", "destination": "/en/huidverbetering-deventer/index.html" },
+    { "source": "/huidverbetering-deventer", "destination": "/huidverbetering-deventer/index.html" },
+    { "source": "/pl/gezichtsbehandeling-deventer", "destination": "/pl/gezichtsbehandeling-deventer/index.html" },
+    { "source": "/en/gezichtsbehandeling-deventer", "destination": "/en/gezichtsbehandeling-deventer/index.html" },
+    { "source": "/gezichtsbehandeling-deventer", "destination": "/gezichtsbehandeling-deventer/index.html" },
+    { "source": "/pl/nagels-deventer", "destination": "/pl/nagels-deventer/index.html" },
+    { "source": "/en/nagels-deventer", "destination": "/en/nagels-deventer/index.html" },
+    { "source": "/nagels-deventer", "destination": "/nagels-deventer/index.html" },
+    { "source": "/pl/lycon-waxing-deventer", "destination": "/pl/lycon-waxing-deventer/index.html" },
+    { "source": "/en/lycon-waxing-deventer", "destination": "/en/lycon-waxing-deventer/index.html" },
+    { "source": "/lycon-waxing-deventer", "destination": "/lycon-waxing-deventer/index.html" },
+    { "source": "/zabiegi", "destination": "/zabiegi/index.html" },
+    { "source": "/paznokcie", "destination": "/paznokcie/index.html" },
+    { "source": "/depilacja", "destination": "/depilacja/index.html" },
+    { "source": "/cialo", "destination": "/cialo/index.html" },
+    { "source": "/wiedza", "destination": "/wiedza/index.html" },
+    { "source": "/akademia-skory", "destination": "/akademia-skory/index.html" },
+    { "source": "/cennik", "destination": "/cennik/index.html" },
+    { "source": "/abonamenty", "destination": "/abonamenty/index.html" },
+    { "source": "/kontakt", "destination": "/kontakt/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
