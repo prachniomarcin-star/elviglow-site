@@ -32,6 +32,7 @@ const hub = `
   </p>
   <h3>Microneedling</h3>
   <p><a href="/kennis/wat-niet-doen-na-microneedling">Wat kun je beter niet doen na microneedling?</a></p>
+
   <h3>Polski poradnik</h3>
   <p>
     <a href="/pl/wiedza/brazilian-wax-jak-sie-przygotowac">Brazilian wax: jak się przygotować</a> ·
@@ -42,6 +43,18 @@ const hub = `
     <a href="/pl/wiedza/sucha-skora-mimo-kremu">Sucha skóra mimo kremu</a> ·
     <a href="/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe">Oxybrazja czy oczyszczanie wodorowe?</a> ·
     <a href="/pl/wiedza/czego-nie-robic-po-microneedlingu">Czego nie robić po microneedlingu?</a>
+  </p>
+
+  <h3>English guides</h3>
+  <p>
+    <a href="/en/knowledge/brazilian-wax-preparation">Brazilian wax preparation</a> ·
+    <a href="/en/knowledge/bikini-line-or-brazilian-wax">Bikini line or Brazilian wax?</a> ·
+    <a href="/en/knowledge/first-time-waxing">First time waxing</a> ·
+    <a href="/en/knowledge/how-long-does-waxing-last">How long does waxing stay smooth?</a> ·
+    <a href="/en/knowledge/large-pores-what-helps">Visible pores: what helps?</a> ·
+    <a href="/en/knowledge/dry-skin-despite-moisturiser">Dry skin despite moisturiser</a> ·
+    <a href="/en/knowledge/oxybrasion-or-hydrogen-cleansing">Oxybrasion or hydrogen cleansing?</a> ·
+    <a href="/en/knowledge/what-not-to-do-after-microneedling">What to avoid after microneedling?</a>
   </p>
 </section>`;
 
