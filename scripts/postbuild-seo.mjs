@@ -104,6 +104,22 @@ const homeLocalLinks = `
     </p>
   </section>`;
 
+const waxIntentBlock = `
+  <section aria-label="Waxen in Deventer per zone">
+    <h2>Waxen in Deventer per zone</h2>
+    <p>Zoek je waxen in Deventer, dan kun je bij ElviGlow per zone kiezen. Naast kleinere zones zoals bovenlip, wenkbrauwen en oksels zijn er ook behandelingen voor benen, bikinilijn en Brazilian wax.</p>
+    <h3>Brazilian wax Deventer</h3>
+    <p>Een Brazilian wax is uitgebreider dan alleen de bikinilijn. Lees vooraf hoe je je voorbereidt en wat je na de behandeling beter even vermijdt.</p>
+    <h3>Bikinilijn waxen Deventer</h3>
+    <p>Wil je alleen haren langs de rand van bikini of ondergoed verwijderen, dan past de bikinilijn beter. Het verschil met Brazilian leggen we apart uit.</p>
+    <nav aria-label="Meer informatie over waxen">
+      <a href="/kennis/brazilian-wax-voorbereiden">Brazilian wax voorbereiden</a> ·
+      <a href="/kennis/bikinilijn-of-brazilian-wax">Bikinilijn of Brazilian wax</a> ·
+      <a href="/kennis/waxen-eerste-keer">Eerste keer waxen</a> ·
+      <a href="/kennis/hoe-lang-glad-na-waxen">Hoe lang glad na waxen?</a>
+    </nav>
+  </section>`;
+
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
@@ -129,7 +145,7 @@ function fallback(data, route) {
   const extra = route === "/"
     ? homeLocalLinks
     : route === "/depilacja"
-      ? `<p><a href="/lycon-waxing-deventer">Specifiek op zoek naar LYCON waxing in Deventer?</a></p>`
+      ? `${waxIntentBlock}<p><a href="/lycon-waxing-deventer">Specifiek op zoek naar LYCON waxing in Deventer?</a></p>`
       : "";
 
   return `<main class="seo-fallback" aria-label="ElviGlow">
@@ -159,4 +175,31 @@ for (const [route, data] of Object.entries(routes)) {
   }
 }
 
-console.log(`SEO postbuild: generated ${Object.keys(routes).length} route snapshots.`);
+const waxArticleCtas = [
+  ["kennis/waxen-eerste-keer/index.html", "/depilacja", "Bekijk waxzones en prijzen"],
+  ["kennis/brazilian-wax-voorbereiden/index.html", "/depilacja", "Bekijk Brazilian wax en prijzen"],
+  ["kennis/bikinilijn-of-brazilian-wax/index.html", "/depilacja", "Bekijk bikini en Brazilian wax"],
+  ["kennis/hoe-lang-glad-na-waxen/index.html", "/depilacja", "Bekijk waxzones en prijzen"],
+  ["pl/wiedza/depilacja-woskiem-pierwszy-raz/index.html", "/depilacja", "Zobacz strefy depilacji i ceny"],
+  ["pl/wiedza/brazilian-wax-jak-sie-przygotowac/index.html", "/depilacja", "Zobacz Brazilian wax i ceny"],
+  ["pl/wiedza/bikini-czy-brazilian-wax/index.html", "/depilacja", "Zobacz bikini i Brazilian wax"],
+  ["pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem/index.html", "/depilacja", "Zobacz strefy depilacji i ceny"],
+];
+
+let relinkedWaxArticles = 0;
+for (const [relativeFile, target, label] of waxArticleCtas) {
+  const file = path.join(dist, relativeFile);
+  if (!fs.existsSync(file)) continue;
+
+  const original = fs.readFileSync(file, "utf8");
+  let html = original
+    .replace(/<a class="btn secondary" href="\/lycon-waxing-deventer">Bekijk passende behandeling<\/a>/g, `<a class="btn secondary" href="${target}">${label}</a>`)
+    .replace(/<a class="btn secondary" href="\/pl\/lycon-waxing-deventer">Zobacz pasujący zabieg<\/a>/g, `<a class="btn secondary" href="${target}">${label}</a>`);
+
+  if (html !== original) {
+    fs.writeFileSync(file, html);
+    relinkedWaxArticles += 1;
+  }
+}
+
+console.log(`SEO postbuild: generated ${Object.keys(routes).length} route snapshots; relinked ${relinkedWaxArticles} waxing articles.`);
