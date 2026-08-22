@@ -133,10 +133,6 @@
     if (node && node.textContent !== value) node.textContent = value;
   }
 
-  function setHref(node, value) {
-    if (node && node.getAttribute("href") !== value) node.setAttribute("href", value);
-  }
-
   function applyMetadata() {
     const path = cleanPath();
     const lang = currentLang();
@@ -198,8 +194,9 @@
     const lang = currentLang();
     const oldLink = document.querySelector("[data-seo-wave1-lycon-link]");
     const oldKnowledge = document.querySelector("[data-seo-wave1-wax-links]");
+    oldLink?.remove();
+
     if (path !== "/depilacja") {
-      oldLink?.remove();
       oldKnowledge?.remove();
       return;
     }
@@ -215,24 +212,6 @@
       setText(hero.querySelector(".eyebrow"), "Depilacja woskiem • Deventer");
       setText(hero.querySelector("h1"), "Depilacja woskiem w Deventer");
       setText(hero.querySelector(".lead"), "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, przedramiona, nogi, plecy, bikini i Brazilian. Osobna strona opisuje depilację wykonywaną produktami LYCON.");
-    }
-
-    const lyconHref = lang === "pl" ? "/pl/lycon-waxing-deventer" : (lang === "en" ? "/en/lycon-waxing-deventer" : "/lycon-waxing-deventer");
-    const lyconLabel = lang === "pl" ? "Depilacja Lycon Deventer" : "Lycon waxing Deventer";
-
-    if (!oldLink) {
-      const actions = hero.querySelector(".hero-actions");
-      if (actions) {
-        const link = document.createElement("a");
-        link.className = "secondary-btn";
-        link.setAttribute("data-seo-wave1-lycon-link", "");
-        link.href = lyconHref;
-        link.textContent = lyconLabel;
-        actions.appendChild(link);
-      }
-    } else {
-      setHref(oldLink, lyconHref);
-      setText(oldLink, lyconLabel);
     }
 
     if (!oldKnowledge && waxKnowledgeLinks[lang]) {
