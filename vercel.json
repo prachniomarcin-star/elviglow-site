@@ -1,4 +1,18 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.elviglow.com"
+        }
+      ],
+      "destination": "https://elviglow.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/pl/kosmetyczka-deventer",
