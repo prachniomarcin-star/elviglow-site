@@ -26,7 +26,7 @@ const common = `
 const routes = {
   "/": {
     title: "ElviGlow Deventer | Huidverbetering & beauty",
-    description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen.",
+    description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, waxing en lichaamsbehandelingen.",
     h1: "Ziet je huid er moe uit ondanks je dagelijkse verzorging?",
     intro: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? We kijken eerst naar wat je huid werkelijk nodig heeft. Pas daarna kiezen we de behandeling en het verzorgingsplan.",
   },
@@ -43,10 +43,10 @@ const routes = {
     intro: "Klassieke manicure, gellak, gel- of acrylverlenging, opvullen, verwijderen en pedicure met aandacht voor een nette afwerking en de conditie van de nagelplaat.",
   },
   "/depilacja": {
-    title: "Lycon waxing Deventer | ElviGlow",
-    description: "Lycon waxing voor vrouwen in Deventer met aandacht voor comfort, precisie en huidreactie.",
-    h1: "Lycon waxing in Deventer",
-    intro: "Waxing voor geselecteerde zones met aandacht voor hygiëne, comfort en een rustige huidreactie. Voor het gezicht blijven alleen precieze zones in de aanbieding.",
+    title: "Waxen Deventer | Waxbehandelingen & prijzen | ElviGlow",
+    description: "Waxen in Deventer voor vrouwen: bovenlip, wenkbrauwen, oksels, armen, benen, rug, bikini en Brazilian. Bekijk zones, voorbereiding en prijzen bij ElviGlow.",
+    h1: "Waxen in Deventer: zones, prijzen en voorbereiding",
+    intro: "Van bovenlip en wenkbrauwen tot oksels, benen, bikini en Brazilian. Kies hier je waxzone en bekijk de voorbereiding. Zoek je specifiek naar LYCON? Daarvoor heeft ElviGlow een aparte merkpagina.",
   },
   "/cialo": {
     title: "Lichaamsbehandelingen Deventer | ElviGlow",
@@ -70,7 +70,7 @@ const routes = {
     title: "Prijslijst beauty & huid Deventer | ElviGlow",
     description: "Actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, waxing en lichaamsbehandelingen.",
     h1: "Prijslijst ElviGlow",
-    intro: "Bekijk prijzen per categorie: gezicht, verzorgingsprogramma's, nagels en voeten, Lycon waxing en lichaamsbehandelingen.",
+    intro: "Bekijk prijzen per categorie: gezicht, verzorgingsprogramma's, nagels en voeten, waxing en lichaamsbehandelingen.",
   },
   "/abonamenty": {
     title: "Verzorgingsprogramma's | ElviGlow Deventer",
@@ -85,6 +85,40 @@ const routes = {
     intro: "Stuur een bericht met de dienst die je interesseert, je gewenste resultaat en wanneer je ongeveer beschikbaar bent.",
   },
 };
+
+const homeLocalLinks = `
+  <section aria-label="Populaire behandelingen in Deventer">
+    <h2>Populaire behandelingen in Deventer</h2>
+    <p>
+      <a href="/gezichtsbehandeling-deventer">Gezichtsbehandeling Deventer</a> ·
+      <a href="/huidverbetering-deventer">Huidverbetering Deventer</a> ·
+      <a href="/microneedling-deventer">Microneedling Deventer</a> ·
+      <a href="/nagels-deventer">Nagels Deventer</a> ·
+      <a href="/depilacja">Waxen Deventer</a> ·
+      <a href="/lycon-waxing-deventer">LYCON waxing Deventer</a>
+    </p>
+    <p>
+      <a href="/pl/kosmetyczka-deventer">Kosmetyczka Deventer po polsku</a> ·
+      <a href="/pl/gezichtsbehandeling-deventer">Zabiegi na twarz Deventer</a> ·
+      <a href="/pl/microneedling-deventer">Microneedling Deventer po polsku</a>
+    </p>
+  </section>`;
+
+const waxIntentBlock = `
+  <section aria-label="Waxen in Deventer per zone">
+    <h2>Waxen in Deventer per zone</h2>
+    <p>Zoek je waxen in Deventer, dan kun je bij ElviGlow per zone kiezen. Naast kleinere zones zoals bovenlip, wenkbrauwen en oksels zijn er ook behandelingen voor benen, bikinilijn en Brazilian wax.</p>
+    <h3>Brazilian wax Deventer</h3>
+    <p>Een Brazilian wax is uitgebreider dan alleen de bikinilijn. Lees vooraf hoe je je voorbereidt en wat je na de behandeling beter even vermijdt.</p>
+    <h3>Bikinilijn waxen Deventer</h3>
+    <p>Wil je alleen haren langs de rand van bikini of ondergoed verwijderen, dan past de bikinilijn beter. Het verschil met Brazilian leggen we apart uit.</p>
+    <nav aria-label="Meer informatie over waxen">
+      <a href="/kennis/brazilian-wax-voorbereiden">Brazilian wax voorbereiden</a> ·
+      <a href="/kennis/bikinilijn-of-brazilian-wax">Bikinilijn of Brazilian wax</a> ·
+      <a href="/kennis/waxen-eerste-keer">Eerste keer waxen</a> ·
+      <a href="/kennis/hoe-lang-glad-na-waxen">Hoe lang glad na waxen?</a>
+    </nav>
+  </section>`;
 
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -107,16 +141,23 @@ function replaceMeta(html, route, data) {
   return html;
 }
 
-function fallback(data) {
+function fallback(data, route) {
+  const extra = route === "/"
+    ? homeLocalLinks
+    : route === "/depilacja"
+      ? `${waxIntentBlock}<p><a href="/lycon-waxing-deventer">Specifiek op zoek naar LYCON waxing in Deventer?</a></p>`
+      : "";
+
   return `<main class="seo-fallback" aria-label="ElviGlow">
     <section>
       <img src="/elviglow-logo.png" alt="ElviGlow huidverbetering en beauty in Deventer" width="120" height="120" />
       <p>ElviGlow • Deventer • Huidverbetering & beauty</p>
       <h1>${escapeHtml(data.h1)}</h1>
       <p>${escapeHtml(data.intro)}</p>
+      ${extra}
       ${common}
       <nav aria-label="Belangrijkste pagina's">
-        <a href="/zabiegi">Gezichtsbehandelingen</a> · <a href="/akademia-skory">Huidacademie</a> · <a href="/cennik">Prijslijst</a> · <a href="/kontakt">Contact</a>
+        <a href="/zabiegi">Gezichtsbehandelingen</a> · <a href="/depilacja">Waxen Deventer</a> · <a href="/akademia-skory">Huidacademie</a> · <a href="/cennik">Prijslijst</a> · <a href="/kontakt">Contact</a>
       </nav>
     </section>
   </main>`;
@@ -124,7 +165,7 @@ function fallback(data) {
 
 for (const [route, data] of Object.entries(routes)) {
   let html = replaceMeta(source, route, data);
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${fallback(data)}</div>`);
+  html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${fallback(data, route)}</div>`);
   if (route === "/") {
     fs.writeFileSync(sourceFile, html);
   } else {
@@ -134,4 +175,31 @@ for (const [route, data] of Object.entries(routes)) {
   }
 }
 
-console.log(`SEO postbuild: generated ${Object.keys(routes).length} route snapshots.`);
+const waxArticleCtas = [
+  ["kennis/waxen-eerste-keer/index.html", "/depilacja", "Bekijk waxzones en prijzen"],
+  ["kennis/brazilian-wax-voorbereiden/index.html", "/depilacja", "Bekijk Brazilian wax en prijzen"],
+  ["kennis/bikinilijn-of-brazilian-wax/index.html", "/depilacja", "Bekijk bikini en Brazilian wax"],
+  ["kennis/hoe-lang-glad-na-waxen/index.html", "/depilacja", "Bekijk waxzones en prijzen"],
+  ["pl/wiedza/depilacja-woskiem-pierwszy-raz/index.html", "/depilacja", "Zobacz strefy depilacji i ceny"],
+  ["pl/wiedza/brazilian-wax-jak-sie-przygotowac/index.html", "/depilacja", "Zobacz Brazilian wax i ceny"],
+  ["pl/wiedza/bikini-czy-brazilian-wax/index.html", "/depilacja", "Zobacz bikini i Brazilian wax"],
+  ["pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem/index.html", "/depilacja", "Zobacz strefy depilacji i ceny"],
+];
+
+let relinkedWaxArticles = 0;
+for (const [relativeFile, target, label] of waxArticleCtas) {
+  const file = path.join(dist, relativeFile);
+  if (!fs.existsSync(file)) continue;
+
+  const original = fs.readFileSync(file, "utf8");
+  let html = original
+    .replace(/<a class="btn secondary" href="\/lycon-waxing-deventer">Bekijk passende behandeling<\/a>/g, `<a class="btn secondary" href="${target}">${label}</a>`)
+    .replace(/<a class="btn secondary" href="\/pl\/lycon-waxing-deventer">Zobacz pasujący zabieg<\/a>/g, `<a class="btn secondary" href="${target}">${label}</a>`);
+
+  if (html !== original) {
+    fs.writeFileSync(file, html);
+    relinkedWaxArticles += 1;
+  }
+}
+
+console.log(`SEO postbuild: generated ${Object.keys(routes).length} route snapshots; relinked ${relinkedWaxArticles} waxing articles.`);

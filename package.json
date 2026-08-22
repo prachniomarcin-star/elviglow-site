@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/postbuild-seo.mjs",
+    "build": "vite build && node scripts/postbuild-seo.mjs && node scripts/postbuild-face-cluster.mjs && node scripts/postbuild-knowledge-shell.mjs && node scripts/postbuild-knowledge-hub.mjs && node scripts/postbuild-en-knowledge.mjs && node scripts/postbuild-en-oxybrasion.mjs && node scripts/postbuild-en-hydrogen.mjs && node scripts/postbuild-en-internal-links.mjs && node scripts/postbuild-hreflang.mjs && node scripts/postbuild-final-qa.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
