@@ -102,6 +102,14 @@
     if (node && node.getAttribute(attr) !== value) node.setAttribute(attr, value);
   }
 
+  function setText(node, value) {
+    if (node && node.textContent !== value) node.textContent = value;
+  }
+
+  function setHref(node, value) {
+    if (node && node.getAttribute("href") !== value) node.setAttribute("href", value);
+  }
+
   function applyMetadata() {
     const path = cleanPath();
     const lang = currentLang();
@@ -171,20 +179,17 @@
     if (!hero) return;
 
     if (lang === "nl") {
-      const eyebrow = hero.querySelector(".eyebrow");
-      const title = hero.querySelector("h1");
-      const lead = hero.querySelector(".lead");
-      if (eyebrow) eyebrow.textContent = "Waxen • Deventer";
-      if (title) title.textContent = "Waxen in Deventer: zones, prijzen en voorbereiding";
-      if (lead) lead.textContent = "Van bovenlip en wenkbrauwen tot benen, bikini en Brazilian: kies de waxzone die bij je afspraak past. Voor informatie over LYCON is er een aparte merkpagina.";
+      setText(hero.querySelector(".eyebrow"), "Waxen • Deventer");
+      setText(hero.querySelector("h1"), "Waxen in Deventer: zones, prijzen en voorbereiding");
+      setText(hero.querySelector(".lead"), "Van bovenlip en wenkbrauwen tot benen, bikini en Brazilian: kies de waxzone die bij je afspraak past. Voor informatie over LYCON is er een aparte merkpagina.");
     } else if (lang === "pl") {
-      const eyebrow = hero.querySelector(".eyebrow");
-      const title = hero.querySelector("h1");
-      const lead = hero.querySelector(".lead");
-      if (eyebrow) eyebrow.textContent = "Depilacja woskiem • Deventer";
-      if (title) title.textContent = "Depilacja woskiem w Deventer";
-      if (lead) lead.textContent = "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, przedramiona, nogi, plecy, bikini i Brazilian. Osobna strona opisuje depilację wykonywaną produktami LYCON.";
+      setText(hero.querySelector(".eyebrow"), "Depilacja woskiem • Deventer");
+      setText(hero.querySelector("h1"), "Depilacja woskiem w Deventer");
+      setText(hero.querySelector(".lead"), "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, przedramiona, nogi, plecy, bikini i Brazilian. Osobna strona opisuje depilację wykonywaną produktami LYCON.");
     }
+
+    const lyconHref = lang === "pl" ? "/pl/lycon-waxing-deventer" : (lang === "en" ? "/en/lycon-waxing-deventer" : "/lycon-waxing-deventer");
+    const lyconLabel = lang === "pl" ? "Depilacja Lycon Deventer" : "Lycon waxing Deventer";
 
     if (!oldLink) {
       const actions = hero.querySelector(".hero-actions");
@@ -192,12 +197,12 @@
       const link = document.createElement("a");
       link.className = "secondary-btn";
       link.setAttribute("data-seo-wave1-lycon-link", "");
-      link.href = lang === "pl" ? "/pl/lycon-waxing-deventer" : (lang === "en" ? "/en/lycon-waxing-deventer" : "/lycon-waxing-deventer");
-      link.textContent = lang === "pl" ? "Depilacja Lycon Deventer" : "Lycon waxing Deventer";
+      link.href = lyconHref;
+      link.textContent = lyconLabel;
       actions.appendChild(link);
     } else {
-      oldLink.href = lang === "pl" ? "/pl/lycon-waxing-deventer" : (lang === "en" ? "/en/lycon-waxing-deventer" : "/lycon-waxing-deventer");
-      oldLink.textContent = lang === "pl" ? "Depilacja Lycon Deventer" : "Lycon waxing Deventer";
+      setHref(oldLink, lyconHref);
+      setText(oldLink, lyconLabel);
     }
   }
 
