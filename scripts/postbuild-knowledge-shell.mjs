@@ -46,9 +46,13 @@ function setLinkActive(html, href, active) {
   });
 }
 
-function contextFor(file, lang) {
+function isWaxArticle(file) {
   const slug = file.toLowerCase();
-  const wax = waxMarkers.some((marker) => slug.includes(marker));
+  return waxMarkers.some((marker) => slug.includes(marker));
+}
+
+function contextFor(file, lang) {
+  const wax = isWaxArticle(file);
   if (lang === "pl") {
     return wax
       ? {
@@ -88,6 +92,32 @@ function contextFor(file, lang) {
       };
 }
 
+function pricingCtaFor(file, lang) {
+  const wax = isWaxArticle(file);
+  if (lang === "pl") {
+    return wax
+      ? { href: "/cennik#waxing", label: "Zobacz cennik depilacji" }
+      : { href: "/cennik#face", label: "Zobacz cennik zabiegów" };
+  }
+  return wax
+    ? { href: "/cennik#waxing", label: "Bekijk waxprijzen" }
+    : { href: "/cennik#face", label: "Bekijk gezichtsprijzen" };
+}
+
+function replaceHeroSecondaryCta(html, file, lang) {
+  const cta = pricingCtaFor(file, lang);
+  const heroMatch = html.match(/<section class="article-hero">[\s\S]*?<\/section>/i);
+  if (!heroMatch) return html;
+
+  const originalHero = heroMatch[0];
+  const nextHero = originalHero.replace(
+    /<a\b([^>]*\bclass=["'][^"']*\bbtn\s+secondary\b[^"']*["'][^>]*)href=["'][^"']*["']([^>]*)>[\s\S]*?<\/a>/i,
+    (match, before, after) => `<a${before}href="${cta.href}"${after}>${cta.label}</a>`
+  );
+
+  return nextHero === originalHero ? html : html.replace(originalHero, nextHero);
+}
+
 function addShell(html, file, lang) {
   if (!html.includes('/knowledge-shell-v2.css')) {
     const marker = '<link rel="stylesheet" href="/knowledge-seo.css" />';
@@ -105,6 +135,7 @@ function addShell(html, file, lang) {
 
   html = setLinkActive(html, "/zabiegi", false);
   html = setLinkActive(html, "/wiedza", true);
+  html = replaceHeroSecondaryCta(html, file, lang);
 
   if (!html.includes("data-article-context-nav")) {
     const c = contextFor(file, lang);
