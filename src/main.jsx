@@ -1144,7 +1144,7 @@ function ContactPage({ t, lang }) {
   const serviceGroups = bookingServices[lang] || bookingServices.nl;
   const selectedCategory = serviceGroups.find((group) => group.id === category) || null;
   const selectedService = selectedCategory?.items.find((item) => item.id === serviceId) || null;
-  const canAddNailRemoval = category === "nails" && selectedService && selectedService.id !== "nail-removal";
+  const canAddNailRemoval = category === "nails" && selectedService && !["nail-removal", "nail-refill"].includes(selectedService.id);
   const hasNailRemovalAddon = Boolean(canAddNailRemoval && removeOldStyle);
   const isWaxing = category === "wax";
   const isBody = category === "body";
