@@ -91,6 +91,10 @@ body.knowledge-shell-v2 .knowledge-article .article-section {
   padding: 22px 0;
 }
 
+body.knowledge-shell-v2 .knowledge-article .article-section.studio-disclosure {
+  padding: 34px 36px;
+}
+
 body.knowledge-shell-v2 .knowledge-article .article-section[id] .article-copy {
   max-width: 920px;
   padding: 30px 32px 32px;
@@ -189,6 +193,10 @@ body.knowledge-shell-v2 .footer {
 
   body.knowledge-shell-v2 .knowledge-article .article-section {
     padding: 11px 0;
+  }
+
+  body.knowledge-shell-v2 .knowledge-article .article-section.studio-disclosure {
+    padding: 24px 20px;
   }
 
   body.knowledge-shell-v2 .knowledge-article .article-section[id] .article-copy {
