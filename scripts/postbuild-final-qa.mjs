@@ -122,6 +122,17 @@ for (const cluster of clusters) {
       if (matches.length !== 1) warn(`${route}: expected one ${hreflang} hreflang, found ${matches.length}`);
       else if (matches[0] !== href) warn(`${route}: ${hreflang} points to ${matches[0]}, expected ${href}`);
     }
+
+    if (/^\/(?:kennis\/|pl\/wiedza\/|en\/knowledge\/)/.test(route)) {
+      const refinedMarkers = (html.match(/data-psychology-refined=["']true["']/gi) || []).length;
+      const recognitionSections = (html.match(/data-psychology-layer=["']recognition["']/gi) || []).length;
+      const outcomeSections = (html.match(/data-psychology-layer=["']outcome["']/gi) || []).length;
+
+      if (refinedMarkers !== 1) fail(`${route}: expected one psychology refinement marker, found ${refinedMarkers}`);
+      if (recognitionSections !== 1) fail(`${route}: expected one recognition section, found ${recognitionSections}`);
+      if (outcomeSections !== 1) fail(`${route}: expected one outcome section, found ${outcomeSections}`);
+      if (/Want to choose the next step\?/i.test(html)) fail(`${route}: generic CTA copy was not replaced`);
+    }
   }
 }
 

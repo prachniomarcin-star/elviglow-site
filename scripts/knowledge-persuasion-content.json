@@ -1,0 +1,398 @@
+[
+  {
+    "routes": {
+      "nl": "/kennis/waxen-eerste-keer",
+      "pl": "/pl/wiedza/depilacja-woskiem-pierwszy-raz",
+      "en": "/en/knowledge/first-time-waxing"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Als je de eerste afspraak uitstelt, gaat het vaak niet alleen om pijn",
+        "recognitionText": "Misschien scheer je omdat dat vertrouwd voelt, terwijl snelle teruggroei, stoppels of irritatie je blijven storen. Een eerste waxafspraak voelt vooral groot wanneer je niet weet wat er gebeurt. Zodra de behandeling rustig wordt uitgelegd en je weet hoe je de huid voorbereidt, wordt waxen een bewuste keuze voor langer comfort in plaats van een spannende sprong.",
+        "outcomeTitle": "Wat kan een goede eerste ervaring veranderen?",
+        "outcomeText": "Het doel is niet een onrealistisch perfecte huid, maar langer een glad en verzorgd gevoel zonder steeds op het laatste moment te scheren. Na de eerste afspraak weet je bovendien hoe jouw huid reageert. Een eventueel ritme ontstaat dan uit je eigen ervaring en dagelijkse gemak, niet uit druk.",
+        "ctaTitle": "Wil je eerst rustig weten of waxen bij jouw huid en zone past?",
+        "ctaText": "Vertel welke zone je stoort en hoe je huid normaal op scheren reageert. Dan weet je vóór het boeken wat een logische eerste stap is."
+      },
+      "pl": {
+        "recognitionTitle": "Jeśli odkładasz pierwszą wizytę, zwykle nie chodzi tylko o ból",
+        "recognitionText": "Być może nadal wybierasz maszynkę, bo jest znajoma, chociaż drażnią Cię szybko wracające włoski, szorstkość albo podrażnienie. Pierwszy wosk wydaje się dużym krokiem głównie wtedy, gdy nie wiesz, jak wygląda wizyta. Spokojne wyjaśnienie i dobre przygotowanie zmieniają go w świadomy wybór dłuższego komfortu.",
+        "outcomeTitle": "Co może zmienić dobrze przeprowadzona pierwsza wizyta?",
+        "outcomeText": "Celem nie jest nierealnie idealna skóra, lecz dłuższe uczucie gładkości bez ciągłego golenia na ostatnią chwilę. Po pierwszej wizycie wiesz również, jak reaguje Twoja skóra. Ewentualna regularność wynika wtedy z własnego doświadczenia i codziennej wygody, a nie z presji.",
+        "ctaTitle": "Chcesz najpierw spokojnie sprawdzić, czy wosk pasuje do Twojej skóry i wybranej strefy?",
+        "ctaText": "Napisz, która okolica Ci przeszkadza i jak skóra reaguje na golenie. Jeszcze przed rezerwacją będziesz wiedzieć, jaki pierwszy krok jest rozsądny."
+      },
+      "en": {
+        "recognitionTitle": "If you keep postponing your first appointment, it is rarely only about pain",
+        "recognitionText": "You may keep shaving because it feels familiar even though fast regrowth, stubble or irritation continues to bother you. A first waxing appointment feels biggest when you do not know what will happen. Calm explanation and good preparation turn it into an informed choice for longer comfort rather than a step into the unknown.",
+        "outcomeTitle": "What can a positive first experience change?",
+        "outcomeText": "The goal is not unrealistically perfect skin, but a smoother feeling without repeated last-minute shaving. After the first appointment you also know how your skin responds. Any future rhythm can develop from your own experience and everyday convenience, not from pressure.",
+        "ctaTitle": "Would you like to check calmly whether waxing suits your skin and chosen area?",
+        "ctaText": "Tell us which area bothers you and how your skin normally responds to shaving. You can understand the sensible first step before booking."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/brazilian-wax-voorbereiden",
+      "pl": "/pl/wiedza/brazilian-wax-jak-sie-przygotowac",
+      "en": "/en/knowledge/brazilian-wax-preparation"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Twijfel over een Brazilian gaat vaak meer over comfort dan over de wax zelf",
+        "recognitionText": "Bij een intieme behandeling kunnen schaamte, privacy en controle zwaarder wegen dan de korte gevoeligheid van het waxen. Daardoor blijven sommige vrouwen scheren, ook wanneer ze snelle teruggroei en irritatie zat zijn. Een professionele afspraak hoort voorspelbaar en respectvol te voelen: de zone wordt vooraf afgesproken en jij houdt de regie.",
+        "outcomeTitle": "Waarom kiezen vrouwen daarna opnieuw voor deze behandeling?",
+        "outcomeText": "Een goed uitgevoerde Brazilian kan langer een glad en verzorgd gevoel geven zonder dagelijks controleren of opnieuw scheren. Het belangrijkste resultaat is vaak niet wat iemand anders ziet, maar dat je zelf minder met de zone bezig bent — bij sport, vakantie, kleding of gewoon in het dagelijks leven.",
+        "ctaTitle": "Wil je eerst precies weten welke zone wordt behandeld en hoe de afspraak verloopt?",
+        "ctaText": "Je mag vooraf alles vragen en de gewenste omvang rustig afspreken. Zo beslis je pas wanneer de behandeling voor jou duidelijk en comfortabel voelt."
+      },
+      "pl": {
+        "recognitionTitle": "Wątpliwości przed Brazilian wax częściej dotyczą komfortu niż samego wosku",
+        "recognitionText": "Przy zabiegu intymnym skrępowanie, prywatność i poczucie kontroli mogą być ważniejsze niż krótkie odczucie podczas depilacji. Dlatego część kobiet nadal się goli, choć ma już dość szybkiego odrastania i podrażnień. Profesjonalna wizyta powinna być przewidywalna i pełna szacunku: zakres ustala się wcześniej, a Ty zachowujesz kontrolę.",
+        "outcomeTitle": "Dlaczego wiele kobiet później wybiera ten zabieg ponownie?",
+        "outcomeText": "Dobrze wykonany Brazilian może dać dłuższe uczucie gładkości i zadbania bez codziennego sprawdzania oraz ponownego golenia. Najważniejszy efekt często nie polega na tym, co zobaczy ktoś inny, lecz na tym, że sama rzadziej myślisz o tej okolicy — podczas sportu, wakacji, noszenia ubrań i na co dzień.",
+        "ctaTitle": "Chcesz najpierw dokładnie wiedzieć, jaki zakres obejmuje zabieg i jak wygląda wizyta?",
+        "ctaText": "Możesz wcześniej zapytać o każdy szczegół i spokojnie ustalić zakres. Decyzję podejmujesz dopiero wtedy, gdy wszystko jest dla Ciebie jasne i komfortowe."
+      },
+      "en": {
+        "recognitionTitle": "Doubts about a Brazilian wax are often more about comfort than waxing",
+        "recognitionText": "With an intimate treatment, privacy, embarrassment and control can feel more important than brief sensitivity. Some women therefore keep shaving even when fast regrowth and irritation have become frustrating. A professional appointment should feel predictable and respectful: the area is agreed beforehand and you remain in control.",
+        "outcomeTitle": "Why do many women choose the treatment again?",
+        "outcomeText": "A well-performed Brazilian wax can provide a longer smooth and cared-for feeling without daily checking or repeated shaving. The most valuable result is often not what somebody else sees, but that you spend less mental attention on the area during sport, holidays, clothing choices and everyday life.",
+        "ctaTitle": "Would you like to understand the exact area and appointment before deciding?",
+        "ctaText": "You can ask every question and agree the treatment area calmly in advance. Decide only when the process feels clear and comfortable to you."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/bikinilijn-of-brazilian-wax",
+      "pl": "/pl/wiedza/bikini-czy-brazilian-wax",
+      "en": "/en/knowledge/bikini-line-or-brazilian-wax"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Je kiest niet alleen een naam, maar hoeveel rust je rond de zone wilt",
+        "recognitionText": "De twijfel tussen bikinilijn en Brazilian ontstaat vaak omdat je wel een gladder en netter gevoel wilt, maar niet weet hoeveel haar daarvoor verwijderd moet worden. De juiste keuze is niet automatisch de meest uitgebreide behandeling. Het is de omvang waarbij jij je verzorgd voelt zonder dat de afspraak verder gaat dan prettig is.",
+        "outcomeTitle": "Hoe voelt een keuze die echt bij je past?",
+        "outcomeText": "Bij de bikinilijn blijven haren buiten badkleding of ondergoed minder zichtbaar. Een Brazilian geeft een uitgebreider glad gevoel en kan het dagelijkse onderhoud verder verminderen. Wanneer je vooraf het verschil begrijpt, kom je binnen met een duidelijke wens en houd je zelf de regie.",
+        "ctaTitle": "Wil je de omvang kiezen op basis van jouw comfort in plaats van de behandelnaam?",
+        "ctaText": "Beschrijf welk resultaat je wilt en wat je liever niet laat behandelen. Dan wordt snel duidelijk of de bikinilijn of Brazilian beter past."
+      },
+      "pl": {
+        "recognitionTitle": "Nie wybierasz tylko nazwy, lecz poziom gładkości i komfortu",
+        "recognitionText": "Wątpliwość między linią bikini a Brazilian często pojawia się dlatego, że chcesz czuć większą gładkość i zadbanie, ale nie wiesz, jak szeroki zabieg jest potrzebny. Najlepszym wyborem nie jest automatycznie najbardziej rozbudowana opcja, lecz taki zakres, przy którym czujesz się komfortowo.",
+        "outcomeTitle": "Jak wygląda wybór naprawdę dopasowany do Ciebie?",
+        "outcomeText": "Przy linii bikini włoski wystające poza bieliznę lub strój kąpielowy stają się mniej widoczne. Brazilian daje szersze uczucie gładkości i może jeszcze bardziej ograniczyć codzienną potrzebę golenia. Znając różnicę wcześniej, przychodzisz z jasnym oczekiwaniem i zachowujesz kontrolę.",
+        "ctaTitle": "Chcesz wybrać zakres według własnego komfortu, a nie tylko nazwy zabiegu?",
+        "ctaText": "Napisz, jaki efekt chcesz uzyskać i których miejsc nie chcesz depilować. Szybko ustalimy, czy lepiej pasuje linia bikini, czy Brazilian."
+      },
+      "en": {
+        "recognitionTitle": "You are not only choosing a name, but the level of smoothness and comfort",
+        "recognitionText": "Uncertainty between a bikini-line and Brazilian wax often comes from wanting a smoother, more cared-for feeling without knowing how much hair needs to be removed. The right choice is not automatically the most extensive option, but the area that gives you the result you want without going beyond your comfort.",
+        "outcomeTitle": "What does a choice that genuinely suits you feel like?",
+        "outcomeText": "A bikini-line wax makes hair outside underwear or swimwear less visible. A Brazilian creates a more extensive smooth feeling and can further reduce day-to-day shaving. Understanding the difference in advance lets you arrive with a clear preference and stay in control.",
+        "ctaTitle": "Would you like to choose the area by your comfort rather than the treatment name?",
+        "ctaText": "Describe the result you want and anything you prefer not to treat. It quickly becomes clearer whether a bikini-line or Brazilian wax fits better."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/hoe-lang-glad-na-waxen",
+      "pl": "/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem",
+      "en": "/en/knowledge/how-long-does-waxing-last"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Als scheren je routine bepaalt, merk je vooral hoe snel het resultaat verdwijnt",
+        "recognitionText": "Je scheert voor een training, weekend, jurk of vakantie en voelt soms kort daarna alweer stoppels. Per keer kost dat weinig tijd, maar het vraagt steeds opnieuw aandacht en kan irritatie blijven uitlokken. Waxing verandert vooral dat ritme: je hoeft niet iedere paar dagen hetzelfde probleem opnieuw op te lossen.",
+        "outcomeTitle": "De echte winst is voorspelbaarheid",
+        "outcomeText": "Wanneer je weet hoe jouw haargroei verloopt, kun je een volgende afspraak plannen vóórdat scheren weer een dagelijkse ergernis wordt. Regelmaat betekent niet dat je verplicht vaak moet komen, maar dat je een moment kiest dat past bij jouw groei, agenda en gewenste gladheid.",
+        "ctaTitle": "Wil je ontdekken welk waxritme jou het meeste dagelijkse gemak geeft?",
+        "ctaText": "Begin met één behandeling en kijk hoe jouw haargroei terugkomt. Daarna kun je een volgend moment kiezen op basis van je eigen ervaring."
+      },
+      "pl": {
+        "recognitionTitle": "Gdy golenie wyznacza rytm pielęgnacji, najbardziej zauważasz szybki powrót włosków",
+        "recognitionText": "Golisz skórę przed treningiem, weekendem, założeniem sukienki albo urlopem, a niedługo później znowu czujesz szorstkość. Jednorazowo zajmuje to niewiele czasu, ale ciągle wymaga uwagi i może podrażniać skórę. Wosk zmienia przede wszystkim ten rytm: nie rozwiązujesz co kilka dni tego samego problemu.",
+        "outcomeTitle": "Największą korzyścią jest przewidywalność",
+        "outcomeText": "Kiedy poznasz tempo własnego odrastania, możesz zaplanować następną wizytę, zanim golenie znowu stanie się codzienną irytacją. Regularność nie oznacza obowiązku częstych wizyt, lecz wybór terminu pasującego do Twojego odrastania, planów i oczekiwanego poziomu gładkości.",
+        "ctaTitle": "Chcesz sprawdzić, jaki rytm depilacji da Ci najwięcej codziennej wygody?",
+        "ctaText": "Zacznij od jednego zabiegu i zobacz, jak odrastają Twoje włoski. Kolejny termin wybierzesz na podstawie własnego doświadczenia."
+      },
+      "en": {
+        "recognitionTitle": "When shaving controls your routine, you mainly notice how quickly the result disappears",
+        "recognitionText": "You shave before training, a weekend, a dress or a holiday and may feel stubble again soon afterwards. Each shave takes little time, but repeatedly demands attention and can keep irritating the skin. Waxing mainly changes that rhythm: you do not solve the same problem again every few days.",
+        "outcomeTitle": "The real benefit is predictability",
+        "outcomeText": "Once you understand your regrowth, you can plan another appointment before shaving becomes a repeated frustration again. Regularity does not mean being pressured into frequent visits. It means choosing timing that suits your regrowth, schedule and preferred level of smoothness.",
+        "ctaTitle": "Would you like to discover which waxing rhythm gives you the most everyday convenience?",
+        "ctaText": "Start with one treatment and observe your regrowth. You can choose the next appointment from your own experience."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/grove-porien-wat-helpt",
+      "pl": "/pl/wiedza/rozszerzone-pory-co-pomaga",
+      "en": "/en/knowledge/large-pores-what-helps"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Poriën vallen vaak het meest op wanneer je juist probeert de huid glad te laten lijken",
+        "recognitionText": "Misschien zie je ze vooral in daglicht, op foto's of wanneer make-up zich rond neus en wangen verzamelt. Zelfs direct na het reinigen kan de huid minder egaal ogen dan je wilt. Sterker scrubben geeft kort een glad gevoel, maar verandert niet automatisch of verstopping, uitdroging of huidstructuur de echte oorzaak is.",
+        "outcomeTitle": "Waar werk je realistisch naartoe?",
+        "outcomeText": "Niet naar een onnatuurlijke huid zonder poriën, maar naar een oppervlak dat schoner, rustiger en gelijkmatiger licht weerkaatst. Daardoor kunnen poriën minder de aandacht trekken, ook zonder zwaar dekkende make-up. De grootste winst ontstaat wanneer je niet langer willekeurig producten probeert, maar de juiste oorzaak aanpakt.",
+        "ctaTitle": "Wil je begrijpen wat jouw poriën vooral zichtbaar maakt?",
+        "ctaText": "Beschrijf waar je ze ziet, of de huid snel glanst en of zij tegelijk droog of gevoelig voelt. Dan wordt duidelijk welke verzorgingsrichting logisch is."
+      },
+      "pl": {
+        "recognitionTitle": "Pory często zwracają największą uwagę właśnie wtedy, gdy próbujesz wygładzić skórę",
+        "recognitionText": "Być może najbardziej widzisz je w świetle dziennym, na zdjęciach albo gdy makijaż zbiera się wokół nosa i na policzkach. Nawet po umyciu skóra może wyglądać mniej równo, niż oczekujesz. Mocniejsze peelingi dają chwilową gładkość, ale nie pokazują, czy przyczyną jest zatkanie, odwodnienie czy struktura.",
+        "outcomeTitle": "Do jakiego efektu można dążyć realistycznie?",
+        "outcomeText": "Nie do nienaturalnej skóry bez porów, lecz do powierzchni wyglądającej czyściej, spokojniej i odbijającej światło bardziej równomiernie. Dzięki temu pory mogą mniej przyciągać uwagę również bez mocno kryjącego makijażu. Największa zmiana zaczyna się od pracy nad właściwą przyczyną, a nie kolejnego przypadkowego produktu.",
+        "ctaTitle": "Chcesz zrozumieć, co u Ciebie najbardziej uwidacznia pory?",
+        "ctaText": "Napisz, gdzie są najbardziej widoczne, czy skóra szybko się błyszczy i czy jednocześnie jest sucha lub wrażliwa. Wtedy łatwiej wybrać właściwy kierunek."
+      },
+      "en": {
+        "recognitionTitle": "Pores often stand out most when you are trying to make the skin look smooth",
+        "recognitionText": "You may notice them most in daylight, in photographs or when makeup gathers around the nose and cheeks. Even after cleansing, skin can look less even than you would like. Stronger scrubbing gives a brief smooth feeling but does not reveal whether congestion, dehydration or texture is the real cause.",
+        "outcomeTitle": "What is a realistic result to work towards?",
+        "outcomeText": "Not unnatural poreless skin, but a surface that looks clearer, calmer and reflects light more evenly. Pores can then attract less attention, even without heavy coverage. The biggest change begins when you address the likely cause rather than test another random product.",
+        "ctaTitle": "Would you like to understand what makes your pores most visible?",
+        "ctaText": "Describe where you notice them, whether the skin becomes oily quickly and whether it also feels dry or sensitive. The most logical care direction then becomes clearer."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/droge-huid-ondanks-creme",
+      "pl": "/pl/wiedza/sucha-skora-mimo-kremu",
+      "en": "/en/knowledge/dry-skin-despite-moisturiser"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Als crème maar kort helpt, blijf je de hele dag met je huid bezig",
+        "recognitionText": "Je smeert in de ochtend, maar later voelt de huid opnieuw strak of zie je droogtelijntjes onder make-up. Dan probeer je gemakkelijk een rijkere crème, extra serum of sterkere peeling. Meer producten geven echter niet altijd meer comfort wanneer reinigen, irritatie of een verzwakte huidbarrière een deel van de onrust blijft voeden.",
+        "outcomeTitle": "Hoe voelt huid die weer meer in balans komt?",
+        "outcomeText": "Het doel is dat je gezicht na het reinigen niet meteen om een nieuwe laag product vraagt en dat make-up minder snel droge plekjes benadrukt. De huid hoeft niet perfect te zijn om duidelijk comfortabeler en frisser te voelen. Een zachte behandeling kan het oppervlak verzorgen en helpen de routine opnieuw logisch op te bouwen.",
+        "ctaTitle": "Wil je weten waarom jouw huid ondanks crème droog blijft aanvoelen?",
+        "ctaText": "Vertel hoe je reinigt, welke producten je gebruikt en wanneer de trekkerigheid terugkomt. Dan bekijken we eerst de oorzaak en pas daarna de behandeling."
+      },
+      "pl": {
+        "recognitionTitle": "Gdy krem pomaga tylko na chwilę, przez cały dzień nadal myślisz o skórze",
+        "recognitionText": "Nakładasz krem rano, ale później skóra znowu jest napięta albo makijaż podkreśla suche linie. Łatwo wtedy kupić bogatszy krem, kolejne serum lub mocniejszy peeling. Więcej produktów nie zawsze daje jednak większy komfort, jeśli sposób oczyszczania, podrażnienie albo osłabiona bariera stale podtrzymują problem.",
+        "outcomeTitle": "Jak odczuwa się skórę, która odzyskuje większą równowagę?",
+        "outcomeText": "Celem jest, aby po umyciu twarz nie domagała się natychmiast kolejnej warstwy kosmetyku, a makijaż rzadziej podkreślał suche miejsca. Skóra nie musi być idealna, żeby wyraźnie lepiej wyglądała i była bardziej komfortowa. Delikatny zabieg może zadbać o jej powierzchnię i pomóc ponownie logicznie ułożyć pielęgnację.",
+        "ctaTitle": "Chcesz zrozumieć, dlaczego Twoja skóra nadal jest sucha mimo kremu?",
+        "ctaText": "Napisz, jak oczyszczasz twarz, jakich produktów używasz i kiedy wraca ściągnięcie. Najpierw poszukamy przyczyny, a dopiero potem właściwego zabiegu."
+      },
+      "en": {
+        "recognitionTitle": "When moisturiser helps only briefly, your skin stays on your mind all day",
+        "recognitionText": "You apply cream in the morning, but later the skin feels tight again or makeup highlights dry lines. It is easy to buy a richer cream, another serum or a stronger exfoliant. More products do not always create more comfort if cleansing, irritation or a weakened barrier keeps part of the problem going.",
+        "outcomeTitle": "What does skin moving towards better balance feel like?",
+        "outcomeText": "The goal is for your face not to demand another layer immediately after cleansing and for makeup to emphasise dry areas less. Skin does not need to be perfect to feel noticeably more comfortable and look fresher. A gentle facial can care for the surface and help rebuild a more logical routine.",
+        "ctaTitle": "Would you like to understand why your skin still feels dry despite moisturiser?",
+        "ctaText": "Describe how you cleanse, what you use and when tightness returns. We can look at the likely cause before considering the treatment direction."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/oxybrasie-of-waterstofreiniging",
+      "pl": "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe",
+      "en": "/en/knowledge/oxybrasion-or-hydrogen-cleansing"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Je hoeft de naam van het apparaat niet te kennen om goed te kiezen",
+        "recognitionText": "Veel klanten weten alleen dat de huid dof, ruw, verstopt of minder fris oogt. Wanneer behandelmenu's technisch klinken, ontstaat twijfel of je iets te zacht of juist te intensief kiest. De nuttigste vraag is daarom niet welk apparaat populairder is, maar wat je na de behandeling anders wilt zien en voelen: meer frisheid of vooral grondiger reinigen.",
+        "outcomeTitle": "Wat verandert wanneer de behandeling bij het echte huiddoel past?",
+        "outcomeText": "Een droge of doffe huid wordt niet onnodig sterk gereinigd, terwijl zichtbare verstopping meer kan krijgen dan alleen een lichte glow-behandeling. Je hoeft niet zelf alle technieken te vergelijken en kunt het resultaat centraal zetten: een frisser oppervlak of een schoner, gelijkmatiger huidbeeld.",
+        "ctaTitle": "Wil je kiezen op wat je huid laat zien in plaats van op een behandelnaam?",
+        "ctaText": "Beschrijf of je vooral droogte, dofheid, zwarte puntjes of verstopping ziet. Dan wordt vanzelf duidelijk welke richting beter past."
+      },
+      "pl": {
+        "recognitionTitle": "Nie musisz znać nazwy urządzenia, żeby dobrze wybrać",
+        "recognitionText": "Wiele klientek wie jedynie, że skóra wygląda na matową, szorstką, zatkaną albo mniej świeżą. Gdy menu brzmi technicznie, łatwo obawiać się zbyt słabego lub zbyt mocnego wyboru. Najważniejsze pytanie dotyczy więc tego, co po zabiegu ma wyglądać i odczuwać się inaczej: większa świeżość czy przede wszystkim dokładniejsze oczyszczenie.",
+        "outcomeTitle": "Co zmienia zabieg dopasowany do prawdziwego celu skóry?",
+        "outcomeText": "Sucha lub matowa skóra nie jest niepotrzebnie mocno oczyszczana, a wyraźne zatkanie otrzymuje coś więcej niż lekką pielęgnację glow. Nie musisz samodzielnie porównywać technologii i możesz skupić się na efekcie: świeższej powierzchni albo czystszym, równiejszym wyglądzie.",
+        "ctaTitle": "Chcesz wybrać zabieg według tego, co pokazuje skóra, a nie według nazwy?",
+        "ctaText": "Napisz, czy widzisz głównie suchość, matowość, czarne kropki czy zatkanie. Wtedy naturalnie wyłoni się lepiej dopasowany kierunek."
+      },
+      "en": {
+        "recognitionTitle": "You do not need to know the device name to make a good choice",
+        "recognitionText": "Many clients only know that their skin looks dull, rough, congested or less fresh. When a treatment menu sounds technical, it is easy to worry about choosing something too gentle or too intensive. The most useful question is what you want to look and feel different afterwards: more freshness or primarily deeper cleansing.",
+        "outcomeTitle": "What changes when treatment matches the real skin goal?",
+        "outcomeText": "Dry or dull skin is not cleansed unnecessarily strongly, while visible congestion can receive more than a light glow treatment. You do not need to compare every technology yourself and can focus on the result: a fresher surface or a clearer, more even-looking complexion.",
+        "ctaTitle": "Would you like to choose from what your skin shows rather than a treatment name?",
+        "ctaText": "Describe whether you mainly see dryness, dullness, dark dots or congestion. The better-fitting direction then becomes much clearer."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/wat-niet-doen-na-microneedling",
+      "pl": "/pl/wiedza/czego-nie-robic-po-microneedlingu",
+      "en": "/en/knowledge/what-not-to-do-after-microneedling"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Twijfel over herstel kan zwaarder voelen dan de behandeling zelf",
+        "recognitionText": "Veel mensen willen aan structuur, poriën of fijne lijntjes werken, maar vragen zich af hoe zichtbaar roodheid zal zijn en of de huid op tijd rustig wordt voor werk of een afspraak. Een duidelijke hersteltijdlijn haalt onzekerheid weg: je weet wat kan passen, wat je zelf doet en wanneer iets niet meer bij normaal herstel hoort.",
+        "outcomeTitle": "Goede nazorg maakt microneedling een gecontroleerd proces",
+        "outcomeText": "De behandeling eindigt niet wanneer het apparaat stopt. De dagen erna bepalen hoe comfortabel de huid herstelt en hoe goed je extra irritatie door hitte, zon of sterke producten voorkomt. Wanneer je dit vooraf begrijpt, kies je bewust voor een volledig proces met voorbereiding, behandeling en begeleiding daarna.",
+        "ctaTitle": "Wil je vóór microneedling precies weten hoe je de herstelperiode plant?",
+        "ctaText": "Vertel welke producten je gebruikt en welke dagen belangrijk zijn in je agenda. Dan kun je de behandeling plannen op een moment dat ook ruimte geeft voor rustige nazorg."
+      },
+      "pl": {
+        "recognitionTitle": "Niepewność dotycząca regeneracji może być większa niż obawa przed samym zabiegiem",
+        "recognitionText": "Wiele osób chce pracować nad strukturą, porami lub drobnymi liniami, ale zastanawia się, jak widoczne będzie zaczerwienienie i czy skóra uspokoi się przed pracą albo ważnym spotkaniem. Jasna oś regeneracji usuwa niepewność: wiesz, jaka reakcja może być normalna, co robić i kiedy objawy nie pasują już do typowego gojenia.",
+        "outcomeTitle": "Dobra pielęgnacja pozabiegowa zmienia microneedling w kontrolowany proces",
+        "outcomeText": "Zabieg nie kończy się w momencie odłożenia urządzenia. Kolejne dni wpływają na komfort regeneracji i ograniczenie dodatkowego drażnienia przez ciepło, słońce albo mocne kosmetyki. Gdy wiesz to wcześniej, świadomie wybierasz cały proces: przygotowanie, zabieg i prowadzenie po nim.",
+        "ctaTitle": "Chcesz przed microneedlingiem dokładnie wiedzieć, jak zaplanować regenerację?",
+        "ctaText": "Napisz, jakich produktów używasz i które dni są ważne w Twoim kalendarzu. Zabieg można zaplanować tak, aby pozostało miejsce na spokojną pielęgnację."
+      },
+      "en": {
+        "recognitionTitle": "Uncertainty about recovery can feel bigger than concern about treatment",
+        "recognitionText": "Many people want to work on texture, pores or fine lines but wonder how visible redness may be and whether skin will settle before work or an important event. A clear timeline removes uncertainty: you understand which reactions can be expected, what to do and when something no longer resembles normal recovery.",
+        "outcomeTitle": "Good aftercare turns microneedling into a controlled process",
+        "outcomeText": "Treatment does not finish when the device stops. The following days affect how comfortably skin recovers and how well you avoid extra irritation from heat, sun or strong products. Understanding this in advance means choosing a complete process: preparation, treatment and guidance afterwards.",
+        "ctaTitle": "Would you like to understand how to plan recovery before microneedling?",
+        "ctaText": "Tell us which products you use and which days matter in your schedule. Treatment can then be planned with enough space for calm aftercare."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/hoeveel-microneedling-behandelingen",
+      "pl": "/pl/wiedza/ile-zabiegow-microneedlingu",
+      "en": "/en/knowledge/how-many-microneedling-treatments"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Je wilt geen serie kiezen zonder te begrijpen wat er onderweg verandert",
+        "recognitionText": "De vraag naar het aantal behandelingen betekent vaak eigenlijk: is de investering de moeite waard en wanneer kan ik eerlijk beoordelen of mijn huid reageert? Dat is terecht. Structuur en stevigheid veranderen geleidelijk, waardoor een goed traject niet alleen uit afspraken bestaat, maar ook uit herstellen, vergelijken en zo nodig bijsturen.",
+        "outcomeTitle": "Waarom voelt geleidelijke verandering vaak overtuigender?",
+        "outcomeText": "Het verschil zit niet altijd in één spectaculair moment. Je merkt eerder dat make-up gelijkmatiger ligt, de huid in hetzelfde licht rustiger oogt of de structuur minder aandacht trekt. Foto's zonder filter en evaluatie tussen sessies maken een serie geen blind pakket, maar een meetbaar plan met een duidelijk doel.",
+        "ctaTitle": "Wil je eerst een realistisch plan voordat je over een serie beslist?",
+        "ctaText": "Beschrijf welk huidkenmerk je wilt verbeteren. Dan bespreken we wat één behandeling kan laten zien en wanneer een serie pas logisch wordt."
+      },
+      "pl": {
+        "recognitionTitle": "Nie chcesz wybierać serii, jeśli nie rozumiesz, co ma zmieniać się po drodze",
+        "recognitionText": "Pytanie o liczbę zabiegów często oznacza tak naprawdę: czy ta inwestycja ma sens i kiedy można uczciwie ocenić reakcję własnej skóry? To uzasadniona wątpliwość. Struktura i jędrność zmieniają się stopniowo, dlatego dobry plan obejmuje nie tylko terminy, ale też regenerację, porównanie i dopasowanie kolejnego kroku.",
+        "outcomeTitle": "Dlaczego stopniowa zmiana może być bardziej przekonująca?",
+        "outcomeText": "Różnica nie zawsze pojawia się w jednym spektakularnym momencie. Częściej zauważasz, że makijaż układa się równiej, skóra w tym samym świetle wygląda spokojniej albo jej struktura mniej przyciąga uwagę. Zdjęcia bez filtra oraz ocena między sesjami zmieniają serię z zakupu w ciemno w mierzalny plan.",
+        "ctaTitle": "Chcesz najpierw otrzymać realistyczny plan, zanim zdecydujesz o serii?",
+        "ctaText": "Napisz, którą cechę skóry chcesz poprawić. Omówimy, co może pokazać pierwszy zabieg i kiedy seria rzeczywiście zaczyna mieć sens."
+      },
+      "en": {
+        "recognitionTitle": "You do not want to choose a course without understanding what should change along the way",
+        "recognitionText": "The question about treatment numbers often means: is the investment worthwhile and when can I honestly assess whether my skin is responding? That is reasonable. Texture and firmness change gradually, so a good plan includes more than appointments. It also includes recovery, comparison and adjustment when needed.",
+        "outcomeTitle": "Why can gradual change feel more convincing?",
+        "outcomeText": "The difference does not always arrive in one dramatic moment. You may first notice that makeup sits more evenly, skin looks calmer in the same light or texture attracts less attention. Unfiltered photographs and evaluation between sessions turn a course from a blind package into a measurable plan with a clear goal.",
+        "ctaTitle": "Would you like a realistic plan before deciding on a course?",
+        "ctaText": "Describe the skin feature you want to improve. We can discuss what one treatment may show and when a course genuinely becomes logical."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/wanneer-geen-microneedling",
+      "pl": "/pl/wiedza/kiedy-nie-robic-microneedlingu",
+      "en": "/en/knowledge/when-not-to-have-microneedling"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Een betrouwbare behandeling begint soms met het advies om nog even te wachten",
+        "recognitionText": "Het kan teleurstellen wanneer je eindelijk iets aan je huid wilt doen en hoort dat dit moment niet geschikt is. Toch laat juist die grens zien dat de huid belangrijker is dan het vullen van de agenda. Eerst rust of medisch advies kiezen beschermt je herstel en het latere behandelplan.",
+        "outcomeTitle": "Uitstellen betekent niet dat je doel verdwijnt",
+        "outcomeText": "Wanneer de huid weer rustig is en relevante omstandigheden goed zijn besproken, kan microneedling veel gecontroleerder worden gepland. Je begint vanuit een betere uitgangspositie. Dat geeft vertrouwen: niet iedere klant krijgt automatisch dezelfde behandeling en een eerlijk advies hoort bij professionele zorg.",
+        "ctaTitle": "Wil je eerst veilig laten beoordelen of dit het juiste moment is?",
+        "ctaText": "Meld huidreacties, medicijnen en recente behandelingen vóór de afspraak. Een kort gesprek kan bevestigen dat je kunt starten of dat wachten verstandiger is."
+      },
+      "pl": {
+        "recognitionTitle": "Wiarygodny zabieg czasem zaczyna się od zalecenia, żeby jeszcze chwilę poczekać",
+        "recognitionText": "Może być rozczarowujące, gdy wreszcie chcesz zrobić coś dla skóry i słyszysz, że to nie jest odpowiedni moment. Właśnie taka granica pokazuje jednak, że kondycja skóry jest ważniejsza niż samo zapełnienie kalendarza. Najpierw uspokojenie skóry albo konsultacja medyczna chronią regenerację i późniejszy plan.",
+        "outcomeTitle": "Przełożenie zabiegu nie oznacza rezygnacji z celu",
+        "outcomeText": "Gdy skóra ponownie jest spokojna, a ważne okoliczności zostały omówione, microneedling można zaplanować znacznie bardziej kontrolowanie. Zaczynasz z lepszej pozycji. To buduje zaufanie: nie każda klientka automatycznie otrzymuje ten sam zabieg, a uczciwe zalecenie jest częścią profesjonalnej opieki.",
+        "ctaTitle": "Chcesz najpierw bezpiecznie sprawdzić, czy to jest właściwy moment?",
+        "ctaText": "Zgłoś reakcje skóry, leki i niedawne zabiegi przed wizytą. Krótka rozmowa może potwierdzić możliwość rozpoczęcia albo wskazać, że rozsądniej będzie poczekać."
+      },
+      "en": {
+        "recognitionTitle": "A trustworthy treatment sometimes begins with advice to wait",
+        "recognitionText": "It can feel disappointing to finally decide to work on your skin and hear that the timing is not suitable. That boundary also shows that skin condition matters more than filling the appointment calendar. Choosing calm skin or medical advice first protects recovery and the later treatment plan.",
+        "outcomeTitle": "Postponing does not mean abandoning the goal",
+        "outcomeText": "When skin is calm again and relevant circumstances have been discussed, microneedling can be planned more carefully from a better starting point. That creates trust: not every client automatically receives the same treatment, and honest advice belongs to professional care.",
+        "ctaTitle": "Would you like to check safely whether this is the right time?",
+        "ctaText": "Disclose skin reactions, medicines and recent procedures before the appointment. A short discussion can confirm whether you can begin or whether waiting is wiser."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/verstopte-porien-en-mee-eters",
+      "pl": "/pl/wiedza/zatkane-pory-i-zaskorniki",
+      "en": "/en/knowledge/clogged-pores-and-blackheads"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Als zwarte puntjes steeds terugkomen, ga je gemakkelijk steeds harder reinigen",
+        "recognitionText": "Je bekijkt neus of kin van dichtbij, knijpt een paar plekjes uit en ziet kort daarna opnieuw dezelfde puntjes. Dat kan voelen alsof de huid niet schoon is, zelfs wanneer je dagelijks zorgvuldig reinigt. Zo ontstaat snel een cirkel van scrubben, uitdrogen en opnieuw uitknijpen terwijl de huid steeds onrustiger oogt.",
+        "outcomeTitle": "Hoe ziet een rustiger reinigingsdoel eruit?",
+        "outcomeText": "Niet een huid zonder één zichtbaar puntje, maar een oppervlak dat schoner, gelijkmatiger en minder geïrriteerd oogt. Daardoor voel je minder behoefte om steeds in de spiegel te controleren of de huid aan te raken. Professionele reiniging kan oppervlakkige verstopping gecontroleerd aanpakken en helpen een eenvoudige thuisroutine te kiezen.",
+        "ctaTitle": "Wil je weten of jouw zwarte puntjes vooral mee-eters, talgfilamenten of irritatie zijn?",
+        "ctaText": "Beschrijf waar ze zitten en wat je thuis al gebruikt. Dan kiezen we alleen voor professionele reiniging als dat werkelijk bij het huidbeeld past."
+      },
+      "pl": {
+        "recognitionTitle": "Gdy czarne kropki ciągle wracają, łatwo zacząć oczyszczać coraz mocniej",
+        "recognitionText": "Patrzysz z bliska na nos lub brodę, wyciskasz kilka miejsc, a niedługo później znowu widzisz te same punkty. Może to dawać poczucie, że skóra nadal jest brudna, nawet jeśli codziennie dokładnie ją myjesz. Tak powstaje krąg szorowania, przesuszania i kolejnego wyciskania, podczas gdy skóra wygląda coraz bardziej niespokojnie.",
+        "outcomeTitle": "Jak wygląda spokojniejszy cel oczyszczania?",
+        "outcomeText": "Nie chodzi o skórę bez ani jednej kropki, lecz o powierzchnię wyglądającą czyściej, równiej i mniej podrażnioną. Dzięki temu rzadziej sprawdzasz twarz w lustrze i dotykasz jej palcami. Profesjonalne oczyszczanie może kontrolowanie zająć się powierzchownym zatkaniem i pomóc dobrać prostą pielęgnację domową.",
+        "ctaTitle": "Chcesz sprawdzić, czy czarne kropki to zaskórniki, włókna łojowe czy efekt podrażnienia?",
+        "ctaText": "Napisz, gdzie się pojawiają i czego już używasz w domu. Profesjonalne oczyszczanie wybierzemy tylko wtedy, gdy rzeczywiście pasuje do obrazu skóry."
+      },
+      "en": {
+        "recognitionTitle": "When dark dots keep returning, it is easy to cleanse more aggressively",
+        "recognitionText": "You inspect the nose or chin closely, squeeze a few areas and see the same dots again soon afterwards. Skin can feel unclean even when you cleanse carefully every day. This easily becomes a cycle of scrubbing, drying and squeezing again while the skin looks increasingly unsettled.",
+        "outcomeTitle": "What does a calmer cleansing goal look like?",
+        "outcomeText": "Not skin without a single visible dot, but a surface that looks clearer, more even and less irritated. You then feel less need to inspect the mirror or touch the skin constantly. Professional cleansing can address superficial congestion in a controlled way and help identify a simple home routine.",
+        "ctaTitle": "Would you like to know whether your dark dots are blackheads, sebaceous filaments or irritation?",
+        "ctaText": "Describe where they appear and what you already use at home. Professional cleansing is chosen only when it genuinely fits the skin picture."
+      }
+    }
+  },
+  {
+    "routes": {
+      "nl": "/kennis/hoe-vaak-gezicht-laten-reinigen",
+      "pl": "/pl/wiedza/jak-czesto-oczyszczac-twarz",
+      "en": "/en/knowledge/how-often-professional-facial-cleansing"
+    },
+    "copy": {
+      "nl": {
+        "recognitionTitle": "Wanneer de huid na reiniging opknapt maar opnieuw verstopt raakt, mis je vaak een ritme",
+        "recognitionText": "Een losse behandeling kan de huid frisser laten voelen, maar talg, dode huidcellen, make-up en dagelijkse belasting stoppen daarna niet. Wanneer zwarte puntjes en ruwheid terugkomen, begin je thuis gemakkelijk opnieuw met extra scrubben of uitknijpen. Het alternatief is niet automatisch vaker behandelen, maar op tijd ondersteunen vóórdat de huid weer onrustig wordt.",
+        "outcomeTitle": "Wat geeft een persoonlijk onderhoudsritme?",
+        "outcomeText": "Je reageert niet pas wanneer de huid volledig verstopt of dof voelt, maar houdt beter zicht op wat zij door seizoen, hormonen en producten nodig heeft. Sommige huid heeft slechts af en toe ondersteuning nodig, andere huid profiteert van meer regelmaat. De waarde zit in tijdig bijsturen, niet in een standaardabonnement.",
+        "ctaTitle": "Wil je ontdekken wanneer jouw huid opnieuw ondersteuning nodig heeft?",
+        "ctaText": "Kijk na één behandeling hoe lang het schone en rustige gevoel blijft. Op basis daarvan kun je een onderhoudsmoment kiezen dat bij jouw huid past."
+      },
+      "pl": {
+        "recognitionTitle": "Gdy po oczyszczaniu skóra wygląda lepiej, ale później znowu się zatyka, często brakuje właściwego rytmu",
+        "recognitionText": "Pojedynczy zabieg może dać świeższe uczucie, ale sebum, martwe komórki, makijaż i codzienne obciążenie nie zatrzymują się po wyjściu z salonu. Kiedy czarne kropki i szorstkość wracają, łatwo ponownie zacząć mocniej złuszczać lub wyciskać. Rozwiązaniem nie jest automatycznie częstszy zabieg, lecz wsparcie skóry zanim znowu stanie się niespokojna.",
+        "outcomeTitle": "Co daje indywidualny rytm podtrzymujący?",
+        "outcomeText": "Nie reagujesz dopiero wtedy, gdy skóra jest już wyraźnie zatkana lub matowa, lecz lepiej obserwujesz potrzeby związane z porą roku, hormonami i kosmetykami. Jedna skóra potrzebuje wsparcia od czasu do czasu, inna korzysta z większej regularności. Wartością jest dopasowanie w odpowiednim momencie, a nie taki sam abonament dla każdej osoby.",
+        "ctaTitle": "Chcesz sprawdzić, po jakim czasie Twoja skóra ponownie potrzebuje wsparcia?",
+        "ctaText": "Po jednym zabiegu obserwuj, jak długo utrzymuje się czystsze i spokojniejsze uczucie. Na tej podstawie można wybrać termin podtrzymujący dopasowany do Ciebie."
+      },
+      "en": {
+        "recognitionTitle": "When skin improves after cleansing but becomes congested again, what is often missing is the right rhythm",
+        "recognitionText": "One treatment can make skin feel fresher, but oil, dead cells, makeup and daily exposure do not stop afterwards. When dark dots and roughness return, it is easy to begin stronger exfoliation or squeezing again. The alternative is not automatically more frequent treatment, but timely support before skin becomes unsettled again.",
+        "outcomeTitle": "What does a personal maintenance rhythm provide?",
+        "outcomeText": "You do not wait until skin feels completely congested or dull. You gain a clearer view of what it needs through changes in season, hormones and products. Some skin needs support occasionally while other skin benefits from more regular attention. The value is timely adjustment, not the same subscription for everyone.",
+        "ctaTitle": "Would you like to discover when your skin starts needing support again?",
+        "ctaText": "After one treatment, observe how long the clearer and calmer feeling lasts. That gives you a personal basis for choosing a maintenance appointment."
+      }
+    }
+  }
+]
