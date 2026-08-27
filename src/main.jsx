@@ -5,9 +5,7 @@ import OfferCard from "./components/OfferCard";
 import CtaStrip from "./components/CtaStrip";
 import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
-import { bookingServices, getPricingCatalog, bodyAreas } from "./data/serviceCatalog";
 import "./index.css";
-import "./booking-v17-2.css";
 
 const allowedPaths = ["/", "/zabiegi", "/paznokcie", "/depilacja", "/cialo", "/wiedza", "/cennik", "/akademia-skory", "/abonamenty", "/kontakt"];
 
@@ -124,12 +122,12 @@ const seoByPath = {
     description: "ElviGlow in Deventer: huidverbetering, microneedling, oxybrasie, huidverzorging, nagels, Lycon waxing en lichaamsbehandelingen. Kies eerst op huidbehoefte, daarna op behandeling.",
   },
   "/zabiegi": { title: "Gezichtsbehandelingen Deventer | ElviGlow", description: "Gezichtsbehandelingen in Deventer: reiniging, oxybrasie, ampullen, lifting care en microneedling afgestemd op de actuele huidconditie." },
-  "/paznokcie": { title: "Nagels & pedicure Deventer | ElviGlow", description: "Manicure, gellak, gel- of acrylverlenging en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
+  "/paznokcie": { title: "Nagels & Gellak Deventer | ElviGlow", description: "Manicure, gellak en pedicure in Deventer in de rustige, verzorgde ElviGlow-stijl." },
   "/depilacja": { title: "Lycon waxing Deventer | ElviGlow", description: "Lycon waxing voor vrouwen in Deventer: precieze en grotere zones met aandacht voor comfort en huidreactie." },
   "/cialo": { title: "Lichaamsbehandelingen Deventer | ElviGlow", description: "Vacuum dermomassage en cryolipolyse in Deventer. Heldere uitleg, eenvoudige pakketten en één gekozen zone per cryolipolysebezoek." },
   "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
   "/akademia-skory": { title: "Huidacademie & mini huidkaart | ElviGlow", description: "Leer je huid beter begrijpen met de ElviGlow Huidacademie en mini huidkaart: probleem, mechanisme, doel en verzorgingsrichting." },
-  "/cennik": { title: "Prijslijst beauty & huid Deventer | ElviGlow", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
+  "/cennik": { title: "Prijslijst ElviGlow Deventer", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
   "/abonamenty": { title: "Verzorgingsprogramma's | ElviGlow Deventer", description: "Regelmatige huidverzorgingsprogramma's voor klanten die liever met een plan werken dan met losse, toevallige behandelingen." },
   "/kontakt": { title: "Contact & afspraak | ElviGlow Deventer", description: "Neem contact op met ElviGlow in Deventer voor een afspraak, huidbehandeling, microneedling, nagels, waxing of lichaamsbehandeling." },
 };
@@ -333,16 +331,7 @@ function TreatmentsPage({ t, onNavigate }) {
   );
 }
 
-function NailsPage({ t, onNavigate, lang }) {
-  const pedicureInfo = {
-    pl: "Pielęgnacja stóp, paznokci i skórek. W aktualnej ofercie jest pedicure klasyczny oraz pedicure z gellak.",
-    en: "Foot, toenail and cuticle care. The current offer includes classic pedicure and pedicure with gellak.",
-    nl: "Verzorging van voeten, teennagels en nagelriemen. In de actuele aanbieding staan klassieke pedicure en pedicure met gellak.",
-  }[lang] || "Verzorging van voeten, teennagels en nagelriemen. In de actuele aanbieding staan klassieke pedicure en pedicure met gellak.";
-
-  const nailInfoCards = t.nails.infoCards.map((item, index) =>
-    index === 1 ? { ...item, text: pedicureInfo } : item
-  );
+function NailsPage({ t, onNavigate }) {
   return (
     <>
       <PageHero eyebrow={t.nails.eyebrow} title={t.nails.title} text={t.nails.lead}>
@@ -367,7 +356,7 @@ function NailsPage({ t, onNavigate, lang }) {
           <p>{t.nails.infoLead}</p>
         </div>
         <div className="guide-grid">
-          {nailInfoCards.map((item) => (
+          {t.nails.infoCards.map((item) => (
             <article className="guide-card" key={item.title}>
               <span>✦</span>
               <h3>{item.title}</h3>
@@ -591,10 +580,9 @@ function PriceListGroups({ groups }) {
   );
 }
 
-function PricingPage({ t, lang }) {
+function PricingPage({ t }) {
   const [active, setActive] = useState("face");
   const pricing = t.pricing;
-  const catalog = getPricingCatalog(lang);
 
   function renderFace() {
     return (
@@ -608,21 +596,21 @@ function PricingPage({ t, lang }) {
         <div className="pricing-group">
           <h3>{pricing.headings.popular}</h3>
           <div className="offer-grid">
-            {catalog.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {pricing.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.premium}</h3>
           <div className="offer-grid">
-            {catalog.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {pricing.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.regeneration}</h3>
           <div className="offer-grid">
-            {catalog.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {pricing.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
           </div>
           <p className="pricing-note">{pricing.note}</p>
         </div>
@@ -639,7 +627,7 @@ function PricingPage({ t, lang }) {
           <p>{pricing.nailsIntro}</p>
         </div>
         <div className="price-list-grid">
-          {catalog.nails.map((service) => (
+          {pricing.nails.map((service) => (
             <article className="price-row-card" key={service.name}>
               <div>
                 <h3>{service.name}</h3>
@@ -661,7 +649,7 @@ function PricingPage({ t, lang }) {
           <h2>{pricing.tabs.waxing}</h2>
           <p>{pricing.waxingIntro}</p>
         </div>
-        <PriceListGroups groups={catalog.waxing} />
+        <PriceListGroups groups={pricing.waxing} />
       </>
     );
   }
@@ -675,7 +663,7 @@ function PricingPage({ t, lang }) {
           <h2>{pricing.tabs.body}</h2>
           <p>{pricing.bodyIntro}</p>
         </div>
-        <PriceListGroups groups={catalog.body} />
+        <PriceListGroups groups={pricing.body} />
       </>
     );
   }
@@ -689,7 +677,7 @@ function PricingPage({ t, lang }) {
           <p>{pricing.careIntro}</p>
         </div>
         <div className="offer-grid">
-          {catalog.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
+          {pricing.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
         </div>
       </>
     );
@@ -719,22 +707,22 @@ function PricingPage({ t, lang }) {
 function AcademyPage({ t, onNavigate, lang }) {
   const academyNextStep = {
     pl: {
-      title: "Wiesz już, czego potrzebuje Twoja skóra?",
-      text: "Sprawdź cennik zabiegów albo napisz do nas, jeśli chcesz dobrać pierwszy rytuał do aktualnego stanu skóry.",
-      primary: "Zobacz cennik",
-      secondary: "Kontakt",
+      title: "Znalazłaś kierunek dla swojej skóry?",
+      text: "Po rekomendacji możesz od razu umówić wizytę albo sprawdzić aktualną cenę wybranego zabiegu.",
+      primary: "Umów wizytę",
+      secondary: "Zobacz cennik",
     },
     en: {
-      title: "Do you already know what your skin needs?",
-      text: "Check the price list or message us if you want to choose the first ritual for your current skin condition.",
-      primary: "View prices",
-      secondary: "Contact",
+      title: "Found the right direction for your skin?",
+      text: "After the recommendation, you can book a visit straight away or check the current price of the selected treatment.",
+      primary: "Book a visit",
+      secondary: "View prices",
     },
     nl: {
-      title: "Weet je al wat je huid nodig heeft?",
-      text: "Bekijk de prijslijst of stuur ons een bericht als je het eerste ritueel wilt afstemmen op je huidige huidconditie.",
-      primary: "Bekijk prijzen",
-      secondary: "Contact",
+      title: "Heb je een passende richting voor je huid gevonden?",
+      text: "Na de aanbeveling kun je direct een afspraak maken of de actuele prijs van de gekozen behandeling bekijken.",
+      primary: "Maak afspraak",
+      secondary: "Bekijk prijzen",
     },
   }[lang] || {
     title: t.cta.title,
@@ -774,7 +762,7 @@ function AcademyPage({ t, onNavigate, lang }) {
         </div>
       </section>
 
-      <ElviSkinMiniMap lang={lang} />
+      <ElviSkinMiniMap lang={lang} onNavigate={onNavigate} />
 
       <section className="section age-section">
         <div className="section-heading center">
@@ -825,8 +813,8 @@ function AcademyPage({ t, onNavigate, lang }) {
           <p>{academyNextStep.text}</p>
         </div>
         <div className="hero-actions">
-          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.primary}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.secondary}</button>
+          <button className="primary-btn" onClick={() => onNavigate("/kontakt")}>{academyNextStep.primary}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/cennik")}>{academyNextStep.secondary}</button>
         </div>
       </section>
     </>
@@ -865,6 +853,10 @@ const bookingCopy = {
     firstVisit: "To moja pierwsza wizyta w ElviGlow",
     note: "Dodatkowa wiadomość (opcjonalnie)",
     notePlaceholder: "Np. zależy mi na oczyszczeniu, mam wrażliwą skórę albo chcę konkretny kolor paznokci.",
+    nailRemovalAddon: "Mam starą stylizację do zdjęcia przed wybraną usługą (+20 €)",
+    nailRemovalAddonHelp: "Jeśli chcesz zdjąć paznokcie i od razu zrobić nowy set, wybierz nowy set jako usługę główną i zaznacz tę opcję.",
+    nailRemovalOnlyHint: "Chcesz zdjąć stylizację i od razu zrobić nowy set? Wybierz nowy set jako usługę główną, a potem zaznacz dodatkowe zdjęcie stylizacji.",
+    messageAddon: "Dodatkowa usługa",
     whatsapp: "Wyślij przez WhatsApp",
     instagram: "Skopiuj wiadomość i otwórz Instagram",
     copied: "Wiadomość skopiowana — wklej ją w DM na Instagramie.",
@@ -909,6 +901,10 @@ const bookingCopy = {
     firstVisit: "This is my first visit to ElviGlow",
     note: "Additional message (optional)",
     notePlaceholder: "For example: I want cleansing, I have sensitive skin, or I have a specific nail colour in mind.",
+    nailRemovalAddon: "I have an old nail set to remove before the selected service (+20 €)",
+    nailRemovalAddonHelp: "If you want removal and a new set in one visit, choose the new set as the main service and tick this option.",
+    nailRemovalOnlyHint: "Want removal and a new set in the same visit? Choose the new set as the main service, then add removal as an extra.",
+    messageAddon: "Additional service",
     whatsapp: "Send via WhatsApp",
     instagram: "Copy message and open Instagram",
     copied: "Message copied — paste it into an Instagram DM.",
@@ -953,6 +949,10 @@ const bookingCopy = {
     firstVisit: "Dit is mijn eerste bezoek aan ElviGlow",
     note: "Extra bericht (optioneel)",
     notePlaceholder: "Bijvoorbeeld: ik wil mijn huid laten reinigen, ik heb een gevoelige huid of ik wil een specifieke nagelkleur.",
+    nailRemovalAddon: "Ik heb een oude nagelset die vóór de gekozen behandeling verwijderd moet worden (+20 €)",
+    nailRemovalAddonHelp: "Wil je de oude set verwijderen en direct een nieuwe set laten plaatsen? Kies de nieuwe set als hoofdbehandeling en vink deze optie aan.",
+    nailRemovalOnlyHint: "Wil je verwijderen en direct een nieuwe set? Kies de nieuwe set als hoofdbehandeling en voeg daarna het verwijderen als extra toe.",
+    messageAddon: "Extra behandeling",
     whatsapp: "Verstuur via WhatsApp",
     instagram: "Kopieer bericht en open Instagram",
     copied: "Bericht gekopieerd — plak het in een DM op Instagram.",
@@ -980,6 +980,177 @@ const bookingCopy = {
   },
 };
 
+
+const bookingServices = {
+  pl: [
+    { id: "face", label: "Zabiegi twarzy", items: [
+      { id: "oxy", name: "Oxybrazja", price: "59 €", duration: "ok. 60 min" },
+      { id: "microdermabrasion", name: "Mikrodermabrazja", price: "50 €", duration: "ok. 60 min" },
+      { id: "cleansing-glow", name: "Oczyszczanie wodorowe", price: "69 €", duration: "ok. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy z ampułką i maską", price: "89 €", duration: "ok. 60 min" },
+      { id: "lifting", name: "Pielęgnacja liftingująca", price: "95 €", duration: "ok. 60 min" },
+    ]},
+    { id: "micro", label: "Microneedling", items: [
+      { id: "micro-face", name: "Microneedling — twarz", price: "89 €", duration: "ok. 30 min" },
+      { id: "micro-neck", name: "Microneedling — twarz + szyja", price: "109 €", duration: "ok. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — twarz + szyja + dekolt", price: "139 €", duration: "ok. 60 min" },
+    ]},
+    { id: "nails", label: "Paznokcie", items: [
+      { id: "manicure-classic", name: "Manicure klasyczny", price: "35 €", duration: "ok. 45 min" },
+      { id: "manicure-gellak", name: "Manicure hybrydowy / gellak", price: "50 €", duration: "ok. 60 min" },
+      { id: "nail-extension", name: "Przedłużanie żelem lub akrylem", price: "65 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-extension-gellak", name: "Przedłużanie żelem lub akrylem + hybryda / gellak", price: "70 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-refill", name: "Uzupełnienie do 4 tygodni", price: "55 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-removal", name: "Usunięcie stylizacji", price: "20 €", duration: "ok. 30 min" },
+    ]},
+    { id: "pedicure", label: "Pedicure", items: [
+      { id: "pedi-classic", name: "Pedicure klasyczny", price: "40 €", duration: "ok. 60 min" },
+      { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "ok. 75 min" },
+    ]},
+    { id: "nail-packages", label: "Pakiety paznokci", items: [
+      { id: "nail-package-classic", name: "Manicure klasyczny + pedicure klasyczny", price: "70 €", duration: "czas ustalimy przy rezerwacji" },
+      { id: "nail-package-gellak", name: "Hybryda / gellak dłonie + pedicure z gellak", price: "95 €", duration: "czas ustalimy przy rezerwacji" },
+    ]},
+    { id: "wax", label: "Depilacja Lycon", items: [
+      { id: "wax-lip", name: "Wąsik", price: "10 €", duration: "ok. 15 min" },
+      { id: "wax-brows", name: "Brwi", price: "15 €", duration: "ok. 20 min" },
+      { id: "wax-brows-tint", name: "Brwi + henna", price: "25 €", duration: "ok. 30 min" },
+      { id: "wax-underarms", name: "Pachy", price: "20 €", duration: "ok. 20 min" },
+      { id: "wax-forearms", name: "Przedramiona", price: "25 €", duration: "ok. 30 min" },
+      { id: "wax-lowerlegs", name: "Łydki", price: "30 €", duration: "ok. 30 min" },
+      { id: "wax-legs", name: "Całe nogi", price: "35 €", duration: "ok. 45 min" },
+      { id: "wax-back", name: "Plecy", price: "36 €", duration: "ok. 45 min" },
+      { id: "wax-bikini", name: "Linia bikini", price: "40 €", duration: "ok. 30 min" },
+      { id: "wax-brazilian", name: "Bikini brazylijskie", price: "50 €", duration: "ok. 45 min" },
+    ]},
+    { id: "body", label: "Zabiegi na ciało", items: [
+      { id: "dermomassage", name: "Dermomasaż vacuum", price: "60 €", duration: "ok. 60 min" },
+      { id: "cryo-abdomen", name: "Kriolipoliza — brzuch", price: "99 €", duration: "ok. 75 min" },
+      { id: "cryo-waist", name: "Kriolipoliza — boczki / talia", price: "99 €", duration: "ok. 75 min" },
+      { id: "cryo-outer-thigh", name: "Kriolipoliza — uda zewnętrzne", price: "99 €", duration: "ok. 75 min" },
+      { id: "cryo-inner-thigh", name: "Kriolipoliza — uda wewnętrzne", price: "99 €", duration: "ok. 75 min" },
+      { id: "cryo-arms", name: "Kriolipoliza — ramiona", price: "99 €", duration: "ok. 75 min" },
+    ]},
+    { id: "care", label: "Program pielęgnacji", items: [
+      { id: "care-advice", name: "Chcę dobrać program pielęgnacji", price: "od 69 €/mies.", duration: "czas pierwszej wizyty ustalimy po rozmowie" },
+    ]},
+    { id: "advice", label: "Konsultacja / nie wiem", items: [
+      { id: "general-advice", name: "Nie wiem — potrzebuję konsultacji i doboru", price: "do ustalenia", duration: "ustalimy po rozmowie" },
+    ]},
+  ],
+  en: [
+    { id: "face", label: "Facial treatments", items: [
+      { id: "oxy", name: "Oxybrasion", price: "59 €", duration: "approx. 60 min" },
+      { id: "microdermabrasion", name: "Microdermabrasion", price: "50 €", duration: "approx. 60 min" },
+      { id: "cleansing-glow", name: "Hydrogen Cleansing", price: "69 €", duration: "approx. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy with Ampoule and Mask", price: "89 €", duration: "approx. 60 min" },
+      { id: "lifting", name: "Lifting Care", price: "95 €", duration: "approx. 60 min" },
+    ]},
+    { id: "micro", label: "Microneedling", items: [
+      { id: "micro-face", name: "Microneedling — face", price: "89 €", duration: "approx. 30 min" },
+      { id: "micro-neck", name: "Microneedling — face + neck", price: "109 €", duration: "approx. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — face + neck + décolleté", price: "139 €", duration: "approx. 60 min" },
+    ]},
+    { id: "nails", label: "Nails", items: [
+      { id: "manicure-classic", name: "Classic manicure", price: "35 €", duration: "approx. 45 min" },
+      { id: "manicure-gellak", name: "Hybrid manicure / gellak", price: "50 €", duration: "approx. 60 min" },
+      { id: "nail-extension", name: "Gel or acrylic extensions", price: "65 €", duration: "time agreed when booking" },
+      { id: "nail-extension-gellak", name: "Gel or acrylic extensions + hybrid / gellak", price: "70 €", duration: "time agreed when booking" },
+      { id: "nail-refill", name: "Refill up to 4 weeks", price: "55 €", duration: "time agreed when booking" },
+      { id: "nail-removal", name: "Removal", price: "20 €", duration: "approx. 30 min" },
+    ]},
+    { id: "pedicure", label: "Pedicure", items: [
+      { id: "pedi-classic", name: "Classic pedicure", price: "40 €", duration: "approx. 60 min" },
+      { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "approx. 75 min" },
+    ]},
+    { id: "nail-packages", label: "Nail packages", items: [
+      { id: "nail-package-classic", name: "Classic manicure + classic pedicure", price: "70 €", duration: "time agreed when booking" },
+      { id: "nail-package-gellak", name: "Hybrid / gellak hands + pedicure with gellak", price: "95 €", duration: "time agreed when booking" },
+    ]},
+    { id: "wax", label: "Lycon waxing", items: [
+      { id: "wax-lip", name: "Upper lip", price: "10 €", duration: "approx. 15 min" },
+      { id: "wax-brows", name: "Brows", price: "15 €", duration: "approx. 20 min" },
+      { id: "wax-brows-tint", name: "Brows + tint", price: "25 €", duration: "approx. 30 min" },
+      { id: "wax-underarms", name: "Underarms", price: "20 €", duration: "approx. 20 min" },
+      { id: "wax-forearms", name: "Forearms", price: "25 €", duration: "approx. 30 min" },
+      { id: "wax-lowerlegs", name: "Lower legs", price: "30 €", duration: "approx. 30 min" },
+      { id: "wax-legs", name: "Full legs", price: "35 €", duration: "approx. 45 min" },
+      { id: "wax-back", name: "Back", price: "36 €", duration: "approx. 45 min" },
+      { id: "wax-bikini", name: "Bikini line", price: "40 €", duration: "approx. 30 min" },
+      { id: "wax-brazilian", name: "Brazilian bikini", price: "50 €", duration: "approx. 45 min" },
+    ]},
+    { id: "body", label: "Body treatments", items: [
+      { id: "dermomassage", name: "Vacuum dermomassage", price: "60 €", duration: "approx. 60 min" },
+      { id: "cryo-abdomen", name: "Cryolipolysis — abdomen", price: "99 €", duration: "approx. 75 min" },
+      { id: "cryo-waist", name: "Cryolipolysis — flanks / waist", price: "99 €", duration: "approx. 75 min" },
+      { id: "cryo-outer-thigh", name: "Cryolipolysis — outer thighs", price: "99 €", duration: "approx. 75 min" },
+      { id: "cryo-inner-thigh", name: "Cryolipolysis — inner thighs", price: "99 €", duration: "approx. 75 min" },
+      { id: "cryo-arms", name: "Cryolipolysis — arms", price: "99 €", duration: "approx. 75 min" },
+    ]},
+    { id: "care", label: "Care programme", items: [
+      { id: "care-advice", name: "I want help choosing a care programme", price: "from 69 €/month", duration: "first-visit time agreed in conversation" },
+    ]},
+    { id: "advice", label: "Consultation / not sure", items: [
+      { id: "general-advice", name: "I am not sure — I need consultation and advice", price: "to be agreed", duration: "agreed in conversation" },
+    ]},
+  ],
+  nl: [
+    { id: "face", label: "Gezichtsbehandelingen", items: [
+      { id: "oxy", name: "Oxybrasie", price: "59 €", duration: "ca. 60 min" },
+      { id: "microdermabrasion", name: "Microdermabrasie", price: "50 €", duration: "ca. 60 min" },
+      { id: "cleansing-glow", name: "Waterstofreiniging", price: "69 €", duration: "ca. 60 min" },
+      { id: "glow-ampoule-mask", name: "Glow Therapy met ampul en masker", price: "89 €", duration: "ca. 60 min" },
+      { id: "lifting", name: "Lifting verzorging", price: "95 €", duration: "ca. 60 min" },
+    ]},
+    { id: "micro", label: "Microneedling", items: [
+      { id: "micro-face", name: "Microneedling — gezicht", price: "89 €", duration: "ca. 30 min" },
+      { id: "micro-neck", name: "Microneedling — gezicht + hals", price: "109 €", duration: "ca. 45 min" },
+      { id: "micro-decollete", name: "Microneedling — gezicht + hals + decolleté", price: "139 €", duration: "ca. 60 min" },
+    ]},
+    { id: "nails", label: "Nagels", items: [
+      { id: "manicure-classic", name: "Klassieke manicure", price: "35 €", duration: "ca. 45 min" },
+      { id: "manicure-gellak", name: "Hybride manicure / gellak", price: "50 €", duration: "ca. 60 min" },
+      { id: "nail-extension", name: "Verlenging met gel of acryl", price: "65 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-extension-gellak", name: "Verlenging met gel of acryl + hybride / gellak", price: "70 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-refill", name: "Opvullen tot 4 weken", price: "55 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-removal", name: "Verwijderen", price: "20 €", duration: "ca. 30 min" },
+    ]},
+    { id: "pedicure", label: "Pedicure", items: [
+      { id: "pedi-classic", name: "Klassieke pedicure", price: "40 €", duration: "ca. 60 min" },
+      { id: "pedi-gellak", name: "Pedicure + gellak", price: "50 €", duration: "ca. 75 min" },
+    ]},
+    { id: "nail-packages", label: "Nagelpakketten", items: [
+      { id: "nail-package-classic", name: "Klassieke manicure + klassieke pedicure", price: "70 €", duration: "tijd spreken we af bij de boeking" },
+      { id: "nail-package-gellak", name: "Hybride / gellak handen + pedicure met gellak", price: "95 €", duration: "tijd spreken we af bij de boeking" },
+    ]},
+    { id: "wax", label: "Lycon waxing", items: [
+      { id: "wax-lip", name: "Bovenlip", price: "10 €", duration: "ca. 15 min" },
+      { id: "wax-brows", name: "Wenkbrauwen", price: "15 €", duration: "ca. 20 min" },
+      { id: "wax-brows-tint", name: "Wenkbrauwen + henna", price: "25 €", duration: "ca. 30 min" },
+      { id: "wax-underarms", name: "Oksels", price: "20 €", duration: "ca. 20 min" },
+      { id: "wax-forearms", name: "Onderarmen", price: "25 €", duration: "ca. 30 min" },
+      { id: "wax-lowerlegs", name: "Onderbenen", price: "30 €", duration: "ca. 30 min" },
+      { id: "wax-legs", name: "Hele benen", price: "35 €", duration: "ca. 45 min" },
+      { id: "wax-back", name: "Rug", price: "36 €", duration: "ca. 45 min" },
+      { id: "wax-bikini", name: "Bikinilijn", price: "40 €", duration: "ca. 30 min" },
+      { id: "wax-brazilian", name: "Brazilian bikini", price: "50 €", duration: "ca. 45 min" },
+    ]},
+    { id: "body", label: "Lichaamsbehandelingen", items: [
+      { id: "dermomassage", name: "Vacuum dermomassage", price: "60 €", duration: "ca. 60 min" },
+      { id: "cryo-abdomen", name: "Cryolipolyse — buik", price: "99 €", duration: "ca. 75 min" },
+      { id: "cryo-waist", name: "Cryolipolyse — flanken / taille", price: "99 €", duration: "ca. 75 min" },
+      { id: "cryo-outer-thigh", name: "Cryolipolyse — buitenkant dijen", price: "99 €", duration: "ca. 75 min" },
+      { id: "cryo-inner-thigh", name: "Cryolipolyse — binnenkant dijen", price: "99 €", duration: "ca. 75 min" },
+      { id: "cryo-arms", name: "Cryolipolyse — armen", price: "99 €", duration: "ca. 75 min" },
+    ]},
+    { id: "care", label: "Verzorgingsprogramma", items: [
+      { id: "care-advice", name: "Ik wil een verzorgingsprogramma laten kiezen", price: "vanaf 69 €/maand", duration: "tijd voor het eerste bezoek spreken we af" },
+    ]},
+    { id: "advice", label: "Consult / ik weet het nog niet", items: [
+      { id: "general-advice", name: "Ik weet het nog niet — graag consult en advies", price: "in overleg", duration: "in overleg" },
+    ]},
+  ],
+};
 
 const openingHours = {
   pl: [
@@ -1011,182 +1182,37 @@ const openingHours = {
   ],
 };
 
-
-const googleReviewSnippets = { pl: [], en: [], nl: [] };
-
-function trackGrowthEvent(eventName, params = {}) {
-  if (typeof window === "undefined") return;
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, params);
-  }
-  if (Array.isArray(window.dataLayer)) {
-    window.dataLayer.push({ event: eventName, ...params });
-  }
-}
-
 function ContactPage({ t, lang }) {
   const copy = bookingCopy[lang] || bookingCopy.nl;
-  const multiCopy = {
-    pl: {
-      zonesTitle: "Wybierz jedną lub kilka stref",
-      zonesHelp: "Możesz zaznaczyć kilka partii podczas jednej wizyty. Cena i orientacyjny czas zsumują się automatycznie.",
-      selectedZones: "Wybrane strefy",
-      totalPrice: "Łączna cena",
-      totalDuration: "Orientacyjny czas łącznie",
-      chooseZone: "Wybierz przynajmniej jedną strefę depilacji.",
-      messageZones: "Strefy",
-      approx: "ok.",
-      bodyArea: "Partia kriolipolizy",
-      bodyAreaHelp: "Podczas jednej wizyty wybieramy tylko jedną partię ciała.",
-      bodyAreaPlaceholder: "Wybierz partię",
-      messageArea: "Partia",
-    },
-    en: {
-      zonesTitle: "Choose one or more areas",
-      zonesHelp: "You can select several waxing areas for one visit. The total price and estimated time will be calculated automatically.",
-      selectedZones: "Selected areas",
-      totalPrice: "Total price",
-      totalDuration: "Estimated total time",
-      chooseZone: "Choose at least one waxing area.",
-      messageZones: "Areas",
-      approx: "approx.",
-      bodyArea: "Cryolipolysis area",
-      bodyAreaHelp: "Only one body area is treated during one visit.",
-      bodyAreaPlaceholder: "Choose an area",
-      messageArea: "Area",
-    },
-    nl: {
-      zonesTitle: "Kies één of meerdere zones",
-      zonesHelp: "Je kunt meerdere waxzones voor één afspraak kiezen. De totaalprijs en geschatte tijd worden automatisch opgeteld.",
-      selectedZones: "Gekozen zones",
-      totalPrice: "Totaalprijs",
-      totalDuration: "Geschatte totale tijd",
-      chooseZone: "Kies minimaal één waxzone.",
-      messageZones: "Zones",
-      approx: "ca.",
-      bodyArea: "Zone voor cryolipolyse",
-      bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
-      bodyAreaPlaceholder: "Kies een zone",
-      messageArea: "Zone",
-    },
-  }[lang] || {
-    zonesTitle: "Kies één of meerdere zones",
-    zonesHelp: "Je kunt meerdere waxzones voor één afspraak kiezen.",
-    selectedZones: "Gekozen zones",
-    totalPrice: "Totaalprijs",
-    totalDuration: "Geschatte totale tijd",
-    chooseZone: "Kies minimaal één waxzone.",
-    messageZones: "Zones",
-    approx: "ca.",
-    bodyArea: "Zone voor cryolipolyse",
-    bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
-    bodyAreaPlaceholder: "Kies een zone",
-    messageArea: "Zone",
-  };
-
-  const growthCopy = {
-    pl: {
-      reviewEyebrow: "OPINIE GOOGLE",
-      reviewTitle: "Byłaś zadowolona z wizyty?",
-      reviewText: "Krótka, prawdziwa opinia pomaga innym klientkom znaleźć ElviGlow w Google i łatwiej zdecydować się na pierwszą wizytę.",
-      reviewButton: "Dodaj opinię w Google",
-      polishEyebrow: "OBSŁUGA PO POLSKU",
-      polishTitle: "Szukasz polskiej kosmetyczki w Deventer?",
-      polishText: "Zobacz najważniejsze informacje o ElviGlow po polsku: zabiegi, depilacja, paznokcie, adres i sposób umawiania wizyty.",
-      polishButton: "Polska kosmetyczka Deventer",
-    },
-    en: {
-      reviewEyebrow: "GOOGLE REVIEWS",
-      reviewTitle: "Were you happy with your visit?",
-      reviewText: "A short, genuine review helps other clients find ElviGlow on Google and feel more confident before a first visit.",
-      reviewButton: "Leave a Google review",
-    },
-    nl: {
-      reviewEyebrow: "GOOGLE REVIEWS",
-      reviewTitle: "Tevreden over je bezoek?",
-      reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden en makkelijker voor een eerste afspraak te kiezen.",
-      reviewButton: "Schrijf een Google-review",
-    },
-  }[lang] || {
-    reviewEyebrow: "GOOGLE REVIEWS",
-    reviewTitle: "Tevreden over je bezoek?",
-    reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden.",
-    reviewButton: "Schrijf een Google-review",
-  };
-
-  const googleReviewUrl = "https://g.page/r/CTlVO8SKXGw-EBM/review";
-
-
   const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty";
   const whatsappNumber = "31682224999";
   const whatsappDisplay = "+31 6 82224999";
   const email = "elviglow47@gmail.com";
-
   const [category, setCategory] = useState("");
   const [serviceId, setServiceId] = useState("");
-  const [waxIds, setWaxIds] = useState([]);
-  const [bodyArea, setBodyArea] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [firstVisit, setFirstVisit] = useState(false);
   const [note, setNote] = useState("");
+  const [removeOldStyle, setRemoveOldStyle] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const serviceGroups = bookingServices[lang] || bookingServices.nl;
   const selectedCategory = serviceGroups.find((group) => group.id === category) || null;
   const selectedService = selectedCategory?.items.find((item) => item.id === serviceId) || null;
-  const isWaxing = category === "wax";
-  const isBody = category === "body";
-  const bodyAreaOptions = isBody && selectedService?.areaType
-    ? (bodyAreas[lang]?.[selectedService.areaType] || bodyAreas.nl[selectedService.areaType] || [])
-    : [];
-  const requiresBodyArea = isBody && Boolean(selectedService?.areaType);
-
-  const selectedWaxServices = isWaxing
-    ? (selectedCategory?.items || []).filter((item) => waxIds.includes(item.id))
-    : [];
-  const selectedServices = isWaxing
-    ? selectedWaxServices
-    : selectedService ? [selectedService] : [];
-
-  const waxExclusiveGroups = [
-    ["wax-bikini", "wax-brazilian"],
-    ["wax-lowerlegs", "wax-legs"],
-    ["wax-brows", "wax-brows-tint"],
-  ];
-
-  function toggleWaxZone(id) {
-    setWaxIds((current) => {
-      if (current.includes(id)) return current.filter((item) => item !== id);
-
-      let next = [...current];
-      const group = waxExclusiveGroups.find((items) => items.includes(id));
-      if (group) next = next.filter((item) => !group.includes(item));
-      return [...next, id];
-    });
-    setCopied(false);
-  }
-
-  function priceNumber(value) {
-    const match = String(value || "").replace(",", ".").match(/(\d+(?:\.\d+)?)/);
-    return match ? Number(match[1]) : 0;
-  }
-
-  function durationNumber(value) {
-    const match = String(value || "").match(/(\d+)\s*min/i);
-    return match ? Number(match[1]) : 0;
-  }
-
-  const waxTotalPrice = selectedWaxServices.reduce((sum, item) => sum + priceNumber(item.price), 0);
-  const waxTotalMinutes = selectedWaxServices.reduce((sum, item) => sum + durationNumber(item.duration), 0);
-
-  const displayPrice = isWaxing
-    ? (selectedWaxServices.length ? `${waxTotalPrice} €` : "—")
-    : (selectedService?.price || "—");
-
-  const displayDuration = isWaxing
-    ? (selectedWaxServices.length ? `${multiCopy.approx} ${waxTotalMinutes} min` : "—")
-    : (selectedService?.duration || "—");
+  const canAddNailRemoval = category === "nails" && selectedService && selectedService.id !== "nail-removal";
+  const hasNailRemovalAddon = Boolean(canAddNailRemoval && removeOldStyle);
+  const basePriceNumber = selectedService ? Number((selectedService.price.match(/\d+/) || [])[0]) : NaN;
+  const bookingPrice = hasNailRemovalAddon && Number.isFinite(basePriceNumber) ? `${basePriceNumber + 20} €` : (selectedService?.price || "—");
+  const bookingDuration = (() => {
+    if (!hasNailRemovalAddon || !selectedService) return selectedService?.duration || "—";
+    const durationMatch = selectedService.duration.match(/(\d+)\s*min/i);
+    if (durationMatch) {
+      return selectedService.duration.replace(durationMatch[1], String(Number(durationMatch[1]) + 30));
+    }
+    const suffix = lang === "pl" ? " + ok. 30 min na zdjęcie stylizacji" : lang === "nl" ? " + ca. 30 min voor verwijderen" : " + approx. 30 min for removal";
+    return `${selectedService.duration}${suffix}`;
+  })();
 
   const now = new Date();
   const minDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
@@ -1206,50 +1232,32 @@ function ContactPage({ t, lang }) {
   }
 
   const formattedDate = chosenDate
-    ? new Intl.DateTimeFormat(
-        lang === "pl" ? "pl-PL" : lang === "nl" ? "nl-NL" : "en-GB",
-        { weekday: "long", day: "2-digit", month: "2-digit", year: "numeric" }
-      ).format(chosenDate)
+    ? new Intl.DateTimeFormat(lang === "pl" ? "pl-PL" : lang === "nl" ? "nl-NL" : "en-GB", { weekday: "long", day: "2-digit", month: "2-digit", year: "numeric" }).format(chosenDate)
     : "—";
 
   const messageLines = [
     copy.messageIntro,
-    `${copy.messageService}: ${isWaxing ? (selectedCategory?.label || "—") : (selectedService?.name || "—")}`,
+    `${copy.messageService}: ${selectedService?.name || "—"}`,
   ];
-
-  if (isWaxing) {
-    messageLines.push(`${multiCopy.messageZones}: ${selectedWaxServices.length ? selectedWaxServices.map((item) => item.name).join(", ") : "—"}`);
+  if (hasNailRemovalAddon) {
+    const removalName = lang === "pl" ? "Usunięcie stylizacji (+20 €)" : lang === "nl" ? "Verwijderen oude styling (+20 €)" : "Removal of old styling (+20 €)";
+    messageLines.push(`${copy.messageAddon}: ${removalName}`);
   }
-
-  if (requiresBodyArea) {
-    messageLines.push(`${multiCopy.messageArea}: ${bodyArea || "—"}`);
-  }
-
   messageLines.push(
-    `${copy.messagePrice}: ${displayPrice}`,
-    `${copy.messageDuration}: ${displayDuration}`,
+    `${copy.messagePrice}: ${bookingPrice}`,
+    `${copy.messageDuration}: ${bookingDuration}`,
     `${copy.messageDate}: ${formattedDate}`,
     `${copy.messageTime}: ${time || "—"}`,
     `${copy.messageFirst}: ${firstVisit ? copy.yes : copy.no}`,
   );
-
   if (note.trim()) messageLines.push(`${copy.messageNote}: ${note.trim()}`);
-
   const message = messageLines.join("\n");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-  const canSend = Boolean(category && selectedServices.length && date && time && !isClosed && (!requiresBodyArea || bodyArea));
+  const canSend = Boolean(category && selectedService && date && time && !isClosed);
 
   function handleDateChange(value) {
     setDate(value);
     setTime("");
-    setCopied(false);
-  }
-
-  function handleCategoryChange(value) {
-    setCategory(value);
-    setServiceId("");
-    setWaxIds([]);
-    setBodyArea("");
     setCopied(false);
   }
 
@@ -1278,88 +1286,19 @@ function ContactPage({ t, lang }) {
           <div className="booking-form-grid">
             <label className="booking-field">
               <span>{copy.category}</span>
-              <select value={category} onChange={(event) => handleCategoryChange(event.target.value)}>
+              <select value={category} onChange={(event) => { setCategory(event.target.value); setServiceId(""); setRemoveOldStyle(false); setCopied(false); }}>
                 <option value="">{copy.categoryPlaceholder}</option>
                 {serviceGroups.map((group) => <option key={group.id} value={group.id}>{group.label}</option>)}
               </select>
             </label>
 
-            {!isWaxing && (
-              <label className="booking-field">
-                <span>{copy.service}</span>
-                <select
-                  value={serviceId}
-                  disabled={!selectedCategory}
-                  onChange={(event) => { setServiceId(event.target.value); setBodyArea(""); setCopied(false); }}
-                >
-                  <option value="">{selectedCategory ? copy.service : copy.servicePlaceholder}</option>
-                  {selectedCategory?.items.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
-                </select>
-              </label>
-            )}
-
-            {requiresBodyArea && (
-              <label className="booking-field booking-field-full">
-                <span>{multiCopy.bodyArea}</span>
-                <select
-                  value={bodyArea}
-                  onChange={(event) => { setBodyArea(event.target.value); setCopied(false); }}
-                >
-                  <option value="">{multiCopy.bodyAreaPlaceholder}</option>
-                  {bodyAreaOptions.map((area) => <option key={area} value={area}>{area}</option>)}
-                </select>
-                <small className="booking-field-help">{multiCopy.bodyAreaHelp}</small>
-              </label>
-            )}
-
-            {isWaxing && selectedCategory && (
-              <div className="booking-wax-field">
-                <div className="booking-wax-head">
-                  <div>
-                    <strong>{multiCopy.zonesTitle}</strong>
-                    <p>{multiCopy.zonesHelp}</p>
-                  </div>
-                </div>
-
-                <div className="booking-wax-grid">
-                  {selectedCategory.items.map((item) => {
-                    const checked = waxIds.includes(item.id);
-                    return (
-                      <label key={item.id} className={`booking-wax-option ${checked ? "is-selected" : ""}`}>
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleWaxZone(item.id)}
-                        />
-                        <span>
-                          <strong>{item.name}</strong>
-                          <small>{item.price} • {item.duration}</small>
-                        </span>
-                      </label>
-                    );
-                  })}
-                </div>
-
-                {selectedWaxServices.length > 0 ? (
-                  <div className="booking-wax-summary">
-                    <div>
-                      <span>{multiCopy.selectedZones}</span>
-                      <strong>{selectedWaxServices.map((item) => item.name).join(" + ")}</strong>
-                    </div>
-                    <div>
-                      <span>{multiCopy.totalPrice}</span>
-                      <strong>{displayPrice}</strong>
-                    </div>
-                    <div>
-                      <span>{multiCopy.totalDuration}</span>
-                      <strong>{displayDuration}</strong>
-                    </div>
-                  </div>
-                ) : (
-                  <p className="booking-info subtle">{multiCopy.chooseZone}</p>
-                )}
-              </div>
-            )}
+            <label className="booking-field">
+              <span>{copy.service}</span>
+              <select value={serviceId} disabled={!selectedCategory} onChange={(event) => { setServiceId(event.target.value); setRemoveOldStyle(false); setCopied(false); }}>
+                <option value="">{selectedCategory ? copy.service : copy.servicePlaceholder}</option>
+                {selectedCategory?.items.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+              </select>
+            </label>
 
             <label className="booking-field">
               <span>{copy.date}</span>
@@ -1380,12 +1319,25 @@ function ContactPage({ t, lang }) {
             </label>
           </div>
 
-          {!isWaxing && selectedService && (
+          {selectedService && (
             <p className="booking-info">
-              <strong>{selectedService.name}</strong> • {copy.price}: <strong>{selectedService.price}</strong> • {copy.duration}: <strong>{selectedService.duration}</strong>
+              <strong>{selectedService.name}</strong> • {copy.price}: <strong>{bookingPrice}</strong> • {copy.duration}: <strong>{bookingDuration}</strong>
             </p>
           )}
-          {!isWaxing && !selectedService && <p className="booking-info subtle">{copy.selectionHelp}</p>}
+          {!selectedService && <p className="booking-info subtle">{copy.selectionHelp}</p>}
+
+          {canAddNailRemoval && (
+            <>
+              <label className="booking-check">
+                <input type="checkbox" checked={removeOldStyle} onChange={(event) => { setRemoveOldStyle(event.target.checked); setCopied(false); }} />
+                <span>{copy.nailRemovalAddon}</span>
+              </label>
+              <p className="booking-info subtle">{copy.nailRemovalAddonHelp}</p>
+            </>
+          )}
+          {category === "nails" && selectedService?.id === "nail-removal" && (
+            <p className="booking-info subtle">{copy.nailRemovalOnlyHint}</p>
+          )}
 
           {date && isClosed && <p className="booking-alert">{copy.closed}</p>}
           {date && isSaturday && !isClosed && <p className="booking-info">{copy.saturday}</p>}
@@ -1402,13 +1354,7 @@ function ContactPage({ t, lang }) {
           </div>
 
           <div className="booking-actions">
-            <a
-              className={`primary-btn booking-whatsapp ${!canSend ? "is-disabled" : ""}`}
-              href={canSend ? whatsappUrl : undefined}
-              target="_blank"
-              rel="noreferrer"
-              aria-disabled={!canSend}
-            >
+            <a className={`primary-btn booking-whatsapp ${!canSend ? "is-disabled" : ""}`} href={canSend ? whatsappUrl : undefined} target="_blank" rel="noreferrer" aria-disabled={!canSend}>
               {copy.whatsapp}
             </a>
             <button className="secondary-btn" type="button" disabled={!canSend} onClick={openInstagram}>{copy.instagram}</button>
@@ -1432,10 +1378,10 @@ function ContactPage({ t, lang }) {
             <p className="eyebrow">ElviGlow</p>
             <h3>{copy.channelsTitle}</h3>
             <p>{copy.channelsText}</p>
-            <a className="booking-contact-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" onClick={() => trackGrowthEvent("whatsapp_contact_click", { page: "contact", lang })}>
+            <a className="booking-contact-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer">
               <span>WA</span><div><small>{copy.phoneLabel}</small><strong>{whatsappDisplay}</strong></div>
             </a>
-            <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer" onClick={() => trackGrowthEvent("instagram_contact_click", { page: "contact", lang })}>
+            <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer">
               <span>IG</span><div><small>Instagram</small><strong>@nagelsvoorjouenbeauty</strong></div>
             </a>
             <a className="booking-contact-link" href={`mailto:${email}`}>
@@ -1443,32 +1389,6 @@ function ContactPage({ t, lang }) {
             </a>
           </article>
         </aside>
-      </section>
-
-      <section className="section booking-review-strip">
-        <div className="booking-review-strip-copy">
-          <p className="eyebrow">{growthCopy.reviewEyebrow}</p>
-          <h2>{growthCopy.reviewTitle}</h2>
-          <p>{growthCopy.reviewText}</p>
-        </div>
-        <div className="booking-review-strip-action">
-          <a className="primary-btn" href={googleReviewUrl} target="_blank" rel="noreferrer"
-             onClick={() => trackGrowthEvent("google_review_click", { page: "contact_top", lang })}>
-            ★ {growthCopy.reviewButton}
-          </a>
-        </div>
-        {googleReviewSnippets[lang]?.length > 0 && (
-          <div className="booking-review-list">
-            {googleReviewSnippets[lang].slice(0, 3).map((review) => (
-              <article className="booking-review-item" key={`${review.author}-${review.text}`}>
-                <div className="booking-review-stars">{"★".repeat(review.rating)}</div>
-                <p>“{review.text}”</p>
-                <strong>{review.author}</strong>
-                {review.date ? <small>{review.date}</small> : null}
-              </article>
-            ))}
-          </div>
-        )}
       </section>
 
       <section className="section contact-note-box">
@@ -1548,11 +1468,11 @@ function App() {
 
   let page = <HomePage onNavigate={onNavigate} t={t} lang={lang} />;
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} lang={lang} />;
+  if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/cennik") page = <PricingPage t={t} lang={lang} />;
+  if (currentPath === "/cennik") page = <PricingPage t={t} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} lang={lang} />;
