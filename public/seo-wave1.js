@@ -57,6 +57,8 @@
         ["/gezichtsbehandeling-deventer", "Gezichtsbehandeling Deventer"],
         ["/huidverbetering-deventer", "Huidverbetering Deventer"],
         ["/microneedling-deventer", "Microneedling Deventer"],
+        ["/oxybrasie-deventer", "Oxybrasie Deventer"],
+        ["/waterstofreiniging-deventer", "Waterstofreiniging Deventer"],
         ["/nagels-deventer", "Nagels Deventer"],
         ["/depilacja", "Waxen Deventer"],
         ["/lycon-waxing-deventer", "Lycon waxing Deventer"]
@@ -69,6 +71,8 @@
         ["/pl/gezichtsbehandeling-deventer", "Zabiegi na twarz Deventer"],
         ["/pl/huidverbetering-deventer", "Pielęgnacja skóry Deventer"],
         ["/pl/microneedling-deventer", "Microneedling Deventer"],
+        ["/pl/oxybrazja-deventer", "Oxybrazja Deventer"],
+        ["/pl/oczyszczanie-wodorowe-deventer", "Oczyszczanie wodorowe Deventer"],
         ["/pl/nagels-deventer", "Paznokcie Deventer"],
         ["/depilacja", "Depilacja woskiem Deventer"],
         ["/pl/lycon-waxing-deventer", "Depilacja Lycon Deventer"]
@@ -84,6 +88,29 @@
         ["/en/nagels-deventer", "Nails Deventer"],
         ["/depilacja", "Waxing Deventer"],
         ["/en/lycon-waxing-deventer", "Lycon waxing Deventer"]
+      ]
+    }
+  };
+
+  const waxKnowledgeLinks = {
+    nl: {
+      title: "Meer over waxen in Deventer",
+      text: "Twijfel je tussen bikinilijn en Brazilian, of is dit je eerste waxafspraak? Deze uitleg helpt je kiezen en voorbereiden.",
+      items: [
+        ["/kennis/brazilian-wax-voorbereiden", "Brazilian wax: voorbereiding"],
+        ["/kennis/bikinilijn-of-brazilian-wax", "Bikinilijn of Brazilian wax"],
+        ["/kennis/waxen-eerste-keer", "Eerste keer waxen"],
+        ["/kennis/hoe-lang-glad-na-waxen", "Hoe lang blijft de huid glad?"]
+      ]
+    },
+    pl: {
+      title: "Więcej o depilacji woskiem w Deventer",
+      text: "Jeśli wybierasz między bikini i Brazilian albo to Twoja pierwsza depilacja, te materiały pomogą przygotować się do wizyty.",
+      items: [
+        ["/pl/wiedza/brazilian-wax-jak-sie-przygotowac", "Brazilian wax: jak się przygotować"],
+        ["/pl/wiedza/bikini-czy-brazilian-wax", "Bikini czy Brazilian wax"],
+        ["/pl/wiedza/depilacja-woskiem-pierwszy-raz", "Depilacja woskiem pierwszy raz"],
+        ["/pl/wiedza/jak-dlugo-gladka-skora-po-depilacji-woskiem", "Jak długo skóra pozostaje gładka?"]
       ]
     }
   };
@@ -104,10 +131,6 @@
 
   function setText(node, value) {
     if (node && node.textContent !== value) node.textContent = value;
-  }
-
-  function setHref(node, value) {
-    if (node && node.getAttribute("href") !== value) node.setAttribute("href", value);
   }
 
   function applyMetadata() {
@@ -132,7 +155,7 @@
     const style = document.createElement("style");
     style.id = "seo-wave1-style";
     style.textContent = `
-      .seo-wave1-home-links{padding-top:12px}.seo-wave1-link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;max-width:1100px;margin:24px auto 0}.seo-wave1-link-grid a{display:flex;align-items:center;justify-content:center;min-height:54px;padding:12px 16px;border:1px solid rgba(80,58,48,.16);border-radius:16px;text-decoration:none;color:inherit;background:rgba(255,255,255,.7);font-weight:700;text-align:center}.seo-wave1-link-grid a:hover{transform:translateY(-1px)}
+      .seo-wave1-home-links,.seo-wave1-wax-links{padding-top:12px}.seo-wave1-link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;max-width:1100px;margin:24px auto 0}.seo-wave1-link-grid a{display:flex;align-items:center;justify-content:center;min-height:54px;padding:12px 16px;border:1px solid rgba(80,58,48,.16);border-radius:16px;text-decoration:none;color:inherit;background:rgba(255,255,255,.7);font-weight:700;text-align:center}.seo-wave1-link-grid a:hover{transform:translateY(-1px)}
     `;
     document.head.appendChild(style);
   }
@@ -170,8 +193,11 @@
     const path = cleanPath();
     const lang = currentLang();
     const oldLink = document.querySelector("[data-seo-wave1-lycon-link]");
+    const oldKnowledge = document.querySelector("[data-seo-wave1-wax-links]");
+    oldLink?.remove();
+
     if (path !== "/depilacja") {
-      oldLink?.remove();
+      oldKnowledge?.remove();
       return;
     }
 
@@ -188,21 +214,23 @@
       setText(hero.querySelector(".lead"), "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, przedramiona, nogi, plecy, bikini i Brazilian. Osobna strona opisuje depilację wykonywaną produktami LYCON.");
     }
 
-    const lyconHref = lang === "pl" ? "/pl/lycon-waxing-deventer" : (lang === "en" ? "/en/lycon-waxing-deventer" : "/lycon-waxing-deventer");
-    const lyconLabel = lang === "pl" ? "Depilacja Lycon Deventer" : "Lycon waxing Deventer";
-
-    if (!oldLink) {
-      const actions = hero.querySelector(".hero-actions");
-      if (!actions) return;
-      const link = document.createElement("a");
-      link.className = "secondary-btn";
-      link.setAttribute("data-seo-wave1-lycon-link", "");
-      link.href = lyconHref;
-      link.textContent = lyconLabel;
-      actions.appendChild(link);
-    } else {
-      setHref(oldLink, lyconHref);
-      setText(oldLink, lyconLabel);
+    if (!oldKnowledge && waxKnowledgeLinks[lang]) {
+      const copy = waxKnowledgeLinks[lang];
+      const section = document.createElement("section");
+      section.className = "section seo-wave1-wax-links";
+      section.setAttribute("data-seo-wave1-wax-links", "");
+      section.innerHTML = `
+        <div class="section-heading center">
+          <p class="eyebrow">ElviGlow • Deventer</p>
+          <h2>${copy.title}</h2>
+          <p>${copy.text}</p>
+        </div>
+        <nav class="seo-wave1-link-grid" aria-label="Waxen Deventer informatie">
+          ${copy.items.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
+        </nav>
+      `;
+      const insertAfter = document.querySelector(".page-hero");
+      insertAfter?.insertAdjacentElement("afterend", section);
     }
   }
 
