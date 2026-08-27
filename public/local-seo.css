@@ -321,6 +321,19 @@ p { line-height: 1.72; color: var(--muted); }
 .faq p { margin: 12px 0 0; }
 .note { font-size: .9rem; margin-top: 18px; }
 
+.studio-disclosure {
+  padding: 34px;
+  margin-top: 30px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: rgba(255,255,255,.72);
+  box-shadow: var(--shadow-soft);
+}
+.studio-disclosure .section-head { margin-bottom: 0; }
+.studio-disclosure h2 { font-size: clamp(1.8rem,3vw,3rem); }
+.studio-disclosure .trust { margin-top: 20px; }
+
 .cta {
   width: min(1180px,calc(100% - 32px));
   margin: 36px auto 0;

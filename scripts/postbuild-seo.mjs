@@ -19,7 +19,7 @@ const common = `
   <p>Naast huidverzorging biedt ElviGlow klassieke manicure, gellak, gel- of acrylverlenging, pedicure, Lycon waxing voor geselecteerde zones en lichaamsbehandelingen zoals vacuum dermomassage en cryolipolyse. De actuele prijzen staan in de prijslijst.</p>
   <p>De Huidacademie legt uit hoe je zichtbare huidproblemen kunt herkennen, waarom thuisverzorging soms voldoende is en wanneer professionele ondersteuning zinvol kan zijn. De mini huidkaart helpt op een eenvoudige, educatieve manier om van probleem naar mogelijke verzorgingsrichting te gaan.</p>
   <p>ElviGlow wil een rustige plek zijn waar je vragen kunt stellen zonder druk om meteen de sterkste of duurste behandeling te kiezen. Je kunt eerst de behandelingen en prijzen bekijken, daarna meer leren in de Huidacademie en pas vervolgens contact opnemen voor een afspraak.</p>
-  <p>Goede huidverzorging stopt niet bij de salon. Thuis blijven milde reiniging, hydratatie, een passende verzorging en dagelijkse zonbescherming belangrijke onderdelen van het geheel.</p>
+  <p>Goede huidverzorging stopt niet na de afspraak. Thuis blijven milde reiniging, hydratatie, een passende verzorging en dagelijkse zonbescherming belangrijke onderdelen van het geheel.</p>
   <p>Bij een eerste bezoek is het vaak slimmer om de huidreactie te leren kennen dan direct een lange serie vast te leggen. Als de huid rustig reageert en het doel duidelijk is, kan daarna worden besproken of herhaling zinvol is.</p>
   <p>De website is opgebouwd voor klanten uit Deventer en omgeving die graag vooraf willen begrijpen wat een behandeling inhoudt. Uitleg, prijzen, Huidacademie en contact staan daarom in een logische volgorde.</p>`;
 

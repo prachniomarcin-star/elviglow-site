@@ -17,10 +17,10 @@ const homeExperience = {
   pl: {
     eyebrow: "Pielęgnacja skóry • Deventer",
     title: "Twoja skóra wygląda na zmęczoną mimo pielęgnacji?",
-    lead: "Suchość, rozszerzone pory, szary koloryt lub utrata jędrności? Najpierw sprawdzamy, czego potrzebuje Twoja skóra. Dopiero potem dobieramy zabieg i plan pielęgnacji.",
+    lead: "Suchość, rozszerzone pory, szary koloryt lub utrata jędrności? W kameralnym studio domowym najpierw sprawdzamy, czego potrzebuje Twoja skóra. Podczas umówionej wizyty przyjmowana jest jedna klientka, a zabieg odbywa się indywidualnie w zamkniętym gabinecie.",
     primary: "Dobierz zabieg do skóry",
     secondary: "Zobacz zabiegi",
-    trust: ["Deventer", "Indywidualny dobór", "Bez przypadkowych zabiegów"],
+    trust: ["Prywatne studio domowe", "Tylko po umówieniu", "Jedna klientka na raz"],
     visualKicker: "OD PROBLEMU DO PLANU",
     visualTitle: "Nie wybieraj zabiegu w ciemno.",
     visualText: "Wybierz to, co najbardziej przeszkadza Ci w skórze. Pokażemy Ci spokojny kierunek działania i dopiero wtedy dobierzemy zabieg.",
@@ -49,10 +49,10 @@ const homeExperience = {
   en: {
     eyebrow: "Skin improvement • Deventer",
     title: "Does your skin still look tired despite daily care?",
-    lead: "Dryness, visible pores, dull tone or loss of firmness? We first look at what your skin actually needs. Only then do we choose the treatment and care plan.",
+    lead: "Dryness, visible pores, dull tone or loss of firmness? In our small home-based studio, we first look at what your skin actually needs. Each booked visit is one-to-one, with one client at a time in a closed treatment room.",
     primary: "Match a treatment to my skin",
     secondary: "See treatments",
-    trust: ["Deventer", "Individually matched", "No random treatments"],
+    trust: ["Private home studio", "Appointment only", "One client at a time"],
     visualKicker: "FROM CONCERN TO PLAN",
     visualTitle: "Do not choose a treatment blindly.",
     visualText: "Choose what bothers you most about your skin. We show you a clear direction first and choose the treatment afterwards.",
@@ -81,10 +81,10 @@ const homeExperience = {
   nl: {
     eyebrow: "Huidverbetering • Deventer",
     title: "Ziet je huid er moe uit ondanks je dagelijkse verzorging?",
-    lead: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? We kijken eerst naar wat je huid werkelijk nodig heeft. Pas daarna kiezen we de behandeling en het verzorgingsplan.",
+    lead: "Droogte, zichtbare poriën, een doffe teint of minder stevigheid? In onze kleinschalige studio aan huis kijken we eerst naar wat je huid werkelijk nodig heeft. Elke afspraak is één-op-één, met één klant tegelijk in een gesloten behandelruimte.",
     primary: "Vind een passende behandeling",
     secondary: "Bekijk behandelingen",
-    trust: ["Deventer", "Persoonlijk afgestemd", "Geen willekeurige behandeling"],
+    trust: ["Privéstudio aan huis", "Alleen op afspraak", "Eén klant tegelijk"],
     visualKicker: "VAN HUIDVRAAG NAAR PLAN",
     visualTitle: "Kies je behandeling niet blind.",
     visualText: "Kies wat je het meest aan je huid stoort. Eerst krijg je een duidelijke richting; daarna kiezen we pas de behandeling.",
@@ -113,9 +113,9 @@ const homeExperience = {
 };
 
 const contactLocationCopy = {
-  pl: { title: "Deventer", text: "Salon działa w Deventer. Dokładne szczegóły wizyty i lokalizacji potwierdzamy przy rezerwacji." },
-  en: { title: "Deventer", text: "The salon operates in Deventer. Exact visit and location details are confirmed when booking." },
-  nl: { title: "Deventer", text: "De salon is in Deventer. De exacte bezoek- en locatiegegevens bevestigen we bij de afspraak." },
+  pl: { title: "Prywatne studio domowe w Deventer", text: "ElviGlow to kameralny gabinet domowy działający wyłącznie po wcześniejszym umówieniu. Przyjmowana jest jedna klientka na raz, a podczas zabiegu drzwi gabinetu są zamknięte. Dokładne szczegóły lokalizacji potwierdzamy przy rezerwacji." },
+  en: { title: "Private home-based studio in Deventer", text: "ElviGlow is a small home-based treatment studio operating by appointment only. One client is seen at a time, and the treatment-room door remains closed during the appointment. Exact location details are confirmed when booking." },
+  nl: { title: "Privéstudio aan huis in Deventer", text: "ElviGlow is een kleinschalige behandelruimte aan huis en werkt alleen op afspraak. Er is één klant tegelijk en de deur van de behandelruimte blijft tijdens de behandeling gesloten. De exacte locatiegegevens bevestigen we bij de afspraak." },
 };
 
 const seoByPath = {
@@ -870,7 +870,7 @@ const bookingCopy = {
     copied: "Wiadomość skopiowana — wklej ją w DM na Instagramie.",
     preview: "Podgląd wiadomości",
     chooseDate: "Wybierz datę, aby zobaczyć możliwe godziny.",
-    closed: "W niedzielę salon jest nieczynny. Wybierz inny dzień.",
+    closed: "W niedzielę ElviGlow jest nieczynne. Wybierz inny dzień.",
     saturday: "Sobota jest dostępna co drugi tydzień — dostępność potwierdzimy w wiadomości.",
     hoursTitle: "Godziny przyjmowania klientek",
     hoursLead: "Podana godzina końcowa oznacza najpóźniejszą godzinę rozpoczęcia wizyty.",
@@ -914,7 +914,7 @@ const bookingCopy = {
     copied: "Message copied — paste it into an Instagram DM.",
     preview: "Message preview",
     chooseDate: "Choose a date to see possible times.",
-    closed: "The salon is closed on Sundays. Please choose another day.",
+    closed: "ElviGlow is closed on Sundays. Please choose another day.",
     saturday: "Saturday is available every other week — we will confirm availability in the conversation.",
     hoursTitle: "Client hours",
     hoursLead: "The closing time shown is the latest possible appointment start time.",
@@ -958,7 +958,7 @@ const bookingCopy = {
     copied: "Bericht gekopieerd — plak het in een DM op Instagram.",
     preview: "Voorbeeld van je bericht",
     chooseDate: "Kies een datum om mogelijke tijden te zien.",
-    closed: "Op zondag is de salon gesloten. Kies een andere dag.",
+    closed: "Op zondag is ElviGlow gesloten. Kies een andere dag.",
     saturday: "Zaterdag is om de week beschikbaar — we bevestigen de beschikbaarheid in het gesprek.",
     hoursTitle: "Tijden voor afspraken",
     hoursLead: "De eindtijd is de laatst mogelijke starttijd van een afspraak.",

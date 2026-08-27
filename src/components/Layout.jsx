@@ -41,12 +41,19 @@ const localSeoLinks = {
 const mobileMainNav = navKeys.slice(0, 4);
 const mobileMoreNav = navKeys.slice(4);
 
+const studioSubtitles = {
+  pl: "Prywatne studio domowe • jedna klientka na raz",
+  en: "Private home studio • one client at a time",
+  nl: "Privéstudio aan huis • één klant tegelijk",
+};
+
 export default function Layout({ children, currentPath, onNavigate, lang, setLang, t }) {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const activeLanguage = LANGUAGES.find((item) => item.code === lang) || LANGUAGES[0];
   const isMoreActive = mobileMoreNav.some((item) => item.href === currentPath);
   const seoLinks = localSeoLinks[lang] || localSeoLinks.nl;
+  const studioSubtitle = studioSubtitles[lang] || studioSubtitles.nl;
 
   function handleLanguageChange(code) {
     setLang(code);
@@ -66,7 +73,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
             <img src="/elviglow-logo.webp" alt="ElviGlow" />
             <span>
               <strong>ElviGlow</strong>
-              <small>{t.home.cardSubtitle}</small>
+              <small>{studioSubtitle}</small>
             </span>
           </RouterLink>
 
@@ -170,7 +177,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
           <img src="/elviglow-logo.webp" alt="ElviGlow" />
           <div>
             <strong>ElviGlow</strong>
-            <p>{t.home.cardSubtitle}</p>
+            <p>{studioSubtitle}</p>
             <small>Deventer • Skin • Beauty • Care</small>
           </div>
         </div>

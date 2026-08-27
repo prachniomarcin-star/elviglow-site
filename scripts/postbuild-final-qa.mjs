@@ -28,6 +28,19 @@ const clusters = [
   { nl: "/kennis/hoe-vaak-gezicht-laten-reinigen", pl: "/pl/wiedza/jak-czesto-oczyszczac-twarz", en: "/en/knowledge/how-often-professional-facial-cleansing" },
 ];
 
+const appRoutes = new Set([
+  "/",
+  "/zabiegi",
+  "/paznokcie",
+  "/depilacja",
+  "/cialo",
+  "/wiedza",
+  "/cennik",
+  "/akademia-skory",
+  "/abonamenty",
+  "/kontakt",
+]);
+
 const errors = [];
 const warnings = [];
 const fail = (message) => errors.push(message);
@@ -76,6 +89,11 @@ if (!fs.existsSync(sitemapFile)) {
     if (!/<title>[^<]+<\/title>/i.test(html)) warn(`${pathname}: title missing`);
     if (!/<meta\b[^>]*name=["']description["'][^>]*>/i.test(html)) warn(`${pathname}: meta description missing`);
     if (/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) warn(`${pathname}: noindex found`);
+
+    if (!appRoutes.has(pathname)) {
+      const transparencyMarkers = (html.match(/data-studio-transparency=["']true["']/gi) || []).length;
+      if (transparencyMarkers !== 1) fail(`${pathname}: expected one studio transparency block, found ${transparencyMarkers}`);
+    }
 
     const internalLinks = [...html.matchAll(/<a\b[^>]*href=["'](\/[^"'#?]*)(?:[?#][^"']*)?["'][^>]*>/gi)].map((m) => m[1]);
     for (const href of internalLinks) {
@@ -149,4 +167,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Final SEO QA GREEN: 68 sitemap URLs and all required generated HTML files validated; ${clusters.length} language clusters inspected.`);
+console.log(`Final SEO QA GREEN: 68 sitemap URLs validated; all static pages include the studio disclosure; ${clusters.length} language clusters inspected.`);
