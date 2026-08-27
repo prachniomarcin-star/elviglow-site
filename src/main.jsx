@@ -1040,6 +1040,8 @@ function ContactPage({ t, lang }) {
       bodyAreaHelp: "Podczas jednej wizyty wybieramy tylko jedną partię ciała.",
       bodyAreaPlaceholder: "Wybierz partię",
       messageArea: "Partia",
+      nailRemovalAddon: "Mam starą stylizację na dłoniach do usunięcia podczas tej wizyty",
+      nailRemovalMessage: "Usunięcie starej stylizacji z dłoni",
     },
     en: {
       zonesTitle: "Choose one or more areas",
@@ -1054,6 +1056,8 @@ function ContactPage({ t, lang }) {
       bodyAreaHelp: "Only one body area is treated during one visit.",
       bodyAreaPlaceholder: "Choose an area",
       messageArea: "Area",
+      nailRemovalAddon: "I have an old nail set on my hands to remove during this visit",
+      nailRemovalMessage: "Removal of old hand nail set",
     },
     nl: {
       zonesTitle: "Kies één of meerdere zones",
@@ -1068,6 +1072,8 @@ function ContactPage({ t, lang }) {
       bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
       bodyAreaPlaceholder: "Kies een zone",
       messageArea: "Zone",
+      nailRemovalAddon: "Ik heb een oude nagelset op mijn handen die tijdens deze afspraak verwijderd moet worden",
+      nailRemovalMessage: "Verwijderen van oude nagelset op de handen",
     },
   }[lang] || {
     zonesTitle: "Kies één of meerdere zones",
@@ -1082,6 +1088,8 @@ function ContactPage({ t, lang }) {
     bodyAreaHelp: "Tijdens één bezoek behandelen we slechts één lichaamszone.",
     bodyAreaPlaceholder: "Kies een zone",
     messageArea: "Zone",
+    nailRemovalAddon: "Ik heb een oude nagelset op mijn handen die tijdens deze afspraak verwijderd moet worden",
+    nailRemovalMessage: "Verwijderen van oude nagelset op de handen",
   };
 
   const growthCopy = {
@@ -1130,11 +1138,14 @@ function ContactPage({ t, lang }) {
   const [time, setTime] = useState("");
   const [firstVisit, setFirstVisit] = useState(false);
   const [note, setNote] = useState("");
+  const [removeOldStyle, setRemoveOldStyle] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const serviceGroups = bookingServices[lang] || bookingServices.nl;
   const selectedCategory = serviceGroups.find((group) => group.id === category) || null;
   const selectedService = selectedCategory?.items.find((item) => item.id === serviceId) || null;
+  const canAddNailRemoval = category === "nails" && selectedService && !["nail-removal", "nail-refill"].includes(selectedService.id);
+  const hasNailRemovalAddon = Boolean(canAddNailRemoval && removeOldStyle);
   const isWaxing = category === "wax";
   const isBody = category === "body";
   const bodyAreaOptions = isBody && selectedService?.areaType
@@ -1180,13 +1191,29 @@ function ContactPage({ t, lang }) {
   const waxTotalPrice = selectedWaxServices.reduce((sum, item) => sum + priceNumber(item.price), 0);
   const waxTotalMinutes = selectedWaxServices.reduce((sum, item) => sum + durationNumber(item.duration), 0);
 
-  const displayPrice = isWaxing
+  const baseDisplayPrice = isWaxing
     ? (selectedWaxServices.length ? `${waxTotalPrice} €` : "—")
     : (selectedService?.price || "—");
 
-  const displayDuration = isWaxing
+  const displayPrice = hasNailRemovalAddon
+    ? `${priceNumber(selectedService?.price) + 20} €`
+    : baseDisplayPrice;
+
+  const baseDisplayDuration = isWaxing
     ? (selectedWaxServices.length ? `${multiCopy.approx} ${waxTotalMinutes} min` : "—")
     : (selectedService?.duration || "—");
+
+  const displayDuration = (() => {
+    if (!hasNailRemovalAddon || !selectedService) return baseDisplayDuration;
+    const baseMinutes = durationNumber(selectedService.duration);
+    if (baseMinutes) return `${multiCopy.approx} ${baseMinutes + 40} min`;
+    const extra = lang === "pl"
+      ? " + ok. 40 min na usunięcie stylizacji"
+      : lang === "nl"
+        ? " + ca. 40 min voor verwijderen"
+        : " + approx. 40 min for removal";
+    return `${selectedService.duration}${extra}`;
+  })();
 
   const now = new Date();
   const minDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
@@ -1225,6 +1252,10 @@ function ContactPage({ t, lang }) {
     messageLines.push(`${multiCopy.messageArea}: ${bodyArea || "—"}`);
   }
 
+  if (hasNailRemovalAddon) {
+    messageLines.push(`${multiCopy.nailRemovalMessage}: +20 € • ${multiCopy.approx} 40 min`);
+  }
+
   messageLines.push(
     `${copy.messagePrice}: ${displayPrice}`,
     `${copy.messageDuration}: ${displayDuration}`,
@@ -1250,6 +1281,7 @@ function ContactPage({ t, lang }) {
     setServiceId("");
     setWaxIds([]);
     setBodyArea("");
+    setRemoveOldStyle(false);
     setCopied(false);
   }
 
@@ -1290,7 +1322,7 @@ function ContactPage({ t, lang }) {
                 <select
                   value={serviceId}
                   disabled={!selectedCategory}
-                  onChange={(event) => { setServiceId(event.target.value); setBodyArea(""); setCopied(false); }}
+                  onChange={(event) => { setServiceId(event.target.value); setBodyArea(""); setRemoveOldStyle(false); setCopied(false); }}
                 >
                   <option value="">{selectedCategory ? copy.service : copy.servicePlaceholder}</option>
                   {selectedCategory?.items.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
@@ -1382,9 +1414,21 @@ function ContactPage({ t, lang }) {
 
           {!isWaxing && selectedService && (
             <p className="booking-info">
-              <strong>{selectedService.name}</strong> • {copy.price}: <strong>{selectedService.price}</strong> • {copy.duration}: <strong>{selectedService.duration}</strong>
+              <strong>{selectedService.name}</strong> • {copy.price}: <strong>{displayPrice}</strong> • {copy.duration}: <strong>{displayDuration}</strong>
             </p>
           )}
+
+          {canAddNailRemoval && (
+            <label className="booking-check">
+              <input
+                type="checkbox"
+                checked={removeOldStyle}
+                onChange={(event) => { setRemoveOldStyle(event.target.checked); setCopied(false); }}
+              />
+              <span>{multiCopy.nailRemovalAddon} (+20 € • {multiCopy.approx} 40 min)</span>
+            </label>
+          )}
+
           {!isWaxing && !selectedService && <p className="booking-info subtle">{copy.selectionHelp}</p>}
 
           {date && isClosed && <p className="booking-alert">{copy.closed}</p>}
