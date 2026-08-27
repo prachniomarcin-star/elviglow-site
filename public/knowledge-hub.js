@@ -28,17 +28,21 @@
           items: [
             ["/pl/wiedza/rozszerzone-pory-co-pomaga", "Rozszerzone pory: co naprawdę pomaga?", "Co może poprawić wygląd porów, a czego nie warto obiecywać."],
             ["/pl/wiedza/sucha-skora-mimo-kremu", "Sucha skóra mimo kremu", "Dlaczego więcej kremu nie zawsze rozwiązuje problem napięcia i suchości."],
-            ["/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe", "Oxybrazja czy oczyszczanie wodorowe?", "Dwa różne cele: delikatne odświeżenie albo mocniejszy kierunek oczyszczający."]
+            ["/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe", "Oxybrazja czy oczyszczanie wodorowe?", "Dwa różne cele: delikatne odświeżenie albo mocniejszy kierunek oczyszczający."],
+            ["/pl/wiedza/zatkane-pory-i-zaskorniki", "Zatkane pory i zaskórniki — co pomaga?", "Czym naprawdę są czarne kropki, czego nie wyciskać i kiedy oczyszczanie ma sens."],
+            ["/pl/wiedza/jak-czesto-oczyszczac-twarz", "Jak często oczyszczać twarz profesjonalnie?", "Dlaczego częstotliwość zależy od kondycji i reakcji skóry, a nie od stałego kalendarza."]
           ]
         },
         {
           id: "microneedling",
           title: "Microneedling i regeneracja",
-          text: "Najważniejsze informacje po zabiegu, gdy skóra potrzebuje spokoju i prawidłowej regeneracji.",
+          text: "Plan zabiegów, bezpieczeństwo i najważniejsze zasady spokojnej regeneracji skóry.",
           ctaHref: "/pl/microneedling-deventer",
           cta: "Zobacz microneedling Deventer",
           items: [
-            ["/pl/wiedza/czego-nie-robic-po-microneedlingu", "Czego nie robić po microneedlingu?", "Najczęstsze błędy po zabiegu i zasady, które pomagają nie przeciążać świeżo potraktowanej skóry."]
+            ["/pl/wiedza/czego-nie-robic-po-microneedlingu", "Microneedling dzień po dniu", "Regeneracja, pielęgnacja i objawy, których nie należy ignorować po zabiegu."],
+            ["/pl/wiedza/ile-zabiegow-microneedlingu", "Ile zabiegów microneedlingu potrzeba?", "Kiedy można ocenić efekty i dlaczego liczba sesji zależy od celu oraz reakcji skóry."],
+            ["/pl/wiedza/kiedy-nie-robic-microneedlingu", "Kiedy lepiej nie robić microneedlingu?", "Sytuacje, w których zabieg trzeba przełożyć lub najpierw omówić z lekarzem."]
           ]
         }
       ]
@@ -71,17 +75,21 @@
           items: [
             ["/kennis/grove-porien-wat-helpt", "Grove poriën: wat helpt echt?", "Wat de zichtbaarheid van poriën kan beïnvloeden en welke beloftes onrealistisch zijn."],
             ["/kennis/droge-huid-ondanks-creme", "Droge huid ondanks crème", "Waarom meer crème niet altijd genoeg is bij trekkerigheid en droogte."],
-            ["/kennis/oxybrasie-of-waterstofreiniging", "Oxybrasie of waterstofreiniging?", "Twee verschillende doelen: zachte opfrissing of een meer reinigende aanpak."]
+            ["/kennis/oxybrasie-of-waterstofreiniging", "Oxybrasie of waterstofreiniging?", "Twee verschillende doelen: zachte opfrissing of een meer reinigende aanpak."],
+            ["/kennis/verstopte-porien-en-mee-eters", "Verstopte poriën en mee-eters", "Wat zwarte puntjes werkelijk zijn, wat je beter niet uitknijpt en wanneer reinigen logisch is."],
+            ["/kennis/hoe-vaak-gezicht-laten-reinigen", "Hoe vaak professioneel laten reinigen?", "Waarom huidconditie en herstel belangrijker zijn dan een vast maandschema."]
           ]
         },
         {
           id: "microneedling",
           title: "Microneedling en herstel",
-          text: "Belangrijke nazorg wanneer de huid vooral rust en een goede herstelperiode nodig heeft.",
+          text: "Behandelplan, veiligheid en de belangrijkste regels voor een rustige herstelperiode.",
           ctaHref: "/microneedling-deventer",
           cta: "Bekijk microneedling Deventer",
           items: [
-            ["/kennis/wat-niet-doen-na-microneedling", "Wat kun je beter niet doen na microneedling?", "Veelgemaakte fouten na de behandeling en hoe je de huid niet onnodig belast."]
+            ["/kennis/wat-niet-doen-na-microneedling", "Microneedling dag voor dag", "Herstel, nazorg en signalen die je na de behandeling niet moet negeren."],
+            ["/kennis/hoeveel-microneedling-behandelingen", "Hoeveel behandelingen zijn nodig?", "Wanneer je resultaat kunt beoordelen en waarom het aantal afhangt van doel en huidreactie."],
+            ["/kennis/wanneer-geen-microneedling", "Wanneer beter geen microneedling?", "Situaties waarin je de behandeling uitstelt of eerst met een arts bespreekt."]
           ]
         }
       ]
@@ -114,17 +122,21 @@
           items: [
             ["/en/knowledge/large-pores-what-helps", "Visible pores: what can actually help?", "What can influence the appearance of pores and which promises are unrealistic."],
             ["/en/knowledge/dry-skin-despite-moisturiser", "Dry skin despite moisturiser", "Why adding more cream does not always solve tightness, dryness or barrier discomfort."],
-            ["/en/knowledge/oxybrasion-or-hydrogen-cleansing", "Oxybrasion or hydrogen cleansing?", "Two different goals: gentle surface refresh or a more cleansing-focused treatment direction."]
+            ["/en/knowledge/oxybrasion-or-hydrogen-cleansing", "Oxybrasion or hydrogen cleansing?", "Two different goals: gentle surface refresh or a more cleansing-focused treatment direction."],
+            ["/en/knowledge/clogged-pores-and-blackheads", "Clogged pores and blackheads", "What dark dots actually are, what not to squeeze and when professional cleansing may make sense."],
+            ["/en/knowledge/how-often-professional-facial-cleansing", "How often should you have facial cleansing?", "Why skin condition and recovery matter more than a fixed monthly schedule."]
           ]
         },
         {
           id: "microneedling",
           title: "Microneedling and recovery",
-          text: "The most important aftercare points when the skin needs calm, protection and time to recover.",
+          text: "Treatment planning, safety and the most important rules for a calm recovery period.",
           ctaHref: "/en/microneedling-deventer",
           cta: "View microneedling Deventer",
           items: [
-            ["/en/knowledge/what-not-to-do-after-microneedling", "What should you avoid after microneedling?", "Common aftercare mistakes and simple rules that help avoid unnecessary irritation after treatment."]
+            ["/en/knowledge/what-not-to-do-after-microneedling", "Microneedling day by day", "Recovery, aftercare and warning signs that should not be ignored after treatment."],
+            ["/en/knowledge/how-many-microneedling-treatments", "How many treatments are needed?", "When results can be assessed and why the number depends on the goal and skin response."],
+            ["/en/knowledge/when-not-to-have-microneedling", "When should you avoid microneedling?", "Situations where treatment should be postponed or discussed with a doctor first."]
           ]
         }
       ]

@@ -22,6 +22,10 @@ const clusters = [
   { nl: "/kennis/droge-huid-ondanks-creme", pl: "/pl/wiedza/sucha-skora-mimo-kremu", en: "/en/knowledge/dry-skin-despite-moisturiser" },
   { nl: "/kennis/wat-niet-doen-na-microneedling", pl: "/pl/wiedza/czego-nie-robic-po-microneedlingu", en: "/en/knowledge/what-not-to-do-after-microneedling" },
   { nl: "/kennis/oxybrasie-of-waterstofreiniging", pl: "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe", en: "/en/knowledge/oxybrasion-or-hydrogen-cleansing" },
+  { nl: "/kennis/hoeveel-microneedling-behandelingen", pl: "/pl/wiedza/ile-zabiegow-microneedlingu", en: "/en/knowledge/how-many-microneedling-treatments" },
+  { nl: "/kennis/wanneer-geen-microneedling", pl: "/pl/wiedza/kiedy-nie-robic-microneedlingu", en: "/en/knowledge/when-not-to-have-microneedling" },
+  { nl: "/kennis/verstopte-porien-en-mee-eters", pl: "/pl/wiedza/zatkane-pory-i-zaskorniki", en: "/en/knowledge/clogged-pores-and-blackheads" },
+  { nl: "/kennis/hoe-vaak-gezicht-laten-reinigen", pl: "/pl/wiedza/jak-czesto-oczyszczac-twarz", en: "/en/knowledge/how-often-professional-facial-cleansing" },
 ];
 
 const errors = [];
@@ -47,7 +51,7 @@ if (!fs.existsSync(sitemapFile)) {
   const urls = [...sitemap.matchAll(/<loc>(https:\/\/elviglow\.com[^<]+)<\/loc>/g)].map((m) => m[1]);
   const uniqueUrls = new Set(urls);
 
-  if (urls.length !== 56) fail(`expected 56 sitemap URLs, found ${urls.length}`);
+  if (urls.length !== 68) fail(`expected 68 sitemap URLs, found ${urls.length}`);
   if (uniqueUrls.size !== urls.length) fail(`sitemap contains ${urls.length - uniqueUrls.size} duplicate URL(s)`);
 
   const sitemapPaths = new Set(urls.map((url) => new URL(url).pathname.replace(/\/$/, "") || "/"));
@@ -118,6 +122,17 @@ for (const cluster of clusters) {
       if (matches.length !== 1) warn(`${route}: expected one ${hreflang} hreflang, found ${matches.length}`);
       else if (matches[0] !== href) warn(`${route}: ${hreflang} points to ${matches[0]}, expected ${href}`);
     }
+
+    if (/^\/(?:kennis\/|pl\/wiedza\/|en\/knowledge\/)/.test(route)) {
+      const refinedMarkers = (html.match(/data-psychology-refined=["']true["']/gi) || []).length;
+      const recognitionSections = (html.match(/data-psychology-layer=["']recognition["']/gi) || []).length;
+      const outcomeSections = (html.match(/data-psychology-layer=["']outcome["']/gi) || []).length;
+
+      if (refinedMarkers !== 1) fail(`${route}: expected one psychology refinement marker, found ${refinedMarkers}`);
+      if (recognitionSections !== 1) fail(`${route}: expected one recognition section, found ${recognitionSections}`);
+      if (outcomeSections !== 1) fail(`${route}: expected one outcome section, found ${outcomeSections}`);
+      if (/Want to choose the next step\?/i.test(html)) fail(`${route}: generic CTA copy was not replaced`);
+    }
   }
 }
 
@@ -134,4 +149,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Final SEO QA GREEN: 56 sitemap URLs and all required generated HTML files validated; ${clusters.length} language clusters inspected.`);
+console.log(`Final SEO QA GREEN: 68 sitemap URLs and all required generated HTML files validated; ${clusters.length} language clusters inspected.`);

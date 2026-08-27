@@ -20,6 +20,10 @@ const clusters = [
   { nl: "/kennis/droge-huid-ondanks-creme", pl: "/pl/wiedza/sucha-skora-mimo-kremu", en: "/en/knowledge/dry-skin-despite-moisturiser" },
   { nl: "/kennis/wat-niet-doen-na-microneedling", pl: "/pl/wiedza/czego-nie-robic-po-microneedlingu", en: "/en/knowledge/what-not-to-do-after-microneedling" },
   { nl: "/kennis/oxybrasie-of-waterstofreiniging", pl: "/pl/wiedza/oxybrazja-czy-oczyszczanie-wodorowe", en: "/en/knowledge/oxybrasion-or-hydrogen-cleansing" },
+  { nl: "/kennis/hoeveel-microneedling-behandelingen", pl: "/pl/wiedza/ile-zabiegow-microneedlingu", en: "/en/knowledge/how-many-microneedling-treatments" },
+  { nl: "/kennis/wanneer-geen-microneedling", pl: "/pl/wiedza/kiedy-nie-robic-microneedlingu", en: "/en/knowledge/when-not-to-have-microneedling" },
+  { nl: "/kennis/verstopte-porien-en-mee-eters", pl: "/pl/wiedza/zatkane-pory-i-zaskorniki", en: "/en/knowledge/clogged-pores-and-blackheads" },
+  { nl: "/kennis/hoe-vaak-gezicht-laten-reinigen", pl: "/pl/wiedza/jak-czesto-oczyszczac-twarz", en: "/en/knowledge/how-often-professional-facial-cleansing" },
 ];
 
 function fileFor(urlPath) {
@@ -58,7 +62,11 @@ for (const cluster of clusters) {
     checked += 1;
     const original = fs.readFileSync(file, "utf8");
 
-    let html = original.replace(/\s*<link\b[^>]*\brel=["']alternate["'][^>]*\bhreflang=["'][^"']+["'][^>]*>/gi, "");
+    let html = original.replace(/\s*<link\b[^>]*>/gi, (tag) => {
+      const isAlternate = /\brel=["']alternate["']/i.test(tag);
+      const hasHreflang = /\bhreflang=["'][^"']+["']/i.test(tag);
+      return isAlternate && hasHreflang ? "" : tag;
+    });
 
     const canonicalMatch = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*>/i);
     if (canonicalMatch) {
