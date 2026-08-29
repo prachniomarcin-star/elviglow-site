@@ -29,6 +29,7 @@ const clusters = [
 ];
 
 const clusterByPl = new Map(clusters.map((c) => [c.pl, c]));
+const polishLocalLanding = "/pl/kosmetyczka-deventer";
 
 function fileFor(route) {
   return path.join(dist, route.replace(/^\//, ""), "index.html");
@@ -39,6 +40,9 @@ function textMatch(html, tag) {
 }
 function count(haystack, re) {
   return (haystack.match(re) || []).length;
+}
+function esc(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 if (!fs.existsSync(sitemapFile)) {
@@ -62,21 +66,23 @@ if (!fs.existsSync(sitemapFile)) {
     if (!/<html\b[^>]*lang=["']pl["']/i.test(html)) errors.push(`${route}: html lang is not pl`);
     if (!title) errors.push(`${route}: title missing`);
     if (!h1) errors.push(`${route}: h1 missing`);
-    if (/\bpo polsku\b/i.test(title)) errors.push(`${route}: title contains artificial phrase 'po polsku'`);
-    if (/\bpo polsku\b/i.test(h1)) errors.push(`${route}: H1 contains artificial phrase 'po polsku'`);
-    if (/Obsługa po polsku/i.test(html)) warnings.push(`${route}: visible 'Obsługa po polsku' badge/copy remains`);
+    if (route !== polishLocalLanding && /\bpo polsku\b/i.test(title)) errors.push(`${route}: title contains artificial phrase 'po polsku'`);
+    if (route !== polishLocalLanding && /\bpo polsku\b/i.test(h1)) errors.push(`${route}: H1 contains artificial phrase 'po polsku'`);
+    if (route !== polishLocalLanding && /Obsługa po polsku/i.test(html)) warnings.push(`${route}: visible 'Obsługa po polsku' badge/copy remains`);
     if (!/<link\b[^>]*rel=["']canonical["'][^>]*>/i.test(html)) errors.push(`${route}: canonical missing`);
     if (!/<meta\b[^>]*name=["']description["'][^>]*>/i.test(html)) errors.push(`${route}: meta description missing`);
+    if (/"addressLocality"\s*:\s*"Deventer"/i.test(html)) errors.push(`${route}: business schema still uses Deventer as physical locality`);
+    if (/Jan Wansinkstraat 59,\s*7415 PB Deventer/i.test(html)) errors.push(`${route}: visible physical address still says Deventer`);
 
     const cluster = clusterByPl.get(route);
     if (cluster) {
       for (const lang of ["pl", "en", "nl"]) {
         const expected = `https://elviglow.com${cluster[lang]}`;
-        const re = new RegExp(`<link\\b[^>]*hreflang=["']${lang}["'][^>]*href=["']${expected.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["'][^>]*>|<link\\b[^>]*href=["']${expected.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["'][^>]*hreflang=["']${lang}["'][^>]*>`, "i");
+        const re = new RegExp(`<link\\b[^>]*hreflang=["']${lang}["'][^>]*href=["']${esc(expected)}["'][^>]*>|<link\\b[^>]*href=["']${esc(expected)}["'][^>]*hreflang=["']${lang}["'][^>]*>`, "i");
         if (!re.test(html)) errors.push(`${route}: ${lang} hreflang missing or wrong`);
       }
-      if (!new RegExp(`href=["']${cluster.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html)) warnings.push(`${route}: no visible EN link in page HTML`);
-      if (!new RegExp(`href=["']${cluster.nl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html)) warnings.push(`${route}: no visible NL link in page HTML`);
+      if (!new RegExp(`href=["']${esc(cluster.en)}["']`, "i").test(html)) errors.push(`${route}: no direct EN link in page HTML`);
+      if (!new RegExp(`href=["']${esc(cluster.nl)}["']`, "i").test(html)) errors.push(`${route}: no direct NL link in page HTML`);
     }
 
     if (!route.startsWith("/pl/wiedza/")) {
