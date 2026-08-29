@@ -4,6 +4,8 @@
       title: "Meer over waxen in Deventer",
       text: "Twijfel je tussen bikinilijn en Brazilian, of is dit je eerste waxafspraak? Deze uitleg helpt je kiezen en voorbereiden.",
       aria: "Waxen Deventer informatie",
+      intentTitle: "Welke waxbehandeling past bij je afspraak?",
+      intentText: "Voor een bikinilijn worden alleen de haren buiten de rand van bikini of ondergoed verwijderd. Een Brazilian wax is uitgebreider en vraagt daarom een andere reservering. Boek je voor het eerst? Laat de haren vooraf groeien, vermijd waxen op een duidelijk geïrriteerde huid en kies vooral de zone die je echt wilt laten behandelen. Zoeken op Brazilian wax Deventer of bikinilijn waxen Deventer leidt vaak naar dezelfde vraag: hoeveel wil je laten verwijderen? Bij ElviGlow kies je de zone vooraf en bevestigen we de afspraak persoonlijk.",
       items: [
         ["/kennis/brazilian-wax-voorbereiden", "Brazilian wax: voorbereiding"],
         ["/kennis/bikinilijn-of-brazilian-wax", "Bikinilijn of Brazilian wax"],
@@ -15,6 +17,8 @@
       title: "Więcej o depilacji woskiem w Deventer",
       text: "Jeśli wybierasz między bikini i Brazilian albo to Twoja pierwsza depilacja, te materiały pomogą przygotować się do wizyty.",
       aria: "Informacje o depilacji woskiem w Deventer",
+      intentTitle: "Bikini czy Brazilian — co właściwie rezerwujesz?",
+      intentText: "Depilacja bikini usuwa włoski widoczne poza linią bielizny, a Brazilian obejmuje większy obszar intymny i wymaga odpowiedniej rezerwacji czasu. Jeśli to pierwsza wizyta, nie gol włosków tuż przed zabiegiem i nie planuj woskowania na mocno podrażnionej skórze. W ElviGlow wybierasz konkretną strefę wcześniej, dzięki czemu wiadomo, czy rezerwujesz bikini, Brazilian czy inną część ciała.",
       items: [
         ["/pl/wiedza/brazilian-wax-jak-sie-przygotowac", "Brazilian wax: jak się przygotować"],
         ["/pl/wiedza/bikini-czy-brazilian-wax", "Bikini czy Brazilian wax"],
@@ -26,6 +30,8 @@
       title: "Learn more about waxing in Deventer",
       text: "Choosing between a bikini line and Brazilian wax, or booking for the first time? These guides help you prepare and know what to expect.",
       aria: "Waxing Deventer guides",
+      intentTitle: "Bikini line or Brazilian — what are you booking?",
+      intentText: "A bikini-line wax removes hair outside the edge of underwear, while a Brazilian covers a larger intimate area and needs a different appointment slot. If this is your first wax, allow enough hair growth beforehand and avoid booking when the skin is clearly irritated. At ElviGlow you choose the treatment area before the appointment, so a search for Brazilian wax Deventer or bikini waxing Deventer leads to a clear, practical choice instead of a vague waxing booking.",
       items: [
         ["/en/knowledge/brazilian-wax-preparation", "Brazilian wax: how to prepare"],
         ["/en/knowledge/bikini-line-or-brazilian-wax", "Bikini line or Brazilian wax?"],
@@ -69,6 +75,8 @@
         <p class="eyebrow">ElviGlow • Deventer</p>
         <h2>${copy.title}</h2>
         <p>${copy.text}</p>
+        <h3>${copy.intentTitle}</h3>
+        <p>${copy.intentText}</p>
       </div>
       <nav class="seo-wave1-link-grid" aria-label="${copy.aria}">
         ${copy.items.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
