@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://elviglow.com/waterstofreiniging-deventer" />
   <link rel="alternate" hreflang="nl" href="https://elviglow.com/waterstofreiniging-deventer" />
   <link rel="alternate" hreflang="pl" href="https://elviglow.com/pl/oczyszczanie-wodorowe-deventer" />
+  <link rel="alternate" hreflang="en" href="https://elviglow.com/en/hydrogen-facial-cleansing-deventer" />
   <link rel="alternate" hreflang="x-default" href="https://elviglow.com/waterstofreiniging-deventer" />
   <link rel="icon" type="image/png" href="/elviglow-favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +31,7 @@
   <header class="topbar">
     <div class="brand-row">
       <a class="brand" href="/" aria-label="ElviGlow home"><img src="/elviglow-logo.webp" alt="ElviGlow" /><span><strong>ElviGlow</strong><small>Huid • Beauty • Care</small></span></a>
-      <div class="top-actions"><div class="language-menu" id="seo-language-menu"><button class="language-trigger" type="button" aria-expanded="false">NL <span aria-hidden="true">⌄</span></button><div class="language-options" role="menu"><a href="/pl/oczyszczanie-wodorowe-deventer">PL</a><a class="active" href="/waterstofreiniging-deventer">NL</a></div></div><a class="nav-cta" href="/kontakt">Afspraak</a></div>
+      <div class="top-actions"><div class="language-menu" id="seo-language-menu"><button class="language-trigger" type="button" aria-expanded="false">NL <span aria-hidden="true">⌄</span></button><div class="language-options" role="menu"><a href="/pl/oczyszczanie-wodorowe-deventer" data-lang-link="pl">PL</a><a href="/en/hydrogen-facial-cleansing-deventer" data-lang-link="en">EN</a><a class="active" href="/waterstofreiniging-deventer" data-lang-link="nl">NL</a></div></div><a class="nav-cta" href="/kontakt">Afspraak</a></div>
     </div>
     <nav class="nav-tabs desktop-nav" aria-label="Main navigation"><a href="/">Home</a><a class="active" href="/zabiegi">Behandelingen</a><a href="/paznokcie">Nagels</a><a href="/depilacja">Waxing</a><a href="/cialo">Lichaam</a><a href="/wiedza">Kennis</a><a href="/cennik">Prijzen</a><a href="/kontakt">Contact</a></nav>
     <nav class="nav-tabs mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a class="active" href="/zabiegi">Behandelingen</a><a href="/cennik">Prijzen</a><a href="/kontakt">Contact</a></nav>
@@ -54,6 +55,6 @@
   </main>
   <footer class="footer footer-premium"><div class="footer-brand"><img src="/elviglow-logo.webp" alt="ElviGlow" /><div><strong>ElviGlow</strong><p>Huid • Beauty • Care</p><small>Deventer • Skin • Beauty • Care</small></div></div><div class="footer-links"><a href="/gezichtsbehandeling-deventer">Gezichtsbehandeling</a><a href="/huidverbetering-deventer">Huidverbetering</a><a href="/cennik">Prijzen</a><a href="/kontakt">Contact</a></div></footer>
   <div class="mobile-booking-bar" aria-label="Quick actions"><a class="mobile-booking-secondary" href="/cennik">Prijzen</a><a class="mobile-booking-primary" href="/kontakt">Afspraak</a></div>
-  <script>(()=>{const m=document.getElementById('seo-language-menu'),b=m?.querySelector('.language-trigger');b?.addEventListener('click',()=>{const o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));});})();</script>
+  <script>(()=>{const pageLang="nl",m=document.getElementById('seo-language-menu'),b=m?.querySelector('.language-trigger');b?.addEventListener('click',()=>{const o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));});document.addEventListener('click',e=>{const l=e.target.closest('a[data-lang-link]');if(l)localStorage.setItem('elviglow-lang',l.getAttribute('data-lang-link'));});})();</script>
 </body>
 </html>
