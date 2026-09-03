@@ -7,6 +7,18 @@
       read: "Czytaj poradnik →",
       groups: [
         {
+          id: "paznokcie",
+          title: "Paznokcie",
+          text: "Wybór między żelem i akrylem, trwałość stylizacji oraz spokojne przygotowanie do pierwszego przedłużania.",
+          ctaHref: "/pl/nagels-deventer",
+          cta: "Zobacz paznokcie w Deventer",
+          items: [
+            ["/pl/wiedza/paznokcie-akrylowe-czy-zelowe", "Paznokcie akrylowe czy żelowe?", "Praktyczne różnice między akrylem i żelem oraz jak wybrać kierunek dla swoich paznokci."],
+            ["/pl/wiedza/jak-dlugo-trzymaja-sie-paznokcie-zelowe-i-hybryda", "Jak długo trzymają się paznokcie żelowe i hybryda?", "Odrost, trwałość, pielęgnacja i moment, kiedy warto zaplanować uzupełnienie."],
+            ["/pl/wiedza/pierwsze-przedluzanie-paznokci", "Pierwsze przedłużanie paznokci", "Jak wybrać długość i kształt, przygotować się do wizyty i czego spodziewać się po pierwszym secie."]
+          ]
+        },
+        {
           id: "depilacja",
           title: "Depilacja woskiem",
           text: "Przygotowanie, różnice między strefami i to, czego realnie spodziewać się po zabiegu.",
@@ -54,6 +66,18 @@
       read: "Lees de gids →",
       groups: [
         {
+          id: "nagels",
+          title: "Nagels",
+          text: "Acryl of gel kiezen, begrijpen wanneer onderhoud nodig is en rustig voorbereiden op een eerste nagelverlenging.",
+          ctaHref: "/nagels-deventer",
+          cta: "Bekijk nagels in Deventer",
+          items: [
+            ["/kennis/acrylnagels-of-gelnagels", "Acrylnagels of gelnagels?", "De praktische verschillen tussen acryl en gel en welke richting bij jouw nagels en dagelijkse gebruik kan passen."],
+            ["/kennis/hoe-lang-blijven-gelnagels-en-gellak-mooi", "Hoe lang blijven gelnagels en gellak mooi?", "Uitgroei, houdbaarheid, onderhoud en het moment waarop een refill logisch wordt."],
+            ["/kennis/eerste-keer-nagelverlenging", "Eerste keer nagelverlenging", "Hoe je lengte en vorm kiest, je voorbereidt en wat je tijdens je eerste afspraak kunt verwachten."]
+          ]
+        },
+        {
           id: "waxen",
           title: "Waxen",
           text: "Voorbereiding, verschillen tussen zones en wat je realistisch van de behandeling kunt verwachten.",
@@ -100,6 +124,18 @@
       text: "Understand the skin concern or treatment first. Then move on to prices or booking.",
       read: "Read the guide →",
       groups: [
+        {
+          id: "nails",
+          title: "Nails",
+          text: "Compare acrylic and gel, understand maintenance timing and prepare calmly for first-time nail extensions.",
+          ctaHref: "/en/nagels-deventer",
+          cta: "View nails in Deventer",
+          items: [
+            ["/en/knowledge/acrylic-or-gel-nails", "Acrylic or gel nails?", "The practical differences between acrylic and gel and which direction may suit your nails and everyday use."],
+            ["/en/knowledge/how-long-do-gel-nails-and-gel-polish-last", "How long do gel nails and gel polish last?", "Regrowth, wear, maintenance and when it makes sense to book a refill."],
+            ["/en/knowledge/first-time-nail-extensions", "First-time nail extensions", "How to choose length and shape, prepare for the appointment and know what to expect from your first set."]
+          ]
+        },
         {
           id: "waxing",
           title: "Waxing",
