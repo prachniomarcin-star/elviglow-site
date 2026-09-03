@@ -53,6 +53,33 @@ body.knowledge-shell-v2 .knowledge-article .article-nav a:hover {
   background: rgba(185,109,98,.10);
 }
 
+/* New nail guides use article-copy directly inside FAQ rather than section-head. */
+body.knowledge-shell-v2 .knowledge-article .faq-section > .article-copy {
+  max-width: 920px;
+}
+
+body.knowledge-shell-v2 .knowledge-article .faq-section > .article-copy > .eyebrow {
+  margin: 0 0 10px;
+}
+
+body.knowledge-shell-v2 .knowledge-article .faq-section > .article-copy > h2 {
+  max-width: 820px;
+  margin: 0 0 30px;
+  font-size: clamp(2.15rem, 3.15vw, 3.25rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+
+body.knowledge-shell-v2 .knowledge-article .faq-section .faq {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+body.knowledge-shell-v2 .knowledge-article .faq-section .faq details {
+  margin: 0;
+}
+
 @media (max-width: 740px) {
   body.knowledge-shell-v2 .knowledge-article .psychology-section .article-copy {
     padding: 21px 20px 23px;
@@ -70,4 +97,14 @@ body.knowledge-shell-v2 .knowledge-article .article-nav a:hover {
   }
   body.knowledge-shell-v2 .knowledge-article .article-nav::-webkit-scrollbar { display: none; }
   body.knowledge-shell-v2 .knowledge-article .article-nav a { white-space: nowrap; }
+
+  body.knowledge-shell-v2 .knowledge-article .faq-section > .article-copy > h2 {
+    margin-bottom: 22px;
+    font-size: clamp(2rem, 8.5vw, 2.7rem);
+    line-height: 1.04;
+  }
+
+  body.knowledge-shell-v2 .knowledge-article .faq-section .faq {
+    gap: 10px;
+  }
 }
