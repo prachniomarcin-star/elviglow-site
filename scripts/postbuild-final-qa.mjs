@@ -64,7 +64,7 @@ if (!fs.existsSync(sitemapFile)) {
   const urls = [...sitemap.matchAll(/<loc>(https:\/\/elviglow\.com[^<]+)<\/loc>/g)].map((m) => m[1]);
   const uniqueUrls = new Set(urls);
 
-  if (urls.length !== 68) fail(`expected 68 sitemap URLs, found ${urls.length}`);
+  if (urls.length !== 77) fail(`expected 77 sitemap URLs, found ${urls.length}`);
   if (uniqueUrls.size !== urls.length) fail(`sitemap contains ${urls.length - uniqueUrls.size} duplicate URL(s)`);
 
   const sitemapPaths = new Set(urls.map((url) => new URL(url).pathname.replace(/\/$/, "") || "/"));
@@ -167,4 +167,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Final SEO QA GREEN: 68 sitemap URLs validated; all static pages include the studio disclosure; ${clusters.length} language clusters inspected.`);
+console.log(`Final SEO QA GREEN: 77 sitemap URLs validated; all static pages include the studio disclosure; ${clusters.length} legacy language clusters inspected plus Nail Knowledge QA.`);
