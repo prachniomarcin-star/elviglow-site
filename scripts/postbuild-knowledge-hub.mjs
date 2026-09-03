@@ -15,8 +15,35 @@ if (html.includes(marker)) {
 }
 
 const hub = `
-<section ${marker} aria-label="ElviGlow kennisartikelen">
-  <h2>Praktische huid- en waxkennis</h2>
+<section class="section" ${marker} aria-label="ElviGlow kennisartikelen">
+  <div class="section-heading center">
+    <p class="eyebrow">ElviGlow • Kennis</p>
+    <h2>Praktische gidsen van ElviGlow</h2>
+    <p>Lees verder over nagels, waxen, huidproblemen en microneedling.</p>
+  </div>
+
+  <h3>Nagels • Paznokcie • Nails</h3>
+  <div class="card-grid-3 knowledge-card-grid" data-nail-knowledge-hub="true">
+    <article class="glass-card">
+      <span class="card-mark">✦</span>
+      <h3>Acrylnagels of gelnagels?</h3>
+      <p>Wat is het verschil en welke richting past bij jouw nagels en dagelijks gebruik?</p>
+      <p><a href="/kennis/acrylnagels-of-gelnagels">NL</a> · <a href="/pl/wiedza/paznokcie-akrylowe-czy-zelowe">PL</a> · <a href="/en/knowledge/acrylic-or-gel-nails">EN</a></p>
+    </article>
+    <article class="glass-card">
+      <span class="card-mark">✦</span>
+      <h3>Hoe lang blijven gelnagels en gellak mooi?</h3>
+      <p>Over uitgroei, houdbaarheid, onderhoud en wanneer een refill logisch is.</p>
+      <p><a href="/kennis/hoe-lang-blijven-gelnagels-en-gellak-mooi">NL</a> · <a href="/pl/wiedza/jak-dlugo-trzymaja-sie-paznokcie-zelowe-i-hybryda">PL</a> · <a href="/en/knowledge/how-long-do-gel-nails-and-gel-polish-last">EN</a></p>
+    </article>
+    <article class="glass-card">
+      <span class="card-mark">✦</span>
+      <h3>Eerste keer nagelverlenging</h3>
+      <p>Hoe kies je lengte en vorm, hoe bereid je je voor en wat gebeurt er tijdens de afspraak?</p>
+      <p><a href="/kennis/eerste-keer-nagelverlenging">NL</a> · <a href="/pl/wiedza/pierwsze-przedluzanie-paznokci">PL</a> · <a href="/en/knowledge/first-time-nail-extensions">EN</a></p>
+    </article>
+  </div>
+
   <h3>Waxen</h3>
   <p>
     <a href="/kennis/brazilian-wax-voorbereiden">Brazilian wax voorbereiden</a> ·
@@ -41,6 +68,9 @@ const hub = `
 
   <h3>Polski poradnik</h3>
   <p>
+    <a href="/pl/wiedza/paznokcie-akrylowe-czy-zelowe">Paznokcie akrylowe czy żelowe?</a> ·
+    <a href="/pl/wiedza/jak-dlugo-trzymaja-sie-paznokcie-zelowe-i-hybryda">Jak długo trzymają się paznokcie żelowe i hybryda?</a> ·
+    <a href="/pl/wiedza/pierwsze-przedluzanie-paznokci">Pierwsze przedłużanie paznokci</a> ·
     <a href="/pl/wiedza/brazilian-wax-jak-sie-przygotowac">Brazilian wax: jak się przygotować</a> ·
     <a href="/pl/wiedza/bikini-czy-brazilian-wax">Bikini czy Brazilian wax</a> ·
     <a href="/pl/wiedza/depilacja-woskiem-pierwszy-raz">Depilacja woskiem pierwszy raz</a> ·
@@ -57,6 +87,9 @@ const hub = `
 
   <h3>English guides</h3>
   <p>
+    <a href="/en/knowledge/acrylic-or-gel-nails">Acrylic or gel nails?</a> ·
+    <a href="/en/knowledge/how-long-do-gel-nails-and-gel-polish-last">How long do gel nails and gel polish last?</a> ·
+    <a href="/en/knowledge/first-time-nail-extensions">First-time nail extensions</a> ·
     <a href="/en/knowledge/brazilian-wax-preparation">Brazilian wax preparation</a> ·
     <a href="/en/knowledge/bikini-line-or-brazilian-wax">Bikini line or Brazilian wax?</a> ·
     <a href="/en/knowledge/first-time-waxing">First time waxing</a> ·
@@ -76,4 +109,4 @@ if (html.includes("</main>")) html = html.replace("</main>", `${hub}\n</main>`);
 else html = html.replace("</body>", `${hub}\n</body>`);
 
 fs.writeFileSync(file, html);
-console.log("Knowledge hub postbuild: static links added.");
+console.log("Knowledge hub postbuild: static links added, including visible Nail Knowledge cards.");
