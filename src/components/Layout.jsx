@@ -189,7 +189,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
           {seoLinks.map(([href, label]) => (
             <a href={href} key={href}>{label}</a>
           ))}
-          <a href="https://www.instagram.com/nagelsvoorjouenbeauty?igsh=N2hxdnRmaXZyYTJp" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/elviglow.deventer/" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </footer>
 

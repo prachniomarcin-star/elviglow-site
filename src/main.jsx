@@ -1012,7 +1012,59 @@ const openingHours = {
 };
 
 
-const googleReviewSnippets = { pl: [], en: [], nl: [] };
+const googleReviewSnippets = {
+  pl: [
+    {
+      author: "Agata Rodziewicz",
+      rating: 5,
+      text: "Paznokcie perfekt, depilacja perfekt, zabiegi na twarz również.",
+    },
+    {
+      author: "Oliwia Lila",
+      rating: 5,
+      text: "Z czystym sumieniem polecam paznokcie, zabiegi na twarz oraz depilację Lycon.",
+    },
+    {
+      author: "Patricia Goedman",
+      rating: 5,
+      text: "Pięknie pomalowane paznokcie. Naprawdę profesjonalnie!",
+    },
+  ],
+  en: [
+    {
+      author: "Agata Rodziewicz",
+      rating: 5,
+      text: "Perfect nails, perfect waxing and facial treatments too.",
+    },
+    {
+      author: "Oliwia Lila",
+      rating: 5,
+      text: "I wholeheartedly recommend the nails, facial treatments and Lycon waxing.",
+    },
+    {
+      author: "Patricia Goedman",
+      rating: 5,
+      text: "Beautifully polished nails. Truly professional!",
+    },
+  ],
+  nl: [
+    {
+      author: "Agata Rodziewicz",
+      rating: 5,
+      text: "Perfecte nagels, perfecte waxbehandeling en ook gezichtsbehandelingen.",
+    },
+    {
+      author: "Oliwia Lila",
+      rating: 5,
+      text: "Ik raad de nagels, gezichtsbehandelingen en Lycon-waxbehandeling van harte aan.",
+    },
+    {
+      author: "Patricia Goedman",
+      rating: 5,
+      text: "Hele mooie gelakte nagels. Echt professioneel!",
+    },
+  ],
+};
 
 function trackGrowthEvent(eventName, params = {}) {
   if (typeof window === "undefined") return;
@@ -1098,6 +1150,8 @@ function ContactPage({ t, lang }) {
       reviewTitle: "Byłaś zadowolona z wizyty?",
       reviewText: "Krótka, prawdziwa opinia pomaga innym klientkom znaleźć ElviGlow w Google i łatwiej zdecydować się na pierwszą wizytę.",
       reviewButton: "Dodaj opinię w Google",
+      reviewSource: "Wybrane fragmenty prawdziwych opinii opublikowanych w Google; tłumaczenia dopasowano do wersji językowej.",
+      reviewAll: "Zobacz wszystkie opinie w Google",
       polishEyebrow: "OBSŁUGA PO POLSKU",
       polishTitle: "Szukasz polskiej kosmetyczki w Deventer?",
       polishText: "Zobacz najważniejsze informacje o ElviGlow po polsku: zabiegi, depilacja, paznokcie, adres i sposób umawiania wizyty.",
@@ -1108,24 +1162,31 @@ function ContactPage({ t, lang }) {
       reviewTitle: "Were you happy with your visit?",
       reviewText: "A short, genuine review helps other clients find ElviGlow on Google and feel more confident before a first visit.",
       reviewButton: "Leave a Google review",
+      reviewSource: "Selected excerpts from genuine Google reviews; translations match the page language.",
+      reviewAll: "See all reviews on Google",
     },
     nl: {
       reviewEyebrow: "GOOGLE REVIEWS",
       reviewTitle: "Tevreden over je bezoek?",
       reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden en makkelijker voor een eerste afspraak te kiezen.",
       reviewButton: "Schrijf een Google-review",
+      reviewSource: "Geselecteerde fragmenten uit echte Google-reviews; vertalingen zijn aangepast aan de paginataal.",
+      reviewAll: "Bekijk alle reviews op Google",
     },
   }[lang] || {
     reviewEyebrow: "GOOGLE REVIEWS",
     reviewTitle: "Tevreden over je bezoek?",
     reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden.",
     reviewButton: "Schrijf een Google-review",
+    reviewSource: "Geselecteerde fragmenten uit echte Google-reviews; vertalingen zijn aangepast aan de paginataal.",
+    reviewAll: "Bekijk alle reviews op Google",
   };
 
   const googleReviewUrl = "https://g.page/r/CTlVO8SKXGw-EBM/review";
+  const googleReviewsUrl = "https://www.google.com/maps/place/ElviGlow/@52.2795944,6.172778,17z/data=!4m8!3m7!1s0x47c7eb9d6adc32cb:0x3e6c5c8ac43b5539!8m2!3d52.2795944!4d6.172778!9m1!1b1!16s%2Fg%2F11zf31_vzv?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
 
 
-  const instagramUrl = "https://www.instagram.com/nagelsvoorjouenbeauty";
+  const instagramUrl = "https://www.instagram.com/elviglow.deventer/";
   const whatsappNumber = "31682224999";
   const whatsappDisplay = "+31 6 82224999";
   const email = "elviglow47@gmail.com";
@@ -1480,7 +1541,7 @@ function ContactPage({ t, lang }) {
               <span>WA</span><div><small>{copy.phoneLabel}</small><strong>{whatsappDisplay}</strong></div>
             </a>
             <a className="booking-contact-link" href={instagramUrl} target="_blank" rel="noreferrer" onClick={() => trackGrowthEvent("instagram_contact_click", { page: "contact", lang })}>
-              <span>IG</span><div><small>Instagram</small><strong>@nagelsvoorjouenbeauty</strong></div>
+              <span>IG</span><div><small>Instagram</small><strong>@elviglow.deventer</strong></div>
             </a>
             <a className="booking-contact-link" href={`mailto:${email}`}>
               <span>✉</span><div><small>{copy.emailLabel}</small><strong>{email}</strong></div>
@@ -1502,15 +1563,23 @@ function ContactPage({ t, lang }) {
           </a>
         </div>
         {googleReviewSnippets[lang]?.length > 0 && (
-          <div className="booking-review-list">
-            {googleReviewSnippets[lang].slice(0, 3).map((review) => (
-              <article className="booking-review-item" key={`${review.author}-${review.text}`}>
-                <div className="booking-review-stars">{"★".repeat(review.rating)}</div>
-                <p>“{review.text}”</p>
-                <strong>{review.author}</strong>
-                {review.date ? <small>{review.date}</small> : null}
-              </article>
-            ))}
+          <div className="booking-review-content">
+            <div className="booking-review-list">
+              {googleReviewSnippets[lang].slice(0, 3).map((review) => (
+                <article className="booking-review-item" key={`${review.author}-${review.text}`}>
+                  <div className="booking-review-stars" aria-label={`${review.rating} / 5`}>{"★".repeat(review.rating)}</div>
+                  <p>“{review.text}”</p>
+                  <strong>{review.author}</strong>
+                </article>
+              ))}
+            </div>
+            <div className="booking-review-footer">
+              <small>{growthCopy.reviewSource}</small>
+              <a href={googleReviewsUrl} target="_blank" rel="noreferrer"
+                 onClick={() => trackGrowthEvent("google_reviews_read_click", { page: "contact_top", lang })}>
+                {growthCopy.reviewAll} →
+              </a>
+            </div>
           </div>
         )}
       </section>
