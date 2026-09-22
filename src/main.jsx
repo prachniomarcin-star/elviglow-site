@@ -281,10 +281,38 @@ function HomePage({ onNavigate, t, lang }) {
   );
 }
 
-function TreatmentsPage({ t, onNavigate }) {
+function TreatmentsPage({ t, onNavigate, lang }) {
+  const catalog = getPricingCatalog(lang);
+  const featured = [
+    ...catalog.offers.facial,
+    ...catalog.offers.premium,
+    catalog.offers.microneedling[0],
+  ].filter(Boolean);
+
+  const bookCopy = {
+    pl: { eyebrow: "AKTUALNA OFERTA", title: "Wybierz zabieg albo zacznij od problemu skóry", text: "Każda karta pokazuje cenę, orientacyjny czas, zakres zabiegu i cel. Jeśli już wiesz, czego chcesz, możesz przejść prosto do rezerwacji.", button: "Umów ten zabieg" },
+    en: { eyebrow: "CURRENT TREATMENTS", title: "Choose a treatment or start with your skin concern", text: "Each card shows the price, estimated time, what is included and the goal. If you already know what you want, go straight to booking.", button: "Book this treatment" },
+    nl: { eyebrow: "ACTUELE BEHANDELINGEN", title: "Kies een behandeling of begin bij je huidvraag", text: "Elke kaart toont prijs, geschatte tijd, inhoud en doel. Weet je al wat je wilt, dan kun je direct naar de afspraak.", button: "Boek deze behandeling" },
+  }[lang] || {};
+
+  const book = (serviceId) => onNavigate(`/kontakt?category=face&service=${encodeURIComponent(serviceId)}`);
+
   return (
     <>
       <PageHero eyebrow={t.treatments.eyebrow} title={t.treatments.title} text={t.treatments.lead} />
+
+      <section className="section treatment-catalog-section first-in-flow">
+        <div className="section-heading center">
+          <p className="eyebrow">{bookCopy.eyebrow}</p>
+          <h2>{bookCopy.title}</h2>
+          <p>{bookCopy.text}</p>
+        </div>
+        <div className="offer-grid">
+          {featured.map((item) => (
+            <OfferCard item={item} key={item.id} t={t} onBook={book} bookLabel={bookCopy.button} />
+          ))}
+        </div>
+      </section>
 
       <section className="section consultation-section first-in-flow">
         <div>
@@ -568,7 +596,7 @@ function KnowledgePage({ t, onNavigate }) {
   );
 }
 
-function PriceListGroups({ groups }) {
+function PriceListGroups({ groups, onBook, category, bookLabel }) {
   return (
     <>
       {groups.map((group) => (
@@ -581,7 +609,14 @@ function PriceListGroups({ groups }) {
                   <h3>{service.name}</h3>
                   <p>{service.text}</p>
                 </div>
-                <strong>{service.price}</strong>
+                <div className="price-row-actions">
+                  <strong>{service.price}</strong>
+                  {onBook && (
+                    <button type="button" className="price-book-btn" onClick={() => onBook(category, service.id)}>
+                      {bookLabel}
+                    </button>
+                  )}
+                </div>
               </article>
             ))}
           </div>
@@ -591,7 +626,9 @@ function PriceListGroups({ groups }) {
   );
 }
 
-function PricingPage({ t, lang }) {
+function PricingPage({ t, lang, onNavigate }) {
+  const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
+  const book = (category, serviceId) => onNavigate(`/kontakt?category=${category}&service=${encodeURIComponent(serviceId)}`);
   const [active, setActive] = useState("face");
   const pricing = t.pricing;
   const catalog = getPricingCatalog(lang);
@@ -608,21 +645,21 @@ function PricingPage({ t, lang }) {
         <div className="pricing-group">
           <h3>{pricing.headings.popular}</h3>
           <div className="offer-grid">
-            {catalog.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.facial.map((item) => <OfferCard item={item} key={item.name} t={t} onBook={(id) => book("face", id)} bookLabel={bookLabel} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.premium}</h3>
           <div className="offer-grid">
-            {catalog.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.premium.map((item) => <OfferCard item={item} key={item.name} t={t} onBook={(id) => book("face", id)} bookLabel={bookLabel} />)}
           </div>
         </div>
 
         <div className="pricing-group">
           <h3>{pricing.headings.regeneration}</h3>
           <div className="offer-grid">
-            {catalog.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} />)}
+            {catalog.offers.microneedling.map((item) => <OfferCard item={item} key={item.name} t={t} onBook={(id) => book("face", id)} bookLabel={bookLabel} />)}
           </div>
           <p className="pricing-note">{pricing.note}</p>
         </div>
@@ -645,7 +682,10 @@ function PricingPage({ t, lang }) {
                 <h3>{service.name}</h3>
                 <p>{service.text}</p>
               </div>
-              <strong>{service.price}</strong>
+              <div className="price-row-actions">
+                <strong>{service.price}</strong>
+                <button type="button" className="price-book-btn" onClick={() => book("nails", service.id)}>{bookLabel}</button>
+              </div>
             </article>
           ))}
         </div>
@@ -661,7 +701,7 @@ function PricingPage({ t, lang }) {
           <h2>{pricing.tabs.waxing}</h2>
           <p>{pricing.waxingIntro}</p>
         </div>
-        <PriceListGroups groups={catalog.waxing} />
+        <PriceListGroups groups={catalog.waxing} onBook={book} category="wax" bookLabel={bookLabel} />
       </>
     );
   }
@@ -675,7 +715,7 @@ function PricingPage({ t, lang }) {
           <h2>{pricing.tabs.body}</h2>
           <p>{pricing.bodyIntro}</p>
         </div>
-        <PriceListGroups groups={catalog.body} />
+        <PriceListGroups groups={catalog.body} onBook={book} category="body" bookLabel={bookLabel} />
       </>
     );
   }
@@ -689,7 +729,7 @@ function PricingPage({ t, lang }) {
           <p>{pricing.careIntro}</p>
         </div>
         <div className="offer-grid">
-          {catalog.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} />)}
+          {catalog.memberships.map((item) => <OfferCard key={item.name} item={{ ...item, tags: [], passes: "" }} t={t} onBook={(id) => book("care", id)} bookLabel={bookLabel} />)}
         </div>
       </>
     );
@@ -1191,9 +1231,17 @@ function ContactPage({ t, lang }) {
   const whatsappDisplay = "+31 6 82224999";
   const email = "elviglow47@gmail.com";
 
-  const [category, setCategory] = useState("");
-  const [serviceId, setServiceId] = useState("");
-  const [waxIds, setWaxIds] = useState([]);
+  const initialBooking = (() => {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      category: params.get("category") || "",
+      service: params.get("service") || "",
+    };
+  })();
+
+  const [category, setCategory] = useState(initialBooking.category);
+  const [serviceId, setServiceId] = useState(initialBooking.category === "wax" ? "" : initialBooking.service);
+  const [waxIds, setWaxIds] = useState(initialBooking.category === "wax" && initialBooking.service ? [initialBooking.service] : []);
   const [bodyArea, setBodyArea] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -1611,8 +1659,10 @@ function App() {
   const t = translations[lang] || translations.pl;
 
   function onNavigate(path) {
-    const next = normalizePath(path);
-    window.history.pushState({}, "", next);
+    const [pathname, search = ""] = path.split("?");
+    const next = normalizePath(pathname);
+    const href = search ? `${next}?${search}` : next;
+    window.history.pushState({}, "", href);
     setCurrentPath(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -1660,12 +1710,12 @@ function App() {
   }, [currentPath, lang]);
 
   let page = <HomePage onNavigate={onNavigate} t={t} lang={lang} />;
-  if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/cennik") page = <PricingPage t={t} lang={lang} />;
+  if (currentPath === "/cennik") page = <PricingPage t={t} lang={lang} onNavigate={onNavigate} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/abonamenty") page = <MembershipsPage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/kontakt") page = <ContactPage t={t} lang={lang} />;
