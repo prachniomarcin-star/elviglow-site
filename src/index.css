@@ -2256,3 +2256,104 @@ summary:focus-visible {
     grid-template-columns: 1fr auto;
   }
 }
+
+
+/* Conversion UX patch — direct booking, trust and simplified service pages */
+.offer-price {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+.offer-price > strong {
+  color: var(--brand-dark);
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.offer-price > small {
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.offer-book-btn {
+  width: 100%;
+  margin-top: 18px;
+}
+.price-row-actions {
+  display: grid;
+  justify-items: end;
+  gap: 9px;
+}
+.price-book-btn {
+  border: 1px solid rgba(185,109,98,0.25);
+  background: rgba(185,109,98,0.08);
+  color: var(--brand-dark);
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.price-book-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(185,109,98,0.14);
+}
+.treatment-catalog-section,
+.nails-pricing-section,
+.current-prices-section {
+  padding-top: 42px;
+}
+.home-reviews-section {
+  padding-top: 56px;
+  padding-bottom: 26px;
+}
+.home-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.home-review-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 24px;
+  background: rgba(255,255,255,0.78);
+  box-shadow: var(--shadow-soft);
+}
+.home-review-card p {
+  margin: 14px 0 18px;
+  color: var(--text);
+}
+.home-review-card strong {
+  color: var(--brand-dark);
+}
+
+@media (max-width: 740px) {
+  .offer-topline {
+    align-items: flex-start;
+  }
+  .offer-price {
+    justify-items: start;
+  }
+  .price-row-actions {
+    justify-items: start;
+  }
+  .price-book-btn {
+    min-height: 44px;
+    padding: 10px 15px;
+  }
+  .home-review-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-reviews-section {
+    padding-top: 42px;
+  }
+  .treatment-catalog-section,
+  .nails-pricing-section,
+  .current-prices-section {
+    padding-top: 32px;
+  }
+  .nav-more-trigger {
+    min-width: 82px;
+  }
+}

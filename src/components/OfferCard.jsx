@@ -1,4 +1,4 @@
-export default function OfferCard({ item, t }) {
+export default function OfferCard({ item, t, onBook, bookLabel }) {
   return (
     <article className="offer-card">
       <div className="offer-topline">
@@ -6,7 +6,10 @@ export default function OfferCard({ item, t }) {
           <h3>{item.name}</h3>
           <p className="offer-tags">{item.tags?.join(" • ")}</p>
         </div>
-        <strong>{item.price}</strong>
+        <div className="offer-price">
+          <strong>{item.price}</strong>
+          {item.duration && <small>{item.duration}</small>}
+        </div>
       </div>
 
       <div className="offer-block">
@@ -24,6 +27,12 @@ export default function OfferCard({ item, t }) {
       </div>
 
       {item.passes && <p className="passes-line">{item.passes}</p>}
+
+      {onBook && (
+        <button type="button" className="secondary-btn offer-book-btn" onClick={() => onBook(item.id)}>
+          {bookLabel || t.common.bookVisit}
+        </button>
+      )}
     </article>
   );
 }

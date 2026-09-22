@@ -38,8 +38,15 @@ const localSeoLinks = {
   ],
 };
 
-const mobileMainNav = navKeys.slice(0, 4);
-const mobileMoreNav = navKeys.slice(4);
+const mobilePrimaryKeys = new Set(["treatments", "nails", "waxing", "pricing"]);
+const mobileMainNav = navKeys.filter((item) => mobilePrimaryKeys.has(item.key));
+const mobileMoreNav = navKeys.filter((item) => item.key !== "home" && !mobilePrimaryKeys.has(item.key));
+
+const moreLabels = {
+  pl: "Więcej",
+  en: "More",
+  nl: "Meer",
+};
 
 const studioSubtitles = {
   pl: "Prywatne studio domowe • jedna klientka na raz",
@@ -143,14 +150,14 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
             <button
               type="button"
               className="nav-more-trigger"
-              aria-label="More pages"
+              aria-label={moreLabels[lang] || moreLabels.nl}
               aria-expanded={isMoreOpen}
               onClick={() => {
                 setIsMoreOpen((value) => !value);
                 setIsLangOpen(false);
               }}
             >
-              •••
+              {moreLabels[lang] || moreLabels.nl}
             </button>
             {isMoreOpen && (
               <div className="nav-more-panel">
