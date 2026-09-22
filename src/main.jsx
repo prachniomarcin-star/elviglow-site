@@ -152,6 +152,38 @@ function PageHero({ eyebrow, title, text, children }) {
   );
 }
 
+function ReviewsTrustSection({ lang }) {
+  const copy = {
+    pl: { eyebrow: "OPINIE GOOGLE", title: "Co klientki mówią o ElviGlow", text: "Prawdziwe opinie pomagają zobaczyć, jak wyglądają wizyty i efekty z perspektywy klientek.", all: "Zobacz wszystkie opinie w Google" },
+    en: { eyebrow: "GOOGLE REVIEWS", title: "What clients say about ElviGlow", text: "Real reviews show what visits and results feel like from the client's perspective.", all: "See all Google reviews" },
+    nl: { eyebrow: "GOOGLE REVIEWS", title: "Wat klanten over ElviGlow zeggen", text: "Echte reviews laten zien hoe klanten de afspraak, verzorging en resultaten ervaren.", all: "Bekijk alle Google-reviews" },
+  }[lang] || {};
+  const reviews = googleReviewSnippets[lang] || googleReviewSnippets.nl;
+  const reviewsUrl = "https://www.google.com/maps/place/ElviGlow/@52.2795944,6.172778,17z/data=!4m8!3m7!1s0x47c7eb9d6adc32cb:0x3e6c5c8ac43b5539!8m2!3d52.2795944!4d6.172778!9m1!1b1!16s%2Fg%2F11zf31_vzv?entry=ttu";
+
+  return (
+    <section className="section home-reviews-section">
+      <div className="section-heading center">
+        <p className="eyebrow">{copy.eyebrow}</p>
+        <h2>{copy.title}</h2>
+        <p>{copy.text}</p>
+      </div>
+      <div className="home-review-grid">
+        {reviews.slice(0, 3).map((review) => (
+          <article className="home-review-card" key={`${review.author}-${review.text}`}>
+            <div className="booking-review-stars" aria-label={`${review.rating} / 5`}>{"★".repeat(review.rating)}</div>
+            <p>“{review.text}”</p>
+            <strong>{review.author}</strong>
+          </article>
+        ))}
+      </div>
+      <div className="hero-actions centered-actions">
+        <a className="secondary-btn" href={reviewsUrl} target="_blank" rel="noreferrer">{copy.all} →</a>
+      </div>
+    </section>
+  );
+}
+
 function HomePage({ onNavigate, t, lang }) {
   const x = homeExperience[lang] || homeExperience.nl;
 
@@ -216,6 +248,8 @@ function HomePage({ onNavigate, t, lang }) {
           ))}
         </div>
       </section>
+
+      <ReviewsTrustSection lang={lang} />
 
       <section className="section pathway-section">
         <div className="pathway-copy">
@@ -362,6 +396,9 @@ function TreatmentsPage({ t, onNavigate, lang }) {
 }
 
 function NailsPage({ t, onNavigate, lang }) {
+  const catalog = getPricingCatalog(lang);
+  const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
+  const book = (serviceId) => onNavigate(`/kontakt?category=nails&service=${encodeURIComponent(serviceId)}`);
   const pedicureInfo = {
     pl: "Pielęgnacja stóp, paznokci i skórek. W aktualnej ofercie jest pedicure klasyczny oraz pedicure z gellak.",
     en: "Foot, toenail and cuticle care. The current offer includes classic pedicure and pedicure with gellak.",
@@ -405,6 +442,25 @@ function NailsPage({ t, onNavigate, lang }) {
         </div>
       </section>
 
+      <section className="section nails-pricing-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Nails</p>
+          <h2>{t.pricing.tabs.nails}</h2>
+          <p>{t.pricing.nailsIntro}</p>
+        </div>
+        <div className="price-list-grid">
+          {catalog.nails.map((service) => (
+            <article className="price-row-card" key={service.id}>
+              <div><h3>{service.name}</h3><p>{service.text}</p></div>
+              <div className="price-row-actions">
+                <strong>{service.price}</strong>
+                <button type="button" className="price-book-btn" onClick={() => book(service.id)}>{bookLabel}</button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <CtaStrip onNavigate={onNavigate} t={t} />
     </>
   );
@@ -412,7 +468,10 @@ function NailsPage({ t, onNavigate, lang }) {
 
 
 
-function WaxingPage({ t, onNavigate }) {
+function WaxingPage({ t, onNavigate, lang }) {
+  const catalog = getPricingCatalog(lang);
+  const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
+  const book = (category, serviceId) => onNavigate(`/kontakt?category=${category}&service=${encodeURIComponent(serviceId)}`);
   return (
     <>
       <PageHero eyebrow={t.waxing.eyebrow} title={t.waxing.title} text={t.waxing.lead}>
@@ -466,6 +525,15 @@ function WaxingPage({ t, onNavigate }) {
         </div>
       </section>
 
+      <section className="section current-prices-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Waxing</p>
+          <h2>{t.pricing.tabs.waxing}</h2>
+          <p>{t.pricing.waxingIntro}</p>
+        </div>
+        <PriceListGroups groups={catalog.waxing} onBook={book} category="wax" bookLabel={bookLabel} />
+      </section>
+
       <section className="section rules-box">
         <div>
           <p className="eyebrow">ElviGlow</p>
@@ -478,7 +546,10 @@ function WaxingPage({ t, onNavigate }) {
 }
 
 
-function BodyPage({ t, onNavigate }) {
+function BodyPage({ t, onNavigate, lang }) {
+  const catalog = getPricingCatalog(lang);
+  const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
+  const book = (category, serviceId) => onNavigate(`/kontakt?category=${category}&service=${encodeURIComponent(serviceId)}`);
   return (
     <>
       <PageHero eyebrow={t.body.eyebrow} title={t.body.title} text={t.body.lead}>
@@ -513,6 +584,15 @@ function BodyPage({ t, onNavigate }) {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section current-prices-section">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Body</p>
+          <h2>{t.pricing.tabs.body}</h2>
+          <p>{t.pricing.bodyIntro}</p>
+        </div>
+        <PriceListGroups groups={catalog.body} onBook={book} category="body" bookLabel={bookLabel} />
       </section>
 
       <section className="section rules-box">
@@ -1187,8 +1267,8 @@ function ContactPage({ t, lang }) {
   const growthCopy = {
     pl: {
       reviewEyebrow: "OPINIE GOOGLE",
-      reviewTitle: "Byłaś zadowolona z wizyty?",
-      reviewText: "Krótka, prawdziwa opinia pomaga innym klientkom znaleźć ElviGlow w Google i łatwiej zdecydować się na pierwszą wizytę.",
+      reviewTitle: "Co klientki mówią o ElviGlow",
+      reviewText: "Zobacz wybrane prawdziwe opinie Google. Jeśli byłaś już w ElviGlow, możesz również dodać własną opinię.",
       reviewButton: "Dodaj opinię w Google",
       reviewSource: "Wybrane fragmenty prawdziwych opinii opublikowanych w Google; tłumaczenia dopasowano do wersji językowej.",
       reviewAll: "Zobacz wszystkie opinie w Google",
@@ -1199,23 +1279,23 @@ function ContactPage({ t, lang }) {
     },
     en: {
       reviewEyebrow: "GOOGLE REVIEWS",
-      reviewTitle: "Were you happy with your visit?",
-      reviewText: "A short, genuine review helps other clients find ElviGlow on Google and feel more confident before a first visit.",
+      reviewTitle: "What clients say about ElviGlow",
+      reviewText: "See selected genuine Google reviews. If you have already visited ElviGlow, you can also leave your own review.",
       reviewButton: "Leave a Google review",
       reviewSource: "Selected excerpts from genuine Google reviews; translations match the page language.",
       reviewAll: "See all reviews on Google",
     },
     nl: {
       reviewEyebrow: "GOOGLE REVIEWS",
-      reviewTitle: "Tevreden over je bezoek?",
-      reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden en makkelijker voor een eerste afspraak te kiezen.",
+      reviewTitle: "Wat klanten over ElviGlow zeggen",
+      reviewText: "Bekijk geselecteerde echte Google-reviews. Ben je al bij ElviGlow geweest, dan kun je ook je eigen review achterlaten.",
       reviewButton: "Schrijf een Google-review",
       reviewSource: "Geselecteerde fragmenten uit echte Google-reviews; vertalingen zijn aangepast aan de paginataal.",
       reviewAll: "Bekijk alle reviews op Google",
     },
   }[lang] || {
     reviewEyebrow: "GOOGLE REVIEWS",
-    reviewTitle: "Tevreden over je bezoek?",
+    reviewTitle: "Wat klanten over ElviGlow zeggen",
     reviewText: "Een korte, echte review helpt andere klanten ElviGlow via Google te vinden.",
     reviewButton: "Schrijf een Google-review",
     reviewSource: "Geselecteerde fragmenten uit echte Google-reviews; vertalingen zijn aangepast aan de paginataal.",
@@ -1712,8 +1792,8 @@ function App() {
   let page = <HomePage onNavigate={onNavigate} t={t} lang={lang} />;
   if (currentPath === "/zabiegi") page = <TreatmentsPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/paznokcie") page = <NailsPage t={t} onNavigate={onNavigate} lang={lang} />;
-  if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} />;
-  if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} />;
+  if (currentPath === "/depilacja") page = <WaxingPage t={t} onNavigate={onNavigate} lang={lang} />;
+  if (currentPath === "/cialo") page = <BodyPage t={t} onNavigate={onNavigate} lang={lang} />;
   if (currentPath === "/wiedza") page = <KnowledgePage t={t} onNavigate={onNavigate} />;
   if (currentPath === "/cennik") page = <PricingPage t={t} lang={lang} onNavigate={onNavigate} />;
   if (currentPath === "/akademia-skory") page = <AcademyPage t={t} onNavigate={onNavigate} lang={lang} />;
