@@ -74,7 +74,7 @@ const routes = {
   },
   "/abonamenty": {
     title: "Verzorgingsprogramma's | ElviGlow Deventer",
-    description: "Regelmatige huidverzorgingsprogramma's voor klanten die liever met een plan werken dan met losse behandelingen.",
+    description: "Regelmatige huidverzorging in Deventer met een duidelijk plan voor reiniging, glow en regeneratie bij ElviGlow.",
     h1: "Regelmatige verzorging in plaats van losse keuzes",
     intro: "Verzorgingsprogramma's zijn bedoeld voor klanten die huidverzorging systematisch willen aanpakken en liever met een plan werken dan steeds opnieuw beginnen.",
   },
