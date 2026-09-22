@@ -23,7 +23,7 @@ const pages = {
   },
   "abonamenty/index.html": {
     canonical: "/abonamenty",
-    description: "Verzorgingsprogramma's van ElviGlow in Deventer voor regelmatige huidverzorging, glow en regeneratie met een duidelijk persoonlijk plan."
+    description: "Regelmatige huidverzorging in Deventer met een duidelijk plan voor reiniging, glow en regeneratie bij ElviGlow."
   }
 };
 
