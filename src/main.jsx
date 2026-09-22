@@ -130,7 +130,7 @@ const seoByPath = {
   "/wiedza": { title: "Huidkennis | ElviGlow Deventer", description: "Praktische huidkennis: huidtypes, zichtbare signalen, verzorgingsregels en hoe je een behandeling bewuster kiest." },
   "/akademia-skory": { title: "Huidacademie & mini huidkaart | ElviGlow", description: "Leer je huid beter begrijpen met de ElviGlow Huidacademie en mini huidkaart: probleem, mechanisme, doel en verzorgingsrichting." },
   "/cennik": { title: "Prijslijst beauty & huid Deventer | ElviGlow", description: "Bekijk actuele prijzen voor gezichtsbehandelingen, microneedling, verzorgingsprogramma's, nagels, Lycon waxing en lichaamsbehandelingen." },
-  "/abonamenty": { title: "Verzorgingsprogramma's | ElviGlow Deventer", description: "Regelmatige huidverzorgingsprogramma's voor klanten die liever met een plan werken dan met losse, toevallige behandelingen." },
+  "/abonamenty": { title: "Verzorgingsprogramma's | ElviGlow Deventer", description: "Regelmatige huidverzorging in Deventer met een duidelijk plan voor reiniging, glow en regeneratie bij ElviGlow." },
   "/kontakt": { title: "Contact & afspraak | ElviGlow Deventer", description: "Neem contact op met ElviGlow in Deventer voor een afspraak, huidbehandeling, microneedling, nagels, waxing of lichaamsbehandeling." },
 };
 
