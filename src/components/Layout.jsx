@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RouterLink from "./RouterLink";
 import { LANGUAGES } from "../data/i18n";
+import { appointmentLanguageCopy } from "../data/appointmentLanguage";
 
 const navKeys = [
   { key: "home", href: "/" },
@@ -186,6 +187,7 @@ export default function Layout({ children, currentPath, onNavigate, lang, setLan
             <strong>ElviGlow</strong>
             <p>{studioSubtitle}</p>
             <small>Deventer • Skin • Beauty • Care</small>
+            <p className="footer-language">{(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).footer}</p>
           </div>
         </div>
         <div className="footer-links">

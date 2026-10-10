@@ -20,19 +20,19 @@ const copy = {
   pl: {
     eyebrow: "PRYWATNIE I KAMERALNIE",
     title: "Studio domowe — wyłącznie po umówieniu",
-    text: "ElviGlow to prywatny gabinet domowy w Deventer, w którym wizyty odbywają się indywidualnie, jedna klientka na raz. Podczas zabiegu drzwi gabinetu są zamknięte. Nie prowadzimy wizyt bez wcześniejszego umówienia; szczegóły lokalizacji potwierdzamy przy rezerwacji.",
+    text: "ElviGlow to prywatny gabinet domowy w Deventer, w którym wizyty odbywają się indywidualnie, jedna klientka na raz. Podczas zabiegu drzwi gabinetu są zamknięte. Nie prowadzimy wizyt bez wcześniejszego umówienia; szczegóły lokalizacji potwierdzamy przy rezerwacji. Rezerwacje i zabiegi omawiamy po polsku lub angielsku.",
     tags: ["Prywatny gabinet domowy", "Jedna klientka na raz", "Tylko po umówieniu"],
   },
   en: {
     eyebrow: "PRIVATE AND PERSONAL",
     title: "Home-based studio — appointment only",
-    text: "ElviGlow is a private home-based treatment studio in Deventer, where visits are one-to-one and only one client is seen at a time. The treatment-room door remains closed during the appointment. There are no walk-ins; location details are confirmed when booking.",
+    text: "ElviGlow is a private home-based treatment studio in Deventer, where visits are one-to-one and only one client is seen at a time. The treatment-room door remains closed during the appointment. There are no walk-ins; location details are confirmed when booking. Bookings and treatments are in English or Polish.",
     tags: ["Private home studio", "One client at a time", "Appointment only"],
   },
   nl: {
     eyebrow: "PRIVÉ EN KLEINSCHALIG",
     title: "Studio aan huis — alleen op afspraak",
-    text: "ElviGlow is een privé-behandelruimte aan huis in Deventer. Afspraken zijn één-op-één, met één klant tegelijk, en de deur van de behandelruimte blijft tijdens de behandeling gesloten. Er is geen vrije inloop; de bezoekdetails worden bij de afspraak bevestigd.",
+    text: "ElviGlow is een privé-behandelruimte aan huis in Deventer. Afspraken zijn één-op-één, met één klant tegelijk, en de deur van de behandelruimte blijft tijdens de behandeling gesloten. Er is geen vrije inloop; de bezoekdetails worden bij de afspraak bevestigd. De website is in het Nederlands beschikbaar, maar afspraken en behandelingen zijn in het Engels of Pools.",
     tags: ["Privéstudio aan huis", "Eén klant tegelijk", "Alleen op afspraak"],
   },
 };
