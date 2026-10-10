@@ -6,6 +6,7 @@ import CtaStrip from "./components/CtaStrip";
 import ElviSkinMiniMap from "./components/ElviSkinMiniMap";
 import { translations } from "./data/i18n";
 import { bookingServices, getPricingCatalog, bodyAreas } from "./data/serviceCatalog";
+import { appointmentLanguageCopy } from "./data/appointmentLanguage";
 import "./index.css";
 import "./booking-v17-2.css";
 
@@ -200,6 +201,7 @@ function HomePage({ onNavigate, t, lang }) {
           </div>
           <div className="trust-row" aria-label="ElviGlow">
             {x.trust.map((item) => <span key={item}>✦ {item}</span>)}
+            <span>✦ {(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).short}</span>
           </div>
         </div>
 
@@ -479,6 +481,7 @@ function WaxingPage({ t, onNavigate, lang }) {
           <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
           <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{t.common.bookVisit}</button>
         </div>
+        <p className="appointment-language-inline">✦ {(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).short}</p>
       </PageHero>
 
       <section className="section two-columns">
@@ -1087,7 +1090,7 @@ const bookingCopy = {
     emailLabel: "E-mail",
     phoneLabel: "WhatsApp",
     weekdays: ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
-    messageIntro: "Hallo, ik wil graag een afspraak maken bij ElviGlow.",
+    messageIntro: "Hallo, ik wil graag een afspraak maken bij ElviGlow. Ik begrijp dat de communicatie over afspraken en tijdens behandelingen in het Engels of Pools verloopt.",
     messageService: "Behandeling",
     messagePrice: "Prijs",
     messageDuration: "Geschatte tijd",
@@ -1483,7 +1486,12 @@ function ContactPage({ t, lang }) {
 
   return (
     <>
-      <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead} />
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead}>
+        <div className="appointment-language-note">
+          <strong>{(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).title}</strong>
+          <p>{(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).text}</p>
+        </div>
+      </PageHero>
 
       <section className="section booking-layout">
         <article className="booking-card">
