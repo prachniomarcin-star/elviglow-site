@@ -503,6 +503,10 @@ const waxingConversionCopy = {
 function WaxingPage({ t, onNavigate, lang }) {
   const catalog = getPricingCatalog(lang);
   const copy = waxingConversionCopy[lang] || waxingConversionCopy.nl;
+  // Put Bikini/Brazilian first for high-intent waxing visitors without altering shared pricing data.
+  const waxingGroups = [...catalog.waxing].sort(
+    (left, right) => Number(right.category === "Bikini") - Number(left.category === "Bikini")
+  );
   const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
   const book = (category, serviceId) => onNavigate(`/kontakt?category=${category}&service=${encodeURIComponent(serviceId)}`);
   const scrollToPrices = () => document.getElementById("waxing-prices")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -526,7 +530,7 @@ function WaxingPage({ t, onNavigate, lang }) {
           <h2>{t.pricing.tabs.waxing}</h2>
           <p>{t.pricing.waxingIntro}</p>
         </div>
-        <PriceListGroups groups={catalog.waxing} onBook={book} category="wax" bookLabel={bookLabel} />
+        <PriceListGroups groups={waxingGroups} onBook={book} category="wax" bookLabel={bookLabel} />
       </section>
 
       <ReviewsTrustSection lang={lang} />
