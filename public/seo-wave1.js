@@ -204,15 +204,8 @@
     const hero = document.querySelector(".page-hero");
     if (!hero) return;
 
-    if (lang === "nl") {
-      setText(hero.querySelector(".eyebrow"), "Waxen • Deventer");
-      setText(hero.querySelector("h1"), "Waxen in Deventer: zones, prijzen en voorbereiding");
-      setText(hero.querySelector(".lead"), "Van bovenlip en wenkbrauwen tot benen, bikini en Brazilian: kies de waxzone die bij je afspraak past. Voor informatie over LYCON is er een aparte merkpagina.");
-    } else if (lang === "pl") {
-      setText(hero.querySelector(".eyebrow"), "Depilacja woskiem • Deventer");
-      setText(hero.querySelector("h1"), "Depilacja woskiem w Deventer");
-      setText(hero.querySelector(".lead"), "Depilacja woskiem dla kobiet: wąsik, brwi, pachy, przedramiona, nogi, plecy, bikini i Brazilian. Osobna strona opisuje depilację wykonywaną produktami LYCON.");
-    }
+    // Hero copy belongs to React's WaxingPage. Do not overwrite its CRO headings or lead.
+    // Keep SEO metadata and contextual article links managed by this script.
 
     if (!oldKnowledge && waxKnowledgeLinks[lang]) {
       const copy = waxKnowledgeLinks[lang];
@@ -229,7 +222,9 @@
           ${copy.items.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
         </nav>
       `;
-      const insertAfter = document.querySelector(".page-hero");
+      // Contextual learning links are useful for SEO, but should follow the offer,
+      // prices, trust and aftercare rather than interrupt the booking funnel.
+      const insertAfter = document.querySelector(".rules-box");
       insertAfter?.insertAdjacentElement("afterend", section);
     }
   }
