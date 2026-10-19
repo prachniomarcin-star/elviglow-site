@@ -64,7 +64,14 @@
       section = document.createElement("section");
       section.className = "section seo-wave1-wax-links";
       section.setAttribute("data-seo-wave1-wax-links", "");
-      hero.insertAdjacentElement("afterend", section);
+      const aftercare = document.querySelector(".rules-box");
+      (aftercare || hero).insertAdjacentElement("afterend", section);
+    }
+
+    // Repair legacy placement even if the section was created by seo-wave1.js.
+    const aftercare = document.querySelector(".rules-box");
+    if (aftercare && section.previousElementSibling !== aftercare) {
+      aftercare.insertAdjacentElement("afterend", section);
     }
 
     if (section.getAttribute("data-seo-wax-lang") === current) return;

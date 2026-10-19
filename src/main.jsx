@@ -470,19 +470,70 @@ function NailsPage({ t, onNavigate, lang }) {
 
 
 
+const waxingConversionCopy = {
+  pl: {
+    eyebrow: "Depilacja Lycon • Deventer",
+    title: "Depilacja woskiem Lycon w Deventer",
+    lead: "Bikini brazylijskie, linia bikini, pachy, nogi, brwi i inne wybrane strefy. Prywatne studio w Schalkhaar przy Deventer, jedna klientka na raz.",
+    priceCta: "Zobacz ceny i strefy",
+    bookCta: "Wybierz strefę i termin",
+    language: "Możesz napisać po holendersku. Zabieg prowadzimy po polsku lub angielsku.",
+    trust: ["LYCON wax", "Prywatne studio", "Jedna klientka na raz", "Jasne ceny"],
+  },
+  en: {
+    eyebrow: "LYCON waxing • Deventer",
+    title: "LYCON waxing in Deventer",
+    lead: "Brazilian bikini, bikini line, underarms, legs, brows and other selected areas. A calm private studio in Schalkhaar near Deventer, one client at a time.",
+    priceCta: "See prices & areas",
+    bookCta: "Choose area & preferred time",
+    language: "Dutch messages are welcome. The treatment is carried out in English or Polish.",
+    trust: ["LYCON wax", "Private studio", "One client at a time", "Clear prices"],
+  },
+  nl: {
+    eyebrow: "LYCON waxing • Deventer",
+    title: "Waxen in Deventer met LYCON",
+    lead: "Brazilian bikini, bikinilijn, oksels, benen, wenkbrauwen en andere geselecteerde zones. Rustige privéstudio in Schalkhaar bij Deventer, één klant tegelijk.",
+    priceCta: "Bekijk prijzen & zones",
+    bookCta: "Kies zone en gewenst tijdstip",
+    language: "Berichten in het Nederlands zijn welkom. De behandeling is in het Engels of Pools.",
+    trust: ["LYCON wax", "Privéstudio", "Eén klant tegelijk", "Duidelijke prijzen"],
+  },
+};
+
 function WaxingPage({ t, onNavigate, lang }) {
   const catalog = getPricingCatalog(lang);
+  const copy = waxingConversionCopy[lang] || waxingConversionCopy.nl;
+  // Put Bikini/Brazilian first for high-intent waxing visitors without altering shared pricing data.
+  const waxingGroups = [...catalog.waxing].sort(
+    (left, right) => Number(right.category === "Bikini") - Number(left.category === "Bikini")
+  );
   const bookLabel = { pl: "Umów", en: "Book", nl: "Boek" }[lang] || "Boek";
   const book = (category, serviceId) => onNavigate(`/kontakt?category=${category}&service=${encodeURIComponent(serviceId)}`);
+  const scrollToPrices = () => document.getElementById("waxing-prices")?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   return (
     <>
-      <PageHero eyebrow={t.waxing.eyebrow} title={t.waxing.title} text={t.waxing.lead}>
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} text={copy.lead}>
         <div className="hero-actions">
-          <button className="primary-btn" onClick={() => onNavigate("/cennik")}>{t.common.seePricing}</button>
-          <button className="secondary-btn" onClick={() => onNavigate("/kontakt")}>{t.common.bookVisit}</button>
+          <button className="primary-btn" onClick={scrollToPrices}>{copy.priceCta}</button>
+          <button className="secondary-btn" onClick={() => onNavigate("/kontakt?category=wax")}>{copy.bookCta}</button>
         </div>
-        <p className="appointment-language-inline">✦ {(appointmentLanguageCopy[lang] || appointmentLanguageCopy.nl).short}</p>
+        <div className="trust-row" aria-label="ElviGlow waxing">
+          {copy.trust.map((item) => <span key={item}>✦ {item}</span>)}
+        </div>
+        <p className="appointment-language-inline">✦ {copy.language}</p>
       </PageHero>
+
+      <section className="section current-prices-section" id="waxing-prices">
+        <div className="section-heading center">
+          <p className="eyebrow">ElviGlow Waxing</p>
+          <h2>{t.pricing.tabs.waxing}</h2>
+          <p>{t.pricing.waxingIntro}</p>
+        </div>
+        <PriceListGroups groups={waxingGroups} onBook={book} category="wax" bookLabel={bookLabel} />
+      </section>
+
+      <ReviewsTrustSection lang={lang} />
 
       <section className="section two-columns">
         <div>
@@ -528,15 +579,6 @@ function WaxingPage({ t, onNavigate, lang }) {
         </div>
       </section>
 
-      <section className="section current-prices-section">
-        <div className="section-heading center">
-          <p className="eyebrow">ElviGlow Waxing</p>
-          <h2>{t.pricing.tabs.waxing}</h2>
-          <p>{t.pricing.waxingIntro}</p>
-        </div>
-        <PriceListGroups groups={catalog.waxing} onBook={book} category="wax" bookLabel={bookLabel} />
-      </section>
-
       <section className="section rules-box">
         <div>
           <p className="eyebrow">ElviGlow</p>
@@ -547,7 +589,6 @@ function WaxingPage({ t, onNavigate, lang }) {
     </>
   );
 }
-
 
 function BodyPage({ t, onNavigate, lang }) {
   const catalog = getPricingCatalog(lang);
